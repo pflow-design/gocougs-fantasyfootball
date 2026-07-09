@@ -23,7 +23,12 @@
       "pf": 1696.12,
       "pa": 1486.21,
       "diff": 209.91,
-      "games": 14
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "L-1",
+      "rating": 679,
+      "level": "Silver",
+      "finalPlace": 2
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1611.75,
       "pa": 1614.99,
       "diff": -3.24,
-      "games": 14
+      "games": 14,
+      "team": "The Gloria Hole",
+      "streak": "W-1",
+      "rating": 590,
+      "level": "Bronze",
+      "finalPlace": 1
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1647.55,
       "pa": 1487.9,
       "diff": 159.65,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "W-1",
+      "rating": 861,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 4,
@@ -71,7 +86,12 @@
       "pf": 1678.92,
       "pa": 1689.55,
       "diff": -10.63,
-      "games": 14
+      "games": 14,
+      "team": "KingDomeRafters",
+      "streak": "W-2",
+      "rating": 781,
+      "level": "Gold",
+      "finalPlace": 7
     },
     {
       "rank": 6,
@@ -83,7 +103,12 @@
       "pf": 1559.84,
       "pa": 1637.02,
       "diff": -77.18,
-      "games": 14
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "L-2",
+      "rating": 649,
+      "level": "Silver",
+      "finalPlace": 8
     },
     {
       "rank": 7,
@@ -107,7 +132,12 @@
       "pf": 1496.52,
       "pa": 1575.73,
       "diff": -79.21,
-      "games": 14
+      "games": 14,
+      "team": "Your Mom",
+      "streak": "W-3",
+      "rating": 572,
+      "level": "Bronze",
+      "finalPlace": 5
     },
     {
       "rank": 9,
@@ -119,7 +149,12 @@
       "pf": 1524.02,
       "pa": 1592.4,
       "diff": -68.38,
-      "games": 14
+      "games": 14,
+      "team": "My Main Thang",
+      "streak": "L-3",
+      "rating": 576,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +166,12 @@
       "pf": 1626.38,
       "pa": 1791.43,
       "diff": -165.05,
-      "games": 14
+      "games": 14,
+      "team": "CouginItMeansChamp!",
+      "streak": "L-1",
+      "rating": 553,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +623,245 @@
         136.76
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Ryan C",
+      "Daniel",
+      "Antony",
+      "Raj",
+      "David",
+      "Patrick",
+      "Kyle K",
+      "Duncan",
+      "Robbie",
+      "Kyle P"
+    ],
+    "pf": [
+      1725.41,
+      1696.12,
+      1678.92,
+      1647.55,
+      1626.38,
+      1611.75,
+      1559.84,
+      1524.02,
+      1510.62,
+      1496.52
+    ],
+    "pa": [
+      1671.31,
+      1486.21,
+      1689.55,
+      1487.9,
+      1791.43,
+      1614.99,
+      1637.02,
+      1592.4,
+      1585.35,
+      1575.73
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "The Gloria Hole",
+      "manager": "Patrick",
+      "record": "9-5-0",
+      "place": 1,
+      "badges": [
+        "2015 CHAMPION",
+        "Bronze 590"
+      ],
+      "pf": 1611.75,
+      "pa": 1614.99,
+      "diff": -3.24
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "9-5-0",
+      "place": 2,
+      "badges": [
+        "Silver 679"
+      ],
+      "pf": 1696.12,
+      "pa": 1486.21,
+      "diff": 209.91
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "8-6-0",
+      "place": 3,
+      "badges": [
+        "Platinum 861"
+      ],
+      "pf": 1647.55,
+      "pa": 1487.9,
+      "diff": 159.65
+    },
+    {
+      "team": "Your Mom",
+      "manager": "Kyle P",
+      "record": "7-7-0",
+      "place": 5,
+      "badges": [
+        "Bronze 572"
+      ],
+      "pf": 1496.52,
+      "pa": 1575.73,
+      "diff": -79.21
+    },
+    {
+      "team": "KingDomeRafters",
+      "manager": "Antony",
+      "record": "7-7-0",
+      "place": 7,
+      "badges": [
+        "Gold 781"
+      ],
+      "pf": 1678.92,
+      "pa": 1689.55,
+      "diff": -10.63
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle K",
+      "record": "7-7-0",
+      "place": 8,
+      "badges": [
+        "Silver 649"
+      ],
+      "pf": 1559.84,
+      "pa": 1637.02,
+      "diff": -77.18
+    },
+    {
+      "team": "My Main Thang",
+      "manager": "Duncan",
+      "record": "5-9-0",
+      "place": 9,
+      "badges": [
+        "Bronze 576"
+      ],
+      "pf": 1524.02,
+      "pa": 1592.4,
+      "diff": -68.38
+    },
+    {
+      "team": "CouginItMeansChamp!",
+      "manager": "David",
+      "record": "4-10-0",
+      "place": 10,
+      "badges": [
+        "Bronze 553"
+      ],
+      "pf": 1626.38,
+      "pa": 1791.43,
+      "diff": -165.05
+    },
+    {
+      "team": "Ryan C",
+      "manager": "Ryan C",
+      "record": "7-7-0",
+      "place": null,
+      "badges": [],
+      "pf": 1725.41,
+      "pa": 1671.31,
+      "diff": 54.1
+    },
+    {
+      "team": "Robbie",
+      "manager": "Robbie",
+      "record": "7-7-0",
+      "place": null,
+      "badges": [],
+      "pf": 1510.62,
+      "pa": 1585.35,
+      "diff": -74.73
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "The Gloria Hole",
+            "score": 161.37
+          },
+          "loser": {
+            "team": "Ryan C",
+            "score": 155.5
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 123.8
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 121.43
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "The Gloria Hole",
+            "score": 88.05
+          },
+          "loser": {
+            "team": "My Ball Zach Ertz",
+            "score": 74.24
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "shmoney maker",
+            "score": 127.97
+          },
+          "loser": {
+            "team": "Ryan C",
+            "score": 113.11
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: David — 187.44",
+      "body": "CouginItMeansChamp! posted the season's top single-week score, 187.44 points in Week 3."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 79.71 pts",
+      "body": "In Week 3, My Ball Zach Ertz crushed Swing Your Sword 146.49–66.78, a 79.71-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 2.55 pts",
+      "body": "Week 7 came down to 2.55: My Main Thang edged Ryan C 114.75–112.20."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Kyle P — 53.97",
+      "body": "Your Mom bottomed out at 53.97 in Week 10 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Patrick wins it all",
+      "body": "The Gloria Hole took the 2015 title, beating Daniel in the final."
+    }
+  ]
 }

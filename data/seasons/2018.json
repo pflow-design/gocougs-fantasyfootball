@@ -23,7 +23,12 @@
       "pf": 1904.46,
       "pa": 1500.38,
       "diff": 404.08,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "L-1",
+      "rating": 829,
+      "level": "Platinum",
+      "finalPlace": 4
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1955.78,
       "pa": 1749.19,
       "diff": 206.59,
-      "games": 14
+      "games": 14,
+      "team": "Double deuce",
+      "streak": "W-3",
+      "rating": 746,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1734.82,
       "pa": 1573.75,
       "diff": 161.07,
-      "games": 14
+      "games": 14,
+      "team": "Dickson’s 3rd leg",
+      "streak": "W-1",
+      "rating": 570,
+      "level": "Bronze",
+      "finalPlace": 3
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1863.75,
       "pa": 1626.16,
       "diff": 237.59,
-      "games": 14
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "W-1",
+      "rating": 830,
+      "level": "Platinum",
+      "finalPlace": 1
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1693.79,
       "pa": 1785.74,
       "diff": -91.95,
-      "games": 14
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-1",
+      "rating": 760,
+      "level": "Gold",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1707.92,
       "pa": 1761.56,
       "diff": -53.64,
-      "games": 14
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "W-2",
+      "rating": 734,
+      "level": "Gold",
+      "finalPlace": 5
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1478.8,
       "pa": 1630.5,
       "diff": -151.7,
-      "games": 14
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "L-1",
+      "rating": 597,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1775.53,
       "pa": 1926.88,
       "diff": -151.35,
-      "games": 14
+      "games": 14,
+      "team": "Tony the Pony",
+      "streak": "W-1",
+      "rating": 903,
+      "level": "Diamond",
+      "finalPlace": 7
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1557.9,
       "pa": 1797.69,
       "diff": -239.79,
-      "games": 14
+      "games": 14,
+      "team": "Rogers Goodell",
+      "streak": "L-3",
+      "rating": 555,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1487.2,
       "pa": 1808.1,
       "diff": -320.9,
-      "games": 14
+      "games": 14,
+      "team": "David",
+      "streak": "L-4",
+      "rating": 562,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +633,249 @@
         106.42
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Kyle P",
+      "Raj",
+      "Ryan C",
+      "Antony",
+      "Patrick",
+      "Daniel",
+      "Robbie",
+      "Duncan",
+      "David",
+      "Kyle K"
+    ],
+    "pf": [
+      1955.78,
+      1904.46,
+      1863.75,
+      1775.53,
+      1734.82,
+      1707.92,
+      1693.79,
+      1557.9,
+      1487.2,
+      1478.8
+    ],
+    "pa": [
+      1749.19,
+      1500.38,
+      1626.16,
+      1926.88,
+      1573.75,
+      1761.56,
+      1785.74,
+      1797.69,
+      1808.1,
+      1630.5
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "8-6-0",
+      "place": 1,
+      "badges": [
+        "2018 CHAMPION",
+        "Platinum 830"
+      ],
+      "pf": 1863.75,
+      "pa": 1626.16,
+      "diff": 237.59
+    },
+    {
+      "team": "Double deuce",
+      "manager": "Kyle P",
+      "record": "10-4-0",
+      "place": 2,
+      "badges": [
+        "Gold 746"
+      ],
+      "pf": 1955.78,
+      "pa": 1749.19,
+      "diff": 206.59
+    },
+    {
+      "team": "Dickson’s 3rd leg",
+      "manager": "Patrick",
+      "record": "9-5-0",
+      "place": 3,
+      "badges": [
+        "Bronze 570"
+      ],
+      "pf": 1734.82,
+      "pa": 1573.75,
+      "diff": 161.07
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "12-2-0",
+      "place": 4,
+      "badges": [
+        "Platinum 829"
+      ],
+      "pf": 1904.46,
+      "pa": 1500.38,
+      "diff": 404.08
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "6-8-0",
+      "place": 5,
+      "badges": [
+        "Gold 734"
+      ],
+      "pf": 1707.92,
+      "pa": 1761.56,
+      "diff": -53.64
+    },
+    {
+      "team": "Larson",
+      "manager": "Robbie",
+      "record": "8-6-0",
+      "place": 6,
+      "badges": [
+        "Gold 760"
+      ],
+      "pf": 1693.79,
+      "pa": 1785.74,
+      "diff": -91.95
+    },
+    {
+      "team": "Tony the Pony",
+      "manager": "Antony",
+      "record": "4-10-0",
+      "place": 7,
+      "badges": [
+        "Diamond 903"
+      ],
+      "pf": 1775.53,
+      "pa": 1926.88,
+      "diff": -151.35
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle K",
+      "record": "6-8-0",
+      "place": 8,
+      "badges": [
+        "Bronze 597"
+      ],
+      "pf": 1478.8,
+      "pa": 1630.5,
+      "diff": -151.7
+    },
+    {
+      "team": "Rogers Goodell",
+      "manager": "Duncan",
+      "record": "4-10-0",
+      "place": 9,
+      "badges": [
+        "Bronze 555"
+      ],
+      "pf": 1557.9,
+      "pa": 1797.69,
+      "diff": -239.79
+    },
+    {
+      "team": "David",
+      "manager": "David",
+      "record": "3-11-0",
+      "place": 10,
+      "badges": [
+        "Bronze 562"
+      ],
+      "pf": 1487.2,
+      "pa": 1808.1,
+      "diff": -320.9
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Double deuce",
+            "score": 99.79
+          },
+          "loser": {
+            "team": "Dickson’s 3rd leg",
+            "score": 84.18
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Russell Sprouts",
+            "score": 116.72
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 92.32
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Russell Sprouts",
+            "score": 157.43
+          },
+          "loser": {
+            "team": "Double deuce",
+            "score": 93.61
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "Dickson’s 3rd leg",
+            "score": 106.54
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 105.62
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Kyle P — 175.89",
+      "body": "Double deuce posted the season's top single-week score, 175.89 points in Week 1."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 76.85 pts",
+      "body": "In Week 11, Dickson’s 3rd leg crushed My Ball Zach Ertz 168.42–91.57, a 76.85-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.67 pts",
+      "body": "Week 11 came down to 0.67: Larson edged Double deuce 121.31–120.64."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Kyle K — 55.52",
+      "body": "Swing Your Sword bottomed out at 55.52 in Week 11 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Ryan C wins it all",
+      "body": "Russell Sprouts took the 2018 title, beating Kyle P in the final."
+    }
+  ]
 }

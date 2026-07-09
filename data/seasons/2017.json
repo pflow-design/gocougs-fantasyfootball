@@ -23,7 +23,12 @@
       "pf": 1683.27,
       "pa": 1383.69,
       "diff": 299.58,
-      "games": 14
+      "games": 14,
+      "team": "Brady and the skins",
+      "streak": "W-6",
+      "rating": 616,
+      "level": "Silver",
+      "finalPlace": 1
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1668.14,
       "pa": 1531.43,
       "diff": 136.71,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "W-5",
+      "rating": 845,
+      "level": "Platinum",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1540.63,
       "pa": 1606.63,
       "diff": -66,
-      "games": 14
+      "games": 14,
+      "team": "Rogers Goodell",
+      "streak": "W-4",
+      "rating": 556,
+      "level": "Bronze",
+      "finalPlace": 4
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1676.27,
       "pa": 1532.03,
       "diff": 144.24,
-      "games": 14
+      "games": 14,
+      "team": "Larson",
+      "streak": "W-1",
+      "rating": 612,
+      "level": "Silver",
+      "finalPlace": 3
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1465.91,
       "pa": 1617.35,
       "diff": -151.44,
-      "games": 14
+      "games": 14,
+      "team": "Falk 4 Heisman",
+      "streak": "L-2",
+      "rating": 847,
+      "level": "Platinum",
+      "finalPlace": 7
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1443.5,
       "pa": 1409.79,
       "diff": 33.71,
-      "games": 14
+      "games": 14,
+      "team": "LACY'S CHINESE FOOD",
+      "streak": "L-2",
+      "rating": 557,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1621.93,
       "pa": 1560.35,
       "diff": 61.58,
-      "games": 14
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "W-1",
+      "rating": 695,
+      "level": "Silver",
+      "finalPlace": 6
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1496.04,
       "pa": 1541.5,
       "diff": -45.46,
-      "games": 14
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "L-3",
+      "rating": 783,
+      "level": "Gold",
+      "finalPlace": 5
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1446.08,
       "pa": 1711.11,
       "diff": -265.03,
-      "games": 14
+      "games": 14,
+      "team": "Mariota Kart",
+      "streak": "L-1",
+      "rating": 580,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1288.33,
       "pa": 1436.22,
       "diff": -147.89,
-      "games": 14
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "L-1",
+      "rating": 595,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +633,249 @@
         119.82
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Kyle P",
+      "Robbie",
+      "Raj",
+      "Daniel",
+      "Duncan",
+      "Ryan C",
+      "Antony",
+      "David",
+      "Patrick",
+      "Kyle K"
+    ],
+    "pf": [
+      1683.27,
+      1676.27,
+      1668.14,
+      1621.93,
+      1540.63,
+      1496.04,
+      1465.91,
+      1446.08,
+      1443.5,
+      1288.33
+    ],
+    "pa": [
+      1383.69,
+      1532.03,
+      1531.43,
+      1560.35,
+      1606.63,
+      1541.5,
+      1617.35,
+      1711.11,
+      1409.79,
+      1436.22
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Brady and the skins",
+      "manager": "Kyle P",
+      "record": "11-3-0",
+      "place": 1,
+      "badges": [
+        "2017 CHAMPION",
+        "Silver 616"
+      ],
+      "pf": 1683.27,
+      "pa": 1383.69,
+      "diff": 299.58
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "9-5-0",
+      "place": 2,
+      "badges": [
+        "Platinum 845"
+      ],
+      "pf": 1668.14,
+      "pa": 1531.43,
+      "diff": 136.71
+    },
+    {
+      "team": "Larson",
+      "manager": "Robbie",
+      "record": "7-7-0",
+      "place": 3,
+      "badges": [
+        "Silver 612"
+      ],
+      "pf": 1676.27,
+      "pa": 1532.03,
+      "diff": 144.24
+    },
+    {
+      "team": "Rogers Goodell",
+      "manager": "Duncan",
+      "record": "9-5-0",
+      "place": 4,
+      "badges": [
+        "Bronze 556"
+      ],
+      "pf": 1540.63,
+      "pa": 1606.63,
+      "diff": -66
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "6-8-0",
+      "place": 5,
+      "badges": [
+        "Gold 783"
+      ],
+      "pf": 1496.04,
+      "pa": 1541.5,
+      "diff": -45.46
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "6-8-0",
+      "place": 6,
+      "badges": [
+        "Silver 695"
+      ],
+      "pf": 1621.93,
+      "pa": 1560.35,
+      "diff": 61.58
+    },
+    {
+      "team": "Falk 4 Heisman",
+      "manager": "Antony",
+      "record": "7-7-0",
+      "place": 7,
+      "badges": [
+        "Platinum 847"
+      ],
+      "pf": 1465.91,
+      "pa": 1617.35,
+      "diff": -151.44
+    },
+    {
+      "team": "LACY'S CHINESE FOOD",
+      "manager": "Patrick",
+      "record": "7-7-0",
+      "place": 8,
+      "badges": [
+        "Bronze 557"
+      ],
+      "pf": 1443.5,
+      "pa": 1409.79,
+      "diff": 33.71
+    },
+    {
+      "team": "Mariota Kart",
+      "manager": "David",
+      "record": "4-10-0",
+      "place": 9,
+      "badges": [
+        "Bronze 580"
+      ],
+      "pf": 1446.08,
+      "pa": 1711.11,
+      "diff": -265.03
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle K",
+      "record": "4-10-0",
+      "place": 10,
+      "badges": [
+        "Bronze 595"
+      ],
+      "pf": 1288.33,
+      "pa": 1436.22,
+      "diff": -147.89
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Brady and the skins",
+            "score": 121.76
+          },
+          "loser": {
+            "team": "Larson",
+            "score": 98.48
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "shmoney maker",
+            "score": 131.13
+          },
+          "loser": {
+            "team": "Rogers Goodell",
+            "score": 102.87
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Brady and the skins",
+            "score": 132.36
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 93.12
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "Larson",
+            "score": 104.45
+          },
+          "loser": {
+            "team": "Rogers Goodell",
+            "score": 79.31
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Kyle P — 155.20",
+      "body": "Brady and the skins posted the season's top single-week score, 155.20 points in Week 11."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 77.92 pts",
+      "body": "In Week 6, Larson crushed shmoney maker 151.62–73.70, a 77.92-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.20 pts",
+      "body": "Week 6 came down to 0.20: Mariota Kart edged Russell Sprouts 118.13–117.93."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Kyle K — 59.51",
+      "body": "Swing Your Sword bottomed out at 59.51 in Week 4 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Kyle P wins it all",
+      "body": "Brady and the skins took the 2017 title, beating Raj in the final."
+    }
+  ]
 }

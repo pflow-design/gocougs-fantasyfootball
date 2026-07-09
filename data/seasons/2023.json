@@ -23,7 +23,12 @@
       "pf": 1978.63,
       "pa": 1869.26,
       "diff": 109.37,
-      "games": 15
+      "games": 15,
+      "team": "No Moore Problems",
+      "streak": "W-6",
+      "rating": 823,
+      "level": "Platinum",
+      "finalPlace": 2
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1779.42,
       "pa": 1576.74,
       "diff": 202.68,
-      "games": 15
+      "games": 15,
+      "team": "Hit Somebody",
+      "streak": "W-2",
+      "rating": 745,
+      "level": "Gold",
+      "finalPlace": 3
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1831.55,
       "pa": 1687.46,
       "diff": 144.09,
-      "games": 15
+      "games": 15,
+      "team": "Clappin' Cheeks",
+      "streak": "W-1",
+      "rating": 722,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1757.28,
       "pa": 1625.18,
       "diff": 132.1,
-      "games": 15
+      "games": 15,
+      "team": "Hugh Winn's",
+      "streak": "W-1",
+      "rating": 716,
+      "level": "Gold",
+      "finalPlace": 4
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1712.53,
       "pa": 1738,
       "diff": -25.47,
-      "games": 15
+      "games": 15,
+      "team": "shmoney maker",
+      "streak": "L-1",
+      "rating": 808,
+      "level": "Platinum",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1782.23,
       "pa": 1875.19,
       "diff": -92.96,
-      "games": 15
+      "games": 15,
+      "team": "Moore Bijan please",
+      "streak": "L-1",
+      "rating": 800,
+      "level": "Platinum",
+      "finalPlace": 5
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1575.35,
       "pa": 1762.7,
       "diff": -187.35,
-      "games": 15
+      "games": 15,
+      "team": "Catching Kelce",
+      "streak": "W-1",
+      "rating": 701,
+      "level": "Gold",
+      "finalPlace": 7
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1758.49,
       "pa": 1752.48,
       "diff": 6.01,
-      "games": 15
+      "games": 15,
+      "team": "David",
+      "streak": "L-2",
+      "rating": 688,
+      "level": "Silver",
+      "finalPlace": 8
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1638.26,
       "pa": 1753.19,
       "diff": -114.93,
-      "games": 15
+      "games": 15,
+      "team": "From Texas with love",
+      "streak": "L-7",
+      "rating": 540,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1583.05,
       "pa": 1756.59,
       "diff": -173.54,
-      "games": 15
+      "games": 15,
+      "team": "My Ball Zach Ertz",
+      "streak": "L-1",
+      "rating": 711,
+      "level": "Gold",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -615,5 +665,249 @@
         160.72
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Ryan C",
+      "Jeremy",
+      "Antony",
+      "Rudee",
+      "David",
+      "Duncan",
+      "Raj",
+      "Patrick",
+      "Daniel",
+      "Kyle K"
+    ],
+    "pf": [
+      1978.63,
+      1831.55,
+      1782.23,
+      1779.42,
+      1758.49,
+      1757.28,
+      1712.53,
+      1638.26,
+      1583.05,
+      1575.35
+    ],
+    "pa": [
+      1869.26,
+      1687.46,
+      1875.19,
+      1576.74,
+      1752.48,
+      1625.18,
+      1738,
+      1753.19,
+      1756.59,
+      1762.7
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Clappin' Cheeks",
+      "manager": "Jeremy",
+      "record": "9-6-0",
+      "place": 1,
+      "badges": [
+        "2023 CHAMPION",
+        "Gold 722"
+      ],
+      "pf": 1831.55,
+      "pa": 1687.46,
+      "diff": 144.09
+    },
+    {
+      "team": "No Moore Problems",
+      "manager": "Ryan C",
+      "record": "11-4-0",
+      "place": 2,
+      "badges": [
+        "Platinum 823"
+      ],
+      "pf": 1978.63,
+      "pa": 1869.26,
+      "diff": 109.37
+    },
+    {
+      "team": "Hit Somebody",
+      "manager": "Rudee",
+      "record": "11-4-0",
+      "place": 3,
+      "badges": [
+        "Gold 745"
+      ],
+      "pf": 1779.42,
+      "pa": 1576.74,
+      "diff": 202.68
+    },
+    {
+      "team": "Hugh Winn's",
+      "manager": "Duncan",
+      "record": "8-7-0",
+      "place": 4,
+      "badges": [
+        "Gold 716"
+      ],
+      "pf": 1757.28,
+      "pa": 1625.18,
+      "diff": 132.1
+    },
+    {
+      "team": "Moore Bijan please",
+      "manager": "Antony",
+      "record": "7-8-0",
+      "place": 5,
+      "badges": [
+        "Platinum 800"
+      ],
+      "pf": 1782.23,
+      "pa": 1875.19,
+      "diff": -92.96
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "8-7-0",
+      "place": 6,
+      "badges": [
+        "Platinum 808"
+      ],
+      "pf": 1712.53,
+      "pa": 1738,
+      "diff": -25.47
+    },
+    {
+      "team": "Catching Kelce",
+      "manager": "Kyle K",
+      "record": "7-8-0",
+      "place": 7,
+      "badges": [
+        "Gold 701"
+      ],
+      "pf": 1575.35,
+      "pa": 1762.7,
+      "diff": -187.35
+    },
+    {
+      "team": "David",
+      "manager": "David",
+      "record": "6-9-0",
+      "place": 8,
+      "badges": [
+        "Silver 688"
+      ],
+      "pf": 1758.49,
+      "pa": 1752.48,
+      "diff": 6.01
+    },
+    {
+      "team": "From Texas with love",
+      "manager": "Patrick",
+      "record": "4-11-0",
+      "place": 9,
+      "badges": [
+        "Bronze 540"
+      ],
+      "pf": 1638.26,
+      "pa": 1753.19,
+      "diff": -114.93
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "4-11-0",
+      "place": 10,
+      "badges": [
+        "Gold 711"
+      ],
+      "pf": 1583.05,
+      "pa": 1756.59,
+      "diff": -173.54
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": null,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "No Moore Problems",
+            "score": 160.41
+          },
+          "loser": {
+            "team": "Hugh Winn's",
+            "score": 105.19
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Clappin' Cheeks",
+            "score": 128.75
+          },
+          "loser": {
+            "team": "Hit Somebody",
+            "score": 99.57
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": null,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Clappin' Cheeks",
+            "score": 144.82
+          },
+          "loser": {
+            "team": "No Moore Problems",
+            "score": 95.91
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "Hit Somebody",
+            "score": 141.93
+          },
+          "loser": {
+            "team": "Hugh Winn's",
+            "score": 91.26
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Jeremy — 168.52",
+      "body": "Clappin' Cheeks posted the season's top single-week score, 168.52 points in Week 10."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 100.58 pts",
+      "body": "In Week 1, David crushed Catching Kelce 162.54–61.96, a 100.58-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.04 pts",
+      "body": "Week 10 came down to 0.04: No Moore Problems edged From Texas with love 130.25–130.21."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: David — 58.42",
+      "body": "David bottomed out at 58.42 in Week 4 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Jeremy wins it all",
+      "body": "Clappin' Cheeks took the 2023 title."
+    }
+  ]
 }

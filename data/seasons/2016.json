@@ -23,7 +23,12 @@
       "pf": 1725.06,
       "pa": 1537.62,
       "diff": 187.44,
-      "games": 14
+      "games": 14,
+      "team": "Russell and Flow",
+      "streak": "W-5",
+      "rating": 876,
+      "level": "Platinum",
+      "finalPlace": 1
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1557.51,
       "pa": 1395.29,
       "diff": 162.22,
-      "games": 14
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "W-6",
+      "rating": 729,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -71,7 +81,12 @@
       "pf": 1641.73,
       "pa": 1591.02,
       "diff": 50.71,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "W-1",
+      "rating": 891,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 6,
@@ -83,7 +98,12 @@
       "pf": 1587.84,
       "pa": 1480.14,
       "diff": 107.7,
-      "games": 14
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-1",
+      "rating": 597,
+      "level": "Bronze",
+      "finalPlace": 6
     },
     {
       "rank": 7,
@@ -95,7 +115,12 @@
       "pf": 1566.25,
       "pa": 1526.46,
       "diff": 39.79,
-      "games": 14
+      "games": 14,
+      "team": "DakInABox",
+      "streak": "L-3",
+      "rating": 599,
+      "level": "Bronze",
+      "finalPlace": 7
     },
     {
       "rank": 8,
@@ -107,7 +132,12 @@
       "pf": 1660.44,
       "pa": 1641.11,
       "diff": 19.33,
-      "games": 14
+      "games": 14,
+      "team": "Rogers Goodell",
+      "streak": "W-1",
+      "rating": 564,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 9,
@@ -119,7 +149,12 @@
       "pf": 1468.2,
       "pa": 1703.61,
       "diff": -235.41,
-      "games": 14
+      "games": 14,
+      "team": "The Gloria Hole",
+      "streak": "L-2",
+      "rating": 555,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +166,12 @@
       "pf": 1403.1,
       "pa": 1792.96,
       "diff": -389.86,
-      "games": 14
+      "games": 14,
+      "team": "Chalupa Batman",
+      "streak": "L-5",
+      "rating": 547,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +623,223 @@
         60.73
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Ryan C",
+      "Antony",
+      "Duncan",
+      "Raj",
+      "Daniel",
+      "Robbie",
+      "David",
+      "Kyle K",
+      "Patrick",
+      "Kyle P"
+    ],
+    "pf": [
+      1733.73,
+      1725.06,
+      1660.44,
+      1641.73,
+      1601.03,
+      1587.84,
+      1566.25,
+      1557.51,
+      1468.2,
+      1403.1
+    ],
+    "pa": [
+      1586.64,
+      1537.62,
+      1641.11,
+      1591.02,
+      1559.42,
+      1480.14,
+      1526.46,
+      1395.29,
+      1703.61,
+      1792.96
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Russell and Flow",
+      "manager": "Antony",
+      "record": "10-4-0",
+      "place": 1,
+      "badges": [
+        "2016 CHAMPION",
+        "Platinum 876"
+      ],
+      "pf": 1725.06,
+      "pa": 1537.62,
+      "diff": 187.44
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle K",
+      "record": "10-4-0",
+      "place": 2,
+      "badges": [
+        "Gold 729"
+      ],
+      "pf": 1557.51,
+      "pa": 1395.29,
+      "diff": 162.22
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "8-6-0",
+      "place": 3,
+      "badges": [
+        "Platinum 891"
+      ],
+      "pf": 1641.73,
+      "pa": 1591.02,
+      "diff": 50.71
+    },
+    {
+      "team": "Larson",
+      "manager": "Robbie",
+      "record": "7-7-0",
+      "place": 6,
+      "badges": [
+        "Bronze 597"
+      ],
+      "pf": 1587.84,
+      "pa": 1480.14,
+      "diff": 107.7
+    },
+    {
+      "team": "DakInABox",
+      "manager": "David",
+      "record": "7-7-0",
+      "place": 7,
+      "badges": [
+        "Bronze 599"
+      ],
+      "pf": 1566.25,
+      "pa": 1526.46,
+      "diff": 39.79
+    },
+    {
+      "team": "Rogers Goodell",
+      "manager": "Duncan",
+      "record": "5-9-0",
+      "place": 8,
+      "badges": [
+        "Bronze 564"
+      ],
+      "pf": 1660.44,
+      "pa": 1641.11,
+      "diff": 19.33
+    },
+    {
+      "team": "The Gloria Hole",
+      "manager": "Patrick",
+      "record": "4-10-0",
+      "place": 9,
+      "badges": [
+        "Bronze 555"
+      ],
+      "pf": 1468.2,
+      "pa": 1703.61,
+      "diff": -235.41
+    },
+    {
+      "team": "Chalupa Batman",
+      "manager": "Kyle P",
+      "record": "3-11-0",
+      "place": 10,
+      "badges": [
+        "Bronze 547"
+      ],
+      "pf": 1403.1,
+      "pa": 1792.96,
+      "diff": -389.86
+    },
+    {
+      "team": "Ryan C",
+      "manager": "Ryan C",
+      "record": "9-5-0",
+      "place": null,
+      "badges": [],
+      "pf": 1733.73,
+      "pa": 1586.64,
+      "diff": 147.09
+    },
+    {
+      "team": "Daniel",
+      "manager": "Daniel",
+      "record": "9-5-0",
+      "place": null,
+      "badges": [],
+      "pf": 1601.03,
+      "pa": 1559.42,
+      "diff": 41.61
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Swing Your Sword",
+            "score": 144.07
+          },
+          "loser": {
+            "team": "Ryan C",
+            "score": 78.5
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Russell and Flow",
+            "score": 140.54
+          },
+          "loser": {
+            "team": "Swing Your Sword",
+            "score": 89.51
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Antony — 161.33",
+      "body": "Russell and Flow posted the season's top single-week score, 161.33 points in Week 13."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 78.68 pts",
+      "body": "In Week 13, Russell and Flow crushed Chalupa Batman 161.33–82.65, a 78.68-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.36 pts",
+      "body": "Week 2 came down to 0.36: The Gloria Hole edged Larson 112.85–112.49."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Kyle P — 60.73",
+      "body": "Chalupa Batman bottomed out at 60.73 in Week 14 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Antony wins it all",
+      "body": "Russell and Flow took the 2016 title, beating Kyle K in the final."
+    }
+  ]
 }

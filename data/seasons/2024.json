@@ -23,7 +23,12 @@
       "pf": 1902.78,
       "pa": 1697.22,
       "diff": 205.56,
-      "games": 15
+      "games": 15,
+      "team": "RIPete",
+      "streak": "W-4",
+      "rating": 627,
+      "level": "Silver",
+      "finalPlace": 4
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1854.1,
       "pa": 1674.22,
       "diff": 179.88,
-      "games": 15
+      "games": 15,
+      "team": "Clappin' Cheeks",
+      "streak": "W-1",
+      "rating": 797,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1617.6,
       "pa": 1652.84,
       "diff": -35.24,
-      "games": 15
+      "games": 15,
+      "team": "Trips Formation",
+      "streak": "L-2",
+      "rating": 837,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1717.04,
       "pa": 1720.9,
       "diff": -3.86,
-      "games": 15
+      "games": 15,
+      "team": "My Ball Zach Ertz",
+      "streak": "L-1",
+      "rating": 765,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1690.66,
       "pa": 1611.54,
       "diff": 79.12,
-      "games": 15
+      "games": 15,
+      "team": "Hit Somebody",
+      "streak": "W-2",
+      "rating": 635,
+      "level": "Silver",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1834.6,
       "pa": 1753.52,
       "diff": 81.08,
-      "games": 15
+      "games": 15,
+      "team": "Chasing Points",
+      "streak": "W-3",
+      "rating": 871,
+      "level": "Platinum",
+      "finalPlace": 5
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1696.12,
       "pa": 1685.18,
       "diff": 10.94,
-      "games": 15
+      "games": 15,
+      "team": "Virtual Wreckage",
+      "streak": "L-2",
+      "rating": 681,
+      "level": "Silver",
+      "finalPlace": 8
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1656.24,
       "pa": 1658.12,
       "diff": -1.88,
-      "games": 15
+      "games": 15,
+      "team": "Breece Mode",
+      "streak": "L-1",
+      "rating": 652,
+      "level": "Silver",
+      "finalPlace": 7
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1598.04,
       "pa": 1855.72,
       "diff": -257.68,
-      "games": 15
+      "games": 15,
+      "team": "shmoney maker",
+      "streak": "L-6",
+      "rating": 613,
+      "level": "Silver",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1486.08,
       "pa": 1744,
       "diff": -257.92,
-      "games": 15
+      "games": 15,
+      "team": "#CougsVsEverybody",
+      "streak": "W-1",
+      "rating": 578,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -615,5 +665,249 @@
         90.46
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Patrick",
+      "Jeremy",
+      "Antony",
+      "Daniel",
+      "Duncan",
+      "Rudee",
+      "Kyle K",
+      "Ryan C",
+      "Raj",
+      "David"
+    ],
+    "pf": [
+      1902.78,
+      1854.1,
+      1834.6,
+      1717.04,
+      1696.12,
+      1690.66,
+      1656.24,
+      1617.6,
+      1598.04,
+      1486.08
+    ],
+    "pa": [
+      1697.22,
+      1674.22,
+      1753.52,
+      1720.9,
+      1685.18,
+      1611.54,
+      1658.12,
+      1652.84,
+      1855.72,
+      1744
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "9-6-0",
+      "place": 1,
+      "badges": [
+        "2024 CHAMPION",
+        "Gold 765"
+      ],
+      "pf": 1717.04,
+      "pa": 1720.9,
+      "diff": -3.86
+    },
+    {
+      "team": "Clappin' Cheeks",
+      "manager": "Jeremy",
+      "record": "10-5-0",
+      "place": 2,
+      "badges": [
+        "Gold 797"
+      ],
+      "pf": 1854.1,
+      "pa": 1674.22,
+      "diff": 179.88
+    },
+    {
+      "team": "Trips Formation",
+      "manager": "Ryan C",
+      "record": "10-5-0",
+      "place": 3,
+      "badges": [
+        "Platinum 837"
+      ],
+      "pf": 1617.6,
+      "pa": 1652.84,
+      "diff": -35.24
+    },
+    {
+      "team": "RIPete",
+      "manager": "Patrick",
+      "record": "11-4-0",
+      "place": 4,
+      "badges": [
+        "Silver 627"
+      ],
+      "pf": 1902.78,
+      "pa": 1697.22,
+      "diff": 205.56
+    },
+    {
+      "team": "Chasing Points",
+      "manager": "Antony",
+      "record": "7-8-0",
+      "place": 5,
+      "badges": [
+        "Platinum 871"
+      ],
+      "pf": 1834.6,
+      "pa": 1753.52,
+      "diff": 81.08
+    },
+    {
+      "team": "Hit Somebody",
+      "manager": "Rudee",
+      "record": "9-6-0",
+      "place": 6,
+      "badges": [
+        "Silver 635"
+      ],
+      "pf": 1690.66,
+      "pa": 1611.54,
+      "diff": 79.12
+    },
+    {
+      "team": "Breece Mode",
+      "manager": "Kyle K",
+      "record": "6-9-0",
+      "place": 7,
+      "badges": [
+        "Silver 652"
+      ],
+      "pf": 1656.24,
+      "pa": 1658.12,
+      "diff": -1.88
+    },
+    {
+      "team": "Virtual Wreckage",
+      "manager": "Duncan",
+      "record": "7-8-0",
+      "place": 8,
+      "badges": [
+        "Silver 681"
+      ],
+      "pf": 1696.12,
+      "pa": 1685.18,
+      "diff": 10.94
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "3-12-0",
+      "place": 9,
+      "badges": [
+        "Silver 613"
+      ],
+      "pf": 1598.04,
+      "pa": 1855.72,
+      "diff": -257.68
+    },
+    {
+      "team": "#CougsVsEverybody",
+      "manager": "David",
+      "record": "3-12-0",
+      "place": 10,
+      "badges": [
+        "Bronze 578"
+      ],
+      "pf": 1486.08,
+      "pa": 1744,
+      "diff": -257.92
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": null,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 165.94
+          },
+          "loser": {
+            "team": "RIPete",
+            "score": 135.28
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Clappin' Cheeks",
+            "score": 158.02
+          },
+          "loser": {
+            "team": "Trips Formation",
+            "score": 122.04
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": null,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 147.88
+          },
+          "loser": {
+            "team": "Clappin' Cheeks",
+            "score": 142.06
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "Trips Formation",
+            "score": 144.58
+          },
+          "loser": {
+            "team": "RIPete",
+            "score": 108.32
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Patrick — 172.60",
+      "body": "RIPete posted the season's top single-week score, 172.60 points in Week 15."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 82.14 pts",
+      "body": "In Week 15, RIPete crushed Trips Formation 172.60–90.46, a 82.14-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.20 pts",
+      "body": "Week 6 came down to 0.20: Chasing Points edged Breece Mode 125.36–125.16."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: David — 57.54",
+      "body": "#CougsVsEverybody bottomed out at 57.54 in Week 10 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Daniel wins it all",
+      "body": "My Ball Zach Ertz took the 2024 title, beating Jeremy in the final."
+    }
+  ]
 }

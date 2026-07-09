@@ -23,7 +23,12 @@
       "pf": 1790.51,
       "pa": 1669.27,
       "diff": 121.24,
-      "games": 15
+      "games": 15,
+      "team": "Dobbin on IR",
+      "streak": "L-1",
+      "rating": 643,
+      "level": "Silver",
+      "finalPlace": 4
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1826.91,
       "pa": 1776.56,
       "diff": 50.35,
-      "games": 15
+      "games": 15,
+      "team": "Catching Kelce",
+      "streak": "W-1",
+      "rating": 733,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1820.6,
       "pa": 1642.21,
       "diff": 178.39,
-      "games": 15
+      "games": 15,
+      "team": "My Ball Zach Ertz",
+      "streak": "W-1",
+      "rating": 832,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1794.31,
       "pa": 1666.68,
       "diff": 127.63,
-      "games": 15
+      "games": 15,
+      "team": "Null and Boyd",
+      "streak": "W-2",
+      "rating": 810,
+      "level": "Platinum",
+      "finalPlace": 1
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1726.92,
       "pa": 1649.02,
       "diff": 77.9,
-      "games": 15
+      "games": 15,
+      "team": "From Texas with love",
+      "streak": "W-2",
+      "rating": 563,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1728.16,
       "pa": 1832.55,
       "diff": -104.39,
-      "games": 15
+      "games": 15,
+      "team": "Candyman",
+      "streak": "W-1",
+      "rating": 789,
+      "level": "Gold",
+      "finalPlace": 5
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1795.11,
       "pa": 1823.98,
       "diff": -28.87,
-      "games": 15
+      "games": 15,
+      "team": "ChristianMINGLE",
+      "streak": "L-1",
+      "rating": 791,
+      "level": "Gold",
+      "finalPlace": 7
     },
     {
       "rank": 8,
@@ -119,7 +154,12 @@
       "pf": 1578.47,
       "pa": 1668.91,
       "diff": -90.44,
-      "games": 15
+      "games": 15,
+      "team": "Clappin' Cheeks",
+      "streak": "L-3",
+      "rating": 599,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +171,12 @@
       "pf": 1572.85,
       "pa": 1796.74,
       "diff": -223.89,
-      "games": 15
+      "games": 15,
+      "team": "Two Moore Problems",
+      "streak": "L-7",
+      "rating": 731,
+      "level": "Gold",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -615,5 +660,247 @@
         84.44
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Kyle K",
+      "Daniel",
+      "David",
+      "Antony",
+      "Rudee",
+      "Duncan",
+      "Patrick",
+      "Jeremy",
+      "Ryan C",
+      "Raj"
+    ],
+    "pf": [
+      1826.91,
+      1820.6,
+      1795.11,
+      1794.31,
+      1790.51,
+      1728.16,
+      1726.92,
+      1578.47,
+      1572.85,
+      1532
+    ],
+    "pa": [
+      1776.56,
+      1642.21,
+      1823.98,
+      1666.68,
+      1669.27,
+      1832.55,
+      1649.02,
+      1668.91,
+      1796.74,
+      1810.06
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Null and Boyd",
+      "manager": "Antony",
+      "record": "9-6-0",
+      "place": 1,
+      "badges": [
+        "2022 CHAMPION",
+        "Platinum 810"
+      ],
+      "pf": 1794.31,
+      "pa": 1666.68,
+      "diff": 127.63
+    },
+    {
+      "team": "Catching Kelce",
+      "manager": "Kyle K",
+      "record": "9-6-0",
+      "place": 2,
+      "badges": [
+        "Gold 733"
+      ],
+      "pf": 1826.91,
+      "pa": 1776.56,
+      "diff": 50.35
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "9-6-0",
+      "place": 3,
+      "badges": [
+        "Platinum 832"
+      ],
+      "pf": 1820.6,
+      "pa": 1642.21,
+      "diff": 178.39
+    },
+    {
+      "team": "Dobbin on IR",
+      "manager": "Rudee",
+      "record": "11-4-0",
+      "place": 4,
+      "badges": [
+        "Silver 643"
+      ],
+      "pf": 1790.51,
+      "pa": 1669.27,
+      "diff": 121.24
+    },
+    {
+      "team": "Candyman",
+      "manager": "Duncan",
+      "record": "8-7-0",
+      "place": 5,
+      "badges": [
+        "Gold 789"
+      ],
+      "pf": 1728.16,
+      "pa": 1832.55,
+      "diff": -104.39
+    },
+    {
+      "team": "ChristianMINGLE",
+      "manager": "David",
+      "record": "7-8-0",
+      "place": 7,
+      "badges": [
+        "Gold 791"
+      ],
+      "pf": 1795.11,
+      "pa": 1823.98,
+      "diff": -28.87
+    },
+    {
+      "team": "From Texas with love",
+      "manager": "Patrick",
+      "record": "9-6-0",
+      "place": 8,
+      "badges": [
+        "Bronze 563"
+      ],
+      "pf": 1726.92,
+      "pa": 1649.02,
+      "diff": 77.9
+    },
+    {
+      "team": "Clappin' Cheeks",
+      "manager": "Jeremy",
+      "record": "4-11-0",
+      "place": 9,
+      "badges": [
+        "Bronze 599"
+      ],
+      "pf": 1578.47,
+      "pa": 1668.91,
+      "diff": -90.44
+    },
+    {
+      "team": "Two Moore Problems",
+      "manager": "Ryan C",
+      "record": "3-12-0",
+      "place": 10,
+      "badges": [
+        "Gold 731"
+      ],
+      "pf": 1572.85,
+      "pa": 1796.74,
+      "diff": -223.89
+    },
+    {
+      "team": "Raj",
+      "manager": "Raj",
+      "record": "5-10-0",
+      "place": null,
+      "badges": [],
+      "pf": 1532,
+      "pa": 1810.06,
+      "diff": -278.06
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Null and Boyd",
+            "score": 128.54
+          },
+          "loser": {
+            "team": "Dobbin on IR",
+            "score": 82.83
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Catching Kelce",
+            "score": 124.99
+          },
+          "loser": {
+            "team": "My Ball Zach Ertz",
+            "score": 77.64
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 17,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Null and Boyd",
+            "score": 108.96
+          },
+          "loser": {
+            "team": "Catching Kelce",
+            "score": 90.91
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 86.98
+          },
+          "loser": {
+            "team": "Dobbin on IR",
+            "score": 74.09
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Kyle K — 173.28",
+      "body": "Catching Kelce posted the season's top single-week score, 173.28 points in Week 5."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 91.38 pts",
+      "body": "In Week 4, Two Moore Problems crushed Candyman 159.88–68.50, a 91.38-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.66 pts",
+      "body": "Week 8 came down to 0.66: Dobbin on IR edged Candyman 112.37–111.71."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Duncan — 68.50",
+      "body": "Candyman bottomed out at 68.50 in Week 4 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Antony wins it all",
+      "body": "Null and Boyd took the 2022 title, beating Kyle K in the final."
+    }
+  ]
 }

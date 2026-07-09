@@ -23,7 +23,12 @@
       "pf": 1772.66,
       "pa": 1524,
       "diff": 248.66,
-      "games": 14
+      "games": 14,
+      "team": "WokeUpFeelinDangerus",
+      "streak": "W-4",
+      "rating": 635,
+      "level": "Silver",
+      "finalPlace": 2
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1767.16,
       "pa": 1535.9,
       "diff": 231.26,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "L-1",
+      "rating": 804,
+      "level": "Platinum",
+      "finalPlace": 4
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1715.4,
       "pa": 1580.31,
       "diff": 135.09,
-      "games": 14
+      "games": 14,
+      "team": "Candyman",
+      "streak": "W-1",
+      "rating": 738,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 4,
@@ -71,7 +86,12 @@
       "pf": 1603.87,
       "pa": 1540.21,
       "diff": 63.66,
-      "games": 14
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "L-1",
+      "rating": 734,
+      "level": "Gold",
+      "finalPlace": 3
     },
     {
       "rank": 6,
@@ -83,7 +103,12 @@
       "pf": 1602.66,
       "pa": 1642.46,
       "diff": -39.8,
-      "games": 14
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "L-1",
+      "rating": 736,
+      "level": "Gold",
+      "finalPlace": 8
     },
     {
       "rank": 7,
@@ -95,7 +120,12 @@
       "pf": 1499.04,
       "pa": 1557.23,
       "diff": -58.19,
-      "games": 14
+      "games": 14,
+      "team": "Dickson Your Face",
+      "streak": "W-2",
+      "rating": 573,
+      "level": "Bronze",
+      "finalPlace": 6
     },
     {
       "rank": 8,
@@ -107,7 +137,12 @@
       "pf": 1524.75,
       "pa": 1616.44,
       "diff": -91.69,
-      "games": 14
+      "games": 14,
+      "team": "Mixon it up",
+      "streak": "W-1",
+      "rating": 563,
+      "level": "Bronze",
+      "finalPlace": 7
     },
     {
       "rank": 9,
@@ -119,7 +154,12 @@
       "pf": 1485.17,
       "pa": 1735.36,
       "diff": -250.19,
-      "games": 14
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-4",
+      "rating": 631,
+      "level": "Silver",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +171,12 @@
       "pf": 1473.21,
       "pa": 1689.24,
       "diff": -216.03,
-      "games": 14
+      "games": 14,
+      "team": "Double deuce",
+      "streak": "L-2",
+      "rating": 576,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +628,225 @@
         129.35
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "David",
+      "Raj",
+      "Duncan",
+      "Kyle K",
+      "Daniel",
+      "Ryan C",
+      "Rudee",
+      "Patrick",
+      "Robbie",
+      "Kyle P"
+    ],
+    "pf": [
+      1772.66,
+      1767.16,
+      1715.4,
+      1694.62,
+      1603.87,
+      1602.66,
+      1524.75,
+      1499.04,
+      1485.17,
+      1473.21
+    ],
+    "pa": [
+      1524,
+      1535.9,
+      1580.31,
+      1643.63,
+      1540.21,
+      1642.46,
+      1616.44,
+      1557.23,
+      1735.36,
+      1689.24
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Candyman",
+      "manager": "Duncan",
+      "record": "9-5-0",
+      "place": 1,
+      "badges": [
+        "2019 CHAMPION",
+        "Gold 738"
+      ],
+      "pf": 1715.4,
+      "pa": 1580.31,
+      "diff": 135.09
+    },
+    {
+      "team": "WokeUpFeelinDangerus",
+      "manager": "David",
+      "record": "11-3-0",
+      "place": 2,
+      "badges": [
+        "Silver 635"
+      ],
+      "pf": 1772.66,
+      "pa": 1524,
+      "diff": 248.66
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "8-6-0",
+      "place": 3,
+      "badges": [
+        "Gold 734"
+      ],
+      "pf": 1603.87,
+      "pa": 1540.21,
+      "diff": 63.66
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "10-4-0",
+      "place": 4,
+      "badges": [
+        "Platinum 804"
+      ],
+      "pf": 1767.16,
+      "pa": 1535.9,
+      "diff": 231.26
+    },
+    {
+      "team": "Dickson Your Face",
+      "manager": "Patrick",
+      "record": "6-8-0",
+      "place": 6,
+      "badges": [
+        "Bronze 573"
+      ],
+      "pf": 1499.04,
+      "pa": 1557.23,
+      "diff": -58.19
+    },
+    {
+      "team": "Mixon it up",
+      "manager": "Rudee",
+      "record": "5-9-0",
+      "place": 7,
+      "badges": [
+        "Bronze 563"
+      ],
+      "pf": 1524.75,
+      "pa": 1616.44,
+      "diff": -91.69
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "6-8-0",
+      "place": 8,
+      "badges": [
+        "Gold 736"
+      ],
+      "pf": 1602.66,
+      "pa": 1642.46,
+      "diff": -39.8
+    },
+    {
+      "team": "Larson",
+      "manager": "Robbie",
+      "record": "4-10-0",
+      "place": 9,
+      "badges": [
+        "Silver 631"
+      ],
+      "pf": 1485.17,
+      "pa": 1735.36,
+      "diff": -250.19
+    },
+    {
+      "team": "Double deuce",
+      "manager": "Kyle P",
+      "record": "4-10-0",
+      "place": 10,
+      "badges": [
+        "Bronze 576"
+      ],
+      "pf": 1473.21,
+      "pa": 1689.24,
+      "diff": -216.03
+    },
+    {
+      "team": "Kyle K",
+      "manager": "Kyle K",
+      "record": "8-6-0",
+      "place": null,
+      "badges": [],
+      "pf": 1694.62,
+      "pa": 1643.63,
+      "diff": 50.99
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Candyman",
+            "score": 163.82
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 134.51
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Candyman",
+            "score": 164.05
+          },
+          "loser": {
+            "team": "WokeUpFeelinDangerus",
+            "score": 103.21
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Rudee — 177.82",
+      "body": "Mixon it up posted the season's top single-week score, 177.82 points in Week 5."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 88.43 pts",
+      "body": "In Week 10, shmoney maker crushed Russell Sprouts 154.45–66.02, a 88.43-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.40 pts",
+      "body": "Week 8 came down to 0.40: Candyman edged Double deuce 125.45–125.05."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Rudee — 49.06",
+      "body": "Mixon it up bottomed out at 49.06 in Week 7 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Duncan wins it all",
+      "body": "Candyman took the 2019 title, beating David in the final."
+    }
+  ]
 }

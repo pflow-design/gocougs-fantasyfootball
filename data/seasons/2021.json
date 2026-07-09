@@ -23,7 +23,12 @@
       "pf": 1989.2,
       "pa": 1765.3,
       "diff": 223.9,
-      "games": 15
+      "games": 15,
+      "team": "Up Hill Battlers",
+      "streak": "W-1",
+      "rating": 726,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1767.63,
       "pa": 1710.13,
       "diff": 57.5,
-      "games": 15
+      "games": 15,
+      "team": "Candyman",
+      "streak": "L-2",
+      "rating": 714,
+      "level": "Gold",
+      "finalPlace": 4
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1852.41,
       "pa": 1655.29,
       "diff": 197.12,
-      "games": 15
+      "games": 15,
+      "team": "Anything but last",
+      "streak": "L-3",
+      "rating": 652,
+      "level": "Silver",
+      "finalPlace": 2
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1819.38,
       "pa": 1715.6,
       "diff": 103.78,
-      "games": 15
+      "games": 15,
+      "team": "DontStopFeedingMeELLIOTT",
+      "streak": "W-4",
+      "rating": 808,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1832.1,
       "pa": 1803.18,
       "diff": 28.92,
-      "games": 15
+      "games": 15,
+      "team": "Clappin' Cheeks",
+      "streak": "W-1",
+      "rating": 718,
+      "level": "Gold",
+      "finalPlace": 7
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1747.19,
       "pa": 1853.96,
       "diff": -106.77,
-      "games": 15
+      "games": 15,
+      "team": "Russell Sprouts",
+      "streak": "L-1",
+      "rating": 686,
+      "level": "Silver",
+      "finalPlace": 8
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1696.49,
       "pa": 1770.18,
       "diff": -73.69,
-      "games": 15
+      "games": 15,
+      "team": "shmoney maker",
+      "streak": "L-1",
+      "rating": 839,
+      "level": "Platinum",
+      "finalPlace": 6
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1701.6,
       "pa": 1701.59,
       "diff": 0.01,
-      "games": 15
+      "games": 15,
+      "team": "The kdp football team",
+      "streak": "W-3",
+      "rating": 594,
+      "level": "Bronze",
+      "finalPlace": 5
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1824.89,
       "pa": 1881.31,
       "diff": -56.42,
-      "games": 15
+      "games": 15,
+      "team": "My Ball Zach Ertz",
+      "streak": "W-1",
+      "rating": 759,
+      "level": "Gold",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1490.83,
       "pa": 1865.18,
       "diff": -374.35,
-      "games": 15
+      "games": 15,
+      "team": "What food do you want?",
+      "streak": "L-1",
+      "rating": 563,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -615,5 +665,249 @@
         157.07
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Rudee",
+      "Kyle K",
+      "Jeremy",
+      "Daniel",
+      "David",
+      "Duncan",
+      "Ryan C",
+      "Kyle P",
+      "Raj",
+      "Patrick"
+    ],
+    "pf": [
+      1989.2,
+      1852.41,
+      1832.1,
+      1824.89,
+      1819.38,
+      1767.63,
+      1747.19,
+      1701.6,
+      1696.49,
+      1490.83
+    ],
+    "pa": [
+      1765.3,
+      1655.29,
+      1803.18,
+      1881.31,
+      1715.6,
+      1710.13,
+      1853.96,
+      1701.59,
+      1770.18,
+      1865.18
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Up Hill Battlers",
+      "manager": "Rudee",
+      "record": "11-4-0",
+      "place": 1,
+      "badges": [
+        "2021 CHAMPION",
+        "Gold 726"
+      ],
+      "pf": 1989.2,
+      "pa": 1765.3,
+      "diff": 223.9
+    },
+    {
+      "team": "Anything but last",
+      "manager": "Kyle K",
+      "record": "10-5-0",
+      "place": 2,
+      "badges": [
+        "Silver 652"
+      ],
+      "pf": 1852.41,
+      "pa": 1655.29,
+      "diff": 197.12
+    },
+    {
+      "team": "DontStopFeedingMeELLIOTT",
+      "manager": "David",
+      "record": "9-6-0",
+      "place": 3,
+      "badges": [
+        "Platinum 808"
+      ],
+      "pf": 1819.38,
+      "pa": 1715.6,
+      "diff": 103.78
+    },
+    {
+      "team": "Candyman",
+      "manager": "Duncan",
+      "record": "11-4-0",
+      "place": 4,
+      "badges": [
+        "Gold 714"
+      ],
+      "pf": 1767.63,
+      "pa": 1710.13,
+      "diff": 57.5
+    },
+    {
+      "team": "The kdp football team",
+      "manager": "Kyle P",
+      "record": "6-9-0",
+      "place": 5,
+      "badges": [
+        "Bronze 594"
+      ],
+      "pf": 1701.6,
+      "pa": 1701.59,
+      "diff": 0.01
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "7-8-0",
+      "place": 6,
+      "badges": [
+        "Platinum 839"
+      ],
+      "pf": 1696.49,
+      "pa": 1770.18,
+      "diff": -73.69
+    },
+    {
+      "team": "Clappin' Cheeks",
+      "manager": "Jeremy",
+      "record": "7-8-0",
+      "place": 7,
+      "badges": [
+        "Gold 718"
+      ],
+      "pf": 1832.1,
+      "pa": 1803.18,
+      "diff": 28.92
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "7-8-0",
+      "place": 8,
+      "badges": [
+        "Silver 686"
+      ],
+      "pf": 1747.19,
+      "pa": 1853.96,
+      "diff": -106.77
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "5-10-0",
+      "place": 9,
+      "badges": [
+        "Gold 759"
+      ],
+      "pf": 1824.89,
+      "pa": 1881.31,
+      "diff": -56.42
+    },
+    {
+      "team": "What food do you want?",
+      "manager": "Patrick",
+      "record": "2-13-0",
+      "place": 10,
+      "badges": [
+        "Bronze 563"
+      ],
+      "pf": 1490.83,
+      "pa": 1865.18,
+      "diff": -374.35
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Up Hill Battlers",
+            "score": 139.73
+          },
+          "loser": {
+            "team": "DontStopFeedingMeELLIOTT",
+            "score": 79.51
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Anything but last",
+            "score": 182.57
+          },
+          "loser": {
+            "team": "Candyman",
+            "score": 108.74
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 17,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Up Hill Battlers",
+            "score": 125.64
+          },
+          "loser": {
+            "team": "Anything but last",
+            "score": 113.64
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "DontStopFeedingMeELLIOTT",
+            "score": 161.85
+          },
+          "loser": {
+            "team": "Candyman",
+            "score": 113
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Daniel — 183.98",
+      "body": "My Ball Zach Ertz posted the season's top single-week score, 183.98 points in Week 5."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 77.95 pts",
+      "body": "In Week 15, The kdp football team crushed Candyman 146.41–68.46, a 77.95-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.21 pts",
+      "body": "Week 9 came down to 0.21: Russell Sprouts edged The kdp football team 113.87–113.66."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Patrick — 54.91",
+      "body": "What food do you want? bottomed out at 54.91 in Week 15 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Rudee wins it all",
+      "body": "Up Hill Battlers took the 2021 title, beating Kyle K in the final."
+    }
+  ]
 }

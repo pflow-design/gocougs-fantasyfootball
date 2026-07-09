@@ -23,7 +23,12 @@
       "pf": 1860.94,
       "pa": 1448.78,
       "diff": 412.16,
-      "games": 14
+      "games": 14,
+      "team": "u mad",
+      "streak": "W-8",
+      "rating": 883,
+      "level": "Platinum",
+      "finalPlace": 3
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1766.92,
       "pa": 1573.09,
       "diff": 193.83,
-      "games": 14
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-1",
+      "rating": 783,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1690.27,
       "pa": 1510.51,
       "diff": 179.76,
-      "games": 14
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "L-2",
+      "rating": 764,
+      "level": "Gold",
+      "finalPlace": 4
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1784.46,
       "pa": 1666.51,
       "diff": 117.95,
-      "games": 14
+      "games": 14,
+      "team": "My Main Thang",
+      "streak": "W-3",
+      "rating": 777,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1503.42,
       "pa": 1608.08,
       "diff": -104.66,
-      "games": 14
+      "games": 14,
+      "team": "Liquid Courage",
+      "streak": "W-2",
+      "rating": 710,
+      "level": "Gold",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1597.41,
       "pa": 1556.1,
       "diff": 41.31,
-      "games": 14
+      "games": 14,
+      "team": "BeBetterThanLast",
+      "streak": "L-1",
+      "rating": 575,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1638.26,
       "pa": 1665.63,
       "diff": -27.37,
-      "games": 14
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "W-1",
+      "rating": 885,
+      "level": "Platinum",
+      "finalPlace": 5
     },
     {
       "rank": 8,
@@ -119,7 +154,12 @@
       "pf": 1559.06,
       "pa": 1748.58,
       "diff": -189.52,
-      "games": 14
+      "games": 14,
+      "team": "The Gloria Hole",
+      "streak": "W-1",
+      "rating": 591,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +171,12 @@
       "pf": 1354.07,
       "pa": 1717.13,
       "diff": -363.06,
-      "games": 14
+      "games": 14,
+      "team": "Your Mom",
+      "streak": "L-7",
+      "rating": 533,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +628,247 @@
         135.49
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Raj",
+      "Duncan",
+      "Robbie",
+      "Kyle K",
+      "Ryan C",
+      "David",
+      "Patrick",
+      "Antony",
+      "Daniel",
+      "Kyle P"
+    ],
+    "pf": [
+      1860.94,
+      1784.46,
+      1766.92,
+      1690.27,
+      1638.26,
+      1597.41,
+      1559.06,
+      1503.42,
+      1495.68,
+      1354.07
+    ],
+    "pa": [
+      1448.78,
+      1666.51,
+      1573.09,
+      1510.51,
+      1665.63,
+      1556.1,
+      1748.58,
+      1608.08,
+      1676.92,
+      1717.13
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Larson",
+      "manager": "Robbie",
+      "record": "10-4-0",
+      "place": 1,
+      "badges": [
+        "2013 CHAMPION",
+        "Gold 783"
+      ],
+      "pf": 1766.92,
+      "pa": 1573.09,
+      "diff": 193.83
+    },
+    {
+      "team": "My Main Thang",
+      "manager": "Duncan",
+      "record": "9-5-0",
+      "place": 2,
+      "badges": [
+        "Gold 777"
+      ],
+      "pf": 1784.46,
+      "pa": 1666.51,
+      "diff": 117.95
+    },
+    {
+      "team": "u mad",
+      "manager": "Raj",
+      "record": "11-3-0",
+      "place": 3,
+      "badges": [
+        "Platinum 883"
+      ],
+      "pf": 1860.94,
+      "pa": 1448.78,
+      "diff": 412.16
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle K",
+      "record": "10-4-0",
+      "place": 4,
+      "badges": [
+        "Gold 764"
+      ],
+      "pf": 1690.27,
+      "pa": 1510.51,
+      "diff": 179.76
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "6-8-0",
+      "place": 5,
+      "badges": [
+        "Platinum 885"
+      ],
+      "pf": 1638.26,
+      "pa": 1665.63,
+      "diff": -27.37
+    },
+    {
+      "team": "Liquid Courage",
+      "manager": "Antony",
+      "record": "8-6-0",
+      "place": 6,
+      "badges": [
+        "Gold 710"
+      ],
+      "pf": 1503.42,
+      "pa": 1608.08,
+      "diff": -104.66
+    },
+    {
+      "team": "BeBetterThanLast",
+      "manager": "David",
+      "record": "7-7-0",
+      "place": 8,
+      "badges": [
+        "Bronze 575"
+      ],
+      "pf": 1597.41,
+      "pa": 1556.1,
+      "diff": 41.31
+    },
+    {
+      "team": "The Gloria Hole",
+      "manager": "Patrick",
+      "record": "3-11-0",
+      "place": 9,
+      "badges": [
+        "Bronze 591"
+      ],
+      "pf": 1559.06,
+      "pa": 1748.58,
+      "diff": -189.52
+    },
+    {
+      "team": "Your Mom",
+      "manager": "Kyle P",
+      "record": "2-12-0",
+      "place": 10,
+      "badges": [
+        "Bronze 533"
+      ],
+      "pf": 1354.07,
+      "pa": 1717.13,
+      "diff": -363.06
+    },
+    {
+      "team": "Daniel",
+      "manager": "Daniel",
+      "record": "5-9-0",
+      "place": null,
+      "badges": [],
+      "pf": 1495.68,
+      "pa": 1676.92,
+      "diff": -181.24
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "My Main Thang",
+            "score": 166.85
+          },
+          "loser": {
+            "team": "u mad",
+            "score": 86.13
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Larson",
+            "score": 144.05
+          },
+          "loser": {
+            "team": "Swing Your Sword",
+            "score": 143.55
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Larson",
+            "score": 153.18
+          },
+          "loser": {
+            "team": "My Main Thang",
+            "score": 115.99
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "u mad",
+            "score": 126.78
+          },
+          "loser": {
+            "team": "Swing Your Sword",
+            "score": 86.11
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Raj — 162.63",
+      "body": "u mad posted the season's top single-week score, 162.63 points in Week 9."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 83.31 pts",
+      "body": "In Week 12, My Main Thang crushed Liquid Courage 144.30–60.99, a 83.31-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.40 pts",
+      "body": "Week 10 came down to 0.40: Russell Sprouts edged Larson 122.97–122.57."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Antony — 60.99",
+      "body": "Liquid Courage bottomed out at 60.99 in Week 12 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Robbie wins it all",
+      "body": "Larson took the 2013 title."
+    }
+  ]
 }

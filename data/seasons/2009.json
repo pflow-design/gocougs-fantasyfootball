@@ -24,7 +24,11 @@
       "pa": 1073.83,
       "diff": 172.82,
       "games": 13,
-      "team": "The Blackouts"
+      "team": "The Blackouts",
+      "streak": "W-2",
+      "rating": 735,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 2,
@@ -37,7 +41,11 @@
       "pa": 1181.58,
       "diff": 42.03,
       "games": 13,
-      "team": "The Frying Pans"
+      "team": "The Frying Pans",
+      "streak": "W-3",
+      "rating": 715,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 3,
@@ -50,7 +58,11 @@
       "pa": 1136.43,
       "diff": 80.97,
       "games": 13,
-      "team": "Favre and Away"
+      "team": "Favre and Away",
+      "streak": "L-2",
+      "rating": 586,
+      "level": "Bronze",
+      "finalPlace": 5
     },
     {
       "rank": 4,
@@ -63,7 +75,11 @@
       "pa": 1054.02,
       "diff": 128.68,
       "games": 13,
-      "team": "Ballcuzzis"
+      "team": "Ballcuzzis",
+      "streak": "L-1",
+      "rating": 585,
+      "level": "Bronze",
+      "finalPlace": 4
     },
     {
       "rank": 5,
@@ -76,7 +92,11 @@
       "pa": 1142.7,
       "diff": -170.06,
       "games": 13,
-      "team": "cougs4bcsbid"
+      "team": "cougs4bcsbid",
+      "streak": "W-3",
+      "rating": null,
+      "level": null,
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -89,7 +109,11 @@
       "pa": 1108.12,
       "diff": 29.61,
       "games": 13,
-      "team": "Purple Reign"
+      "team": "Purple Reign",
+      "streak": "L-2",
+      "rating": 583,
+      "level": "Bronze",
+      "finalPlace": 3
     },
     {
       "rank": 7,
@@ -102,7 +126,11 @@
       "pa": 1149.74,
       "diff": -103.7,
       "games": 13,
-      "team": "Team Malaysia"
+      "team": "Team Malaysia",
+      "streak": "W-1",
+      "rating": 667,
+      "level": "Silver",
+      "finalPlace": 7
     },
     {
       "rank": 8,
@@ -115,7 +143,11 @@
       "pa": 1191.11,
       "diff": 14.06,
       "games": 13,
-      "team": "FUCK YOU RUDEE"
+      "team": "FUCK YOU RUDEE",
+      "streak": "L-1",
+      "rating": 598,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 9,
@@ -128,7 +160,11 @@
       "pa": 1225.41,
       "diff": -174.47,
       "games": 13,
-      "team": "Sound Records"
+      "team": "Sound Records",
+      "streak": "L-2",
+      "rating": 578,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -141,7 +177,11 @@
       "pa": 1041.25,
       "diff": -19.94,
       "games": 13,
-      "team": "AIDS"
+      "team": "AIDS",
+      "streak": "W-1",
+      "rating": 577,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -561,5 +601,280 @@
         69.98
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Antony",
+      "Duncan",
+      "Daniel",
+      "Bradley",
+      "Kyle K",
+      "Ryan C",
+      "Raj",
+      "Irfan",
+      "Patrick",
+      "David"
+    ],
+    "pf": [
+      1246.65,
+      1223.61,
+      1217.4,
+      1205.17,
+      1182.7,
+      1137.73,
+      1050.94,
+      1046.04,
+      1021.31,
+      972.64
+    ],
+    "pa": [
+      1073.83,
+      1181.58,
+      1136.43,
+      1191.11,
+      1054.02,
+      1108.12,
+      1225.41,
+      1149.74,
+      1041.25,
+      1142.7
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "The Frying Pans",
+      "manager": "Duncan",
+      "record": "7-6-0",
+      "place": 1,
+      "badges": [
+        "2009 CHAMPION",
+        "Gold 715"
+      ],
+      "pf": 1223.61,
+      "pa": 1181.58,
+      "diff": 42.03
+    },
+    {
+      "team": "The Blackouts",
+      "manager": "Antony",
+      "record": "10-3-0",
+      "place": 2,
+      "badges": [
+        "Gold 735"
+      ],
+      "pf": 1246.65,
+      "pa": 1073.83,
+      "diff": 172.82
+    },
+    {
+      "team": "Purple Reign",
+      "manager": "Ryan C",
+      "record": "6-7-0",
+      "place": 3,
+      "badges": [
+        "Bronze 583"
+      ],
+      "pf": 1137.73,
+      "pa": 1108.12,
+      "diff": 29.61
+    },
+    {
+      "team": "Ballcuzzis",
+      "manager": "Kyle K",
+      "record": "7-6-0",
+      "place": 4,
+      "badges": [
+        "Bronze 585"
+      ],
+      "pf": 1182.7,
+      "pa": 1054.02,
+      "diff": 128.68
+    },
+    {
+      "team": "Favre and Away",
+      "manager": "Daniel",
+      "record": "7-6-0",
+      "place": 5,
+      "badges": [
+        "Bronze 586"
+      ],
+      "pf": 1217.4,
+      "pa": 1136.43,
+      "diff": 80.97
+    },
+    {
+      "team": "cougs4bcsbid",
+      "manager": "David",
+      "record": "7-6-0",
+      "place": 6,
+      "badges": [],
+      "pf": 972.64,
+      "pa": 1142.7,
+      "diff": -170.06
+    },
+    {
+      "team": "Team Malaysia",
+      "manager": "Irfan",
+      "record": "6-7-0",
+      "place": 7,
+      "badges": [
+        "Silver 667"
+      ],
+      "pf": 1046.04,
+      "pa": 1149.74,
+      "diff": -103.7
+    },
+    {
+      "team": "FUCK YOU RUDEE",
+      "manager": "Bradley",
+      "record": "5-8-0",
+      "place": 8,
+      "badges": [
+        "Bronze 598"
+      ],
+      "pf": 1205.17,
+      "pa": 1191.11,
+      "diff": 14.06
+    },
+    {
+      "team": "Sound Records",
+      "manager": "Raj",
+      "record": "5-8-0",
+      "place": 9,
+      "badges": [
+        "Bronze 578"
+      ],
+      "pf": 1050.94,
+      "pa": 1225.41,
+      "diff": -174.47
+    },
+    {
+      "team": "AIDS",
+      "manager": "Patrick",
+      "record": "5-8-0",
+      "place": 10,
+      "badges": [
+        "Bronze 577"
+      ],
+      "pf": 1021.31,
+      "pa": 1041.25,
+      "diff": -19.94
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 14,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Purple Reign",
+            "score": 124.68
+          },
+          "loser": {
+            "team": "Favre and Away",
+            "score": 111.2
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Ballcuzzis",
+            "score": 101.71
+          },
+          "loser": {
+            "team": "cougs4bcsbid",
+            "score": 70.42
+          }
+        },
+        {
+          "label": "Semifinal 3",
+          "winner": {
+            "team": "The Frying Pans",
+            "score": 96.66
+          },
+          "loser": {
+            "team": "Purple Reign",
+            "score": 80.48
+          }
+        },
+        {
+          "label": "Semifinal 4",
+          "winner": {
+            "team": "The Blackouts",
+            "score": 103.78
+          },
+          "loser": {
+            "team": "Ballcuzzis",
+            "score": 89.25
+          }
+        },
+        {
+          "label": "Semifinal 5",
+          "winner": {
+            "team": "Favre and Away",
+            "score": 94.3
+          },
+          "loser": {
+            "team": "cougs4bcsbid",
+            "score": 67.6
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "The Frying Pans",
+            "score": 132.95
+          },
+          "loser": {
+            "team": "The Blackouts",
+            "score": 69.45
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "Purple Reign",
+            "score": 94.03
+          },
+          "loser": {
+            "team": "Ballcuzzis",
+            "score": 82.18
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Irfan — 149.16",
+      "body": "Team Malaysia posted the season's top single-week score, 149.16 points in Week 10."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 82.94 pts",
+      "body": "In Week 12, FUCK YOU RUDEE crushed Team Malaysia 135.06–52.12, a 82.94-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.67 pts",
+      "body": "Week 7 came down to 0.67: cougs4bcsbid edged Ballcuzzis 70.70–70.03."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Daniel — 43.57",
+      "body": "Favre and Away bottomed out at 43.57 in Week 2 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Duncan wins it all",
+      "body": "The Frying Pans took the 2009 title, beating Antony in the final."
+    }
+  ]
 }

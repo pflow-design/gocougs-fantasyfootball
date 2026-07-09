@@ -10,19 +10,426 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2010/f1/264678",
   "teams": 12,
   "regularSeasonWeeks": 13,
-  "champion": { "managerKey": "David", "team": "Reality of Fantasy" },
+  "champion": {
+    "managerKey": "David",
+    "team": "Reality of Fantasy"
+  },
   "standings": [
-    { "rank": 1, "team": "Einhorn is Finkle!", "manager": "Ryan C", "managerKey": "RyanC", "w": 10, "l": 3, "t": 0, "pf": 1719, "longestWinStreak": 5, "longestLossStreak": 1 },
-    { "rank": 2, "team": "Marvelous FarveLess", "manager": "Daniel", "managerKey": "Daniel", "w": 10, "l": 3, "t": 0, "pf": 1426, "longestWinStreak": 9, "longestLossStreak": 3 },
-    { "rank": 3, "team": "Ballcuzzis", "manager": "Kyle K", "managerKey": "KyleK", "w": 8, "l": 5, "t": 0, "pf": 1546, "longestWinStreak": 4, "longestLossStreak": 3 },
-    { "rank": 4, "team": "Reality of Fantasy", "manager": "David", "managerKey": "David", "w": 8, "l": 5, "t": 0, "pf": 1382, "longestWinStreak": 6, "longestLossStreak": 2 },
-    { "rank": 5, "team": "Teeth Malaysia", "manager": "Irfan", "managerKey": "Irfan", "w": 7, "l": 6, "t": 0, "pf": 1488, "longestWinStreak": 4, "longestLossStreak": 3, "note": "Irfan — same person as the 2009 'Team Malaysia'. Tracked manager as of 2026-07." },
-    { "rank": 6, "team": "Post-Feminism", "manager": "Bradley", "managerKey": "Bradley", "w": 7, "l": 6, "t": 0, "pf": 1247, "longestWinStreak": 5, "longestLossStreak": 4 },
-    { "rank": 7, "team": "The Favres", "manager": null, "managerKey": null, "w": 6, "l": 7, "t": 0, "pf": 1309, "longestWinStreak": 3, "longestLossStreak": 2 },
-    { "rank": 8, "team": "ihatethecowboys", "manager": null, "managerKey": null, "w": 5, "l": 8, "t": 0, "pf": 1278, "longestWinStreak": 3, "longestLossStreak": 7 },
-    { "rank": 9, "team": "Falcon & The Snowman", "manager": "Antony", "managerKey": "Antony", "w": 5, "l": 8, "t": 0, "pf": 1274, "longestWinStreak": 3, "longestLossStreak": 5 },
-    { "rank": 10, "team": "Don't touch my Ditka", "manager": "Patrick", "managerKey": "PatrickF", "w": 5, "l": 8, "t": 0, "pf": 1230, "longestWinStreak": 2, "longestLossStreak": 3 },
-    { "rank": 11, "team": "Big Balls", "manager": "Duncan", "managerKey": "duncan", "w": 5, "l": 8, "t": 0, "pf": 1189, "longestWinStreak": 3, "longestLossStreak": 5 },
-    { "rank": 12, "team": "Too Good", "manager": null, "managerKey": null, "w": 2, "l": 11, "t": 0, "pf": 1035, "longestWinStreak": 1, "longestLossStreak": 9, "note": "Abandoned team; holds the all-time Low Single Week record (22.36, Wk 9)." }
+    {
+      "rank": 1,
+      "team": "Einhorn is Finkle!",
+      "manager": "Ryan C",
+      "managerKey": "RyanC",
+      "w": 10,
+      "l": 3,
+      "t": 0,
+      "pf": 1719.24,
+      "longestWinStreak": 5,
+      "longestLossStreak": 1,
+      "streak": "W-1",
+      "rating": 723,
+      "level": "Gold",
+      "finalPlace": 4,
+      "pa": 1283.58,
+      "diff": 435.66
+    },
+    {
+      "rank": 2,
+      "team": "Marvelous FarveLess",
+      "manager": "Daniel",
+      "managerKey": "Daniel",
+      "w": 10,
+      "l": 3,
+      "t": 0,
+      "pf": 1425.58,
+      "longestWinStreak": 9,
+      "longestLossStreak": 3,
+      "streak": "W-9",
+      "rating": 595,
+      "level": "Bronze",
+      "finalPlace": 3,
+      "pa": 1265.71,
+      "diff": 159.87
+    },
+    {
+      "rank": 3,
+      "team": "Ballcuzzis",
+      "manager": "Kyle K",
+      "managerKey": "KyleK",
+      "w": 8,
+      "l": 5,
+      "t": 0,
+      "pf": 1545.87,
+      "longestWinStreak": 4,
+      "longestLossStreak": 3,
+      "streak": "L-1",
+      "rating": 596,
+      "level": "Bronze",
+      "finalPlace": 6,
+      "pa": 1352.74,
+      "diff": 193.13
+    },
+    {
+      "rank": 4,
+      "team": "Reality of Fantasy",
+      "manager": "David",
+      "managerKey": "David",
+      "w": 8,
+      "l": 5,
+      "t": 0,
+      "pf": 1382.31,
+      "longestWinStreak": 6,
+      "longestLossStreak": 2,
+      "streak": "W-1",
+      "rating": 651,
+      "level": "Silver",
+      "finalPlace": 1,
+      "pa": 1311.89,
+      "diff": 70.42
+    },
+    {
+      "rank": 5,
+      "team": "Teeth Malaysia",
+      "manager": "Irfan",
+      "managerKey": "Irfan",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 1488.37,
+      "longestWinStreak": 4,
+      "longestLossStreak": 3,
+      "note": "Irfan — same person as the 2009 'Team Malaysia'. Tracked manager as of 2026-07.",
+      "streak": "L-1",
+      "rating": 720,
+      "level": "Gold",
+      "finalPlace": 5,
+      "pa": 1492.07,
+      "diff": -3.7
+    },
+    {
+      "rank": 6,
+      "team": "Post-Feminism",
+      "manager": "Bradley",
+      "managerKey": "Bradley",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 1246.95,
+      "longestWinStreak": 5,
+      "longestLossStreak": 4,
+      "streak": "L-4",
+      "rating": 651,
+      "level": "Silver",
+      "finalPlace": 2,
+      "pa": 1333.49,
+      "diff": -86.54
+    },
+    {
+      "rank": 7,
+      "team": "The Favres",
+      "manager": null,
+      "managerKey": null,
+      "w": 6,
+      "l": 7,
+      "t": 0,
+      "pf": 1308.73,
+      "longestWinStreak": 3,
+      "longestLossStreak": 2,
+      "streak": "L-1",
+      "rating": 590,
+      "level": "Bronze",
+      "finalPlace": 8,
+      "pa": 1392.09,
+      "diff": -83.36
+    },
+    {
+      "rank": 8,
+      "team": "ihatethecowboys",
+      "manager": null,
+      "managerKey": null,
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1277.61,
+      "longestWinStreak": 3,
+      "longestLossStreak": 7,
+      "streak": "W-1",
+      "rating": 580,
+      "level": "Bronze",
+      "finalPlace": 10,
+      "pa": 1349.49,
+      "diff": -71.88
+    },
+    {
+      "rank": 9,
+      "team": "Falcon & The Snowman",
+      "manager": "Antony",
+      "managerKey": "Antony",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1273.74,
+      "longestWinStreak": 3,
+      "longestLossStreak": 5,
+      "streak": "L-1",
+      "rating": 713,
+      "level": "Gold",
+      "finalPlace": 7,
+      "pa": 1393.98,
+      "diff": -120.24
+    },
+    {
+      "rank": 10,
+      "team": "Don't touch my Ditka",
+      "manager": "Patrick",
+      "managerKey": "PatrickF",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1230.38,
+      "longestWinStreak": 2,
+      "longestLossStreak": 3,
+      "streak": "W-1",
+      "rating": 560,
+      "level": "Bronze",
+      "finalPlace": 12,
+      "pa": 1313.53,
+      "diff": -83.15
+    },
+    {
+      "rank": 11,
+      "team": "Big Balls",
+      "manager": "Duncan",
+      "managerKey": "duncan",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1189.26,
+      "longestWinStreak": 3,
+      "longestLossStreak": 5,
+      "streak": "W-3",
+      "rating": 589,
+      "level": "Bronze",
+      "finalPlace": 9,
+      "pa": 1262.39,
+      "diff": -73.13
+    },
+    {
+      "rank": 12,
+      "team": "Too Good",
+      "manager": null,
+      "managerKey": null,
+      "w": 2,
+      "l": 11,
+      "t": 0,
+      "pf": 1035.38,
+      "longestWinStreak": 1,
+      "longestLossStreak": 9,
+      "note": "Abandoned team; holds the all-time Low Single Week record (22.36, Wk 9).",
+      "streak": "L-9",
+      "rating": 552,
+      "level": "Bronze",
+      "finalPlace": 11,
+      "pa": 1372.46,
+      "diff": -337.08
+    }
+  ],
+  "pfpaChart": {
+    "teams": [
+      "Ryan C",
+      "Kyle K",
+      "Irfan",
+      "Daniel",
+      "David",
+      "The Favres",
+      "ihatethecowboys",
+      "Antony",
+      "Bradley",
+      "Patrick",
+      "Duncan",
+      "Too Good"
+    ],
+    "pf": [
+      1719.24,
+      1545.87,
+      1488.37,
+      1425.58,
+      1382.31,
+      1308.73,
+      1277.61,
+      1273.74,
+      1246.95,
+      1230.38,
+      1189.26,
+      1035.38
+    ],
+    "pa": [
+      1283.58,
+      1352.74,
+      1492.07,
+      1265.71,
+      1311.89,
+      1392.09,
+      1349.49,
+      1393.98,
+      1333.49,
+      1313.53,
+      1262.39,
+      1372.46
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Reality of Fantasy",
+      "manager": "David",
+      "record": "8-5-0",
+      "place": 1,
+      "badges": [
+        "2010 CHAMPION",
+        "Silver 651"
+      ],
+      "pf": 1382.31,
+      "pa": 1311.89,
+      "diff": 70.42
+    },
+    {
+      "team": "Post-Feminism",
+      "manager": "Bradley",
+      "record": "7-6-0",
+      "place": 2,
+      "badges": [
+        "Silver 651"
+      ],
+      "pf": 1246.95,
+      "pa": 1333.49,
+      "diff": -86.54
+    },
+    {
+      "team": "Marvelous FarveLess",
+      "manager": "Daniel",
+      "record": "10-3-0",
+      "place": 3,
+      "badges": [
+        "Bronze 595"
+      ],
+      "pf": 1425.58,
+      "pa": 1265.71,
+      "diff": 159.87
+    },
+    {
+      "team": "Einhorn is Finkle!",
+      "manager": "Ryan C",
+      "record": "10-3-0",
+      "place": 4,
+      "badges": [
+        "Gold 723"
+      ],
+      "pf": 1719.24,
+      "pa": 1283.58,
+      "diff": 435.66
+    },
+    {
+      "team": "Teeth Malaysia",
+      "manager": "Irfan",
+      "record": "7-6-0",
+      "place": 5,
+      "badges": [
+        "Gold 720"
+      ],
+      "pf": 1488.37,
+      "pa": 1492.07,
+      "diff": -3.7
+    },
+    {
+      "team": "Ballcuzzis",
+      "manager": "Kyle K",
+      "record": "8-5-0",
+      "place": 6,
+      "badges": [
+        "Bronze 596"
+      ],
+      "pf": 1545.87,
+      "pa": 1352.74,
+      "diff": 193.13
+    },
+    {
+      "team": "Falcon & The Snowman",
+      "manager": "Antony",
+      "record": "5-8-0",
+      "place": 7,
+      "badges": [
+        "Gold 713"
+      ],
+      "pf": 1273.74,
+      "pa": 1393.98,
+      "diff": -120.24
+    },
+    {
+      "team": "The Favres",
+      "manager": "hidden",
+      "record": "6-7-0",
+      "place": 8,
+      "badges": [
+        "Bronze 590"
+      ],
+      "pf": 1308.73,
+      "pa": 1392.09,
+      "diff": -83.36
+    },
+    {
+      "team": "Big Balls",
+      "manager": "Duncan",
+      "record": "5-8-0",
+      "place": 9,
+      "badges": [
+        "Bronze 589"
+      ],
+      "pf": 1189.26,
+      "pa": 1262.39,
+      "diff": -73.13
+    },
+    {
+      "team": "ihatethecowboys",
+      "manager": "hidden",
+      "record": "5-8-0",
+      "place": 10,
+      "badges": [
+        "Bronze 580"
+      ],
+      "pf": 1277.61,
+      "pa": 1349.49,
+      "diff": -71.88
+    },
+    {
+      "team": "Too Good",
+      "manager": "hidden",
+      "record": "2-11-0",
+      "place": 11,
+      "badges": [
+        "Bronze 552"
+      ],
+      "pf": 1035.38,
+      "pa": 1372.46,
+      "diff": -337.08
+    },
+    {
+      "team": "Don't touch my Ditka",
+      "manager": "Patrick",
+      "record": "5-8-0",
+      "place": 12,
+      "badges": [
+        "Bronze 560"
+      ],
+      "pf": 1230.38,
+      "pa": 1313.53,
+      "diff": -83.15
+    }
+  ],
+  "stories": [
+    {
+      "emoji": "🏆",
+      "headline": "David wins it all",
+      "body": "Reality of Fantasy took the 2010 title."
+    }
   ]
 }

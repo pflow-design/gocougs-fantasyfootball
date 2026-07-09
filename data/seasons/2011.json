@@ -23,7 +23,12 @@
       "pf": 1683.7,
       "pa": 1485.56,
       "diff": 198.14,
-      "games": 14
+      "games": 14,
+      "team": "deez Nuts",
+      "streak": "L-1",
+      "rating": 664,
+      "level": "Silver",
+      "finalPlace": 3
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1818.48,
       "pa": 1601.49,
       "diff": 216.99,
-      "games": 14
+      "games": 14,
+      "team": "Beer Money",
+      "streak": "W-6",
+      "rating": 716,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1718.37,
       "pa": 1481.8,
       "diff": 236.57,
-      "games": 14
+      "games": 14,
+      "team": "Ebner",
+      "streak": "W-3",
+      "rating": 605,
+      "level": "Silver",
+      "finalPlace": 4
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1579.66,
       "pa": 1505.12,
       "diff": 74.54,
-      "games": 14
+      "games": 14,
+      "team": "Shawn Kemp's Kids",
+      "streak": "W-6",
+      "rating": 742,
+      "level": "Gold",
+      "finalPlace": 1
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1607.6,
       "pa": 1556.97,
       "diff": 50.63,
-      "games": 14
+      "games": 14,
+      "team": "You Got Chizazzed",
+      "streak": "L-1",
+      "rating": 586,
+      "level": "Bronze",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1611.3,
       "pa": 1786.72,
       "diff": -175.42,
-      "games": 14
+      "games": 14,
+      "team": "Kibbles and Vicks",
+      "streak": "W-1",
+      "rating": 704,
+      "level": "Gold",
+      "finalPlace": 5
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1496.9,
       "pa": 1596.58,
       "diff": -99.68,
-      "games": 14
+      "games": 14,
+      "team": "Only TE in here",
+      "streak": "W-1",
+      "rating": 588,
+      "level": "Bronze",
+      "finalPlace": 7
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1593.03,
       "pa": 1712.15,
       "diff": -119.12,
-      "games": 14
+      "games": 14,
+      "team": "Cougz4ReElection",
+      "streak": "L-2",
+      "rating": 571,
+      "level": "Bronze",
+      "finalPlace": 8
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1428.21,
       "pa": 1601.02,
       "diff": -172.81,
-      "games": 14
+      "games": 14,
+      "team": "liverpoolsucks69",
+      "streak": "L-3",
+      "rating": 564,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1473.55,
       "pa": 1683.39,
       "diff": -209.84,
-      "games": 14
+      "games": 14,
+      "team": "pflow",
+      "streak": "L-5",
+      "rating": 571,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +633,249 @@
         153.17
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "Kyle K",
+      "Daniel",
+      "Raj",
+      "Ryan C",
+      "Duncan",
+      "David",
+      "Antony",
+      "Bradley",
+      "Patrick",
+      "Robbie"
+    ],
+    "pf": [
+      1818.48,
+      1718.37,
+      1683.7,
+      1611.3,
+      1607.6,
+      1593.03,
+      1579.66,
+      1496.9,
+      1473.55,
+      1428.21
+    ],
+    "pa": [
+      1601.49,
+      1481.8,
+      1485.56,
+      1786.72,
+      1556.97,
+      1712.15,
+      1505.12,
+      1596.58,
+      1683.39,
+      1601.02
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "Shawn Kemp's Kids",
+      "manager": "Antony",
+      "record": "8-6-0",
+      "place": 1,
+      "badges": [
+        "2011 CHAMPION",
+        "Gold 742"
+      ],
+      "pf": 1579.66,
+      "pa": 1505.12,
+      "diff": 74.54
+    },
+    {
+      "team": "Beer Money",
+      "manager": "Kyle K",
+      "record": "10-4-0",
+      "place": 2,
+      "badges": [
+        "Gold 716"
+      ],
+      "pf": 1818.48,
+      "pa": 1601.49,
+      "diff": 216.99
+    },
+    {
+      "team": "deez Nuts",
+      "manager": "Raj",
+      "record": "11-3-0",
+      "place": 3,
+      "badges": [
+        "Silver 664"
+      ],
+      "pf": 1683.7,
+      "pa": 1485.56,
+      "diff": 198.14
+    },
+    {
+      "team": "Ebner",
+      "manager": "Daniel",
+      "record": "8-6-0",
+      "place": 4,
+      "badges": [
+        "Silver 605"
+      ],
+      "pf": 1718.37,
+      "pa": 1481.8,
+      "diff": 236.57
+    },
+    {
+      "team": "Kibbles and Vicks",
+      "manager": "Ryan C",
+      "record": "6-8-0",
+      "place": 5,
+      "badges": [
+        "Gold 704"
+      ],
+      "pf": 1611.3,
+      "pa": 1786.72,
+      "diff": -175.42
+    },
+    {
+      "team": "You Got Chizazzed",
+      "manager": "Duncan",
+      "record": "7-7-0",
+      "place": 6,
+      "badges": [
+        "Bronze 586"
+      ],
+      "pf": 1607.6,
+      "pa": 1556.97,
+      "diff": 50.63
+    },
+    {
+      "team": "Only TE in here",
+      "manager": "Bradley",
+      "record": "6-8-0",
+      "place": 7,
+      "badges": [
+        "Bronze 588"
+      ],
+      "pf": 1496.9,
+      "pa": 1596.58,
+      "diff": -99.68
+    },
+    {
+      "team": "Cougz4ReElection",
+      "manager": "David",
+      "record": "5-9-0",
+      "place": 8,
+      "badges": [
+        "Bronze 571"
+      ],
+      "pf": 1593.03,
+      "pa": 1712.15,
+      "diff": -119.12
+    },
+    {
+      "team": "liverpoolsucks69",
+      "manager": "Robbie",
+      "record": "5-9-0",
+      "place": 9,
+      "badges": [
+        "Bronze 564"
+      ],
+      "pf": 1428.21,
+      "pa": 1601.02,
+      "diff": -172.81
+    },
+    {
+      "team": "pflow",
+      "manager": "Patrick",
+      "record": "4-10-0",
+      "place": 10,
+      "badges": [
+        "Bronze 571"
+      ],
+      "pf": 1473.55,
+      "pa": 1683.39,
+      "diff": -209.84
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "Shawn Kemp's Kids",
+            "score": 153.49
+          },
+          "loser": {
+            "team": "deez Nuts",
+            "score": 148.48
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "Beer Money",
+            "score": 126.36
+          },
+          "loser": {
+            "team": "Ebner",
+            "score": 107.88
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "Shawn Kemp's Kids",
+            "score": 121.44
+          },
+          "loser": {
+            "team": "Beer Money",
+            "score": 91.13
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "deez Nuts",
+            "score": 155.58
+          },
+          "loser": {
+            "team": "Ebner",
+            "score": 124.78
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: Raj — 166.96",
+      "body": "deez Nuts posted the season's top single-week score, 166.96 points in Week 12."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 78.61 pts",
+      "body": "In Week 5, Ebner crushed liverpoolsucks69 151.64–73.03, a 78.61-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 0.19 pts",
+      "body": "Week 8 came down to 0.19: liverpoolsucks69 edged Cougz4ReElection 117.83–117.64."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Robbie — 65.99",
+      "body": "liverpoolsucks69 bottomed out at 65.99 in Week 7 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "Antony wins it all",
+      "body": "Shawn Kemps' Kids took the 2011 title, beating Kyle K in the final."
+    }
+  ]
 }

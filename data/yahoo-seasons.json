@@ -1,0 +1,203 @@
+{
+  "_meta": {
+    "description": "Raw per-season data scraped from Yahoo Fantasy (authenticated) via Claude in Chrome, 2026-07. One record per team per season. `place` = [1st, 2nd, 3rd] final-placement team names (from the standings view's placement summary). Each team tuple is [team, wlt, pf, pa, streak, rating, level, yahooManager]. rating/level are Yahoo's FELO badge ('-' where none). yahooManager is Yahoo's displayed first name ('--hidden--' where hidden, 'r' = Rudee, 'Kyle' = either Kyle K or Kyle P — disambiguate by team). Validated: pf/pa match the computed season standings exactly.",
+    "source": "football.fantasysports.yahoo.com <YEAR>/f1/<ID> standings + felo (ratings) views; league IDs from LEAGUE_IDS.md",
+    "tuple": ["team", "wlt", "pf", "pa", "streak", "rating", "level", "yahooManager"]
+  },
+  "seasons": {
+    "2009": { "place": ["The Frying Pans", "The Blackouts", "Purple Reign"], "teams": [
+      ["The Frying Pans", "7-6-0", 1223.61, 1181.58, "W-3", "715", "Gold", "duncan"],
+      ["The Blackouts", "10-3-0", 1246.65, 1073.83, "W-2", "735", "Gold", "Antony"],
+      ["Purple Reign", "6-7-0", 1137.73, 1108.12, "L-2", "583", "Bronze", "Ryan C"],
+      ["Ballcuzzis", "7-6-0", 1182.70, 1054.02, "L-1", "585", "Bronze", "Kyle"],
+      ["Favre and Away", "7-6-0", 1217.40, 1136.43, "L-2", "586", "Bronze", "Daniel"],
+      ["cougs4bcsbid", "7-6-0", 972.64, 1142.70, "W-3", "-", "-", "--hidden--"],
+      ["Team Malaysia", "6-7-0", 1046.04, 1149.74, "W-1", "667", "Silver", "Irfan"],
+      ["FUCK YOU RUDEE", "5-8-0", 1205.17, 1191.11, "L-1", "598", "Bronze", "Bradley"],
+      ["Sound Records", "5-8-0", 1050.94, 1225.41, "L-2", "578", "Bronze", "Raj"],
+      ["AIDS", "5-8-0", 1021.31, 1041.25, "W-1", "577", "Bronze", "Patrick F"]
+    ]},
+    "2010": { "place": ["Reality of Fantasy", "Post-Feminism", "Marvelous FarveLess"], "teams": [
+      ["Reality of Fantasy", "8-5-0", 1382.31, 1311.89, "W-1", "651", "Silver", "David"],
+      ["Post-Feminism", "7-6-0", 1246.95, 1333.49, "L-4", "651", "Silver", "Bradley"],
+      ["Marvelous FarveLess", "10-3-0", 1425.58, 1265.71, "W-9", "595", "Bronze", "Daniel"],
+      ["Einhorn is Finkle!", "10-3-0", 1719.24, 1283.58, "W-1", "723", "Gold", "Ryan C"],
+      ["Teeth Malaysia", "7-6-0", 1488.37, 1492.07, "L-1", "720", "Gold", "Irfan"],
+      ["Ballcuzzis", "8-5-0", 1545.87, 1352.74, "L-1", "596", "Bronze", "Kyle"],
+      ["Falcon & The Snowman", "5-8-0", 1273.74, 1393.98, "L-1", "713", "Gold", "Antony"],
+      ["The Favres", "6-7-0", 1308.73, 1392.09, "L-1", "590", "Bronze", "--hidden--"],
+      ["Big Balls", "5-8-0", 1189.26, 1262.39, "W-3", "589", "Bronze", "duncan"],
+      ["ihatethecowboys", "5-8-0", 1277.61, 1349.49, "W-1", "580", "Bronze", "--hidden--"],
+      ["Too Good", "2-11-0", 1035.38, 1372.46, "L-9", "552", "Bronze", "--hidden--"],
+      ["Don't touch my Ditka", "5-8-0", 1230.38, 1313.53, "W-1", "560", "Bronze", "Patrick F"]
+    ]},
+    "2011": { "place": ["Shawn Kemp's Kids", "Beer Money", "deez Nuts"], "teams": [
+      ["Shawn Kemp's Kids", "8-6-0", 1579.66, 1505.12, "W-6", "742", "Gold", "Antony"],
+      ["Beer Money", "10-4-0", 1818.48, 1601.49, "W-6", "716", "Gold", "Kyle"],
+      ["deez Nuts", "11-3-0", 1683.70, 1485.56, "L-1", "664", "Silver", "Raj"],
+      ["Ebner", "8-6-0", 1718.37, 1481.80, "W-3", "605", "Silver", "Daniel"],
+      ["Kibbles and Vicks", "6-8-0", 1611.30, 1786.72, "W-1", "704", "Gold", "--hidden--"],
+      ["You Got Chizazzed", "7-7-0", 1607.60, 1556.97, "L-1", "586", "Bronze", "duncan"],
+      ["Only TE in here", "6-8-0", 1496.90, 1596.58, "W-1", "588", "Bronze", "Bradley"],
+      ["Cougz4ReElection", "5-9-0", 1593.03, 1712.15, "L-2", "571", "Bronze", "David"],
+      ["liverpoolsucks69", "5-9-0", 1428.21, 1601.02, "L-3", "564", "Bronze", "--hidden--"],
+      ["pflow", "4-10-0", 1473.55, 1683.39, "L-5", "571", "Bronze", "Patrick F"]
+    ]},
+    "2012": { "place": ["My Main Thang", "Swing Your Sword", "Russell Sprouts"], "teams": [
+      ["My Main Thang", "8-6-0", 1690.69, 1562.17, "W-1", "848", "Platinum", "duncan"],
+      ["Swing Your Sword", "8-6-0", 1644.07, 1503.32, "W-1", "727", "Gold", "Kyle"],
+      ["Russell Sprouts", "10-4-0", 1750.46, 1591.56, "W-6", "831", "Platinum", "Ryan C"],
+      ["The Gloria Hole", "10-4-0", 1630.31, 1358.25, "W-1", "604", "Silver", "Patrick F"],
+      ["Larson", "7-7-0", 1554.22, 1652.32, "L-1", "695", "Silver", "--hidden--"],
+      ["BeBetterThanLast", "6-8-0", 1550.63, 1699.51, "L-5", "561", "Bronze", "David"],
+      ["Free Ryan Leaf", "7-7-0", 1552.39, 1622.43, "L-1", "712", "Gold", "Antony"],
+      ["u mad", "7-7-0", 1568.71, 1566.51, "W-4", "639", "Silver", "Raj"],
+      ["Ebner", "4-10-0", 1590.71, 1687.35, "L-1", "628", "Silver", "Daniel"],
+      ["the bron brons", "3-11-0", 1466.41, 1755.18, "L-2", "567", "Bronze", "Kyle"]
+    ]},
+    "2013": { "place": ["Larson", "My Main Thang", "u mad"], "teams": [
+      ["Larson", "10-4-0", 1766.92, 1573.09, "L-1", "783", "Gold", "--hidden--"],
+      ["My Main Thang", "9-5-0", 1784.46, 1666.51, "W-3", "777", "Gold", "duncan"],
+      ["u mad", "11-3-0", 1860.94, 1448.78, "W-8", "883", "Platinum", "Raj"],
+      ["Swing Your Sword", "10-4-0", 1690.27, 1510.51, "L-2", "764", "Gold", "Kyle"],
+      ["Russell Sprouts", "6-8-0", 1638.26, 1665.63, "W-1", "885", "Platinum", "Ryan C"],
+      ["Liquid Courage", "8-6-0", 1503.42, 1608.08, "W-2", "710", "Gold", "Antony"],
+      ["Ebner", "4-10-0", 1456.10, 1716.50, "L-2", "576", "Bronze", "Daniel"],
+      ["BeBetterThanLast", "7-7-0", 1597.41, 1556.10, "L-1", "575", "Bronze", "David"],
+      ["The Gloria Hole", "3-11-0", 1559.06, 1748.58, "W-1", "591", "Bronze", "Patrick F"],
+      ["Your Mom", "2-12-0", 1354.07, 1717.13, "L-7", "533", "Bronze", "Kyle"]
+    ]},
+    "2014": { "place": ["Horns and Halos", "shmoney maker", "Ebner"], "teams": [
+      ["Horns and Halos", "9-5-0", 1767.08, 1607.72, "W-3", "794", "Gold", "Antony"],
+      ["shmoney maker", "10-4-0", 1805.64, 1592.12, "W-4", "892", "Platinum", "Raj"],
+      ["Ebner", "8-6-0", 1626.19, 1576.69, "W-1", "593", "Bronze", "Daniel"],
+      ["Larson", "8-6-0", 1582.38, 1560.67, "W-1", "653", "Silver", "--hidden--"],
+      ["Your Mom", "7-7-0", 1631.98, 1689.83, "L-3", "557", "Bronze", "Kyle"],
+      ["Swing Your Sword", "5-9-0", 1689.75, 1669.52, "W-2", "705", "Gold", "Kyle"],
+      ["CouginItMeansChamp!", "6-8-0", 1592.86, 1715.17, "L-1", "581", "Bronze", "David"],
+      ["The Gloria Hole", "7-7-0", 1690.01, 1620.79, "L-2", "596", "Bronze", "Patrick F"],
+      ["My Main Thang", "5-9-0", 1621.55, 1812.86, "L-1", "590", "Bronze", "duncan"],
+      ["Russell Sprouts", "5-9-0", 1557.17, 1719.24, "L-5", "807", "Platinum", "Ryan C"]
+    ]},
+    "2015": { "place": ["The Gloria Hole", "My Ball Zach Ertz", "shmoney maker"], "teams": [
+      ["The Gloria Hole", "9-5-0", 1611.75, 1614.99, "W-1", "590", "Bronze", "Patrick F"],
+      ["My Ball Zach Ertz", "9-5-0", 1696.12, 1486.21, "L-1", "679", "Silver", "Daniel"],
+      ["shmoney maker", "8-6-0", 1647.55, 1487.90, "W-1", "861", "Platinum", "Raj"],
+      ["Russell Sprouts", "8-6-0", 1774.80, 1621.92, "L-1", "825", "Platinum", "Ryan C"],
+      ["Your Mom", "7-7-0", 1496.52, 1575.73, "W-3", "572", "Bronze", "Kyle"],
+      ["Larson", "6-8-0", 1488.61, 1607.36, "W-1", "607", "Silver", "--hidden--"],
+      ["KingDomeRafters", "7-7-0", 1678.92, 1689.55, "W-2", "781", "Gold", "Antony"],
+      ["Swing Your Sword", "7-7-0", 1559.84, 1637.02, "L-2", "649", "Silver", "Kyle"],
+      ["My Main Thang", "5-9-0", 1524.02, 1592.40, "L-3", "576", "Bronze", "duncan"],
+      ["CouginItMeansChamp!", "4-10-0", 1626.38, 1791.43, "L-1", "553", "Bronze", "David"]
+    ]},
+    "2016": { "place": ["Russell and Flow", "Swing Your Sword", "shmoney maker"], "teams": [
+      ["Russell and Flow", "10-4-0", 1725.06, 1537.62, "W-5", "876", "Platinum", "Antony"],
+      ["Swing Your Sword", "10-4-0", 1557.51, 1395.29, "W-6", "729", "Gold", "Kyle"],
+      ["shmoney maker", "8-6-0", 1641.73, 1591.02, "W-1", "891", "Platinum", "Raj"],
+      ["Russell Sprouts", "8-6-0", 1684.04, 1636.33, "L-1", "782", "Gold", "Ryan C"],
+      ["My Ball Zach Ertz", "8-6-0", 1585.41, 1575.04, "W-2", "732", "Gold", "Daniel"],
+      ["Larson", "7-7-0", 1587.84, 1480.14, "L-1", "597", "Bronze", "--hidden--"],
+      ["DakInABox", "7-7-0", 1566.25, 1526.46, "L-3", "599", "Bronze", "David"],
+      ["Rogers Goodell", "5-9-0", 1660.44, 1641.11, "W-1", "564", "Bronze", "duncan"],
+      ["The Gloria Hole", "4-10-0", 1468.20, 1703.61, "L-2", "555", "Bronze", "Patrick F"],
+      ["Chalupa Batman", "3-11-0", 1403.10, 1792.96, "L-5", "547", "Bronze", "Kyle"]
+    ]},
+    "2017": { "place": ["Brady and the skins", "shmoney maker", "Larson"], "teams": [
+      ["Brady and the skins", "11-3-0", 1683.27, 1383.69, "W-6", "616", "Silver", "Kyle"],
+      ["shmoney maker", "9-5-0", 1668.14, 1531.43, "W-5", "845", "Platinum", "Raj"],
+      ["Larson", "7-7-0", 1676.27, 1532.03, "W-1", "612", "Silver", "--hidden--"],
+      ["Rogers Goodell", "9-5-0", 1540.63, 1606.63, "W-4", "556", "Bronze", "duncan"],
+      ["Russell Sprouts", "6-8-0", 1496.04, 1541.50, "L-3", "783", "Gold", "Ryan C"],
+      ["My Ball Zach Ertz", "6-8-0", 1621.93, 1560.35, "W-1", "695", "Silver", "Daniel"],
+      ["Falk 4 Heisman", "7-7-0", 1465.91, 1617.35, "L-2", "847", "Platinum", "Antony"],
+      ["LACY'S CHINESE FOOD", "7-7-0", 1443.50, 1409.79, "L-2", "557", "Bronze", "Patrick F"],
+      ["Mariota Kart", "4-10-0", 1446.08, 1711.11, "L-1", "580", "Bronze", "David"],
+      ["Swing Your Sword", "4-10-0", 1288.33, 1436.22, "L-1", "595", "Bronze", "Kyle"]
+    ]},
+    "2018": { "place": ["Russell Sprouts", "Double deuce", "Dickson’s 3rd leg"], "teams": [
+      ["Russell Sprouts", "8-6-0", 1863.75, 1626.16, "W-1", "830", "Platinum", "Ryan C"],
+      ["Double deuce", "10-4-0", 1955.78, 1749.19, "W-3", "746", "Gold", "Kyle"],
+      ["Dickson’s 3rd leg", "9-5-0", 1734.82, 1573.75, "W-1", "570", "Bronze", "Patrick F"],
+      ["shmoney maker", "12-2-0", 1904.46, 1500.38, "L-1", "829", "Platinum", "Raj"],
+      ["My Ball Zach Ertz", "6-8-0", 1707.92, 1761.56, "W-2", "734", "Gold", "Daniel"],
+      ["Larson", "8-6-0", 1693.79, 1785.74, "L-1", "760", "Gold", "--hidden--"],
+      ["Tony the Pony", "4-10-0", 1775.53, 1926.88, "W-1", "903", "Diamond", "Antony"],
+      ["Swing Your Sword", "6-8-0", 1478.80, 1630.50, "L-1", "597", "Bronze", "Kyle"],
+      ["Rogers Goodell", "4-10-0", 1557.90, 1797.69, "L-3", "555", "Bronze", "duncan"],
+      ["__DAVID_BLOCKED__", "3-11-0", 1487.20, 1808.10, "L-4", "562", "Bronze", "David"]
+    ]},
+    "2019": { "place": ["Candyman", "__DAVID_BLOCKED__", "My Ball Zach Ertz"], "teams": [
+      ["Candyman", "9-5-0", 1715.40, 1580.31, "W-1", "738", "Gold", "duncan"],
+      ["WokeUpFeelinDangerus", "11-3-0", 1772.66, 1524.00, "W-4", "635", "Silver", "David"],
+      ["My Ball Zach Ertz", "8-6-0", 1603.87, 1540.21, "L-1", "734", "Gold", "Daniel"],
+      ["shmoney maker", "10-4-0", 1767.16, 1535.90, "L-1", "804", "Platinum", "Raj"],
+      ["Swing Your Sword", "7-7-0", 1657.74, 1680.51, "W-1", "634", "Silver", "Kyle"],
+      ["Dickson Your Face", "6-8-0", 1499.04, 1557.23, "W-2", "573", "Bronze", "Patrick F"],
+      ["Mixon it up", "5-9-0", 1524.75, 1616.44, "W-1", "563", "Bronze", "r"],
+      ["Russell Sprouts", "6-8-0", 1602.66, 1642.46, "L-1", "736", "Gold", "Ryan C"],
+      ["Larson", "4-10-0", 1485.17, 1735.36, "L-4", "631", "Silver", "--hidden--"],
+      ["Double deuce", "4-10-0", 1473.21, 1689.24, "L-2", "576", "Bronze", "Kyle"]
+    ]},
+    "2020": { "place": ["__DAVID_BLOCKED__", "My Ball Zach Ertz", "The Covid-19’s"], "teams": [
+      ["WokeUpFeelinDangaRus", "13-1-0", 1908.77, 1421.21, "W-5", "832", "Platinum", "David"],
+      ["My Ball Zach Ertz", "9-5-0", 1836.87, 1697.30, "L-2", "786", "Gold", "Daniel"],
+      ["The Covid-19’s", "7-7-0", 1591.66, 1492.94, "W-3", "589", "Bronze", "Kyle"],
+      ["shmoney maker", "10-4-0", 1772.79, 1642.27, "W-6", "760", "Gold", "Raj"],
+      ["Russell Sprouts", "5-9-0", 1587.09, 1742.90, "L-1", "720", "Gold", "Ryan C"],
+      ["Dickson Your Face", "7-7-0", 1565.30, 1704.14, "L-3", "655", "Silver", "Patrick F"],
+      ["Clappin' Cheeks", "6-8-0", 1663.07, 1717.62, "W-2", "716", "Gold", "Jeremy Trevino"],
+      ["Candyman", "5-9-0", 1530.08, 1648.14, "L-6", "616", "Silver", "duncan"],
+      ["Play Daktion", "4-10-0", 1578.66, 1816.54, "L-2", "593", "Bronze", "r"],
+      ["Rollin With Rolovich", "4-10-0", 1488.41, 1639.64, "W-1", "583", "Bronze", "Kyle"]
+    ]},
+    "2021": { "place": ["Up Hill Battlers", "Anything but last", "__DAVID_BLOCKED__"], "teams": [
+      ["Up Hill Battlers", "11-4-0", 1989.20, 1765.30, "W-1", "726", "Gold", "r"],
+      ["Anything but last", "10-5-0", 1852.41, 1655.29, "L-3", "652", "Silver", "Kyle"],
+      ["DontStopFeedingMeELLIOTT", "9-6-0", 1819.38, 1715.60, "W-4", "808", "Platinum", "David"],
+      ["Candyman", "11-4-0", 1767.63, 1710.13, "L-2", "714", "Gold", "duncan"],
+      ["The kdp football team", "6-9-0", 1701.60, 1701.59, "W-3", "594", "Bronze", "Kyle"],
+      ["shmoney maker", "7-8-0", 1696.49, 1770.18, "L-1", "839", "Platinum", "Raj"],
+      ["Clappin' Cheeks", "7-8-0", 1832.10, 1803.18, "W-1", "718", "Gold", "Jeremy Trevino"],
+      ["Russell Sprouts", "7-8-0", 1747.19, 1853.96, "L-1", "686", "Silver", "Ryan C"],
+      ["My Ball Zach Ertz", "5-10-0", 1824.89, 1881.31, "W-1", "759", "Gold", "Daniel"],
+      ["What food do you want?", "2-13-0", 1490.83, 1865.18, "L-1", "563", "Bronze", "Patrick F"]
+    ]},
+    "2022": { "place": ["Null and Boyd", "Catching Kelce", "My Ball Zach Ertz"], "teams": [
+      ["Null and Boyd", "9-6-0", 1794.31, 1666.68, "W-2", "810", "Platinum", "Antony"],
+      ["Catching Kelce", "9-6-0", 1826.91, 1776.56, "W-1", "733", "Gold", "Kyle"],
+      ["My Ball Zach Ertz", "9-6-0", 1820.60, 1642.21, "W-1", "832", "Platinum", "Daniel"],
+      ["Dobbin on IR", "11-4-0", 1790.51, 1669.27, "L-1", "643", "Silver", "r"],
+      ["Candyman", "8-7-0", 1728.16, 1832.55, "W-1", "789", "Gold", "duncan"],
+      ["shmoney maker", "6-9-0", 1617.07, 1724.99, "L-1", "812", "Platinum", "Raj"],
+      ["ChristianMINGLE", "7-8-0", 1795.11, 1823.98, "L-1", "791", "Gold", "David"],
+      ["From Texas with love", "9-6-0", 1726.92, 1649.02, "W-2", "563", "Bronze", "Patrick F"],
+      ["Clappin' Cheeks", "4-11-0", 1578.47, 1668.91, "L-3", "599", "Bronze", "Jeremy Trevino"],
+      ["Two Moore Problems", "3-12-0", 1572.85, 1796.74, "L-7", "731", "Gold", "Ryan C"]
+    ]},
+    "2023": { "place": ["Clappin' Cheeks", "No Moore Problems", "Hit Somebody"], "teams": [
+      ["Clappin' Cheeks", "9-6-0", 1831.55, 1687.46, "W-1", "722", "Gold", "Jeremy Trevino"],
+      ["No Moore Problems", "11-4-0", 1978.63, 1869.26, "W-6", "823", "Platinum", "Ryan C"],
+      ["Hit Somebody", "11-4-0", 1779.42, 1576.74, "W-2", "745", "Gold", "r"],
+      ["Hugh Winn's", "8-7-0", 1757.28, 1625.18, "W-1", "716", "Gold", "duncan"],
+      ["Moore Bijan please", "7-8-0", 1782.23, 1875.19, "L-1", "800", "Platinum", "Antony"],
+      ["shmoney maker", "8-7-0", 1712.53, 1738.00, "L-1", "808", "Platinum", "Raj"],
+      ["Catching Kelce", "7-8-0", 1575.35, 1762.70, "W-1", "701", "Gold", "Kyle"],
+      ["__DAVID_BLOCKED__", "6-9-0", 1758.49, 1752.48, "L-2", "688", "Silver", "David"],
+      ["From Texas with love", "4-11-0", 1638.26, 1753.19, "L-7", "540", "Bronze", "Patrick F"],
+      ["My Ball Zach Ertz", "4-11-0", 1583.05, 1756.59, "L-1", "711", "Gold", "Daniel"]
+    ]},
+    "2024": { "place": ["My Ball Zach Ertz", "Clappin' Cheeks", "Trips Formation"], "teams": [
+      ["My Ball Zach Ertz", "9-6-0", 1717.04, 1720.90, "L-1", "765", "Gold", "Daniel"],
+      ["Clappin' Cheeks", "10-5-0", 1854.10, 1674.22, "W-1", "797", "Gold", "Jeremy Trevino"],
+      ["Trips Formation", "10-5-0", 1617.60, 1652.84, "L-2", "837", "Platinum", "Ryan C"],
+      ["RIPete", "11-4-0", 1902.78, 1697.22, "W-4", "627", "Silver", "Patrick F"],
+      ["Chasing Points", "7-8-0", 1834.60, 1753.52, "W-3", "871", "Platinum", "Antony"],
+      ["Hit Somebody", "9-6-0", 1690.66, 1611.54, "W-2", "635", "Silver", "r"],
+      ["Breece Mode", "6-9-0", 1656.24, 1658.12, "L-1", "652", "Silver", "Kyle"],
+      ["Virtual Wreckage", "7-8-0", 1696.12, 1685.18, "L-2", "681", "Silver", "duncan"],
+      ["shmoney maker", "3-12-0", 1598.04, 1855.72, "L-6", "613", "Silver", "Raj"],
+      ["#CougsVsEverybody", "3-12-0", 1486.08, 1744.00, "W-1", "578", "Bronze", "David"]
+    ]}
+  }
+}

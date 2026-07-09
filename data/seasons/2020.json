@@ -23,7 +23,12 @@
       "pf": 1908.77,
       "pa": 1421.21,
       "diff": 487.56,
-      "games": 14
+      "games": 14,
+      "team": "WokeUpFeelinDangaRus",
+      "streak": "W-5",
+      "rating": 832,
+      "level": "Platinum",
+      "finalPlace": 1
     },
     {
       "rank": 2,
@@ -35,7 +40,12 @@
       "pf": 1772.79,
       "pa": 1642.27,
       "diff": 130.52,
-      "games": 14
+      "games": 14,
+      "team": "shmoney maker",
+      "streak": "W-6",
+      "rating": 760,
+      "level": "Gold",
+      "finalPlace": 4
     },
     {
       "rank": 3,
@@ -47,7 +57,12 @@
       "pf": 1836.87,
       "pa": 1697.3,
       "diff": 139.57,
-      "games": 14
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "L-2",
+      "rating": 786,
+      "level": "Gold",
+      "finalPlace": 2
     },
     {
       "rank": 4,
@@ -59,7 +74,12 @@
       "pf": 1591.66,
       "pa": 1492.94,
       "diff": 98.72,
-      "games": 14
+      "games": 14,
+      "team": "The Covid-19’s",
+      "streak": "W-3",
+      "rating": 589,
+      "level": "Bronze",
+      "finalPlace": 3
     },
     {
       "rank": 5,
@@ -71,7 +91,12 @@
       "pf": 1565.3,
       "pa": 1704.14,
       "diff": -138.84,
-      "games": 14
+      "games": 14,
+      "team": "Dickson Your Face",
+      "streak": "L-3",
+      "rating": 655,
+      "level": "Silver",
+      "finalPlace": 6
     },
     {
       "rank": 6,
@@ -83,7 +108,12 @@
       "pf": 1663.07,
       "pa": 1717.62,
       "diff": -54.55,
-      "games": 14
+      "games": 14,
+      "team": "Clappin' Cheeks",
+      "streak": "W-2",
+      "rating": 716,
+      "level": "Gold",
+      "finalPlace": 7
     },
     {
       "rank": 7,
@@ -95,7 +125,12 @@
       "pf": 1587.09,
       "pa": 1742.9,
       "diff": -155.81,
-      "games": 14
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "L-1",
+      "rating": 720,
+      "level": "Gold",
+      "finalPlace": 5
     },
     {
       "rank": 8,
@@ -107,7 +142,12 @@
       "pf": 1530.08,
       "pa": 1648.14,
       "diff": -118.06,
-      "games": 14
+      "games": 14,
+      "team": "Candyman",
+      "streak": "L-6",
+      "rating": 616,
+      "level": "Silver",
+      "finalPlace": 8
     },
     {
       "rank": 9,
@@ -119,7 +159,12 @@
       "pf": 1578.66,
       "pa": 1816.54,
       "diff": -237.88,
-      "games": 14
+      "games": 14,
+      "team": "Play Daktion",
+      "streak": "L-2",
+      "rating": 593,
+      "level": "Bronze",
+      "finalPlace": 9
     },
     {
       "rank": 10,
@@ -131,7 +176,12 @@
       "pf": 1488.41,
       "pa": 1639.64,
       "diff": -151.23,
-      "games": 14
+      "games": 14,
+      "team": "Rollin With Rolovich",
+      "streak": "W-1",
+      "rating": 583,
+      "level": "Bronze",
+      "finalPlace": 10
     }
   ],
   "weeklyScores": {
@@ -583,5 +633,249 @@
         99.32
       ]
     ]
-  }
+  },
+  "pfpaChart": {
+    "teams": [
+      "David",
+      "Daniel",
+      "Raj",
+      "Jeremy",
+      "Kyle P",
+      "Ryan C",
+      "Rudee",
+      "Patrick",
+      "Duncan",
+      "Kyle K"
+    ],
+    "pf": [
+      1908.77,
+      1836.87,
+      1772.79,
+      1663.07,
+      1591.66,
+      1587.09,
+      1578.66,
+      1565.3,
+      1530.08,
+      1488.41
+    ],
+    "pa": [
+      1421.21,
+      1697.3,
+      1642.27,
+      1717.62,
+      1492.94,
+      1742.9,
+      1816.54,
+      1704.14,
+      1648.14,
+      1639.64
+    ]
+  },
+  "teamProfiles": [
+    {
+      "team": "WokeUpFeelinDangaRus",
+      "manager": "David",
+      "record": "13-1-0",
+      "place": 1,
+      "badges": [
+        "2020 CHAMPION",
+        "Platinum 832"
+      ],
+      "pf": 1908.77,
+      "pa": 1421.21,
+      "diff": 487.56
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "Daniel",
+      "record": "9-5-0",
+      "place": 2,
+      "badges": [
+        "Gold 786"
+      ],
+      "pf": 1836.87,
+      "pa": 1697.3,
+      "diff": 139.57
+    },
+    {
+      "team": "The Covid-19’s",
+      "manager": "Kyle P",
+      "record": "7-7-0",
+      "place": 3,
+      "badges": [
+        "Bronze 589"
+      ],
+      "pf": 1591.66,
+      "pa": 1492.94,
+      "diff": 98.72
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Raj",
+      "record": "10-4-0",
+      "place": 4,
+      "badges": [
+        "Gold 760"
+      ],
+      "pf": 1772.79,
+      "pa": 1642.27,
+      "diff": 130.52
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "5-9-0",
+      "place": 5,
+      "badges": [
+        "Gold 720"
+      ],
+      "pf": 1587.09,
+      "pa": 1742.9,
+      "diff": -155.81
+    },
+    {
+      "team": "Dickson Your Face",
+      "manager": "Patrick",
+      "record": "7-7-0",
+      "place": 6,
+      "badges": [
+        "Silver 655"
+      ],
+      "pf": 1565.3,
+      "pa": 1704.14,
+      "diff": -138.84
+    },
+    {
+      "team": "Clappin' Cheeks",
+      "manager": "Jeremy",
+      "record": "6-8-0",
+      "place": 7,
+      "badges": [
+        "Gold 716"
+      ],
+      "pf": 1663.07,
+      "pa": 1717.62,
+      "diff": -54.55
+    },
+    {
+      "team": "Candyman",
+      "manager": "Duncan",
+      "record": "5-9-0",
+      "place": 8,
+      "badges": [
+        "Silver 616"
+      ],
+      "pf": 1530.08,
+      "pa": 1648.14,
+      "diff": -118.06
+    },
+    {
+      "team": "Play Daktion",
+      "manager": "Rudee",
+      "record": "4-10-0",
+      "place": 9,
+      "badges": [
+        "Bronze 593"
+      ],
+      "pf": 1578.66,
+      "pa": 1816.54,
+      "diff": -237.88
+    },
+    {
+      "team": "Rollin With Rolovich",
+      "manager": "Kyle K",
+      "record": "4-10-0",
+      "place": 10,
+      "badges": [
+        "Bronze 583"
+      ],
+      "pf": 1488.41,
+      "pa": 1639.64,
+      "diff": -151.23
+    }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 15,
+      "games": [
+        {
+          "label": "Semifinal 1",
+          "winner": {
+            "team": "WokeUpFeelinDangaRus",
+            "score": 134.91
+          },
+          "loser": {
+            "team": "The Covid-19’s",
+            "score": 113.45
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 141.58
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 129.41
+          }
+        }
+      ]
+    },
+    "championship": {
+      "week": 16,
+      "games": [
+        {
+          "label": "Championship Game",
+          "winner": {
+            "team": "WokeUpFeelinDangaRus",
+            "score": 178.14
+          },
+          "loser": {
+            "team": "My Ball Zach Ertz",
+            "score": 125.26
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "The Covid-19’s",
+            "score": 128.35
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 103.81
+          }
+        }
+      ]
+    }
+  },
+  "stories": [
+    {
+      "emoji": "🔥",
+      "headline": "Highest week: David — 182.78",
+      "body": "WokeUpFeelinDangaRus posted the season's top single-week score, 182.78 points in Week 2."
+    },
+    {
+      "emoji": "💥",
+      "headline": "Biggest blowout: 81.81 pts",
+      "body": "In Week 2, WokeUpFeelinDangaRus crushed Play Daktion 182.78–100.97, a 81.81-point margin."
+    },
+    {
+      "emoji": "⚡",
+      "headline": "Closest game: 1.36 pts",
+      "body": "Week 8 came down to 1.36: My Ball Zach Ertz edged Rollin With Rolovich 96.21–94.85."
+    },
+    {
+      "emoji": "😬",
+      "headline": "Lowest week: Kyle P — 61.10",
+      "body": "The Covid-19’s bottomed out at 61.10 in Week 7 — the season's lowest."
+    },
+    {
+      "emoji": "🏆",
+      "headline": "David wins it all",
+      "body": "WokeUpFeelinDangaRus took the 2020 title, beating Daniel in the final."
+    }
+  ]
 }
