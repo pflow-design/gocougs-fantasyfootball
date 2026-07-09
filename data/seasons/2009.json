@@ -28,7 +28,8 @@
       "streak": "W-2",
       "rating": 735,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 24
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-3",
       "rating": 715,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 26
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "L-2",
       "rating": 586,
       "level": "Bronze",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 12
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "L-1",
       "rating": 585,
       "level": "Bronze",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 5
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "W-3",
       "rating": null,
       "level": null,
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 2
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-2",
       "rating": 583,
       "level": "Bronze",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 27
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "W-1",
       "rating": 667,
       "level": "Silver",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 21
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "L-1",
       "rating": 598,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 18
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-2",
       "rating": 578,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 7
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "W-1",
       "rating": 577,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 6
     }
   ],
   "weeklyScores": {
@@ -652,7 +662,8 @@
       ],
       "pf": 1223.61,
       "pa": 1181.58,
-      "diff": 42.03
+      "diff": 42.03,
+      "note": "🏆 Champion. 2nd in scoring (1,224 PF). Yahoo Gold 715."
     },
     {
       "team": "The Blackouts",
@@ -664,7 +675,8 @@
       ],
       "pf": 1246.65,
       "pa": 1073.83,
-      "diff": 172.82
+      "diff": 172.82,
+      "note": "Runner-up. Led the league in scoring (1,247 PF) — the best team that didn't win. Yahoo Gold 735."
     },
     {
       "team": "Purple Reign",
@@ -676,7 +688,8 @@
       ],
       "pf": 1137.73,
       "pa": 1108.12,
-      "diff": 29.61
+      "diff": 29.61,
+      "note": "Third place. 6th in scoring (1,138 PF). Yahoo Bronze 583. Worked the waiver wire hardest (27 moves)."
     },
     {
       "team": "Ballcuzzis",
@@ -688,7 +701,8 @@
       ],
       "pf": 1182.7,
       "pa": 1054.02,
-      "diff": 128.68
+      "diff": 128.68,
+      "note": "Made the playoffs as the 4th seed; finished 4th. 5th in scoring (1,183 PF). Yahoo Bronze 585."
     },
     {
       "team": "Favre and Away",
@@ -700,7 +714,8 @@
       ],
       "pf": 1217.4,
       "pa": 1136.43,
-      "diff": 80.97
+      "diff": 80.97,
+      "note": "Made the playoffs as the 3rd seed; finished 5th. 3rd in scoring (1,217 PF). Yahoo Bronze 586."
     },
     {
       "team": "cougs4bcsbid",
@@ -710,7 +725,8 @@
       "badges": [],
       "pf": 972.64,
       "pa": 1142.7,
-      "diff": -170.06
+      "diff": -170.06,
+      "note": "Made the playoffs as the 5th seed; finished 6th. Fewest points in the league (973 PF). Quietest roster in the league (2 moves)."
     },
     {
       "team": "Team Malaysia",
@@ -722,7 +738,8 @@
       ],
       "pf": 1046.04,
       "pa": 1149.74,
-      "diff": -103.7
+      "diff": -103.7,
+      "note": "Finished 7th of 10. 8th in scoring (1,046 PF). Yahoo Silver 667."
     },
     {
       "team": "FUCK YOU RUDEE",
@@ -734,7 +751,8 @@
       ],
       "pf": 1205.17,
       "pa": 1191.11,
-      "diff": 14.06
+      "diff": 14.06,
+      "note": "Finished 8th of 10. 4th in scoring (1,205 PF). Yahoo Bronze 598."
     },
     {
       "team": "Sound Records",
@@ -746,7 +764,8 @@
       ],
       "pf": 1050.94,
       "pa": 1225.41,
-      "diff": -174.47
+      "diff": -174.47,
+      "note": "Finished 9th of 10. 7th in scoring (1,051 PF). Yahoo Bronze 578."
     },
     {
       "team": "AIDS",
@@ -758,7 +777,8 @@
       ],
       "pf": 1021.31,
       "pa": 1041.25,
-      "diff": -19.94
+      "diff": -19.94,
+      "note": "Finished 10th of 10. 9th in scoring (1,021 PF). Yahoo Bronze 577."
     }
   ],
   "playoffs": {
@@ -852,29 +872,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Irfan — 149.16",
-      "body": "Team Malaysia posted the season's top single-week score, 149.16 points in Week 10."
+      "emoji": "🏆",
+      "headline": "Duncan hoists the trophy",
+      "body": "The Frying Pans (Duncan) captured the 2009 title as the 2nd seed, beating The Blackouts 132.95–69.45 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "The Blackouts poured in a league-best 1,247 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "FUCK YOU RUDEE: all points, no luck",
+      "body": "FUCK YOU RUDEE scored 1,205 — 4th-most in the league — yet watched the playoffs from the couch at 5-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 82.94 pts",
-      "body": "In Week 12, FUCK YOU RUDEE crushed Team Malaysia 135.06–52.12, a 82.94-point margin."
+      "headline": "Biggest blowout: 82.94 points",
+      "body": "Week 12: FUCK YOU RUDEE steamrolled Team Malaysia 135.06–52.12."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.67 pts",
-      "body": "Week 7 came down to 0.67: cougs4bcsbid edged Ballcuzzis 70.70–70.03."
+      "headline": "Down to the wire: 0.67 points",
+      "body": "Week 7 was a nail-biter — cougs4bcsbid slipped past Ballcuzzis 70.70–70.03."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Daniel — 43.57",
-      "body": "Favre and Away bottomed out at 43.57 in Week 2 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Duncan wins it all",
-      "body": "The Frying Pans took the 2009 title, beating Antony in the final."
+      "emoji": "🪣",
+      "headline": "AIDS brings up the rear",
+      "body": "Last place at 5-8-0."
     }
   ]
 }

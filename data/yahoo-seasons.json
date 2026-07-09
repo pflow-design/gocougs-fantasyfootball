@@ -125,9 +125,9 @@
       ["Tony the Pony", "4-10-0", 1775.53, 1926.88, "W-1", "903", "Diamond", "Antony"],
       ["Swing Your Sword", "6-8-0", 1478.80, 1630.50, "L-1", "597", "Bronze", "Kyle"],
       ["Rogers Goodell", "4-10-0", 1557.90, 1797.69, "L-3", "555", "Bronze", "duncan"],
-      ["__DAVID_BLOCKED__", "3-11-0", 1487.20, 1808.10, "L-4", "562", "Bronze", "David"]
+      ["WokeUpFeelinDangerus", "3-11-0", 1487.20, 1808.10, "L-4", "562", "Bronze", "David"]
     ]},
-    "2019": { "place": ["Candyman", "__DAVID_BLOCKED__", "My Ball Zach Ertz"], "teams": [
+    "2019": { "place": ["Candyman", "WokeUpFeelinDangerus", "My Ball Zach Ertz"], "teams": [
       ["Candyman", "9-5-0", 1715.40, 1580.31, "W-1", "738", "Gold", "duncan"],
       ["WokeUpFeelinDangerus", "11-3-0", 1772.66, 1524.00, "W-4", "635", "Silver", "David"],
       ["My Ball Zach Ertz", "8-6-0", 1603.87, 1540.21, "L-1", "734", "Gold", "Daniel"],
@@ -139,7 +139,7 @@
       ["Larson", "4-10-0", 1485.17, 1735.36, "L-4", "631", "Silver", "--hidden--"],
       ["Double deuce", "4-10-0", 1473.21, 1689.24, "L-2", "576", "Bronze", "Kyle"]
     ]},
-    "2020": { "place": ["__DAVID_BLOCKED__", "My Ball Zach Ertz", "The Covid-19’s"], "teams": [
+    "2020": { "place": ["WokeUpFeelinDangaRus", "My Ball Zach Ertz", "The Covid-19’s"], "teams": [
       ["WokeUpFeelinDangaRus", "13-1-0", 1908.77, 1421.21, "W-5", "832", "Platinum", "David"],
       ["My Ball Zach Ertz", "9-5-0", 1836.87, 1697.30, "L-2", "786", "Gold", "Daniel"],
       ["The Covid-19’s", "7-7-0", 1591.66, 1492.94, "W-3", "589", "Bronze", "Kyle"],
@@ -151,7 +151,7 @@
       ["Play Daktion", "4-10-0", 1578.66, 1816.54, "L-2", "593", "Bronze", "r"],
       ["Rollin With Rolovich", "4-10-0", 1488.41, 1639.64, "W-1", "583", "Bronze", "Kyle"]
     ]},
-    "2021": { "place": ["Up Hill Battlers", "Anything but last", "__DAVID_BLOCKED__"], "teams": [
+    "2021": { "place": ["Up Hill Battlers", "Anything but last", "DontStopFeedingMeELLIOTT"], "teams": [
       ["Up Hill Battlers", "11-4-0", 1989.20, 1765.30, "W-1", "726", "Gold", "r"],
       ["Anything but last", "10-5-0", 1852.41, 1655.29, "L-3", "652", "Silver", "Kyle"],
       ["DontStopFeedingMeELLIOTT", "9-6-0", 1819.38, 1715.60, "W-4", "808", "Platinum", "David"],
@@ -183,7 +183,7 @@
       ["Moore Bijan please", "7-8-0", 1782.23, 1875.19, "L-1", "800", "Platinum", "Antony"],
       ["shmoney maker", "8-7-0", 1712.53, 1738.00, "L-1", "808", "Platinum", "Raj"],
       ["Catching Kelce", "7-8-0", 1575.35, 1762.70, "W-1", "701", "Gold", "Kyle"],
-      ["__DAVID_BLOCKED__", "6-9-0", 1758.49, 1752.48, "L-2", "688", "Silver", "David"],
+      ["ExtraVirginOilofOlave", "6-9-0", 1758.49, 1752.48, "L-2", "688", "Silver", "David"],
       ["From Texas with love", "4-11-0", 1638.26, 1753.19, "L-7", "540", "Bronze", "Patrick F"],
       ["My Ball Zach Ertz", "4-11-0", 1583.05, 1756.59, "L-1", "711", "Gold", "Daniel"]
     ]},

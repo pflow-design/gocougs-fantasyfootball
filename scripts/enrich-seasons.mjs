@@ -20,6 +20,7 @@ const readJson = (p) => JSON.parse(readFileSync(resolve(root, p), 'utf8'));
 const legacyRaw = (f) => readFileSync(resolve(root, 'legacy', f), 'utf8');
 
 const yahoo = readJson('data/yahoo-seasons.json').seasons;
+const waivers = readJson('data/yahoo-waivers.json').moves;
 const champions = readJson('data/champions.json');
 const managers = readJson('data/managers.json').managers;
 const champByYear = {};
@@ -102,6 +103,8 @@ function playoffGames(year) {
 // ---- helpers ---------------------------------------------------------------
 const fmtRec = (w, l, t) => `${w}-${l}-${t || 0}`;
 const badge = (rating, level) => (rating && rating !== '-' && level && level !== '-') ? `${level} ${rating}` : null;
+const ordinal = (n) => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+const round = (n) => Math.round(n).toLocaleString('en-US');
 
 // ---- per-season enrichment -------------------------------------------------
 const seasonDir = resolve(root, 'data/seasons');
@@ -114,32 +117,71 @@ for (const file of files) {
   const sc = yahoo[year];
   if (!sc) { report.push(`${year}: no scrape`); continue; }
 
-  // Scraped lookups. Order of sc.teams == final placement (1st..Nth).
-  const byPf = new Map();       // pf(2dp) -> scraped tuple + finalPlace
-  const byTeamNorm = new Map(); // normalized team -> scraped tuple
-  const norm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  sc.teams.forEach((t, i) => {
-    const rec = { team: t[0], wlt: t[1], pf: t[2], pa: t[3], streak: t[4], rating: t[5], level: t[6], finalPlace: i + 1 };
-    byPf.set(t[2].toFixed(2), rec);
-    byTeamNorm.set(norm(t[0]), rec);
-  });
-
-  // Join scraped -> existing standings by PF (2010 has no weekly PF match issues:
-  // its standings PF were rounded, so match 2010 by team name instead).
+  // Scraped teams; array order == final placement (1st..Nth). Join to the
+  // existing standings by W-L record + nearest PF (robust to tiny computed-vs-
+  // Yahoo PF differences), then adopt Yahoo's authoritative PF/PA for display.
+  const scTeams = sc.teams.map((t, i) => ({
+    team: t[0], w: Number(t[1].split('-')[0]), l: Number(t[1].split('-')[1]),
+    pf: t[2], pa: t[3], streak: t[4], rating: t[5], level: t[6], finalPlace: i + 1, _used: false,
+  }));
+  const matchScraped = (row) => {
+    let best = null, bd = Infinity;
+    for (const s of scTeams) {
+      if (s._used || s.w !== row.w || s.l !== row.l) continue;
+      const d = Math.abs(s.pf - (row.pf || 0));
+      if (d < bd) { bd = d; best = s; }
+    }
+    if (!best) for (const s of scTeams) { if (s._used) continue; const d = Math.abs(s.pf - (row.pf || 0)); if (d < bd) { bd = d; best = s; } }
+    if (best) best._used = true;
+    return best;
+  };
   const keyToTeam = {};
   for (const row of season.standings) {
-    let match = byPf.get((row.pf || 0).toFixed(2));
-    if (!match && row.team) match = byTeamNorm.get(norm(row.team));
-    if (match) {
-      row.team = match.team && match.team !== '__DAVID_BLOCKED__' ? match.team : (row.team ?? display(row.managerKey));
-      row.streak = match.streak;
-      row.rating = (match.rating && match.rating !== '-') ? Number(match.rating) : null;
-      row.level = (match.level && match.level !== '-') ? match.level : null;
-      row.finalPlace = match.finalPlace;
-      if (year === 2010) { row.pf = match.pf; row.pa = match.pa; row.diff = +(match.pf - match.pa).toFixed(2); }
+    const m = matchScraped(row);
+    if (m) {
+      row.team = m.team && !m.team.startsWith('__') ? m.team : (row.team ?? display(row.managerKey));
+      row.streak = m.streak;
+      row.rating = (m.rating && m.rating !== '-') ? Number(m.rating) : null;
+      row.level = (m.level && m.level !== '-') ? m.level : null;
+      row.finalPlace = m.finalPlace;
+      row.waiverMoves = (waivers[year] || {})[m.team] ?? null;
+      row.pf = m.pf; row.pa = m.pa; row.diff = +(m.pf - m.pa).toFixed(2); // Yahoo is authoritative
     }
     if (row.managerKey) keyToTeam[row.managerKey] = row.team;
   }
+
+  // Per-season context for notes/stories.
+  const playoffCount = year <= 2010 ? 6 : 4;
+  const teamsN = season.standings.length;
+  const pfRank = {}, paRank = {};
+  [...season.standings].sort((a, b) => b.pf - a.pf).forEach((r, i) => (pfRank[r.team] = i + 1));
+  [...season.standings].sort((a, b) => (a.pa ?? 0) - (b.pa ?? 0)).forEach((r, i) => (paRank[r.team] = i + 1));
+  const movesVals = season.standings.map((r) => r.waiverMoves).filter((m) => typeof m === 'number');
+  const maxMoves = movesVals.length ? Math.max(...movesVals) : null;
+  const minMoves = movesVals.length ? Math.min(...movesVals) : null;
+  const madePlayoffs = (r) => r.rank <= playoffCount;
+
+  // Contextual profile note.
+  const noteFor = (r) => {
+    const p = [];
+    const fp = r.finalPlace;
+    if (fp === 1) p.push('🏆 Champion.');
+    else if (fp === 2) p.push('Runner-up.');
+    else if (fp === 3) p.push('Third place.');
+    else if (madePlayoffs(r)) p.push(`Made the playoffs as the ${ordinal(r.rank)} seed; finished ${ordinal(fp || r.rank)}.`);
+    else p.push(`Finished ${ordinal(fp || r.rank)} of ${teamsN}.`);
+    const pr = pfRank[r.team];
+    let scoring = pr === 1 ? `Led the league in scoring (${round(r.pf)} PF)` : pr === teamsN ? `Fewest points in the league (${round(r.pf)} PF)` : `${ordinal(pr)} in scoring (${round(r.pf)} PF)`;
+    if (pr === 1 && fp > 1) scoring += ' — the best team that didn\'t win';
+    p.push(scoring + '.');
+    const b = badge(r.rating, r.level);
+    if (b) p.push(`Yahoo ${b}.`);
+    if (typeof r.waiverMoves === 'number') {
+      if (r.waiverMoves === maxMoves && maxMoves > 0) p.push(`Worked the waiver wire hardest (${r.waiverMoves} moves).`);
+      else if (r.waiverMoves === minMoves) p.push(`Quietest roster in the league (${r.waiverMoves} moves).`);
+    }
+    return p.join(' ');
+  };
 
   // --- PF/PA chart (ordered by PF desc, manager display labels) ---
   const chartRows = [...season.standings].sort((a, b) => b.pf - a.pf);
@@ -163,6 +205,7 @@ for (const file of files) {
     pf: +r.pf.toFixed(2),
     pa: +(r.pa ?? 0).toFixed(2),
     diff: +((r.pf) - (r.pa ?? 0)).toFixed(2),
+    note: noteFor(r),
   }));
 
   // --- Playoffs (championship bracket only) ---
@@ -201,37 +244,63 @@ for (const file of files) {
     if (finals.length) season.playoffs.championship = { week: finalWeek, games: finals };
   }
 
-  // --- Stories (generated from weeklyScores + standings) ---
+  // --- Stories (varied, generated from standings + playoffs + weekly) ---
   const stories = [];
   const wk = season.weeklyScores || {};
   const wkNums = Object.keys(wk).filter((k) => /^\d+$/.test(k));
   const teamOf = (k) => keyToTeam[k] ?? display(k) ?? k;
   const nameOf = (k) => display(k) ?? k;
-  if (wkNums.length) {
-    let hi = null, lo = null, blow = null, close = null;
-    for (const w of wkNums) {
-      for (const [a, sa, b, sb] of wk[w]) {
-        for (const [k, s] of [[a, sa], [b, sb]]) {
-          if (!hi || s > hi.s) hi = { k, s, w };
-          if (!lo || s < lo.s) lo = { k, s, w };
-        }
-        const m = Math.abs(sa - sb);
-        const win = sa >= sb ? a : b, ws = Math.max(sa, sb), ls = Math.min(sa, sb), lose = sa >= sb ? b : a;
-        if (!blow || m > blow.m) blow = { win, lose, ws, ls, m, w };
-        if (!close || m < close.m) close = { win, lose, ws, ls, m, w };
-      }
-    }
-    if (hi) stories.push({ emoji: '🔥', headline: `Highest week: ${nameOf(hi.k)} — ${hi.s.toFixed(2)}`, body: `${teamOf(hi.k)} posted the season's top single-week score, ${hi.s.toFixed(2)} points in Week ${hi.w}.` });
-    if (blow) stories.push({ emoji: '💥', headline: `Biggest blowout: ${blow.m.toFixed(2)} pts`, body: `In Week ${blow.w}, ${teamOf(blow.win)} crushed ${teamOf(blow.lose)} ${blow.ws.toFixed(2)}–${blow.ls.toFixed(2)}, a ${blow.m.toFixed(2)}-point margin.` });
-    if (close) stories.push({ emoji: '⚡', headline: `Closest game: ${close.m.toFixed(2)} pts`, body: `Week ${close.w} came down to ${close.m.toFixed(2)}: ${teamOf(close.win)} edged ${teamOf(close.lose)} ${close.ws.toFixed(2)}–${close.ls.toFixed(2)}.` });
-    if (lo) stories.push({ emoji: '😬', headline: `Lowest week: ${nameOf(lo.k)} — ${lo.s.toFixed(2)}`, body: `${teamOf(lo.k)} bottomed out at ${lo.s.toFixed(2)} in Week ${lo.w} — the season's lowest.` });
-  }
+  const stByPlace = (pl) => season.standings.find((r) => r.finalPlace === pl);
   const champ = champByYear[year];
+
+  // 1. Champion's run
   if (champ?.champion) {
-    const ct = champ.team && !champ.team.startsWith('__') ? champ.team : teamOf(champ.champion);
-    stories.push({ emoji: '🏆', headline: `${nameOf(champ.champion)} wins it all`, body: `${ct} took the ${year} title${champ.runnerUp ? `, beating ${nameOf(champ.runnerUp)} in the final` : ''}.` });
+    const cr = stByPlace(1);
+    const champTeam = cr?.team ?? (champ.team && !champ.team.startsWith('__') ? champ.team : teamOf(champ.champion));
+    const finalG = season.playoffs?.championship?.games?.find((g) => g.label === 'Championship Game');
+    let body = `${champTeam} (${nameOf(champ.champion)}) captured the ${year} title`;
+    if (cr && madePlayoffs(cr)) body += ` as the ${ordinal(cr.rank)} seed`;
+    if (finalG) body += `, beating ${finalG.loser.team} ${finalG.winner.score.toFixed(2)}–${finalG.loser.score.toFixed(2)} in the final`;
+    stories.push({ emoji: '🏆', headline: `${nameOf(champ.champion)} hoists the trophy`, body: body + '.' });
   }
-  if (stories.length) season.stories = stories;
+
+  // 2. Best team that didn't win (points leader who fell short)
+  const leader = season.standings.find((r) => pfRank[r.team] === 1);
+  if (leader && leader.finalPlace !== 1) {
+    const where = madePlayoffs(leader) ? `bowed out of the playoffs and finished ${ordinal(leader.finalPlace)}` : `somehow missed the playoffs`;
+    stories.push({ emoji: '📈', headline: 'The best team that didn’t win', body: `${leader.team} poured in a league-best ${round(leader.pf)} points but ${where}. Fantasy is cruel.` });
+  }
+
+  // 3. Most unlucky (highest scorer to miss the playoffs)
+  const missers = season.standings.filter((r) => !madePlayoffs(r)).sort((a, b) => b.pf - a.pf);
+  if (missers.length && missers[0].team !== leader?.team) {
+    const u = missers[0];
+    stories.push({ emoji: '😤', headline: `${u.team}: all points, no luck`, body: `${u.team} scored ${round(u.pf)} — ${ordinal(pfRank[u.team])}-most in the league — yet watched the playoffs from the couch at ${fmtRec(u.w, u.l, u.t)}.` });
+  }
+
+  // 4/5. Biggest blowout + closest game (from weekly)
+  if (wkNums.length) {
+    let blow = null, close = null;
+    for (const w of wkNums) for (const [a, sa, b, sb] of wk[w]) {
+      const m = Math.abs(sa - sb), win = sa >= sb ? a : b, lose = sa >= sb ? b : a, ws = Math.max(sa, sb), ls = Math.min(sa, sb);
+      if (!blow || m > blow.m) blow = { win, lose, ws, ls, m, w };
+      if (!close || m < close.m) close = { win, lose, ws, ls, m, w };
+    }
+    if (blow) stories.push({ emoji: '💥', headline: `Biggest blowout: ${blow.m.toFixed(2)} points`, body: `Week ${blow.w}: ${teamOf(blow.win)} steamrolled ${teamOf(blow.lose)} ${blow.ws.toFixed(2)}–${blow.ls.toFixed(2)}.` });
+    if (close) stories.push({ emoji: '⚡', headline: `Down to the wire: ${close.m.toFixed(2)} points`, body: `Week ${close.w} was a nail-biter — ${teamOf(close.win)} slipped past ${teamOf(close.lose)} ${close.ws.toFixed(2)}–${close.ls.toFixed(2)}.` });
+  }
+
+  // 6. The basement
+  const last = stByPlace(teamsN);
+  if (last) {
+    let extra = '.';
+    if (typeof last.waiverMoves === 'number' && last.waiverMoves === minMoves) extra = ` — and made a league-low ${last.waiverMoves} roster moves all year.`;
+    else if (typeof last.waiverMoves === 'number' && last.waiverMoves === maxMoves) extra = ` — despite a league-high ${last.waiverMoves} waiver moves.`;
+    else if (pfRank[last.team] === teamsN) extra = ', dead last in scoring too.';
+    stories.push({ emoji: '🪣', headline: `${last.team} brings up the rear`, body: `Last place at ${fmtRec(last.w, last.l, last.t)}${extra}` });
+  }
+
+  if (stories.length) season.stories = stories.slice(0, 6);
 
   writeFileSync(resolve(seasonDir, file), JSON.stringify(season, null, 2) + '\n');
   report.push(`${year}: chart✓ profiles(${season.teamProfiles.length}) playoffs(${season.playoffs ? 'Y' : '-'}) stories(${stories.length})`);

@@ -28,7 +28,8 @@
       "streak": "W-4",
       "rating": 627,
       "level": "Silver",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 24
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-1",
       "rating": 797,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 44
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "L-2",
       "rating": 837,
       "level": "Platinum",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 32
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "L-1",
       "rating": 765,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 34
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "W-2",
       "rating": 635,
       "level": "Silver",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 28
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "W-3",
       "rating": 871,
       "level": "Platinum",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 33
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "L-2",
       "rating": 681,
       "level": "Silver",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 37
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "L-1",
       "rating": 652,
       "level": "Silver",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 46
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-6",
       "rating": 613,
       "level": "Silver",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 26
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "W-1",
       "rating": 578,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 47
     }
   ],
   "weeklyScores": {
@@ -716,7 +726,8 @@
       ],
       "pf": 1717.04,
       "pa": 1720.9,
-      "diff": -3.86
+      "diff": -3.86,
+      "note": "🏆 Champion. 4th in scoring (1,717 PF). Yahoo Gold 765."
     },
     {
       "team": "Clappin' Cheeks",
@@ -728,7 +739,8 @@
       ],
       "pf": 1854.1,
       "pa": 1674.22,
-      "diff": 179.88
+      "diff": 179.88,
+      "note": "Runner-up. 2nd in scoring (1,854 PF). Yahoo Gold 797."
     },
     {
       "team": "Trips Formation",
@@ -740,7 +752,8 @@
       ],
       "pf": 1617.6,
       "pa": 1652.84,
-      "diff": -35.24
+      "diff": -35.24,
+      "note": "Third place. 8th in scoring (1,618 PF). Yahoo Platinum 837."
     },
     {
       "team": "RIPete",
@@ -752,7 +765,8 @@
       ],
       "pf": 1902.78,
       "pa": 1697.22,
-      "diff": 205.56
+      "diff": 205.56,
+      "note": "Made the playoffs as the 1st seed; finished 4th. Led the league in scoring (1,903 PF) — the best team that didn't win. Yahoo Silver 627. Quietest roster in the league (24 moves)."
     },
     {
       "team": "Chasing Points",
@@ -764,7 +778,8 @@
       ],
       "pf": 1834.6,
       "pa": 1753.52,
-      "diff": 81.08
+      "diff": 81.08,
+      "note": "Finished 5th of 10. 3rd in scoring (1,835 PF). Yahoo Platinum 871."
     },
     {
       "team": "Hit Somebody",
@@ -776,7 +791,8 @@
       ],
       "pf": 1690.66,
       "pa": 1611.54,
-      "diff": 79.12
+      "diff": 79.12,
+      "note": "Finished 6th of 10. 6th in scoring (1,691 PF). Yahoo Silver 635."
     },
     {
       "team": "Breece Mode",
@@ -788,7 +804,8 @@
       ],
       "pf": 1656.24,
       "pa": 1658.12,
-      "diff": -1.88
+      "diff": -1.88,
+      "note": "Finished 7th of 10. 7th in scoring (1,656 PF). Yahoo Silver 652."
     },
     {
       "team": "Virtual Wreckage",
@@ -800,7 +817,8 @@
       ],
       "pf": 1696.12,
       "pa": 1685.18,
-      "diff": 10.94
+      "diff": 10.94,
+      "note": "Finished 8th of 10. 5th in scoring (1,696 PF). Yahoo Silver 681."
     },
     {
       "team": "shmoney maker",
@@ -812,7 +830,8 @@
       ],
       "pf": 1598.04,
       "pa": 1855.72,
-      "diff": -257.68
+      "diff": -257.68,
+      "note": "Finished 9th of 10. 9th in scoring (1,598 PF). Yahoo Silver 613."
     },
     {
       "team": "#CougsVsEverybody",
@@ -824,7 +843,8 @@
       ],
       "pf": 1486.08,
       "pa": 1744,
-      "diff": -257.92
+      "diff": -257.92,
+      "note": "Finished 10th of 10. Fewest points in the league (1,486 PF). Yahoo Bronze 578. Worked the waiver wire hardest (47 moves)."
     }
   ],
   "playoffs": {
@@ -885,29 +905,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Patrick — 172.60",
-      "body": "RIPete posted the season's top single-week score, 172.60 points in Week 15."
+      "emoji": "🏆",
+      "headline": "Daniel hoists the trophy",
+      "body": "My Ball Zach Ertz (Daniel) captured the 2024 title as the 4th seed, beating Clappin' Cheeks 147.88–142.06 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "RIPete poured in a league-best 1,903 points but bowed out of the playoffs and finished 4th. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Chasing Points: all points, no luck",
+      "body": "Chasing Points scored 1,835 — 3rd-most in the league — yet watched the playoffs from the couch at 7-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 82.14 pts",
-      "body": "In Week 15, RIPete crushed Trips Formation 172.60–90.46, a 82.14-point margin."
+      "headline": "Biggest blowout: 82.14 points",
+      "body": "Week 15: RIPete steamrolled Trips Formation 172.60–90.46."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.20 pts",
-      "body": "Week 6 came down to 0.20: Chasing Points edged Breece Mode 125.36–125.16."
+      "headline": "Down to the wire: 0.20 points",
+      "body": "Week 6 was a nail-biter — Chasing Points slipped past Breece Mode 125.36–125.16."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: David — 57.54",
-      "body": "#CougsVsEverybody bottomed out at 57.54 in Week 10 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Daniel wins it all",
-      "body": "My Ball Zach Ertz took the 2024 title, beating Jeremy in the final."
+      "emoji": "🪣",
+      "headline": "#CougsVsEverybody brings up the rear",
+      "body": "Last place at 3-12-0 — despite a league-high 47 waiver moves."
     }
   ]
 }

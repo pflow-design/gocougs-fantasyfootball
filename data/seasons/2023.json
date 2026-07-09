@@ -28,7 +28,8 @@
       "streak": "W-6",
       "rating": 823,
       "level": "Platinum",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 21
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-2",
       "rating": 745,
       "level": "Gold",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 44
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "W-1",
       "rating": 722,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 30
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-1",
       "rating": 716,
       "level": "Gold",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 29
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "L-1",
       "rating": 808,
       "level": "Platinum",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 23
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-1",
       "rating": 800,
       "level": "Platinum",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 46
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "W-1",
       "rating": 701,
       "level": "Gold",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 52
     },
     {
       "rank": 8,
@@ -143,11 +150,12 @@
       "pa": 1752.48,
       "diff": 6.01,
       "games": 15,
-      "team": "David",
+      "team": "ExtraVirginOilofOlave",
       "streak": "L-2",
       "rating": 688,
       "level": "Silver",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 27
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-7",
       "rating": 540,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 13
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "L-1",
       "rating": 711,
       "level": "Gold",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 31
     }
   ],
   "weeklyScores": {
@@ -716,7 +726,8 @@
       ],
       "pf": 1831.55,
       "pa": 1687.46,
-      "diff": 144.09
+      "diff": 144.09,
+      "note": "🏆 Champion. 2nd in scoring (1,832 PF). Yahoo Gold 722."
     },
     {
       "team": "No Moore Problems",
@@ -728,7 +739,8 @@
       ],
       "pf": 1978.63,
       "pa": 1869.26,
-      "diff": 109.37
+      "diff": 109.37,
+      "note": "Runner-up. Led the league in scoring (1,979 PF) — the best team that didn't win. Yahoo Platinum 823."
     },
     {
       "team": "Hit Somebody",
@@ -740,7 +752,8 @@
       ],
       "pf": 1779.42,
       "pa": 1576.74,
-      "diff": 202.68
+      "diff": 202.68,
+      "note": "Third place. 4th in scoring (1,779 PF). Yahoo Gold 745."
     },
     {
       "team": "Hugh Winn's",
@@ -752,7 +765,8 @@
       ],
       "pf": 1757.28,
       "pa": 1625.18,
-      "diff": 132.1
+      "diff": 132.1,
+      "note": "Made the playoffs as the 4th seed; finished 4th. 6th in scoring (1,757 PF). Yahoo Gold 716."
     },
     {
       "team": "Moore Bijan please",
@@ -764,7 +778,8 @@
       ],
       "pf": 1782.23,
       "pa": 1875.19,
-      "diff": -92.96
+      "diff": -92.96,
+      "note": "Finished 5th of 10. 3rd in scoring (1,782 PF). Yahoo Platinum 800."
     },
     {
       "team": "shmoney maker",
@@ -776,7 +791,8 @@
       ],
       "pf": 1712.53,
       "pa": 1738,
-      "diff": -25.47
+      "diff": -25.47,
+      "note": "Finished 6th of 10. 7th in scoring (1,713 PF). Yahoo Platinum 808."
     },
     {
       "team": "Catching Kelce",
@@ -788,10 +804,11 @@
       ],
       "pf": 1575.35,
       "pa": 1762.7,
-      "diff": -187.35
+      "diff": -187.35,
+      "note": "Finished 7th of 10. Fewest points in the league (1,575 PF). Yahoo Gold 701. Worked the waiver wire hardest (52 moves)."
     },
     {
-      "team": "David",
+      "team": "ExtraVirginOilofOlave",
       "manager": "David",
       "record": "6-9-0",
       "place": 8,
@@ -800,7 +817,8 @@
       ],
       "pf": 1758.49,
       "pa": 1752.48,
-      "diff": 6.01
+      "diff": 6.01,
+      "note": "Finished 8th of 10. 5th in scoring (1,758 PF). Yahoo Silver 688."
     },
     {
       "team": "From Texas with love",
@@ -812,7 +830,8 @@
       ],
       "pf": 1638.26,
       "pa": 1753.19,
-      "diff": -114.93
+      "diff": -114.93,
+      "note": "Finished 9th of 10. 8th in scoring (1,638 PF). Yahoo Bronze 540. Quietest roster in the league (13 moves)."
     },
     {
       "team": "My Ball Zach Ertz",
@@ -824,7 +843,8 @@
       ],
       "pf": 1583.05,
       "pa": 1756.59,
-      "diff": -173.54
+      "diff": -173.54,
+      "note": "Finished 10th of 10. 9th in scoring (1,583 PF). Yahoo Gold 711."
     }
   ],
   "playoffs": {
@@ -885,29 +905,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Jeremy — 168.52",
-      "body": "Clappin' Cheeks posted the season's top single-week score, 168.52 points in Week 10."
+      "emoji": "🏆",
+      "headline": "Jeremy hoists the trophy",
+      "body": "Clappin' Cheeks (Jeremy) captured the 2023 title as the 3rd seed, beating No Moore Problems 144.82–95.91 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "No Moore Problems poured in a league-best 1,979 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Moore Bijan please: all points, no luck",
+      "body": "Moore Bijan please scored 1,782 — 3rd-most in the league — yet watched the playoffs from the couch at 7-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 100.58 pts",
-      "body": "In Week 1, David crushed Catching Kelce 162.54–61.96, a 100.58-point margin."
+      "headline": "Biggest blowout: 100.58 points",
+      "body": "Week 1: ExtraVirginOilofOlave steamrolled Catching Kelce 162.54–61.96."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.04 pts",
-      "body": "Week 10 came down to 0.04: No Moore Problems edged From Texas with love 130.25–130.21."
+      "headline": "Down to the wire: 0.04 points",
+      "body": "Week 10 was a nail-biter — No Moore Problems slipped past From Texas with love 130.25–130.21."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: David — 58.42",
-      "body": "David bottomed out at 58.42 in Week 4 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Jeremy wins it all",
-      "body": "Clappin' Cheeks took the 2023 title."
+      "emoji": "🪣",
+      "headline": "My Ball Zach Ertz brings up the rear",
+      "body": "Last place at 4-11-0."
     }
   ]
 }

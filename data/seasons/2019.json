@@ -28,7 +28,8 @@
       "streak": "W-4",
       "rating": 635,
       "level": "Silver",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 32
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "L-1",
       "rating": 804,
       "level": "Platinum",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 19
     },
     {
       "rank": 3,
@@ -62,24 +64,13 @@
       "streak": "W-1",
       "rating": 738,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 53
     },
     {
       "rank": 4,
       "manager": "KyleK",
       "managerKey": "KyleK",
-      "w": 8,
-      "l": 6,
-      "t": 0,
-      "pf": 1694.62,
-      "pa": 1643.63,
-      "diff": 50.99,
-      "games": 14
-    },
-    {
-      "rank": 5,
-      "manager": "Daniel",
-      "managerKey": "Daniel",
       "w": 8,
       "l": 6,
       "t": 0,
@@ -91,14 +82,15 @@
       "streak": "L-1",
       "rating": 734,
       "level": "Gold",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 31
     },
     {
-      "rank": 6,
-      "manager": "RyanC",
-      "managerKey": "RyanC",
-      "w": 6,
-      "l": 8,
+      "rank": 5,
+      "manager": "Daniel",
+      "managerKey": "Daniel",
+      "w": 8,
+      "l": 6,
       "t": 0,
       "pf": 1602.66,
       "pa": 1642.46,
@@ -108,12 +100,13 @@
       "streak": "L-1",
       "rating": 736,
       "level": "Gold",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 28
     },
     {
-      "rank": 7,
-      "manager": "PatrickF",
-      "managerKey": "PatrickF",
+      "rank": 6,
+      "manager": "RyanC",
+      "managerKey": "RyanC",
       "w": 6,
       "l": 8,
       "t": 0,
@@ -125,7 +118,26 @@
       "streak": "W-2",
       "rating": 573,
       "level": "Bronze",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 11
+    },
+    {
+      "rank": 7,
+      "manager": "PatrickF",
+      "managerKey": "PatrickF",
+      "w": 6,
+      "l": 8,
+      "t": 0,
+      "pf": 1485.17,
+      "pa": 1735.36,
+      "diff": -250.19,
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-4",
+      "rating": 631,
+      "level": "Silver",
+      "finalPlace": 9,
+      "waiverMoves": 13
     },
     {
       "rank": 8,
@@ -142,29 +154,13 @@
       "streak": "W-1",
       "rating": 563,
       "level": "Bronze",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 29
     },
     {
       "rank": 9,
       "manager": "Larson",
       "managerKey": "Larson",
-      "w": 4,
-      "l": 10,
-      "t": 0,
-      "pf": 1485.17,
-      "pa": 1735.36,
-      "diff": -250.19,
-      "games": 14,
-      "team": "Larson",
-      "streak": "L-4",
-      "rating": 631,
-      "level": "Silver",
-      "finalPlace": 9
-    },
-    {
-      "rank": 10,
-      "manager": "KyleP",
-      "managerKey": "KyleP",
       "w": 4,
       "l": 10,
       "t": 0,
@@ -176,7 +172,26 @@
       "streak": "L-2",
       "rating": 576,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 27
+    },
+    {
+      "rank": 10,
+      "manager": "KyleP",
+      "managerKey": "KyleP",
+      "w": 4,
+      "l": 10,
+      "t": 0,
+      "pf": 1657.74,
+      "pa": 1680.51,
+      "diff": -22.77,
+      "games": 14,
+      "team": "Swing Your Sword",
+      "streak": "W-1",
+      "rating": 634,
+      "level": "Silver",
+      "finalPlace": 5,
+      "waiverMoves": 19
     }
   ],
   "weeklyScores": {
@@ -634,19 +649,19 @@
       "David",
       "Raj",
       "Duncan",
+      "Kyle P",
       "Kyle K",
       "Daniel",
-      "Ryan C",
       "Rudee",
+      "Ryan C",
       "Patrick",
-      "Robbie",
-      "Kyle P"
+      "Robbie"
     ],
     "pf": [
       1772.66,
       1767.16,
       1715.4,
-      1694.62,
+      1657.74,
       1603.87,
       1602.66,
       1524.75,
@@ -658,7 +673,7 @@
       1524,
       1535.9,
       1580.31,
-      1643.63,
+      1680.51,
       1540.21,
       1642.46,
       1616.44,
@@ -679,7 +694,8 @@
       ],
       "pf": 1715.4,
       "pa": 1580.31,
-      "diff": 135.09
+      "diff": 135.09,
+      "note": "🏆 Champion. 3rd in scoring (1,715 PF). Yahoo Gold 738. Worked the waiver wire hardest (53 moves)."
     },
     {
       "team": "WokeUpFeelinDangerus",
@@ -691,11 +707,12 @@
       ],
       "pf": 1772.66,
       "pa": 1524,
-      "diff": 248.66
+      "diff": 248.66,
+      "note": "Runner-up. Led the league in scoring (1,773 PF) — the best team that didn't win. Yahoo Silver 635."
     },
     {
       "team": "My Ball Zach Ertz",
-      "manager": "Daniel",
+      "manager": "Kyle K",
       "record": "8-6-0",
       "place": 3,
       "badges": [
@@ -703,7 +720,8 @@
       ],
       "pf": 1603.87,
       "pa": 1540.21,
-      "diff": 63.66
+      "diff": 63.66,
+      "note": "Third place. 5th in scoring (1,604 PF). Yahoo Gold 734."
     },
     {
       "team": "shmoney maker",
@@ -715,11 +733,25 @@
       ],
       "pf": 1767.16,
       "pa": 1535.9,
-      "diff": 231.26
+      "diff": 231.26,
+      "note": "Made the playoffs as the 2nd seed; finished 4th. 2nd in scoring (1,767 PF). Yahoo Platinum 804."
+    },
+    {
+      "team": "Swing Your Sword",
+      "manager": "Kyle P",
+      "record": "4-10-0",
+      "place": 5,
+      "badges": [
+        "Silver 634"
+      ],
+      "pf": 1657.74,
+      "pa": 1680.51,
+      "diff": -22.77,
+      "note": "Finished 5th of 10. 4th in scoring (1,658 PF). Yahoo Silver 634."
     },
     {
       "team": "Dickson Your Face",
-      "manager": "Patrick",
+      "manager": "Ryan C",
       "record": "6-8-0",
       "place": 6,
       "badges": [
@@ -727,7 +759,8 @@
       ],
       "pf": 1499.04,
       "pa": 1557.23,
-      "diff": -58.19
+      "diff": -58.19,
+      "note": "Finished 6th of 10. 8th in scoring (1,499 PF). Yahoo Bronze 573. Quietest roster in the league (11 moves)."
     },
     {
       "team": "Mixon it up",
@@ -739,35 +772,38 @@
       ],
       "pf": 1524.75,
       "pa": 1616.44,
-      "diff": -91.69
+      "diff": -91.69,
+      "note": "Finished 7th of 10. 7th in scoring (1,525 PF). Yahoo Bronze 563."
     },
     {
       "team": "Russell Sprouts",
-      "manager": "Ryan C",
-      "record": "6-8-0",
+      "manager": "Daniel",
+      "record": "8-6-0",
       "place": 8,
       "badges": [
         "Gold 736"
       ],
       "pf": 1602.66,
       "pa": 1642.46,
-      "diff": -39.8
+      "diff": -39.8,
+      "note": "Finished 8th of 10. 6th in scoring (1,603 PF). Yahoo Gold 736."
     },
     {
       "team": "Larson",
-      "manager": "Robbie",
-      "record": "4-10-0",
+      "manager": "Patrick",
+      "record": "6-8-0",
       "place": 9,
       "badges": [
         "Silver 631"
       ],
       "pf": 1485.17,
       "pa": 1735.36,
-      "diff": -250.19
+      "diff": -250.19,
+      "note": "Finished 9th of 10. 9th in scoring (1,485 PF). Yahoo Silver 631."
     },
     {
       "team": "Double deuce",
-      "manager": "Kyle P",
+      "manager": "Robbie",
       "record": "4-10-0",
       "place": 10,
       "badges": [
@@ -775,17 +811,8 @@
       ],
       "pf": 1473.21,
       "pa": 1689.24,
-      "diff": -216.03
-    },
-    {
-      "team": "Kyle K",
-      "manager": "Kyle K",
-      "record": "8-6-0",
-      "place": null,
-      "badges": [],
-      "pf": 1694.62,
-      "pa": 1643.63,
-      "diff": 50.99
+      "diff": -216.03,
+      "note": "Finished 10th of 10. Fewest points in the league (1,473 PF). Yahoo Bronze 576."
     }
   ],
   "playoffs": {
@@ -824,29 +851,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Rudee — 177.82",
-      "body": "Mixon it up posted the season's top single-week score, 177.82 points in Week 5."
+      "emoji": "🏆",
+      "headline": "Duncan hoists the trophy",
+      "body": "Candyman (Duncan) captured the 2019 title as the 3rd seed, beating WokeUpFeelinDangerus 164.05–103.21 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "WokeUpFeelinDangerus poured in a league-best 1,773 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Swing Your Sword: all points, no luck",
+      "body": "Swing Your Sword scored 1,658 — 4th-most in the league — yet watched the playoffs from the couch at 4-10-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 88.43 pts",
-      "body": "In Week 10, shmoney maker crushed Russell Sprouts 154.45–66.02, a 88.43-point margin."
+      "headline": "Biggest blowout: 88.43 points",
+      "body": "Week 10: shmoney maker steamrolled Dickson Your Face 154.45–66.02."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.40 pts",
-      "body": "Week 8 came down to 0.40: Candyman edged Double deuce 125.45–125.05."
+      "headline": "Down to the wire: 0.40 points",
+      "body": "Week 8 was a nail-biter — Candyman slipped past Swing Your Sword 125.45–125.05."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Rudee — 49.06",
-      "body": "Mixon it up bottomed out at 49.06 in Week 7 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Duncan wins it all",
-      "body": "Candyman took the 2019 title, beating David in the final."
+      "emoji": "🪣",
+      "headline": "Double deuce brings up the rear",
+      "body": "Last place at 4-10-0, dead last in scoring too."
     }
   ]
 }

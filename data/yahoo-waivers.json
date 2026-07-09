@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "description": "Waiver/free-agent move counts per team per season, scraped from Yahoo Fantasy standings (Moves column), 2026-07. Keyed by exact team name. Used by scripts/enrich-seasons.mjs for team-profile/story flavor.",
+    "source": "football.fantasysports.yahoo.com <YEAR>/f1/<ID> standings view"
+  },
+  "moves": {
+    "2009": { "The Frying Pans": 26, "The Blackouts": 24, "Purple Reign": 27, "Ballcuzzis": 5, "Favre and Away": 12, "cougs4bcsbid": 2, "Team Malaysia": 21, "FUCK YOU RUDEE": 18, "Sound Records": 7, "AIDS": 6 },
+    "2010": { "Reality of Fantasy": 20, "Post-Feminism": 14, "Marvelous FarveLess": 20, "Einhorn is Finkle!": 17, "Teeth Malaysia": 10, "Ballcuzzis": 12, "Falcon & The Snowman": 20, "The Favres": 7, "Big Balls": 28, "ihatethecowboys": 7, "Too Good": 6, "Don't touch my Ditka": 8 },
+    "2011": { "Shawn Kemp's Kids": 37, "Beer Money": 9, "deez Nuts": 12, "Ebner": 14, "Kibbles and Vicks": 14, "You Got Chizazzed": 19, "Only TE in here": 3, "Cougz4ReElection": 16, "liverpoolsucks69": 11, "pflow": 4 },
+    "2012": { "My Main Thang": 16, "Swing Your Sword": 5, "Russell Sprouts": 16, "The Gloria Hole": 5, "Larson": 17, "BeBetterThanLast": 30, "Free Ryan Leaf": 38, "u mad": 12, "Ebner": 17, "the bron brons": 7 },
+    "2013": { "Larson": 18, "My Main Thang": 17, "u mad": 27, "Swing Your Sword": 10, "Russell Sprouts": 19, "Liquid Courage": 33, "Ebner": 22, "BeBetterThanLast": 20, "The Gloria Hole": 10, "Your Mom": 10 },
+    "2014": { "Horns and Halos": 31, "shmoney maker": 30, "Ebner": 26, "Larson": 31, "Your Mom": 8, "Swing Your Sword": 8, "CouginItMeansChamp!": 21, "The Gloria Hole": 11, "My Main Thang": 20, "Russell Sprouts": 17 },
+    "2015": { "The Gloria Hole": 27, "My Ball Zach Ertz": 24, "shmoney maker": 23, "Russell Sprouts": 17, "Your Mom": 14, "Larson": 23, "KingDomeRafters": 43, "Swing Your Sword": 12, "My Main Thang": 30, "CouginItMeansChamp!": 27 },
+    "2016": { "Russell and Flow": 37, "Swing Your Sword": 10, "shmoney maker": 32, "Russell Sprouts": 20, "My Ball Zach Ertz": 14, "Larson": 9, "DakInABox": 35, "Rogers Goodell": 24, "The Gloria Hole": 7, "Chalupa Batman": 40 },
+    "2017": { "Brady and the skins": 46, "shmoney maker": 25, "Larson": 11, "Rogers Goodell": 41, "Russell Sprouts": 21, "My Ball Zach Ertz": 19, "Falk 4 Heisman": 55, "LACY'S CHINESE FOOD": 10, "Mariota Kart": 22, "Swing Your Sword": 16 },
+    "2018": { "Russell Sprouts": 29, "Double deuce": 31, "Dickson’s 3rd leg": 14, "shmoney maker": 21, "My Ball Zach Ertz": 24, "Larson": 17, "Tony the Pony": 55, "Swing Your Sword": 21, "Rogers Goodell": 30, "WokeUpFeelinDangerus": 26 },
+    "2019": { "Candyman": 53, "WokeUpFeelinDangerus": 32, "My Ball Zach Ertz": 31, "shmoney maker": 19, "Swing Your Sword": 19, "Dickson Your Face": 11, "Mixon it up": 29, "Russell Sprouts": 28, "Larson": 13, "Double deuce": 27 },
+    "2020": { "WokeUpFeelinDangaRus": 34, "My Ball Zach Ertz": 19, "The Covid-19’s": 41, "shmoney maker": 32, "Russell Sprouts": 38, "Dickson Your Face": 21, "Clappin' Cheeks": 45, "Candyman": 50, "Play Daktion": 33, "Rollin With Rolovich": 41 },
+    "2021": { "Up Hill Battlers": 40, "Anything but last": 51, "DontStopFeedingMeELLIOTT": 44, "Candyman": 48, "The kdp football team": 32, "shmoney maker": 24, "Clappin' Cheeks": 34, "Russell Sprouts": 24, "My Ball Zach Ertz": 33, "What food do you want?": 19 },
+    "2022": { "Null and Boyd": 52, "Catching Kelce": 41, "My Ball Zach Ertz": 24, "Dobbin on IR": 36, "Candyman": 51, "shmoney maker": 30, "ChristianMINGLE": 33, "From Texas with love": 9, "Clappin' Cheeks": 26, "Two Moore Problems": 32 },
+    "2023": { "Clappin' Cheeks": 30, "No Moore Problems": 21, "Hit Somebody": 44, "Hugh Winn's": 29, "Moore Bijan please": 46, "shmoney maker": 23, "Catching Kelce": 52, "ExtraVirginOilofOlave": 27, "From Texas with love": 13, "My Ball Zach Ertz": 31 },
+    "2024": { "My Ball Zach Ertz": 34, "Clappin' Cheeks": 44, "Trips Formation": 32, "RIPete": 24, "Chasing Points": 33, "Hit Somebody": 28, "Breece Mode": 46, "Virtual Wreckage": 37, "shmoney maker": 26, "#CougsVsEverybody": 47 }
+  }
+}

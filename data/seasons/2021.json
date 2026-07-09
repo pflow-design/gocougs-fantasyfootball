@@ -28,7 +28,8 @@
       "streak": "W-1",
       "rating": 726,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 40
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "L-2",
       "rating": 714,
       "level": "Gold",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 48
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "L-3",
       "rating": 652,
       "level": "Silver",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 51
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-4",
       "rating": 808,
       "level": "Platinum",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 44
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "W-1",
       "rating": 718,
       "level": "Gold",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 34
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-1",
       "rating": 686,
       "level": "Silver",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 24
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "L-1",
       "rating": 839,
       "level": "Platinum",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 24
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "W-3",
       "rating": 594,
       "level": "Bronze",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 32
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "W-1",
       "rating": 759,
       "level": "Gold",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 33
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "L-1",
       "rating": 563,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 19
     }
   ],
   "weeklyScores": {
@@ -716,7 +726,8 @@
       ],
       "pf": 1989.2,
       "pa": 1765.3,
-      "diff": 223.9
+      "diff": 223.9,
+      "note": "🏆 Champion. Led the league in scoring (1,989 PF). Yahoo Gold 726."
     },
     {
       "team": "Anything but last",
@@ -728,7 +739,8 @@
       ],
       "pf": 1852.41,
       "pa": 1655.29,
-      "diff": 197.12
+      "diff": 197.12,
+      "note": "Runner-up. 2nd in scoring (1,852 PF). Yahoo Silver 652. Worked the waiver wire hardest (51 moves)."
     },
     {
       "team": "DontStopFeedingMeELLIOTT",
@@ -740,7 +752,8 @@
       ],
       "pf": 1819.38,
       "pa": 1715.6,
-      "diff": 103.78
+      "diff": 103.78,
+      "note": "Third place. 5th in scoring (1,819 PF). Yahoo Platinum 808."
     },
     {
       "team": "Candyman",
@@ -752,7 +765,8 @@
       ],
       "pf": 1767.63,
       "pa": 1710.13,
-      "diff": 57.5
+      "diff": 57.5,
+      "note": "Made the playoffs as the 2nd seed; finished 4th. 6th in scoring (1,768 PF). Yahoo Gold 714."
     },
     {
       "team": "The kdp football team",
@@ -764,7 +778,8 @@
       ],
       "pf": 1701.6,
       "pa": 1701.59,
-      "diff": 0.01
+      "diff": 0.01,
+      "note": "Finished 5th of 10. 8th in scoring (1,702 PF). Yahoo Bronze 594."
     },
     {
       "team": "shmoney maker",
@@ -776,7 +791,8 @@
       ],
       "pf": 1696.49,
       "pa": 1770.18,
-      "diff": -73.69
+      "diff": -73.69,
+      "note": "Finished 6th of 10. 9th in scoring (1,696 PF). Yahoo Platinum 839."
     },
     {
       "team": "Clappin' Cheeks",
@@ -788,7 +804,8 @@
       ],
       "pf": 1832.1,
       "pa": 1803.18,
-      "diff": 28.92
+      "diff": 28.92,
+      "note": "Finished 7th of 10. 3rd in scoring (1,832 PF). Yahoo Gold 718."
     },
     {
       "team": "Russell Sprouts",
@@ -800,7 +817,8 @@
       ],
       "pf": 1747.19,
       "pa": 1853.96,
-      "diff": -106.77
+      "diff": -106.77,
+      "note": "Finished 8th of 10. 7th in scoring (1,747 PF). Yahoo Silver 686."
     },
     {
       "team": "My Ball Zach Ertz",
@@ -812,7 +830,8 @@
       ],
       "pf": 1824.89,
       "pa": 1881.31,
-      "diff": -56.42
+      "diff": -56.42,
+      "note": "Finished 9th of 10. 4th in scoring (1,825 PF). Yahoo Gold 759."
     },
     {
       "team": "What food do you want?",
@@ -824,7 +843,8 @@
       ],
       "pf": 1490.83,
       "pa": 1865.18,
-      "diff": -374.35
+      "diff": -374.35,
+      "note": "Finished 10th of 10. Fewest points in the league (1,491 PF). Yahoo Bronze 563. Quietest roster in the league (19 moves)."
     }
   ],
   "playoffs": {
@@ -885,29 +905,29 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Daniel — 183.98",
-      "body": "My Ball Zach Ertz posted the season's top single-week score, 183.98 points in Week 5."
+      "emoji": "🏆",
+      "headline": "Rudee hoists the trophy",
+      "body": "Up Hill Battlers (Rudee) captured the 2021 title as the 1st seed, beating Anything but last 125.64–113.64 in the final."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Clappin' Cheeks: all points, no luck",
+      "body": "Clappin' Cheeks scored 1,832 — 3rd-most in the league — yet watched the playoffs from the couch at 7-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 77.95 pts",
-      "body": "In Week 15, The kdp football team crushed Candyman 146.41–68.46, a 77.95-point margin."
+      "headline": "Biggest blowout: 77.95 points",
+      "body": "Week 15: The kdp football team steamrolled Candyman 146.41–68.46."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.21 pts",
-      "body": "Week 9 came down to 0.21: Russell Sprouts edged The kdp football team 113.87–113.66."
+      "headline": "Down to the wire: 0.21 points",
+      "body": "Week 9 was a nail-biter — Russell Sprouts slipped past The kdp football team 113.87–113.66."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Patrick — 54.91",
-      "body": "What food do you want? bottomed out at 54.91 in Week 15 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Rudee wins it all",
-      "body": "Up Hill Battlers took the 2021 title, beating Kyle K in the final."
+      "emoji": "🪣",
+      "headline": "What food do you want? brings up the rear",
+      "body": "Last place at 2-13-0 — and made a league-low 19 roster moves all year."
     }
   ]
 }

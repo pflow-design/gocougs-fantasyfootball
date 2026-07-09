@@ -28,7 +28,8 @@
       "streak": "L-1",
       "rating": 664,
       "level": "Silver",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 12
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-6",
       "rating": 716,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 9
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "W-3",
       "rating": 605,
       "level": "Silver",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 14
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-6",
       "rating": 742,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 37
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "L-1",
       "rating": 586,
       "level": "Bronze",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 19
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "W-1",
       "rating": 704,
       "level": "Gold",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 14
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "W-1",
       "rating": 588,
       "level": "Bronze",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 3
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "L-2",
       "rating": 571,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 16
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-3",
       "rating": 564,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 11
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "L-5",
       "rating": 571,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 4
     }
   ],
   "weeklyScores": {
@@ -684,7 +694,8 @@
       ],
       "pf": 1579.66,
       "pa": 1505.12,
-      "diff": 74.54
+      "diff": 74.54,
+      "note": "🏆 Champion. 7th in scoring (1,580 PF). Yahoo Gold 742. Worked the waiver wire hardest (37 moves)."
     },
     {
       "team": "Beer Money",
@@ -696,7 +707,8 @@
       ],
       "pf": 1818.48,
       "pa": 1601.49,
-      "diff": 216.99
+      "diff": 216.99,
+      "note": "Runner-up. Led the league in scoring (1,818 PF) — the best team that didn't win. Yahoo Gold 716."
     },
     {
       "team": "deez Nuts",
@@ -708,7 +720,8 @@
       ],
       "pf": 1683.7,
       "pa": 1485.56,
-      "diff": 198.14
+      "diff": 198.14,
+      "note": "Third place. 3rd in scoring (1,684 PF). Yahoo Silver 664."
     },
     {
       "team": "Ebner",
@@ -720,7 +733,8 @@
       ],
       "pf": 1718.37,
       "pa": 1481.8,
-      "diff": 236.57
+      "diff": 236.57,
+      "note": "Made the playoffs as the 3rd seed; finished 4th. 2nd in scoring (1,718 PF). Yahoo Silver 605."
     },
     {
       "team": "Kibbles and Vicks",
@@ -732,7 +746,8 @@
       ],
       "pf": 1611.3,
       "pa": 1786.72,
-      "diff": -175.42
+      "diff": -175.42,
+      "note": "Finished 5th of 10. 4th in scoring (1,611 PF). Yahoo Gold 704."
     },
     {
       "team": "You Got Chizazzed",
@@ -744,7 +759,8 @@
       ],
       "pf": 1607.6,
       "pa": 1556.97,
-      "diff": 50.63
+      "diff": 50.63,
+      "note": "Finished 6th of 10. 5th in scoring (1,608 PF). Yahoo Bronze 586."
     },
     {
       "team": "Only TE in here",
@@ -756,7 +772,8 @@
       ],
       "pf": 1496.9,
       "pa": 1596.58,
-      "diff": -99.68
+      "diff": -99.68,
+      "note": "Finished 7th of 10. 8th in scoring (1,497 PF). Yahoo Bronze 588. Quietest roster in the league (3 moves)."
     },
     {
       "team": "Cougz4ReElection",
@@ -768,7 +785,8 @@
       ],
       "pf": 1593.03,
       "pa": 1712.15,
-      "diff": -119.12
+      "diff": -119.12,
+      "note": "Finished 8th of 10. 6th in scoring (1,593 PF). Yahoo Bronze 571."
     },
     {
       "team": "liverpoolsucks69",
@@ -780,7 +798,8 @@
       ],
       "pf": 1428.21,
       "pa": 1601.02,
-      "diff": -172.81
+      "diff": -172.81,
+      "note": "Finished 9th of 10. Fewest points in the league (1,428 PF). Yahoo Bronze 564."
     },
     {
       "team": "pflow",
@@ -792,7 +811,8 @@
       ],
       "pf": 1473.55,
       "pa": 1683.39,
-      "diff": -209.84
+      "diff": -209.84,
+      "note": "Finished 10th of 10. 9th in scoring (1,474 PF). Yahoo Bronze 571."
     }
   ],
   "playoffs": {
@@ -853,29 +873,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Raj — 166.96",
-      "body": "deez Nuts posted the season's top single-week score, 166.96 points in Week 12."
+      "emoji": "🏆",
+      "headline": "Antony hoists the trophy",
+      "body": "Shawn Kemp's Kids (Antony) captured the 2011 title as the 4th seed, beating Beer Money 121.44–91.13 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "Beer Money poured in a league-best 1,818 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Kibbles and Vicks: all points, no luck",
+      "body": "Kibbles and Vicks scored 1,611 — 4th-most in the league — yet watched the playoffs from the couch at 6-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 78.61 pts",
-      "body": "In Week 5, Ebner crushed liverpoolsucks69 151.64–73.03, a 78.61-point margin."
+      "headline": "Biggest blowout: 78.61 points",
+      "body": "Week 5: Ebner steamrolled liverpoolsucks69 151.64–73.03."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.19 pts",
-      "body": "Week 8 came down to 0.19: liverpoolsucks69 edged Cougz4ReElection 117.83–117.64."
+      "headline": "Down to the wire: 0.19 points",
+      "body": "Week 8 was a nail-biter — liverpoolsucks69 slipped past Cougz4ReElection 117.83–117.64."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Robbie — 65.99",
-      "body": "liverpoolsucks69 bottomed out at 65.99 in Week 7 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Antony wins it all",
-      "body": "Shawn Kemps' Kids took the 2011 title, beating Kyle K in the final."
+      "emoji": "🪣",
+      "headline": "pflow brings up the rear",
+      "body": "Last place at 4-10-0."
     }
   ]
 }

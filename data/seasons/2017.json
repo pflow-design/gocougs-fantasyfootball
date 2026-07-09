@@ -28,7 +28,8 @@
       "streak": "W-6",
       "rating": 616,
       "level": "Silver",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 46
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-5",
       "rating": 845,
       "level": "Platinum",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 25
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "W-4",
       "rating": 556,
       "level": "Bronze",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 41
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-1",
       "rating": 612,
       "level": "Silver",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 11
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "L-2",
       "rating": 847,
       "level": "Platinum",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 55
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-2",
       "rating": 557,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 10
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "W-1",
       "rating": 695,
       "level": "Silver",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 19
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "L-3",
       "rating": 783,
       "level": "Gold",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 21
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-1",
       "rating": 580,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 22
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "L-1",
       "rating": 595,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 16
     }
   ],
   "weeklyScores": {
@@ -684,7 +694,8 @@
       ],
       "pf": 1683.27,
       "pa": 1383.69,
-      "diff": 299.58
+      "diff": 299.58,
+      "note": "🏆 Champion. Led the league in scoring (1,683 PF). Yahoo Silver 616."
     },
     {
       "team": "shmoney maker",
@@ -696,7 +707,8 @@
       ],
       "pf": 1668.14,
       "pa": 1531.43,
-      "diff": 136.71
+      "diff": 136.71,
+      "note": "Runner-up. 3rd in scoring (1,668 PF). Yahoo Platinum 845."
     },
     {
       "team": "Larson",
@@ -708,7 +720,8 @@
       ],
       "pf": 1676.27,
       "pa": 1532.03,
-      "diff": 144.24
+      "diff": 144.24,
+      "note": "Third place. 2nd in scoring (1,676 PF). Yahoo Silver 612."
     },
     {
       "team": "Rogers Goodell",
@@ -720,7 +733,8 @@
       ],
       "pf": 1540.63,
       "pa": 1606.63,
-      "diff": -66
+      "diff": -66,
+      "note": "Made the playoffs as the 3rd seed; finished 4th. 5th in scoring (1,541 PF). Yahoo Bronze 556."
     },
     {
       "team": "Russell Sprouts",
@@ -732,7 +746,8 @@
       ],
       "pf": 1496.04,
       "pa": 1541.5,
-      "diff": -45.46
+      "diff": -45.46,
+      "note": "Finished 5th of 10. 6th in scoring (1,496 PF). Yahoo Gold 783."
     },
     {
       "team": "My Ball Zach Ertz",
@@ -744,7 +759,8 @@
       ],
       "pf": 1621.93,
       "pa": 1560.35,
-      "diff": 61.58
+      "diff": 61.58,
+      "note": "Finished 6th of 10. 4th in scoring (1,622 PF). Yahoo Silver 695."
     },
     {
       "team": "Falk 4 Heisman",
@@ -756,7 +772,8 @@
       ],
       "pf": 1465.91,
       "pa": 1617.35,
-      "diff": -151.44
+      "diff": -151.44,
+      "note": "Finished 7th of 10. 7th in scoring (1,466 PF). Yahoo Platinum 847. Worked the waiver wire hardest (55 moves)."
     },
     {
       "team": "LACY'S CHINESE FOOD",
@@ -768,7 +785,8 @@
       ],
       "pf": 1443.5,
       "pa": 1409.79,
-      "diff": 33.71
+      "diff": 33.71,
+      "note": "Finished 8th of 10. 9th in scoring (1,444 PF). Yahoo Bronze 557. Quietest roster in the league (10 moves)."
     },
     {
       "team": "Mariota Kart",
@@ -780,7 +798,8 @@
       ],
       "pf": 1446.08,
       "pa": 1711.11,
-      "diff": -265.03
+      "diff": -265.03,
+      "note": "Finished 9th of 10. 8th in scoring (1,446 PF). Yahoo Bronze 580."
     },
     {
       "team": "Swing Your Sword",
@@ -792,7 +811,8 @@
       ],
       "pf": 1288.33,
       "pa": 1436.22,
-      "diff": -147.89
+      "diff": -147.89,
+      "note": "Finished 10th of 10. Fewest points in the league (1,288 PF). Yahoo Bronze 595."
     }
   ],
   "playoffs": {
@@ -853,29 +873,29 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Kyle P — 155.20",
-      "body": "Brady and the skins posted the season's top single-week score, 155.20 points in Week 11."
+      "emoji": "🏆",
+      "headline": "Kyle P hoists the trophy",
+      "body": "Brady and the skins (Kyle P) captured the 2017 title as the 1st seed, beating shmoney maker 132.36–93.12 in the final."
+    },
+    {
+      "emoji": "😤",
+      "headline": "My Ball Zach Ertz: all points, no luck",
+      "body": "My Ball Zach Ertz scored 1,622 — 4th-most in the league — yet watched the playoffs from the couch at 6-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 77.92 pts",
-      "body": "In Week 6, Larson crushed shmoney maker 151.62–73.70, a 77.92-point margin."
+      "headline": "Biggest blowout: 77.92 points",
+      "body": "Week 6: Larson steamrolled shmoney maker 151.62–73.70."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.20 pts",
-      "body": "Week 6 came down to 0.20: Mariota Kart edged Russell Sprouts 118.13–117.93."
+      "headline": "Down to the wire: 0.20 points",
+      "body": "Week 6 was a nail-biter — Mariota Kart slipped past Russell Sprouts 118.13–117.93."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Kyle K — 59.51",
-      "body": "Swing Your Sword bottomed out at 59.51 in Week 4 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Kyle P wins it all",
-      "body": "Brady and the skins took the 2017 title, beating Raj in the final."
+      "emoji": "🪣",
+      "headline": "Swing Your Sword brings up the rear",
+      "body": "Last place at 4-10-0, dead last in scoring too."
     }
   ]
 }

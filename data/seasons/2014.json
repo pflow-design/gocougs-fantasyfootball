@@ -28,7 +28,8 @@
       "streak": "W-4",
       "rating": 892,
       "level": "Platinum",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 30
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-3",
       "rating": 794,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 31
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "W-1",
       "rating": 593,
       "level": "Bronze",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 26
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-1",
       "rating": 653,
       "level": "Silver",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 31
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "L-2",
       "rating": 596,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 11
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-3",
       "rating": 557,
       "level": "Bronze",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 8
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "L-1",
       "rating": 581,
       "level": "Bronze",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 21
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "W-2",
       "rating": 705,
       "level": "Gold",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 8
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-1",
       "rating": 590,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 20
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "L-5",
       "rating": 807,
       "level": "Platinum",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 17
     }
   ],
   "weeklyScores": {
@@ -684,7 +694,8 @@
       ],
       "pf": 1767.08,
       "pa": 1607.72,
-      "diff": 159.36
+      "diff": 159.36,
+      "note": "🏆 Champion. 2nd in scoring (1,767 PF). Yahoo Gold 794. Worked the waiver wire hardest (31 moves)."
     },
     {
       "team": "shmoney maker",
@@ -696,7 +707,8 @@
       ],
       "pf": 1805.64,
       "pa": 1592.12,
-      "diff": 213.52
+      "diff": 213.52,
+      "note": "Runner-up. Led the league in scoring (1,806 PF) — the best team that didn't win. Yahoo Platinum 892."
     },
     {
       "team": "Ebner",
@@ -708,7 +720,8 @@
       ],
       "pf": 1626.19,
       "pa": 1576.69,
-      "diff": 49.5
+      "diff": 49.5,
+      "note": "Third place. 6th in scoring (1,626 PF). Yahoo Bronze 593."
     },
     {
       "team": "Larson",
@@ -720,7 +733,8 @@
       ],
       "pf": 1582.38,
       "pa": 1560.67,
-      "diff": 21.71
+      "diff": 21.71,
+      "note": "Made the playoffs as the 4th seed; finished 4th. 9th in scoring (1,582 PF). Yahoo Silver 653. Worked the waiver wire hardest (31 moves)."
     },
     {
       "team": "Your Mom",
@@ -732,7 +746,8 @@
       ],
       "pf": 1631.98,
       "pa": 1689.83,
-      "diff": -57.85
+      "diff": -57.85,
+      "note": "Finished 5th of 10. 5th in scoring (1,632 PF). Yahoo Bronze 557. Quietest roster in the league (8 moves)."
     },
     {
       "team": "Swing Your Sword",
@@ -744,7 +759,8 @@
       ],
       "pf": 1689.75,
       "pa": 1669.52,
-      "diff": 20.23
+      "diff": 20.23,
+      "note": "Finished 6th of 10. 4th in scoring (1,690 PF). Yahoo Gold 705. Quietest roster in the league (8 moves)."
     },
     {
       "team": "CouginItMeansChamp!",
@@ -756,7 +772,8 @@
       ],
       "pf": 1592.86,
       "pa": 1715.17,
-      "diff": -122.31
+      "diff": -122.31,
+      "note": "Finished 7th of 10. 8th in scoring (1,593 PF). Yahoo Bronze 581."
     },
     {
       "team": "The Gloria Hole",
@@ -768,7 +785,8 @@
       ],
       "pf": 1690.01,
       "pa": 1620.79,
-      "diff": 69.22
+      "diff": 69.22,
+      "note": "Finished 8th of 10. 3rd in scoring (1,690 PF). Yahoo Bronze 596."
     },
     {
       "team": "My Main Thang",
@@ -780,7 +798,8 @@
       ],
       "pf": 1621.55,
       "pa": 1812.86,
-      "diff": -191.31
+      "diff": -191.31,
+      "note": "Finished 9th of 10. 7th in scoring (1,622 PF). Yahoo Bronze 590."
     },
     {
       "team": "Russell Sprouts",
@@ -792,7 +811,8 @@
       ],
       "pf": 1557.17,
       "pa": 1719.24,
-      "diff": -162.07
+      "diff": -162.07,
+      "note": "Finished 10th of 10. Fewest points in the league (1,557 PF). Yahoo Platinum 807."
     }
   ],
   "playoffs": {
@@ -853,29 +873,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Kyle K — 196.20",
-      "body": "Swing Your Sword posted the season's top single-week score, 196.20 points in Week 13."
+      "emoji": "🏆",
+      "headline": "Antony hoists the trophy",
+      "body": "Horns and Halos (Antony) captured the 2014 title as the 2nd seed, beating shmoney maker 155.31–87.84 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "shmoney maker poured in a league-best 1,806 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "The Gloria Hole: all points, no luck",
+      "body": "The Gloria Hole scored 1,690 — 3rd-most in the league — yet watched the playoffs from the couch at 7-7-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 90.28 pts",
-      "body": "In Week 14, Ebner crushed CouginItMeansChamp! 159.31–69.03, a 90.28-point margin."
+      "headline": "Biggest blowout: 90.28 points",
+      "body": "Week 14: Ebner steamrolled CouginItMeansChamp! 159.31–69.03."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.74 pts",
-      "body": "Week 3 came down to 0.74: Ebner edged The Gloria Hole 91.29–90.55."
+      "headline": "Down to the wire: 0.74 points",
+      "body": "Week 3 was a nail-biter — Ebner slipped past The Gloria Hole 91.29–90.55."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Duncan — 65.20",
-      "body": "My Main Thang bottomed out at 65.20 in Week 2 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Antony wins it all",
-      "body": "Horns and Halos took the 2014 title, beating Raj in the final."
+      "emoji": "🪣",
+      "headline": "Russell Sprouts brings up the rear",
+      "body": "Last place at 5-9-0, dead last in scoring too."
     }
   ]
 }

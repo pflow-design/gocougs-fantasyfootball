@@ -28,7 +28,8 @@
       "streak": "W-5",
       "rating": 832,
       "level": "Platinum",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 34
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-6",
       "rating": 760,
       "level": "Gold",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 32
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "L-2",
       "rating": 786,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 19
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-3",
       "rating": 589,
       "level": "Bronze",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 41
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "L-3",
       "rating": 655,
       "level": "Silver",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 21
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "W-2",
       "rating": 716,
       "level": "Gold",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 45
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "L-1",
       "rating": 720,
       "level": "Gold",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 38
     },
     {
       "rank": 8,
@@ -147,7 +154,8 @@
       "streak": "L-6",
       "rating": 616,
       "level": "Silver",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 50
     },
     {
       "rank": 9,
@@ -164,7 +172,8 @@
       "streak": "L-2",
       "rating": 593,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 33
     },
     {
       "rank": 10,
@@ -181,7 +190,8 @@
       "streak": "W-1",
       "rating": 583,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 41
     }
   ],
   "weeklyScores": {
@@ -684,7 +694,8 @@
       ],
       "pf": 1908.77,
       "pa": 1421.21,
-      "diff": 487.56
+      "diff": 487.56,
+      "note": "🏆 Champion. Led the league in scoring (1,909 PF). Yahoo Platinum 832."
     },
     {
       "team": "My Ball Zach Ertz",
@@ -696,7 +707,8 @@
       ],
       "pf": 1836.87,
       "pa": 1697.3,
-      "diff": 139.57
+      "diff": 139.57,
+      "note": "Runner-up. 2nd in scoring (1,837 PF). Yahoo Gold 786. Quietest roster in the league (19 moves)."
     },
     {
       "team": "The Covid-19’s",
@@ -708,7 +720,8 @@
       ],
       "pf": 1591.66,
       "pa": 1492.94,
-      "diff": 98.72
+      "diff": 98.72,
+      "note": "Third place. 5th in scoring (1,592 PF). Yahoo Bronze 589."
     },
     {
       "team": "shmoney maker",
@@ -720,7 +733,8 @@
       ],
       "pf": 1772.79,
       "pa": 1642.27,
-      "diff": 130.52
+      "diff": 130.52,
+      "note": "Made the playoffs as the 2nd seed; finished 4th. 3rd in scoring (1,773 PF). Yahoo Gold 760."
     },
     {
       "team": "Russell Sprouts",
@@ -732,7 +746,8 @@
       ],
       "pf": 1587.09,
       "pa": 1742.9,
-      "diff": -155.81
+      "diff": -155.81,
+      "note": "Finished 5th of 10. 6th in scoring (1,587 PF). Yahoo Gold 720."
     },
     {
       "team": "Dickson Your Face",
@@ -744,7 +759,8 @@
       ],
       "pf": 1565.3,
       "pa": 1704.14,
-      "diff": -138.84
+      "diff": -138.84,
+      "note": "Finished 6th of 10. 8th in scoring (1,565 PF). Yahoo Silver 655."
     },
     {
       "team": "Clappin' Cheeks",
@@ -756,7 +772,8 @@
       ],
       "pf": 1663.07,
       "pa": 1717.62,
-      "diff": -54.55
+      "diff": -54.55,
+      "note": "Finished 7th of 10. 4th in scoring (1,663 PF). Yahoo Gold 716."
     },
     {
       "team": "Candyman",
@@ -768,7 +785,8 @@
       ],
       "pf": 1530.08,
       "pa": 1648.14,
-      "diff": -118.06
+      "diff": -118.06,
+      "note": "Finished 8th of 10. 9th in scoring (1,530 PF). Yahoo Silver 616. Worked the waiver wire hardest (50 moves)."
     },
     {
       "team": "Play Daktion",
@@ -780,7 +798,8 @@
       ],
       "pf": 1578.66,
       "pa": 1816.54,
-      "diff": -237.88
+      "diff": -237.88,
+      "note": "Finished 9th of 10. 7th in scoring (1,579 PF). Yahoo Bronze 593."
     },
     {
       "team": "Rollin With Rolovich",
@@ -792,7 +811,8 @@
       ],
       "pf": 1488.41,
       "pa": 1639.64,
-      "diff": -151.23
+      "diff": -151.23,
+      "note": "Finished 10th of 10. Fewest points in the league (1,488 PF). Yahoo Bronze 583."
     }
   ],
   "playoffs": {
@@ -853,29 +873,29 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: David — 182.78",
-      "body": "WokeUpFeelinDangaRus posted the season's top single-week score, 182.78 points in Week 2."
+      "emoji": "🏆",
+      "headline": "David hoists the trophy",
+      "body": "WokeUpFeelinDangaRus (David) captured the 2020 title as the 1st seed, beating My Ball Zach Ertz 178.14–125.26 in the final."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Clappin' Cheeks: all points, no luck",
+      "body": "Clappin' Cheeks scored 1,663 — 4th-most in the league — yet watched the playoffs from the couch at 6-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 81.81 pts",
-      "body": "In Week 2, WokeUpFeelinDangaRus crushed Play Daktion 182.78–100.97, a 81.81-point margin."
+      "headline": "Biggest blowout: 81.81 points",
+      "body": "Week 2: WokeUpFeelinDangaRus steamrolled Play Daktion 182.78–100.97."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 1.36 pts",
-      "body": "Week 8 came down to 1.36: My Ball Zach Ertz edged Rollin With Rolovich 96.21–94.85."
+      "headline": "Down to the wire: 1.36 points",
+      "body": "Week 8 was a nail-biter — My Ball Zach Ertz slipped past Rollin With Rolovich 96.21–94.85."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Kyle P — 61.10",
-      "body": "The Covid-19’s bottomed out at 61.10 in Week 7 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "David wins it all",
-      "body": "WokeUpFeelinDangaRus took the 2020 title, beating Daniel in the final."
+      "emoji": "🪣",
+      "headline": "Rollin With Rolovich brings up the rear",
+      "body": "Last place at 4-10-0, dead last in scoring too."
     }
   ]
 }

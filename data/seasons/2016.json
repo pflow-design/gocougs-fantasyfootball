@@ -28,7 +28,8 @@
       "streak": "W-5",
       "rating": 876,
       "level": "Platinum",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 37
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-6",
       "rating": 729,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 10
     },
     {
       "rank": 3,
@@ -54,10 +56,16 @@
       "w": 9,
       "l": 5,
       "t": 0,
-      "pf": 1733.73,
-      "pa": 1586.64,
-      "diff": 147.09,
-      "games": 14
+      "pf": 1684.04,
+      "pa": 1636.33,
+      "diff": 47.71,
+      "games": 14,
+      "team": "Russell Sprouts",
+      "streak": "L-1",
+      "rating": 782,
+      "level": "Gold",
+      "finalPlace": 4,
+      "waiverMoves": 20
     },
     {
       "rank": 4,
@@ -66,10 +74,16 @@
       "w": 9,
       "l": 5,
       "t": 0,
-      "pf": 1601.03,
-      "pa": 1559.42,
-      "diff": 41.61,
-      "games": 14
+      "pf": 1587.84,
+      "pa": 1480.14,
+      "diff": 107.7,
+      "games": 14,
+      "team": "Larson",
+      "streak": "L-1",
+      "rating": 597,
+      "level": "Bronze",
+      "finalPlace": 6,
+      "waiverMoves": 9
     },
     {
       "rank": 5,
@@ -86,29 +100,13 @@
       "streak": "W-1",
       "rating": 891,
       "level": "Platinum",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 32
     },
     {
       "rank": 6,
       "manager": "Larson",
       "managerKey": "Larson",
-      "w": 7,
-      "l": 7,
-      "t": 0,
-      "pf": 1587.84,
-      "pa": 1480.14,
-      "diff": 107.7,
-      "games": 14,
-      "team": "Larson",
-      "streak": "L-1",
-      "rating": 597,
-      "level": "Bronze",
-      "finalPlace": 6
-    },
-    {
-      "rank": 7,
-      "manager": "David",
-      "managerKey": "David",
       "w": 7,
       "l": 7,
       "t": 0,
@@ -120,7 +118,26 @@
       "streak": "L-3",
       "rating": 599,
       "level": "Bronze",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 35
+    },
+    {
+      "rank": 7,
+      "manager": "David",
+      "managerKey": "David",
+      "w": 7,
+      "l": 7,
+      "t": 0,
+      "pf": 1585.41,
+      "pa": 1575.04,
+      "diff": 10.37,
+      "games": 14,
+      "team": "My Ball Zach Ertz",
+      "streak": "W-2",
+      "rating": 732,
+      "level": "Gold",
+      "finalPlace": 5,
+      "waiverMoves": 14
     },
     {
       "rank": 8,
@@ -137,7 +154,8 @@
       "streak": "W-1",
       "rating": 564,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 24
     },
     {
       "rank": 9,
@@ -154,7 +172,8 @@
       "streak": "L-2",
       "rating": 555,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 7
     },
     {
       "rank": 10,
@@ -171,7 +190,8 @@
       "streak": "L-5",
       "rating": 547,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 40
     }
   ],
   "weeklyScores": {
@@ -626,36 +646,36 @@
   },
   "pfpaChart": {
     "teams": [
-      "Ryan C",
       "Antony",
+      "Ryan C",
       "Duncan",
       "Raj",
       "Daniel",
-      "Robbie",
       "David",
+      "Robbie",
       "Kyle K",
       "Patrick",
       "Kyle P"
     ],
     "pf": [
-      1733.73,
       1725.06,
+      1684.04,
       1660.44,
       1641.73,
-      1601.03,
       1587.84,
+      1585.41,
       1566.25,
       1557.51,
       1468.2,
       1403.1
     ],
     "pa": [
-      1586.64,
       1537.62,
+      1636.33,
       1641.11,
       1591.02,
-      1559.42,
       1480.14,
+      1575.04,
       1526.46,
       1395.29,
       1703.61,
@@ -674,7 +694,8 @@
       ],
       "pf": 1725.06,
       "pa": 1537.62,
-      "diff": 187.44
+      "diff": 187.44,
+      "note": "🏆 Champion. Led the league in scoring (1,725 PF). Yahoo Platinum 876."
     },
     {
       "team": "Swing Your Sword",
@@ -686,7 +707,8 @@
       ],
       "pf": 1557.51,
       "pa": 1395.29,
-      "diff": 162.22
+      "diff": 162.22,
+      "note": "Runner-up. 8th in scoring (1,558 PF). Yahoo Gold 729."
     },
     {
       "team": "shmoney maker",
@@ -698,23 +720,51 @@
       ],
       "pf": 1641.73,
       "pa": 1591.02,
-      "diff": 50.71
+      "diff": 50.71,
+      "note": "Third place. 4th in scoring (1,642 PF). Yahoo Platinum 891."
+    },
+    {
+      "team": "Russell Sprouts",
+      "manager": "Ryan C",
+      "record": "9-5-0",
+      "place": 4,
+      "badges": [
+        "Gold 782"
+      ],
+      "pf": 1684.04,
+      "pa": 1636.33,
+      "diff": 47.71,
+      "note": "Made the playoffs as the 3rd seed; finished 4th. 2nd in scoring (1,684 PF). Yahoo Gold 782."
+    },
+    {
+      "team": "My Ball Zach Ertz",
+      "manager": "David",
+      "record": "7-7-0",
+      "place": 5,
+      "badges": [
+        "Gold 732"
+      ],
+      "pf": 1585.41,
+      "pa": 1575.04,
+      "diff": 10.37,
+      "note": "Finished 5th of 10. 6th in scoring (1,585 PF). Yahoo Gold 732."
     },
     {
       "team": "Larson",
-      "manager": "Robbie",
-      "record": "7-7-0",
+      "manager": "Daniel",
+      "record": "9-5-0",
       "place": 6,
       "badges": [
         "Bronze 597"
       ],
       "pf": 1587.84,
       "pa": 1480.14,
-      "diff": 107.7
+      "diff": 107.7,
+      "note": "Made the playoffs as the 4th seed; finished 6th. 5th in scoring (1,588 PF). Yahoo Bronze 597."
     },
     {
       "team": "DakInABox",
-      "manager": "David",
+      "manager": "Robbie",
       "record": "7-7-0",
       "place": 7,
       "badges": [
@@ -722,7 +772,8 @@
       ],
       "pf": 1566.25,
       "pa": 1526.46,
-      "diff": 39.79
+      "diff": 39.79,
+      "note": "Finished 7th of 10. 7th in scoring (1,566 PF). Yahoo Bronze 599."
     },
     {
       "team": "Rogers Goodell",
@@ -734,7 +785,8 @@
       ],
       "pf": 1660.44,
       "pa": 1641.11,
-      "diff": 19.33
+      "diff": 19.33,
+      "note": "Finished 8th of 10. 3rd in scoring (1,660 PF). Yahoo Bronze 564."
     },
     {
       "team": "The Gloria Hole",
@@ -746,7 +798,8 @@
       ],
       "pf": 1468.2,
       "pa": 1703.61,
-      "diff": -235.41
+      "diff": -235.41,
+      "note": "Finished 9th of 10. 9th in scoring (1,468 PF). Yahoo Bronze 555. Quietest roster in the league (7 moves)."
     },
     {
       "team": "Chalupa Batman",
@@ -758,27 +811,8 @@
       ],
       "pf": 1403.1,
       "pa": 1792.96,
-      "diff": -389.86
-    },
-    {
-      "team": "Ryan C",
-      "manager": "Ryan C",
-      "record": "9-5-0",
-      "place": null,
-      "badges": [],
-      "pf": 1733.73,
-      "pa": 1586.64,
-      "diff": 147.09
-    },
-    {
-      "team": "Daniel",
-      "manager": "Daniel",
-      "record": "9-5-0",
-      "place": null,
-      "badges": [],
-      "pf": 1601.03,
-      "pa": 1559.42,
-      "diff": 41.61
+      "diff": -389.86,
+      "note": "Finished 10th of 10. Fewest points in the league (1,403 PF). Yahoo Bronze 547. Worked the waiver wire hardest (40 moves)."
     }
   ],
   "playoffs": {
@@ -792,7 +826,7 @@
             "score": 144.07
           },
           "loser": {
-            "team": "Ryan C",
+            "team": "Russell Sprouts",
             "score": 78.5
           }
         }
@@ -817,29 +851,29 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Antony — 161.33",
-      "body": "Russell and Flow posted the season's top single-week score, 161.33 points in Week 13."
+      "emoji": "🏆",
+      "headline": "Antony hoists the trophy",
+      "body": "Russell and Flow (Antony) captured the 2016 title as the 1st seed, beating Swing Your Sword 140.54–89.51 in the final."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Rogers Goodell: all points, no luck",
+      "body": "Rogers Goodell scored 1,660 — 3rd-most in the league — yet watched the playoffs from the couch at 5-9-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 78.68 pts",
-      "body": "In Week 13, Russell and Flow crushed Chalupa Batman 161.33–82.65, a 78.68-point margin."
+      "headline": "Biggest blowout: 78.68 points",
+      "body": "Week 13: Russell and Flow steamrolled Chalupa Batman 161.33–82.65."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.36 pts",
-      "body": "Week 2 came down to 0.36: The Gloria Hole edged Larson 112.85–112.49."
+      "headline": "Down to the wire: 0.36 points",
+      "body": "Week 2 was a nail-biter — The Gloria Hole slipped past DakInABox 112.85–112.49."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Kyle P — 60.73",
-      "body": "Chalupa Batman bottomed out at 60.73 in Week 14 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Antony wins it all",
-      "body": "Russell and Flow took the 2016 title, beating Kyle K in the final."
+      "emoji": "🪣",
+      "headline": "Chalupa Batman brings up the rear",
+      "body": "Last place at 3-11-0 — despite a league-high 40 waiver moves."
     }
   ]
 }

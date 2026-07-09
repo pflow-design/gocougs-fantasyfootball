@@ -31,7 +31,8 @@
       "level": "Gold",
       "finalPlace": 4,
       "pa": 1283.58,
-      "diff": 435.66
+      "diff": 435.66,
+      "waiverMoves": 17
     },
     {
       "rank": 2,
@@ -49,7 +50,8 @@
       "level": "Bronze",
       "finalPlace": 3,
       "pa": 1265.71,
-      "diff": 159.87
+      "diff": 159.87,
+      "waiverMoves": 20
     },
     {
       "rank": 3,
@@ -67,7 +69,8 @@
       "level": "Bronze",
       "finalPlace": 6,
       "pa": 1352.74,
-      "diff": 193.13
+      "diff": 193.13,
+      "waiverMoves": 12
     },
     {
       "rank": 4,
@@ -85,7 +88,8 @@
       "level": "Silver",
       "finalPlace": 1,
       "pa": 1311.89,
-      "diff": 70.42
+      "diff": 70.42,
+      "waiverMoves": 20
     },
     {
       "rank": 5,
@@ -104,7 +108,8 @@
       "level": "Gold",
       "finalPlace": 5,
       "pa": 1492.07,
-      "diff": -3.7
+      "diff": -3.7,
+      "waiverMoves": 10
     },
     {
       "rank": 6,
@@ -122,7 +127,8 @@
       "level": "Silver",
       "finalPlace": 2,
       "pa": 1333.49,
-      "diff": -86.54
+      "diff": -86.54,
+      "waiverMoves": 14
     },
     {
       "rank": 7,
@@ -140,7 +146,8 @@
       "level": "Bronze",
       "finalPlace": 8,
       "pa": 1392.09,
-      "diff": -83.36
+      "diff": -83.36,
+      "waiverMoves": 7
     },
     {
       "rank": 8,
@@ -158,7 +165,8 @@
       "level": "Bronze",
       "finalPlace": 10,
       "pa": 1349.49,
-      "diff": -71.88
+      "diff": -71.88,
+      "waiverMoves": 7
     },
     {
       "rank": 9,
@@ -176,7 +184,8 @@
       "level": "Gold",
       "finalPlace": 7,
       "pa": 1393.98,
-      "diff": -120.24
+      "diff": -120.24,
+      "waiverMoves": 20
     },
     {
       "rank": 10,
@@ -194,7 +203,8 @@
       "level": "Bronze",
       "finalPlace": 12,
       "pa": 1313.53,
-      "diff": -83.15
+      "diff": -83.15,
+      "waiverMoves": 8
     },
     {
       "rank": 11,
@@ -212,7 +222,8 @@
       "level": "Bronze",
       "finalPlace": 9,
       "pa": 1262.39,
-      "diff": -73.13
+      "diff": -73.13,
+      "waiverMoves": 28
     },
     {
       "rank": 12,
@@ -231,7 +242,8 @@
       "level": "Bronze",
       "finalPlace": 11,
       "pa": 1372.46,
-      "diff": -337.08
+      "diff": -337.08,
+      "waiverMoves": 6
     }
   ],
   "pfpaChart": {
@@ -290,7 +302,8 @@
       ],
       "pf": 1382.31,
       "pa": 1311.89,
-      "diff": 70.42
+      "diff": 70.42,
+      "note": "🏆 Champion. 5th in scoring (1,382 PF). Yahoo Silver 651."
     },
     {
       "team": "Post-Feminism",
@@ -302,7 +315,8 @@
       ],
       "pf": 1246.95,
       "pa": 1333.49,
-      "diff": -86.54
+      "diff": -86.54,
+      "note": "Runner-up. 9th in scoring (1,247 PF). Yahoo Silver 651."
     },
     {
       "team": "Marvelous FarveLess",
@@ -314,7 +328,8 @@
       ],
       "pf": 1425.58,
       "pa": 1265.71,
-      "diff": 159.87
+      "diff": 159.87,
+      "note": "Third place. 4th in scoring (1,426 PF). Yahoo Bronze 595."
     },
     {
       "team": "Einhorn is Finkle!",
@@ -326,7 +341,8 @@
       ],
       "pf": 1719.24,
       "pa": 1283.58,
-      "diff": 435.66
+      "diff": 435.66,
+      "note": "Made the playoffs as the 1st seed; finished 4th. Led the league in scoring (1,719 PF) — the best team that didn't win. Yahoo Gold 723."
     },
     {
       "team": "Teeth Malaysia",
@@ -338,7 +354,8 @@
       ],
       "pf": 1488.37,
       "pa": 1492.07,
-      "diff": -3.7
+      "diff": -3.7,
+      "note": "Made the playoffs as the 5th seed; finished 5th. 3rd in scoring (1,488 PF). Yahoo Gold 720."
     },
     {
       "team": "Ballcuzzis",
@@ -350,7 +367,8 @@
       ],
       "pf": 1545.87,
       "pa": 1352.74,
-      "diff": 193.13
+      "diff": 193.13,
+      "note": "Made the playoffs as the 3rd seed; finished 6th. 2nd in scoring (1,546 PF). Yahoo Bronze 596."
     },
     {
       "team": "Falcon & The Snowman",
@@ -362,7 +380,8 @@
       ],
       "pf": 1273.74,
       "pa": 1393.98,
-      "diff": -120.24
+      "diff": -120.24,
+      "note": "Finished 7th of 12. 8th in scoring (1,274 PF). Yahoo Gold 713."
     },
     {
       "team": "The Favres",
@@ -374,7 +393,8 @@
       ],
       "pf": 1308.73,
       "pa": 1392.09,
-      "diff": -83.36
+      "diff": -83.36,
+      "note": "Finished 8th of 12. 6th in scoring (1,309 PF). Yahoo Bronze 590."
     },
     {
       "team": "Big Balls",
@@ -386,7 +406,8 @@
       ],
       "pf": 1189.26,
       "pa": 1262.39,
-      "diff": -73.13
+      "diff": -73.13,
+      "note": "Finished 9th of 12. 11th in scoring (1,189 PF). Yahoo Bronze 589. Worked the waiver wire hardest (28 moves)."
     },
     {
       "team": "ihatethecowboys",
@@ -398,7 +419,8 @@
       ],
       "pf": 1277.61,
       "pa": 1349.49,
-      "diff": -71.88
+      "diff": -71.88,
+      "note": "Finished 10th of 12. 7th in scoring (1,278 PF). Yahoo Bronze 580."
     },
     {
       "team": "Too Good",
@@ -410,7 +432,8 @@
       ],
       "pf": 1035.38,
       "pa": 1372.46,
-      "diff": -337.08
+      "diff": -337.08,
+      "note": "Finished 11th of 12. Fewest points in the league (1,035 PF). Yahoo Bronze 552. Quietest roster in the league (6 moves)."
     },
     {
       "team": "Don't touch my Ditka",
@@ -422,14 +445,30 @@
       ],
       "pf": 1230.38,
       "pa": 1313.53,
-      "diff": -83.15
+      "diff": -83.15,
+      "note": "Finished 12th of 12. 10th in scoring (1,230 PF). Yahoo Bronze 560."
     }
   ],
   "stories": [
     {
       "emoji": "🏆",
-      "headline": "David wins it all",
-      "body": "Reality of Fantasy took the 2010 title."
+      "headline": "David hoists the trophy",
+      "body": "Reality of Fantasy (David) captured the 2010 title as the 4th seed."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "Einhorn is Finkle! poured in a league-best 1,719 points but bowed out of the playoffs and finished 4th. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "The Favres: all points, no luck",
+      "body": "The Favres scored 1,309 — 6th-most in the league — yet watched the playoffs from the couch at 6-7-0."
+    },
+    {
+      "emoji": "🪣",
+      "headline": "Don't touch my Ditka brings up the rear",
+      "body": "Last place at 5-8-0."
     }
   ]
 }

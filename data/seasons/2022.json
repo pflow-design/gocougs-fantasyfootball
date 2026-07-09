@@ -28,7 +28,8 @@
       "streak": "L-1",
       "rating": 643,
       "level": "Silver",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 36
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "W-1",
       "rating": 733,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 41
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "W-1",
       "rating": 832,
       "level": "Platinum",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 24
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-2",
       "rating": 810,
       "level": "Platinum",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 52
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "W-2",
       "rating": 563,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 9
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "W-1",
       "rating": 789,
       "level": "Gold",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 51
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "L-1",
       "rating": 791,
       "level": "Gold",
-      "finalPlace": 7
+      "finalPlace": 7,
+      "waiverMoves": 33
     },
     {
       "rank": 8,
@@ -139,10 +146,16 @@
       "w": 5,
       "l": 10,
       "t": 0,
-      "pf": 1532,
-      "pa": 1810.06,
-      "diff": -278.06,
-      "games": 15
+      "pf": 1572.85,
+      "pa": 1796.74,
+      "diff": -223.89,
+      "games": 15,
+      "team": "Two Moore Problems",
+      "streak": "L-7",
+      "rating": 731,
+      "level": "Gold",
+      "finalPlace": 10,
+      "waiverMoves": 32
     },
     {
       "rank": 9,
@@ -159,7 +172,8 @@
       "streak": "L-3",
       "rating": 599,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 26
     },
     {
       "rank": 10,
@@ -168,15 +182,16 @@
       "w": 3,
       "l": 12,
       "t": 0,
-      "pf": 1572.85,
-      "pa": 1796.74,
-      "diff": -223.89,
+      "pf": 1617.07,
+      "pa": 1724.99,
+      "diff": -107.92,
       "games": 15,
-      "team": "Two Moore Problems",
-      "streak": "L-7",
-      "rating": 731,
-      "level": "Gold",
-      "finalPlace": 10
+      "team": "shmoney maker",
+      "streak": "L-1",
+      "rating": 812,
+      "level": "Platinum",
+      "finalPlace": 6,
+      "waiverMoves": 30
     }
   ],
   "weeklyScores": {
@@ -670,8 +685,8 @@
       "Rudee",
       "Duncan",
       "Patrick",
-      "Jeremy",
       "Ryan C",
+      "Jeremy",
       "Raj"
     ],
     "pf": [
@@ -682,9 +697,9 @@
       1790.51,
       1728.16,
       1726.92,
+      1617.07,
       1578.47,
-      1572.85,
-      1532
+      1572.85
     ],
     "pa": [
       1776.56,
@@ -694,9 +709,9 @@
       1669.27,
       1832.55,
       1649.02,
+      1724.99,
       1668.91,
-      1796.74,
-      1810.06
+      1796.74
     ]
   },
   "teamProfiles": [
@@ -711,7 +726,8 @@
       ],
       "pf": 1794.31,
       "pa": 1666.68,
-      "diff": 127.63
+      "diff": 127.63,
+      "note": "🏆 Champion. 4th in scoring (1,794 PF). Yahoo Platinum 810. Worked the waiver wire hardest (52 moves)."
     },
     {
       "team": "Catching Kelce",
@@ -723,7 +739,8 @@
       ],
       "pf": 1826.91,
       "pa": 1776.56,
-      "diff": 50.35
+      "diff": 50.35,
+      "note": "Runner-up. Led the league in scoring (1,827 PF) — the best team that didn't win. Yahoo Gold 733."
     },
     {
       "team": "My Ball Zach Ertz",
@@ -735,7 +752,8 @@
       ],
       "pf": 1820.6,
       "pa": 1642.21,
-      "diff": 178.39
+      "diff": 178.39,
+      "note": "Third place. 2nd in scoring (1,821 PF). Yahoo Platinum 832."
     },
     {
       "team": "Dobbin on IR",
@@ -747,7 +765,8 @@
       ],
       "pf": 1790.51,
       "pa": 1669.27,
-      "diff": 121.24
+      "diff": 121.24,
+      "note": "Made the playoffs as the 1st seed; finished 4th. 5th in scoring (1,791 PF). Yahoo Silver 643."
     },
     {
       "team": "Candyman",
@@ -759,7 +778,21 @@
       ],
       "pf": 1728.16,
       "pa": 1832.55,
-      "diff": -104.39
+      "diff": -104.39,
+      "note": "Finished 5th of 10. 6th in scoring (1,728 PF). Yahoo Gold 789."
+    },
+    {
+      "team": "shmoney maker",
+      "manager": "Ryan C",
+      "record": "3-12-0",
+      "place": 6,
+      "badges": [
+        "Platinum 812"
+      ],
+      "pf": 1617.07,
+      "pa": 1724.99,
+      "diff": -107.92,
+      "note": "Finished 6th of 10. 8th in scoring (1,617 PF). Yahoo Platinum 812."
     },
     {
       "team": "ChristianMINGLE",
@@ -771,7 +804,8 @@
       ],
       "pf": 1795.11,
       "pa": 1823.98,
-      "diff": -28.87
+      "diff": -28.87,
+      "note": "Finished 7th of 10. 3rd in scoring (1,795 PF). Yahoo Gold 791."
     },
     {
       "team": "From Texas with love",
@@ -783,7 +817,8 @@
       ],
       "pf": 1726.92,
       "pa": 1649.02,
-      "diff": 77.9
+      "diff": 77.9,
+      "note": "Finished 8th of 10. 7th in scoring (1,727 PF). Yahoo Bronze 563. Quietest roster in the league (9 moves)."
     },
     {
       "team": "Clappin' Cheeks",
@@ -795,29 +830,21 @@
       ],
       "pf": 1578.47,
       "pa": 1668.91,
-      "diff": -90.44
+      "diff": -90.44,
+      "note": "Finished 9th of 10. 9th in scoring (1,578 PF). Yahoo Bronze 599."
     },
     {
       "team": "Two Moore Problems",
-      "manager": "Ryan C",
-      "record": "3-12-0",
+      "manager": "Raj",
+      "record": "5-10-0",
       "place": 10,
       "badges": [
         "Gold 731"
       ],
       "pf": 1572.85,
       "pa": 1796.74,
-      "diff": -223.89
-    },
-    {
-      "team": "Raj",
-      "manager": "Raj",
-      "record": "5-10-0",
-      "place": null,
-      "badges": [],
-      "pf": 1532,
-      "pa": 1810.06,
-      "diff": -278.06
+      "diff": -223.89,
+      "note": "Finished 10th of 10. Fewest points in the league (1,573 PF). Yahoo Gold 731."
     }
   ],
   "playoffs": {
@@ -878,29 +905,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Kyle K — 173.28",
-      "body": "Catching Kelce posted the season's top single-week score, 173.28 points in Week 5."
+      "emoji": "🏆",
+      "headline": "Antony hoists the trophy",
+      "body": "Null and Boyd (Antony) captured the 2022 title as the 4th seed, beating Catching Kelce 108.96–90.91 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "Catching Kelce poured in a league-best 1,827 points but bowed out of the playoffs and finished 2nd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "ChristianMINGLE: all points, no luck",
+      "body": "ChristianMINGLE scored 1,795 — 3rd-most in the league — yet watched the playoffs from the couch at 7-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 91.38 pts",
-      "body": "In Week 4, Two Moore Problems crushed Candyman 159.88–68.50, a 91.38-point margin."
+      "headline": "Biggest blowout: 91.38 points",
+      "body": "Week 4: shmoney maker steamrolled Candyman 159.88–68.50."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.66 pts",
-      "body": "Week 8 came down to 0.66: Dobbin on IR edged Candyman 112.37–111.71."
+      "headline": "Down to the wire: 0.66 points",
+      "body": "Week 8 was a nail-biter — Dobbin on IR slipped past Candyman 112.37–111.71."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Duncan — 68.50",
-      "body": "Candyman bottomed out at 68.50 in Week 4 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Antony wins it all",
-      "body": "Null and Boyd took the 2022 title, beating Kyle K in the final."
+      "emoji": "🪣",
+      "headline": "Two Moore Problems brings up the rear",
+      "body": "Last place at 5-10-0, dead last in scoring too."
     }
   ]
 }

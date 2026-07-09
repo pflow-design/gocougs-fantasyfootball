@@ -28,7 +28,8 @@
       "streak": "W-8",
       "rating": 883,
       "level": "Platinum",
-      "finalPlace": 3
+      "finalPlace": 3,
+      "waiverMoves": 27
     },
     {
       "rank": 2,
@@ -45,7 +46,8 @@
       "streak": "L-1",
       "rating": 783,
       "level": "Gold",
-      "finalPlace": 1
+      "finalPlace": 1,
+      "waiverMoves": 18
     },
     {
       "rank": 3,
@@ -62,7 +64,8 @@
       "streak": "L-2",
       "rating": 764,
       "level": "Gold",
-      "finalPlace": 4
+      "finalPlace": 4,
+      "waiverMoves": 10
     },
     {
       "rank": 4,
@@ -79,7 +82,8 @@
       "streak": "W-3",
       "rating": 777,
       "level": "Gold",
-      "finalPlace": 2
+      "finalPlace": 2,
+      "waiverMoves": 17
     },
     {
       "rank": 5,
@@ -96,7 +100,8 @@
       "streak": "W-2",
       "rating": 710,
       "level": "Gold",
-      "finalPlace": 6
+      "finalPlace": 6,
+      "waiverMoves": 33
     },
     {
       "rank": 6,
@@ -113,7 +118,8 @@
       "streak": "L-1",
       "rating": 575,
       "level": "Bronze",
-      "finalPlace": 8
+      "finalPlace": 8,
+      "waiverMoves": 20
     },
     {
       "rank": 7,
@@ -130,7 +136,8 @@
       "streak": "W-1",
       "rating": 885,
       "level": "Platinum",
-      "finalPlace": 5
+      "finalPlace": 5,
+      "waiverMoves": 19
     },
     {
       "rank": 8,
@@ -139,10 +146,16 @@
       "w": 5,
       "l": 9,
       "t": 0,
-      "pf": 1495.68,
-      "pa": 1676.92,
-      "diff": -181.24,
-      "games": 14
+      "pf": 1456.1,
+      "pa": 1716.5,
+      "diff": -260.4,
+      "games": 14,
+      "team": "Ebner",
+      "streak": "L-2",
+      "rating": 576,
+      "level": "Bronze",
+      "finalPlace": 7,
+      "waiverMoves": 22
     },
     {
       "rank": 9,
@@ -159,7 +172,8 @@
       "streak": "W-1",
       "rating": 591,
       "level": "Bronze",
-      "finalPlace": 9
+      "finalPlace": 9,
+      "waiverMoves": 10
     },
     {
       "rank": 10,
@@ -176,7 +190,8 @@
       "streak": "L-7",
       "rating": 533,
       "level": "Bronze",
-      "finalPlace": 10
+      "finalPlace": 10,
+      "waiverMoves": 10
     }
   ],
   "weeklyScores": {
@@ -651,7 +666,7 @@
       1597.41,
       1559.06,
       1503.42,
-      1495.68,
+      1456.1,
       1354.07
     ],
     "pa": [
@@ -663,7 +678,7 @@
       1556.1,
       1748.58,
       1608.08,
-      1676.92,
+      1716.5,
       1717.13
     ]
   },
@@ -679,7 +694,8 @@
       ],
       "pf": 1766.92,
       "pa": 1573.09,
-      "diff": 193.83
+      "diff": 193.83,
+      "note": "🏆 Champion. 3rd in scoring (1,767 PF). Yahoo Gold 783."
     },
     {
       "team": "My Main Thang",
@@ -691,7 +707,8 @@
       ],
       "pf": 1784.46,
       "pa": 1666.51,
-      "diff": 117.95
+      "diff": 117.95,
+      "note": "Runner-up. 2nd in scoring (1,784 PF). Yahoo Gold 777."
     },
     {
       "team": "u mad",
@@ -703,7 +720,8 @@
       ],
       "pf": 1860.94,
       "pa": 1448.78,
-      "diff": 412.16
+      "diff": 412.16,
+      "note": "Third place. Led the league in scoring (1,861 PF) — the best team that didn't win. Yahoo Platinum 883."
     },
     {
       "team": "Swing Your Sword",
@@ -715,7 +733,8 @@
       ],
       "pf": 1690.27,
       "pa": 1510.51,
-      "diff": 179.76
+      "diff": 179.76,
+      "note": "Made the playoffs as the 3rd seed; finished 4th. 4th in scoring (1,690 PF). Yahoo Gold 764. Quietest roster in the league (10 moves)."
     },
     {
       "team": "Russell Sprouts",
@@ -727,7 +746,8 @@
       ],
       "pf": 1638.26,
       "pa": 1665.63,
-      "diff": -27.37
+      "diff": -27.37,
+      "note": "Finished 5th of 10. 5th in scoring (1,638 PF). Yahoo Platinum 885."
     },
     {
       "team": "Liquid Courage",
@@ -739,7 +759,21 @@
       ],
       "pf": 1503.42,
       "pa": 1608.08,
-      "diff": -104.66
+      "diff": -104.66,
+      "note": "Finished 6th of 10. 8th in scoring (1,503 PF). Yahoo Gold 710. Worked the waiver wire hardest (33 moves)."
+    },
+    {
+      "team": "Ebner",
+      "manager": "Daniel",
+      "record": "5-9-0",
+      "place": 7,
+      "badges": [
+        "Bronze 576"
+      ],
+      "pf": 1456.1,
+      "pa": 1716.5,
+      "diff": -260.4,
+      "note": "Finished 7th of 10. 9th in scoring (1,456 PF). Yahoo Bronze 576."
     },
     {
       "team": "BeBetterThanLast",
@@ -751,7 +785,8 @@
       ],
       "pf": 1597.41,
       "pa": 1556.1,
-      "diff": 41.31
+      "diff": 41.31,
+      "note": "Finished 8th of 10. 6th in scoring (1,597 PF). Yahoo Bronze 575."
     },
     {
       "team": "The Gloria Hole",
@@ -763,7 +798,8 @@
       ],
       "pf": 1559.06,
       "pa": 1748.58,
-      "diff": -189.52
+      "diff": -189.52,
+      "note": "Finished 9th of 10. 7th in scoring (1,559 PF). Yahoo Bronze 591. Quietest roster in the league (10 moves)."
     },
     {
       "team": "Your Mom",
@@ -775,17 +811,8 @@
       ],
       "pf": 1354.07,
       "pa": 1717.13,
-      "diff": -363.06
-    },
-    {
-      "team": "Daniel",
-      "manager": "Daniel",
-      "record": "5-9-0",
-      "place": null,
-      "badges": [],
-      "pf": 1495.68,
-      "pa": 1676.92,
-      "diff": -181.24
+      "diff": -363.06,
+      "note": "Finished 10th of 10. Fewest points in the league (1,354 PF). Yahoo Bronze 533. Quietest roster in the league (10 moves)."
     }
   ],
   "playoffs": {
@@ -846,29 +873,34 @@
   },
   "stories": [
     {
-      "emoji": "🔥",
-      "headline": "Highest week: Raj — 162.63",
-      "body": "u mad posted the season's top single-week score, 162.63 points in Week 9."
+      "emoji": "🏆",
+      "headline": "Robbie hoists the trophy",
+      "body": "Larson (Robbie) captured the 2013 title as the 2nd seed, beating My Main Thang 153.18–115.99 in the final."
+    },
+    {
+      "emoji": "📈",
+      "headline": "The best team that didn’t win",
+      "body": "u mad poured in a league-best 1,861 points but bowed out of the playoffs and finished 3rd. Fantasy is cruel."
+    },
+    {
+      "emoji": "😤",
+      "headline": "Russell Sprouts: all points, no luck",
+      "body": "Russell Sprouts scored 1,638 — 5th-most in the league — yet watched the playoffs from the couch at 6-8-0."
     },
     {
       "emoji": "💥",
-      "headline": "Biggest blowout: 83.31 pts",
-      "body": "In Week 12, My Main Thang crushed Liquid Courage 144.30–60.99, a 83.31-point margin."
+      "headline": "Biggest blowout: 83.31 points",
+      "body": "Week 12: My Main Thang steamrolled Liquid Courage 144.30–60.99."
     },
     {
       "emoji": "⚡",
-      "headline": "Closest game: 0.40 pts",
-      "body": "Week 10 came down to 0.40: Russell Sprouts edged Larson 122.97–122.57."
+      "headline": "Down to the wire: 0.40 points",
+      "body": "Week 10 was a nail-biter — Russell Sprouts slipped past Larson 122.97–122.57."
     },
     {
-      "emoji": "😬",
-      "headline": "Lowest week: Antony — 60.99",
-      "body": "Liquid Courage bottomed out at 60.99 in Week 12 — the season's lowest."
-    },
-    {
-      "emoji": "🏆",
-      "headline": "Robbie wins it all",
-      "body": "Larson took the 2013 title."
+      "emoji": "🪣",
+      "headline": "Your Mom brings up the rear",
+      "body": "Last place at 2-12-0 — and made a league-low 10 roster moves all year."
     }
   ]
 }
