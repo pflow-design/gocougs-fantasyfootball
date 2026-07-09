@@ -1,87 +1,256 @@
 {
   "_meta": {
-    "description": "Canonical managers for the KDP 'Go Cougs' league. Keys match the JS keys used in the report's h2hData and MANAGERS map. All-time records are REGULAR SEASON ONLY, 2009-2025 (16 seasons), as displayed in reference/kdp_report.html's 'All-Time Win-Loss Records by Manager' table.",
-    "source": "reference/kdp_report.html (MANAGERS map + all-time W-L table), STATUS.md (naming history)",
-    "winPctNote": "winPct is copied verbatim from the report; it may not exactly equal w/(w+l) because the report's percentages were rounded/entered by hand.",
-    "allTimeAggregatesCaveat": "The per-manager allTime W-L/seasons/etc. are report-derived and PREDATE two corrections: (1) 2010 added as a canonical season, and (2) the 2009 re-attribution (David = cougs4bcsbid, not Larson). So David is undercounted and Larson is overcounted here. The authoritative per-season truth lives in data/seasons/*.json; the all-time aggregates should be RECOMPUTED from those (regular season) plus playoff data. Tracked as a follow-up."
+    "description": "Canonical managers for the KDP 'Go Cougs' league. Keys match the JS keys used in the report's h2hData and MANAGERS map. All-time records are REGULAR SEASON ONLY, 2009-2025 (17 seasons), RECOMPUTED from data/seasons/*.json by scripts/recompute.mjs — superseding the report's table (which predated the 2009/2010/2019 corrections).",
+    "source": "data/seasons/*.json + data/champions.json via scripts/recompute.mjs; naming history from STATUS.md",
+    "winPctNote": "winPct = w/(w+l)*100, computed from the recomputed W-L.",
+    "allTimeAggregatesCaveat": "Recomputed from data/seasons/*.json (regular season) + champions.json by scripts/recompute.mjs. Playoff appearances = seasons finishing in the playoff seeds (top 6 in 2009-2010, top 4 from 2011). Titles from champions.json. 2010 PF/PA are rounded (standings-only source)."
   },
   "managers": [
     {
-      "key": "Rudee", "display": "Rudee", "since": "2019", "status": "active",
+      "key": "Rudee",
+      "display": "Rudee",
+      "since": "2019",
+      "status": "active",
       "currentTeam": "Hit Somebody",
-      "allTime": { "seasons": 7, "w": 62, "l": 41, "winPct": 60.2, "playoffAppearances": 4, "titles": 1 },
+      "allTime": {
+        "seasons": 7,
+        "w": 62,
+        "l": 41,
+        "t": 0,
+        "pf": 12175.46,
+        "pa": 11697.29,
+        "winPct": 60.2,
+        "playoffAppearances": 4,
+        "titles": 1
+      },
       "notes": "KDP debut 2019. Was mislabeled 'Ryan' (rmath23@hotmail.com) in early builds; the h2hData key is 'Rudee'. Distinct from 'Ryan C' (RyanC)."
     },
     {
-      "key": "Raj", "display": "Raj", "since": "2009", "status": "active",
+      "key": "Raj",
+      "display": "Raj",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "shmoney maker",
-      "allTime": { "seasons": 16, "w": 130, "l": 98, "winPct": 57.0, "playoffAppearances": 9, "titles": 0 },
+      "allTime": {
+        "seasons": 16,
+        "w": 129,
+        "l": 99,
+        "t": 0,
+        "pf": 26422.96,
+        "pa": 25500.12,
+        "winPct": 56.6,
+        "playoffAppearances": 8,
+        "titles": 0
+      },
       "notes": "Original 2009 member. Most wins all-time among never-champions."
     },
     {
-      "key": "Antony", "display": "Antony", "since": "2009", "status": "active",
+      "key": "Antony",
+      "display": "Antony",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "The Cuddly Kittens",
-      "allTime": { "seasons": 13, "w": 101, "l": 84, "winPct": 54.6, "playoffAppearances": 5, "titles": 4 },
+      "allTime": {
+        "seasons": 13,
+        "w": 102,
+        "l": 83,
+        "t": 0,
+        "pf": 21489.48,
+        "pa": 21074.19,
+        "winPct": 55.1,
+        "playoffAppearances": 5,
+        "titles": 4
+      },
       "notes": "Absent 2019-2021 (3 seasons). Most titles all-time (4)."
     },
     {
-      "key": "Larson", "display": "Robbie", "since": "2009", "status": "alumni",
+      "key": "Larson",
+      "display": "Robbie",
+      "since": "2009",
+      "status": "alumni",
       "currentTeam": null,
-      "allTime": { "seasons": 9, "w": 66, "l": 59, "winPct": 52.8, "playoffAppearances": 4, "titles": 1 },
-      "notes": "JS key is 'Larson' but displays as 'Robbie' in the report. Historical/alumni; no 2025 team. CORRECTION (Patrick, 2026-07): Larson was NOT in the league in 2009 — the old data wrongly credited him with David's 2009 team ('cougs4bcsbid'). The allTime figures above still include that phantom 2009 season and need a recompute (Larson's true seasons/W-L are lower). See _meta.allTimeAggregatesCaveat."
+      "allTime": {
+        "seasons": 9,
+        "w": 63,
+        "l": 63,
+        "t": 0,
+        "pf": 14285.42,
+        "pa": 14505.72,
+        "winPct": 50,
+        "playoffAppearances": 3,
+        "titles": 1
+      },
+      "notes": "JS key is 'Larson' but displays as 'Robbie'. Historical/alumni; no 2025 team. 2013 champion. Recomputed: 9 seasons (2011-2019, NOT 2009); this includes 2019, where the hidden 4-10 team was mislabeled 'Antony' in the legacy SCHED_2019 but is actually Larson (confirmed by Patrick, 2026-07)."
     },
     {
-      "key": "KyleK", "display": "Kyle K", "since": "2009", "status": "active",
+      "key": "KyleK",
+      "display": "Kyle K",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "Benching Kelce",
-      "allTime": { "seasons": 16, "w": 116, "l": 112, "winPct": 50.9, "playoffAppearances": 7, "titles": 0 },
+      "allTime": {
+        "seasons": 17,
+        "w": 125,
+        "l": 116,
+        "t": 0,
+        "pf": 27100.57,
+        "pa": 25238.97,
+        "winPct": 51.9,
+        "playoffAppearances": 9,
+        "titles": 0
+      },
       "notes": "Formerly keyed 'Kyle'. Distinct from Kyle P ('Kyle2')."
     },
     {
-      "key": "Jeremy", "display": "Jeremy", "since": "2020", "status": "active",
+      "key": "Jeremy",
+      "display": "Jeremy",
+      "since": "2020",
+      "status": "active",
       "currentTeam": "Clappin' Cheeks",
-      "allTime": { "seasons": 6, "w": 45, "l": 44, "winPct": 50.6, "playoffAppearances": 3, "titles": 2 },
+      "allTime": {
+        "seasons": 6,
+        "w": 45,
+        "l": 44,
+        "t": 0,
+        "pf": 10519.59,
+        "pa": 10207.19,
+        "winPct": 50.6,
+        "playoffAppearances": 3,
+        "titles": 2
+      },
       "notes": "Full name Jeremy Trevino. 2025 & 2023 champion (2 titles)."
     },
     {
-      "key": "Daniel", "display": "Daniel", "since": "2009", "status": "active",
+      "key": "Daniel",
+      "display": "Daniel",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "My Ball Zach Ertz",
-      "allTime": { "seasons": 16, "w": 114, "l": 114, "winPct": 50.0, "playoffAppearances": 9, "titles": 1 },
-      "notes": "Original 2009 member. Exactly .500 all-time (114-114)."
+      "allTime": {
+        "seasons": 16,
+        "w": 116,
+        "l": 112,
+        "t": 0,
+        "pf": 26385.35,
+        "pa": 25814.33,
+        "winPct": 50.9,
+        "playoffAppearances": 9,
+        "titles": 1
+      },
+      "notes": "Original 2009 member. 16 seasons, 116-112 all-time (recomputed)."
     },
     {
-      "key": "RyanC", "display": "Ryan C", "since": "2009", "status": "active",
+      "key": "RyanC",
+      "display": "Ryan C",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "Trips Formation",
-      "allTime": { "seasons": 15, "w": 107, "l": 107, "winPct": 50.0, "playoffAppearances": 7, "titles": 1 },
-      "notes": "Distinct from Rudee. Missing 2011 attribution (hidden manager 'Kibbles and Vicks', confirmed by elimination). Exactly .500 (107-107)."
+      "allTime": {
+        "seasons": 16,
+        "w": 113,
+        "l": 115,
+        "t": 0,
+        "pf": 26268.13,
+        "pa": 26524.48,
+        "winPct": 49.6,
+        "playoffAppearances": 7,
+        "titles": 1
+      },
+      "notes": "Distinct from Rudee. 2018 champion. In 2011 as the hidden 'Kibbles and Vicks' (confirmed by elimination), so 16 seasons; 113-115 all-time (recomputed)."
     },
     {
-      "key": "duncan", "display": "Duncan", "since": "2009", "status": "active",
+      "key": "duncan",
+      "display": "Duncan",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "Spoiling Your Cottage Cheese",
-      "allTime": { "seasons": 16, "w": 110, "l": 118, "winPct": 48.2, "playoffAppearances": 7, "titles": 3 },
+      "allTime": {
+        "seasons": 16,
+        "w": 110,
+        "l": 118,
+        "t": 0,
+        "pf": 25940.23,
+        "pa": 26276.79,
+        "winPct": 48.2,
+        "playoffAppearances": 7,
+        "titles": 3
+      },
       "notes": "Commissioner. 2009 champion. 3 titles. Finished last (3-12) in 2025."
     },
     {
-      "key": "David", "display": "David", "since": "2009", "status": "active",
+      "key": "David",
+      "display": "David",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "GIBBS Me Head",
-      "allTime": { "seasons": 15, "w": 102, "l": 113, "winPct": 47.4, "playoffAppearances": 4, "titles": 1 },
-      "notes": "RESOLVED (Patrick, 2026-07): David WAS in 2009 as the hidden team 'cougs4bcsbid' (the old data mislabeled that slot 'Larson' and wrongly placed David on 'Team Malaysia'). Since '09 stands, and David also won 2010 (Reality of Fantasy). The report's 'Since 11 / 15 seasons' was an artifact of the wrong 2009 attribution; David's true seasons (2009 + 2010 + 2011-2025) and W-L are UNDERCOUNTED in allTime above and need a recompute. See _meta.allTimeAggregatesCaveat."
+      "allTime": {
+        "seasons": 17,
+        "w": 117,
+        "l": 124,
+        "t": 0,
+        "pf": 27255.33,
+        "pa": 26326.22,
+        "winPct": 48.5,
+        "playoffAppearances": 6,
+        "titles": 2
+      },
+      "notes": "David WAS in 2009 as the hidden team 'cougs4bcsbid' (old data mislabeled that slot 'Larson' and wrongly placed David on 'Team Malaysia'). Confirmed by Patrick (2026-07). Recomputed: 17 seasons (2009 + 2010 + 2011-2025) and 2 titles (2010 & 2020) — the report knew only 2020 because 2010 was missing, which is why it showed David with 1 title / 'Since 11'."
     },
     {
-      "key": "PatrickF", "display": "Patrick", "since": "2009", "status": "active",
+      "key": "PatrickF",
+      "display": "Patrick",
+      "since": "2009",
+      "status": "active",
       "currentTeam": "RIPete",
-      "allTime": { "seasons": 16, "w": 101, "l": 127, "winPct": 44.3, "playoffAppearances": 4, "titles": 1 },
-      "notes": "The site owner. Original 2009 member. Holds several 'worst' all-time marks (most losses 127; 2021 loss records)."
+      "allTime": {
+        "seasons": 17,
+        "w": 106,
+        "l": 135,
+        "t": 0,
+        "pf": 26420.64,
+        "pa": 25814.54,
+        "winPct": 44,
+        "playoffAppearances": 4,
+        "titles": 1
+      },
+      "notes": "The site owner. Original 2009 member. 2015 champion. Holds the most all-time losses (135) and the 2021 loss records."
     },
     {
-      "key": "KyleP", "display": "Kyle P", "since": "2012", "status": "alumni",
+      "key": "KyleP",
+      "display": "Kyle P",
+      "since": "2012",
+      "status": "alumni",
       "currentTeam": null,
-      "allTime": { "seasons": 10, "w": 60, "l": 81, "winPct": 42.6, "playoffAppearances": 3, "titles": 1 },
+      "allTime": {
+        "seasons": 10,
+        "w": 60,
+        "l": 81,
+        "t": 0,
+        "pf": 15757.6,
+        "pa": 16547.48,
+        "winPct": 42.6,
+        "playoffAppearances": 3,
+        "titles": 1
+      },
       "notes": "Formerly keyed 'Kyle2'. Last active 2021; not in 2022-2025. 1 title."
     },
     {
-      "key": "Bradley", "display": "Bradley", "since": "2009", "status": "alumni",
+      "key": "Bradley",
+      "display": "Bradley",
+      "since": "2009",
+      "status": "alumni",
       "currentTeam": null,
-      "allTime": { "seasons": 2, "w": 11, "l": 16, "winPct": 40.7, "playoffAppearances": 0, "titles": 0 },
+      "allTime": {
+        "seasons": 2,
+        "w": 11,
+        "l": 16,
+        "t": 0,
+        "pf": 2702.07,
+        "pa": 2787.69,
+        "winPct": 40.7,
+        "playoffAppearances": 0,
+        "titles": 0
+      },
       "notes": "Alumni; limited seasons (only 2009 & 2011 attributed). No titles."
     }
   ],

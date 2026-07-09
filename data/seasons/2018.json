@@ -9,7 +9,9 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2018/f1/857102",
   "teams": 10,
   "regularSeasonWeeks": 14,
-  "champion": null,
+  "champion": {
+    "managerKey": "RyanC"
+  },
   "standings": [
     {
       "rank": 1,

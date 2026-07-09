@@ -1,31 +1,38 @@
 {
   "_meta": {
-    "description": "League champions (title winners) by season. titlesByManager is authoritative and sums to 16 (one per canonical season). The year-by-year 'byYear' list is INCOMPLETE: only seasons confirmed in the source docs / legacy headers are filled; the rest are pending extraction from each gen_h2h_YYYY.py header (which comments the season's final standings/champion).",
-    "source": "STATUS.md (2009), legacy/gen_h2h_2011.py header (2011), legacy/gen_h2h_2024.py header (2024 Daniel), HANDOFF.md (2023, 2025), scraped_2025_2010.md (2010 David), reference/kdp_report.html (2025 + titlesByManager counts)",
-    "seasonCount": "RESOLVED by Patrick (2026-07): 2010 IS a canonical season and David won it. So the league has 17 canonical seasons (2009-2025 inclusive). The '16 seasons' repeated throughout the legacy docs/report is a STALE UNDERCOUNT from when 2010 was missing entirely from the project data; it should read 17. Consequence: there are 17 champions/titles total, but the report-derived titlesByManager below still sums to 16 (built before 2010 was added). Per Patrick, David's title is 2010, so titlesByManager already reflects it as David's 1 title. The remaining gap (16 -> 17) will close when the 11 pending champions (2012-2022) are extracted; one of those seasons currently has an uncredited/departed-manager champion. Also update the '16 seasons' references in README/HANDOFF/report when convenient."
+    "description": "League champions by season — COMPLETE, all 17 seasons (2009-2025). Champions extracted from each legacy/gen_h2h_YYYY.py header comment, plus 2009 (STATUS.md), 2010 (scraped_2025_2010.md), 2025 (report). titlesByManager is derived from byYear and sums to 17.",
+    "source": "legacy/gen_h2h_YYYY.py headers, STATUS.md, scraped_2025_2010.md, reference/kdp_report.html",
+    "seasonCount": "17 canonical seasons (2009-2025 inclusive). The '16 seasons' in the legacy docs/report was a stale undercount from when 2010 was missing. David won BOTH 2010 and 2020 — the report only knew 2020 (2010 was absent), which is why the report credited David with 1 title; his true total is 2. All other managers' title counts match the report."
   },
   "titlesByManager": {
     "Antony": 4,
     "duncan": 3,
+    "David": 2,
     "Jeremy": 2,
-    "Rudee": 1,
     "Larson": 1,
-    "Daniel": 1,
-    "RyanC": 1,
-    "David": 1,
     "PatrickF": 1,
-    "KyleP": 1
+    "KyleP": 1,
+    "RyanC": 1,
+    "Rudee": 1,
+    "Daniel": 1
   },
   "byYear": [
-    { "year": 2009, "champion": "duncan", "team": null, "runnerUp": "Antony", "third": "RyanC", "note": "WaZZU-era league (ID 320012). Confirmed in STATUS.md." },
-    { "year": 2010, "champion": "David", "team": "Reality of Fantasy", "note": "Canonical season, confirmed by Patrick (2026-07). Standings-only (no weekly data); see seasons/2010.json." },
-    { "year": 2011, "champion": "Antony", "team": null, "runnerUp": "KyleK", "third": "Raj", "note": "Confirmed in gen_h2h_2011.py header comment." },
-    { "year": 2023, "champion": "Jeremy", "team": "Clappin' Cheeks", "note": "Confirmed in HANDOFF.md + gen_h2h_2023.py header." },
-    { "year": 2024, "champion": "Daniel", "team": "My Ball Zach Ertz", "runnerUp": "Jeremy", "third": "RyanC", "note": "Confirmed in gen_h2h_2024.py header (Final: Jeremy 142.06 vs Daniel 147.88)." },
+    { "year": 2009, "champion": "duncan", "team": "The Frying Pans", "runnerUp": "Antony", "third": "RyanC", "note": "WaZZU-era league (ID 320012). STATUS.md + gen_h2h_2009.py header." },
+    { "year": 2010, "champion": "David", "team": "Reality of Fantasy", "note": "Canonical season (Patrick, 2026-07). Standings-only; see seasons/2010.json." },
+    { "year": 2011, "champion": "Antony", "team": null, "runnerUp": "KyleK", "third": "Raj", "note": "gen_h2h_2011.py header." },
+    { "year": 2012, "champion": "duncan", "team": null, "runnerUp": "KyleK", "third": "RyanC", "note": "gen_h2h_2012.py header (Final: duncan 156.61 vs Kyle 132.79)." },
+    { "year": 2013, "champion": "Larson", "team": null, "note": "gen_h2h_2013.py header (Larson beats duncan 153.18-115.99). Larson displays as 'Robbie'." },
+    { "year": 2014, "champion": "Antony", "team": null, "runnerUp": "Raj", "note": "gen_h2h_2014.py header (Antony beats Raj 155.31-87.84)." },
+    { "year": 2015, "champion": "PatrickF", "team": null, "runnerUp": "Daniel", "note": "gen_h2h_2015.py header (PatrickF beats Daniel 88.05-74.24)." },
+    { "year": 2016, "champion": "Antony", "team": null, "runnerUp": "KyleK", "note": "gen_h2h_2016.py header (Antony beats Kyle 140.54-89.51)." },
+    { "year": 2017, "champion": "KyleP", "team": null, "runnerUp": "Raj", "note": "gen_h2h_2017.py header (Kyle2 beats Raj 132.36-93.12). Kyle2 = Kyle P." },
+    { "year": 2018, "champion": "RyanC", "team": null, "runnerUp": "KyleP", "note": "gen_h2h_2018.py header (RyanC beats Kyle2 157.43-93.61)." },
+    { "year": 2019, "champion": "duncan", "team": null, "runnerUp": "David", "note": "gen_h2h_2019.py header (duncan beats David 164.05-103.21)." },
+    { "year": 2020, "champion": "David", "team": null, "runnerUp": "Daniel", "note": "gen_h2h_2020.py header (David beats Daniel 178.14-125.26). David's second title." },
+    { "year": 2021, "champion": "Rudee", "team": null, "runnerUp": "KyleK", "note": "gen_h2h_2021.py header (Ryan beats Kyle 125.64-113.64). Ryan = Rudee." },
+    { "year": 2022, "champion": "Antony", "team": null, "runnerUp": "KyleK", "note": "gen_h2h_2022.py header (championship final Antony vs Kyle). Antony's return after 2019-2021 absence; his 4th title." },
+    { "year": 2023, "champion": "Jeremy", "team": "Clappin' Cheeks", "note": "HANDOFF.md + gen_h2h_2023.py header." },
+    { "year": 2024, "champion": "Daniel", "team": "My Ball Zach Ertz", "runnerUp": "Jeremy", "third": "RyanC", "note": "gen_h2h_2024.py header (Final: Jeremy 142.06 vs Daniel 147.88)." },
     { "year": 2025, "champion": "Jeremy", "team": "Clappin' Cheeks", "runnerUp": "Daniel", "third": "Rudee", "note": "Beat Daniel 113.78-105.00 in the championship." }
-  ],
-  "pending": {
-    "years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
-    "howToFill": "Extract each champion from the corresponding legacy/gen_h2h_YYYY.py header comment (final standings). These 11 years hold the remaining 11 titles (Antony x3, duncan x2, Rudee, Larson, RyanC, PatrickF, KyleP, and one more)."
-  }
+  ]
 }

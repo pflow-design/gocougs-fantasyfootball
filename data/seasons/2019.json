@@ -9,7 +9,9 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2019/f1/615427",
   "teams": 10,
   "regularSeasonWeeks": 14,
-  "champion": null,
+  "champion": {
+    "managerKey": "duncan"
+  },
   "standings": [
     {
       "rank": 1,
@@ -109,8 +111,8 @@
     },
     {
       "rank": 9,
-      "manager": "Antony",
-      "managerKey": "Antony",
+      "manager": "Larson",
+      "managerKey": "Larson",
       "w": 4,
       "l": 10,
       "t": 0,
@@ -147,7 +149,7 @@
         109.15
       ],
       [
-        "Antony",
+        "Larson",
         94.19,
         "PatrickF",
         146.91
@@ -179,7 +181,7 @@
         98.86
       ],
       [
-        "Antony",
+        "Larson",
         116.54,
         "KyleP",
         91.82
@@ -201,7 +203,7 @@
       [
         "duncan",
         108.04,
-        "Antony",
+        "Larson",
         118.1
       ],
       [
@@ -239,7 +241,7 @@
       [
         "David",
         136.46,
-        "Antony",
+        "Larson",
         110.68
       ],
       [
@@ -277,7 +279,7 @@
       [
         "Rudee",
         177.82,
-        "Antony",
+        "Larson",
         119.07
       ],
       [
@@ -313,7 +315,7 @@
         135.43
       ],
       [
-        "Antony",
+        "Larson",
         116.2,
         "Raj",
         121.31
@@ -345,7 +347,7 @@
         126.86
       ],
       [
-        "Antony",
+        "Larson",
         77.13,
         "Daniel",
         70.56
@@ -377,7 +379,7 @@
         149.98
       ],
       [
-        "Antony",
+        "Larson",
         104.14,
         "RyanC",
         125.74
@@ -409,7 +411,7 @@
         98.83
       ],
       [
-        "Antony",
+        "Larson",
         116.04,
         "KyleK",
         149.04
@@ -435,7 +437,7 @@
         77.5
       ],
       [
-        "Antony",
+        "Larson",
         119,
         "PatrickF",
         100.84
@@ -467,7 +469,7 @@
         100.16
       ],
       [
-        "Antony",
+        "Larson",
         107.6,
         "KyleP",
         121.65
@@ -489,7 +491,7 @@
       [
         "duncan",
         160.86,
-        "Antony",
+        "Larson",
         86.22
       ],
       [
@@ -527,7 +529,7 @@
       [
         "David",
         125.54,
-        "Antony",
+        "Larson",
         121.16
       ],
       [
@@ -565,7 +567,7 @@
       [
         "Rudee",
         98.77,
-        "Antony",
+        "Larson",
         79.1
       ],
       [

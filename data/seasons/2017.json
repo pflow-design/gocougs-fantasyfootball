@@ -9,7 +9,9 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2017/f1/645247",
   "teams": 10,
   "regularSeasonWeeks": 14,
-  "champion": null,
+  "champion": {
+    "managerKey": "KyleP"
+  },
   "standings": [
     {
       "rank": 1,

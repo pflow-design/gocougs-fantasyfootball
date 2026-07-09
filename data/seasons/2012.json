@@ -9,7 +9,9 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2012/f1/229595",
   "teams": 10,
   "regularSeasonWeeks": 14,
-  "champion": null,
+  "champion": {
+    "managerKey": "duncan"
+  },
   "standings": [
     {
       "rank": 1,

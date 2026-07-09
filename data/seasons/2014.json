@@ -9,7 +9,9 @@
   "yahooUrl": "https://football.fantasysports.yahoo.com/2014/f1/372078",
   "teams": 10,
   "regularSeasonWeeks": 14,
-  "champion": null,
+  "champion": {
+    "managerKey": "Antony"
+  },
   "standings": [
     {
       "rank": 1,

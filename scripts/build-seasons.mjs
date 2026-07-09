@@ -42,9 +42,11 @@ const LEAGUE_ID = {
   2015: '443395', 2016: '782767', 2017: '645247', 2018: '857102', 2019: '615427',
   2020: '562876', 2021: '475255', 2022: '302522', 2023: '211296', 2024: '764109',
 };
-// Champions known from legacy file headers / docs (fills champions.json later).
+// Champions per season (from legacy headers + docs; see data/champions.json).
 const CHAMPION = {
-  2009: 'duncan', 2011: 'Antony', 2023: 'Jeremy', 2024: 'Daniel',
+  2009: 'duncan', 2011: 'Antony', 2012: 'duncan', 2013: 'Larson', 2014: 'Antony',
+  2015: 'PatrickF', 2016: 'Antony', 2017: 'KyleP', 2018: 'RyanC', 2019: 'duncan',
+  2020: 'David', 2021: 'Rudee', 2022: 'Antony', 2023: 'Jeremy', 2024: 'Daniel',
 };
 const KEY = (k) => ({ Kyle: 'KyleK', Kyle2: 'KyleP', Ryan: 'Rudee' }[k] || k);
 const regWeeksFor = (y) => (y <= 2010 ? 13 : y <= 2020 ? 14 : 15);
@@ -55,6 +57,11 @@ const regWeeksFor = (y) => (y <= 2010 ? 13 : y <= 2020 ? 14 : 15);
 //  - Larson (Robbie) was NOT in the league in 2009.
 // Applied to the original GAMES_2009 labels (single lookup, no chaining).
 const REMAP_2009 = { Larson: 'David', David: '__IRFAN2009__' };
+// 2019 correction (confirmed by Patrick, 2026-07): the hidden scmid=4 team (4-10)
+// was mislabeled 'Antony' in SCHED_2019 — it is actually Larson (Robbie). Antony
+// was NOT in the league in 2019. legacy/fix_2019_larson.py fixed only the report's
+// h2hData, never this source dict, so the builder must remap it here.
+const REMAP_2019 = { Antony: 'Larson' };
 const HIDDEN_2009 = { __IRFAN2009__: { manager: 'Irfan (hidden)', team: 'Team Malaysia' } };
 // 2009 team names by canonical manager key (from gen_h2h_2009.py header).
 const TEAMS_2009 = {
@@ -220,17 +227,18 @@ function buildFromGames(year, rows, opts = {}) {
   return finalize(year, table, weekly, opts);
 }
 
-function buildFromSched(year, dict, { hasResult, teamMap }) {
+function buildFromSched(year, dict, { hasResult, teamMap, keyRemap }) {
+  const remap = keyRemap || ((k) => k);
   const table = {}, weekly = {}, seen = new Set();
   for (const [mgrRaw, rows] of Object.entries(dict)) {
-    const self = KEY(mgrRaw);
+    const self = KEY(remap(mgrRaw));
     for (const row of rows) {
       // row shapes: [wk,opp,own,opp2] | [wk,opp,result,own,opp2]
       const wk = row[0];
       let oppRaw, own, oppScore;
       if (hasResult) { oppRaw = row[1]; own = row[3]; oppScore = row[4]; }
       else { oppRaw = row[1]; own = row[2]; oppScore = row[3]; }
-      const opp = KEY(teamMap ? teamMap[oppRaw] : oppRaw);
+      const opp = KEY(remap(teamMap ? teamMap[oppRaw] : oppRaw));
       if (!opp) throw new Error(`${year}: could not resolve opponent "${oppRaw}"`);
       const g = { wk, a: self, b: opp, sa: own, sb: oppScore };
       // Tally only from the self side (each manager lists all their own games).
@@ -269,10 +277,11 @@ function emit(season) {
     teams: TEAMS_2009,
   }));
 }
-// 2011-2022 (sched, no result field)
+// 2011-2022 (sched, no result field). 2019 needs the Antony->Larson remap.
 for (const y of [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
   const src = legacy(`gen_h2h_${y}.py`);
-  emit(buildFromSched(y, parseSchedDict(src, `SCHED_${y}`), { hasResult: false }));
+  const keyRemap = y === 2019 ? (k) => REMAP_2019[k] ?? k : undefined;
+  emit(buildFromSched(y, parseSchedDict(src, `SCHED_${y}`), { hasResult: false, keyRemap }));
 }
 // 2023 (sched with result field, opp = manager key)
 {
