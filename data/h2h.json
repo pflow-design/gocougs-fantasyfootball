@@ -52,7 +52,7 @@
     },
     "KyleP": {
       "label": "Kyle P",
-      "since": "'12"
+      "since": "'10"
     },
     "Bradley": {
       "label": "Bradley",
@@ -61,6 +61,10 @@
     "Irfan": {
       "label": "Irfan",
       "since": "'09"
+    },
+    "Steven": {
+      "label": "Steven",
+      "since": "'10"
     }
   },
   "h2h": {

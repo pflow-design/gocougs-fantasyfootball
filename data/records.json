@@ -32,7 +32,7 @@
       "records": [
         { "metric": "High Single Week", "y2025": { "holder": "Rudee", "detail": "Wk 15", "value": "169.80" }, "allTime": { "holder": "Kyle K", "season": "2014", "value": "196.20" } },
         { "metric": "High Season Total", "y2025": { "holder": "David", "value": "1,900.36" }, "allTime": { "holder": "Rudee", "season": "2021", "value": "1,989.20" } },
-        { "metric": "Low Single Week", "y2025": { "holder": "Kyle K", "detail": "Wk 8", "value": "54.08" }, "allTime": { "holder": "Too Good", "season": "2010", "value": "22.36", "note": "An abandoned 2010 team; manager is hidden, so the team name is shown." } },
+        { "metric": "Low Single Week", "y2025": { "holder": "Kyle K", "detail": "Wk 8", "value": "54.08" }, "allTime": { "holder": "Steven (Too Good)", "season": "2010", "value": "22.36", "note": "Steven's abandoned 2010 team (identified by Patrick, 2026-07)." } },
         { "metric": "Low Season Total", "y2025": { "holder": "Duncan", "value": "1,534.66" }, "allTime": null },
         { "metric": "Low Season Avg (off.)", "y2025": null, "allTime": { "holder": "TBD", "value": "TBD" } }
       ]

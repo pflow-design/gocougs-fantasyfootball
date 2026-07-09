@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "description": "2010 season — STANDINGS ONLY. No weekly matchup data exists in the project (only the team-season table in scraped_2025_2010.md). PF values are rounded integers as scraped. Manager attribution (Patrick, 2026-07): Ryan C (Einhorn is Finkle!), David (Reality of Fantasy), Kyle K (Ballcuzzis), Patrick (Don't touch my Ditka), Daniel (Marvelous FarveLess), Bradley (Post-Feminism), Antony (Falcon & The Snowman), Duncan (Big Balls), Irfan (Teeth Malaysia, non-canonical/named-only). STILL UNKNOWN (pending Patrick's research): The Favres, ihatethecowboys, Too Good. 2010 is a canonical KDP season — champion David — and is in the regular-season Record Book per HANDOFF.md section 4 (source of the all-time Low Single Week: Too Good 22.36). 12-team, different-era league, hence standings-only fidelity.",
-    "source": "scraped_2025_2010.md",
+    "description": "2010 season — STANDINGS ONLY (no weekly matchup data, so no bracket/H2H). PF/PA are exact Yahoo values (data/yahoo-seasons.json). Manager attribution COMPLETE (Patrick, 2026-07): Ryan C (Einhorn is Finkle!), David (Reality of Fantasy), Kyle K (Ballcuzzis), Patrick (Don't touch my Ditka), Daniel (Marvelous FarveLess), Bradley (Post-Feminism), Antony (Falcon & The Snowman), Duncan (Big Balls), Irfan (Teeth Malaysia), Raj (The Favres), Kyle P (ihatethecowboys — his 2010 debut), Steven (Too Good — one-off 2010-only manager). Several were hidden even on Yahoo. 2010 is a canonical KDP season — champion David — and is in the regular-season Record Book (source of the all-time Low Single Week: Steven's Too Good, 22.36). 12-team, different-era league.",
+    "source": "scraped_2025_2010.md + data/yahoo-seasons.json",
     "standingsOnly": true,
     "canonicalSeason": true
   },
@@ -133,8 +133,8 @@
     {
       "rank": 7,
       "team": "The Favres",
-      "manager": null,
-      "managerKey": null,
+      "manager": "Raj",
+      "managerKey": "Raj",
       "w": 6,
       "l": 7,
       "t": 0,
@@ -152,8 +152,8 @@
     {
       "rank": 8,
       "team": "ihatethecowboys",
-      "manager": null,
-      "managerKey": null,
+      "manager": "Kyle P",
+      "managerKey": "KyleP",
       "w": 5,
       "l": 8,
       "t": 0,
@@ -228,15 +228,15 @@
     {
       "rank": 12,
       "team": "Too Good",
-      "manager": null,
-      "managerKey": null,
+      "manager": "Steven",
+      "managerKey": "Steven",
       "w": 2,
       "l": 11,
       "t": 0,
       "pf": 1035.38,
       "longestWinStreak": 1,
       "longestLossStreak": 9,
-      "note": "Abandoned team; holds the all-time Low Single Week record (22.36, Wk 9).",
+      "note": "Steven (2010 only). Abandoned mid-season; holds the all-time Low Single Week record (22.36, Wk 9).",
       "streak": "L-9",
       "rating": 552,
       "level": "Bronze",
@@ -253,13 +253,13 @@
       "Irfan",
       "Daniel",
       "David",
-      "The Favres",
-      "ihatethecowboys",
+      "Raj",
+      "Kyle P",
       "Antony",
       "Bradley",
       "Patrick",
       "Duncan",
-      "Too Good"
+      "Steven"
     ],
     "pf": [
       1719.24,
@@ -385,7 +385,7 @@
     },
     {
       "team": "The Favres",
-      "manager": "hidden",
+      "manager": "Raj",
       "record": "6-7-0",
       "place": 8,
       "badges": [
@@ -411,7 +411,7 @@
     },
     {
       "team": "ihatethecowboys",
-      "manager": "hidden",
+      "manager": "Kyle P",
       "record": "5-8-0",
       "place": 10,
       "badges": [
@@ -424,7 +424,7 @@
     },
     {
       "team": "Too Good",
-      "manager": "hidden",
+      "manager": "Steven",
       "record": "2-11-0",
       "place": 11,
       "badges": [
