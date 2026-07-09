@@ -51,17 +51,17 @@
       "status": "active",
       "currentTeam": "The Cuddly Kittens",
       "allTime": {
-        "seasons": 13,
-        "w": 102,
-        "l": 83,
+        "seasons": 14,
+        "w": 107,
+        "l": 91,
         "t": 0,
-        "pf": 21489.48,
+        "pf": 22763.48,
         "pa": 21074.19,
-        "winPct": 55.1,
+        "winPct": 54,
         "playoffAppearances": 5,
         "titles": 4
       },
-      "notes": "Absent 2019-2021 (3 seasons). Most titles all-time (4)."
+      "notes": "Absent 2019-2021 (3 seasons); 14 seasons total, incl. 2010 (Falcon & The Snowman). Most titles all-time (4)."
     },
     {
       "key": "Larson",
@@ -127,17 +127,17 @@
       "status": "active",
       "currentTeam": "My Ball Zach Ertz",
       "allTime": {
-        "seasons": 16,
-        "w": 116,
-        "l": 112,
+        "seasons": 17,
+        "w": 126,
+        "l": 115,
         "t": 0,
-        "pf": 26385.35,
+        "pf": 27811.35,
         "pa": 25814.33,
-        "winPct": 50.9,
-        "playoffAppearances": 9,
+        "winPct": 52.3,
+        "playoffAppearances": 10,
         "titles": 1
       },
-      "notes": "Original 2009 member. 16 seasons, 116-112 all-time (recomputed)."
+      "notes": "Original 2009 member. 17 seasons (incl. 2010 = Marvelous FarveLess), 126-115 all-time (recomputed)."
     },
     {
       "key": "RyanC",
@@ -146,17 +146,17 @@
       "status": "active",
       "currentTeam": "Trips Formation",
       "allTime": {
-        "seasons": 16,
-        "w": 113,
-        "l": 115,
+        "seasons": 17,
+        "w": 123,
+        "l": 118,
         "t": 0,
-        "pf": 26268.13,
+        "pf": 27987.13,
         "pa": 26524.48,
-        "winPct": 49.6,
-        "playoffAppearances": 7,
+        "winPct": 51,
+        "playoffAppearances": 8,
         "titles": 1
       },
-      "notes": "Distinct from Rudee. 2018 champion. In 2011 as the hidden 'Kibbles and Vicks' (confirmed by elimination), so 16 seasons; 113-115 all-time (recomputed)."
+      "notes": "Distinct from Rudee. 2018 champion. In 2011 as the hidden 'Kibbles and Vicks' and in 2010 as 'Einhorn is Finkle!' — 17 seasons; 123-118 all-time (recomputed)."
     },
     {
       "key": "duncan",
@@ -165,13 +165,13 @@
       "status": "active",
       "currentTeam": "Spoiling Your Cottage Cheese",
       "allTime": {
-        "seasons": 16,
-        "w": 110,
-        "l": 118,
+        "seasons": 17,
+        "w": 115,
+        "l": 126,
         "t": 0,
-        "pf": 25940.23,
+        "pf": 27129.23,
         "pa": 26276.79,
-        "winPct": 48.2,
+        "winPct": 47.7,
         "playoffAppearances": 7,
         "titles": 3
       },
@@ -241,17 +241,17 @@
       "status": "alumni",
       "currentTeam": null,
       "allTime": {
-        "seasons": 2,
-        "w": 11,
-        "l": 16,
+        "seasons": 3,
+        "w": 18,
+        "l": 22,
         "t": 0,
-        "pf": 2702.07,
+        "pf": 3949.07,
         "pa": 2787.69,
-        "winPct": 40.7,
-        "playoffAppearances": 0,
+        "winPct": 45,
+        "playoffAppearances": 1,
         "titles": 0
       },
-      "notes": "Alumni; limited seasons (only 2009 & 2011 attributed). No titles."
+      "notes": "Alumni. 3 seasons: 2009, 2010 (Post-Feminism), 2011. No titles."
     }
   ],
   "namingHistory": {
