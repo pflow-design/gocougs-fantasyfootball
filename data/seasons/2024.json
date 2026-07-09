@@ -15,7 +15,7 @@
   "standings": [
     {
       "rank": 1,
-      "manager": "PatrickF",
+      "manager": "Patrick",
       "managerKey": "PatrickF",
       "w": 11,
       "l": 4,
@@ -51,7 +51,7 @@
     },
     {
       "rank": 3,
-      "manager": "RyanC",
+      "manager": "Ryan C",
       "managerKey": "RyanC",
       "w": 10,
       "l": 5,
@@ -123,7 +123,7 @@
     },
     {
       "rank": 7,
-      "manager": "duncan",
+      "manager": "Duncan",
       "managerKey": "duncan",
       "w": 7,
       "l": 8,
@@ -141,7 +141,7 @@
     },
     {
       "rank": 8,
-      "manager": "KyleK",
+      "manager": "Kyle K",
       "managerKey": "KyleK",
       "w": 6,
       "l": 9,

@@ -33,7 +33,7 @@
     },
     {
       "rank": 2,
-      "manager": "KyleK",
+      "manager": "Kyle K",
       "managerKey": "KyleK",
       "w": 10,
       "l": 4,
@@ -87,7 +87,7 @@
     },
     {
       "rank": 5,
-      "manager": "duncan",
+      "manager": "Duncan",
       "managerKey": "duncan",
       "w": 7,
       "l": 7,
@@ -105,7 +105,7 @@
     },
     {
       "rank": 6,
-      "manager": "RyanC",
+      "manager": "Ryan C",
       "managerKey": "RyanC",
       "w": 6,
       "l": 8,
@@ -159,8 +159,8 @@
     },
     {
       "rank": 9,
-      "manager": "Larson",
-      "managerKey": "Larson",
+      "manager": "Kyle P",
+      "managerKey": "KyleP",
       "w": 5,
       "l": 9,
       "t": 0,
@@ -177,7 +177,7 @@
     },
     {
       "rank": 10,
-      "manager": "PatrickF",
+      "manager": "Patrick",
       "managerKey": "PatrickF",
       "w": 4,
       "l": 10,
@@ -217,7 +217,7 @@
       [
         "Bradley",
         96.76,
-        "Larson",
+        "KyleP",
         122.38
       ],
       [
@@ -255,7 +255,7 @@
       [
         "RyanC",
         77.16,
-        "Larson",
+        "KyleP",
         129.71
       ]
     ],
@@ -285,7 +285,7 @@
         130.83
       ],
       [
-        "Larson",
+        "KyleP",
         102.12,
         "KyleK",
         156.94
@@ -317,7 +317,7 @@
         125.75
       ],
       [
-        "Larson",
+        "KyleP",
         105.14,
         "Raj",
         119.94
@@ -343,7 +343,7 @@
         132.21
       ],
       [
-        "Larson",
+        "KyleP",
         73.03,
         "Daniel",
         151.64
@@ -359,7 +359,7 @@
       [
         "duncan",
         111.45,
-        "Larson",
+        "KyleP",
         108.21
       ],
       [
@@ -397,7 +397,7 @@
       [
         "PatrickF",
         70.62,
-        "Larson",
+        "KyleP",
         65.99
       ],
       [
@@ -435,7 +435,7 @@
       [
         "David",
         117.64,
-        "Larson",
+        "KyleP",
         117.83
       ],
       [
@@ -473,7 +473,7 @@
       [
         "Antony",
         89.8,
-        "Larson",
+        "KyleP",
         78.58
       ],
       [
@@ -505,7 +505,7 @@
       [
         "Bradley",
         80.04,
-        "Larson",
+        "KyleP",
         95.7
       ],
       [
@@ -543,7 +543,7 @@
       [
         "RyanC",
         103.4,
-        "Larson",
+        "KyleP",
         137.67
       ]
     ],
@@ -573,7 +573,7 @@
         166.96
       ],
       [
-        "Larson",
+        "KyleP",
         89.57,
         "KyleK",
         147.71
@@ -605,7 +605,7 @@
         154.19
       ],
       [
-        "Larson",
+        "KyleP",
         103.33,
         "Raj",
         134.24
@@ -631,7 +631,7 @@
         134.1
       ],
       [
-        "Larson",
+        "KyleP",
         98.95,
         "Daniel",
         143.68
@@ -655,7 +655,7 @@
       "Antony",
       "Bradley",
       "Patrick",
-      "Robbie"
+      "Kyle P"
     ],
     "pf": [
       1818.48,
@@ -790,7 +790,7 @@
     },
     {
       "team": "liverpoolsucks69",
-      "manager": "Robbie",
+      "manager": "Kyle P",
       "record": "5-9-0",
       "place": 9,
       "badges": [

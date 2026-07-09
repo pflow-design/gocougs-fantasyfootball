@@ -147,7 +147,7 @@ for (const file of files) {
       row.waiverMoves = (waivers[year] || {})[m.team] ?? null;
       row.pf = m.pf; row.pa = m.pa; row.diff = +(m.pf - m.pa).toFixed(2); // Yahoo is authoritative
     }
-    if (row.managerKey) keyToTeam[row.managerKey] = row.team;
+    if (row.managerKey) { row.manager = display(row.managerKey); keyToTeam[row.managerKey] = row.team; } // consistent display names
   }
 
   // Per-season context for notes/stories.

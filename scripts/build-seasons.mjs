@@ -63,6 +63,10 @@ const REMAP_2009 = { Larson: 'David', David: 'Irfan' };
 // was NOT in the league in 2019. legacy/fix_2019_larson.py fixed only the report's
 // h2hData, never this source dict, so the builder must remap it here.
 const REMAP_2019 = { Antony: 'Larson' };
+// 2011 correction (Patrick, 2026-07): the hidden 'liverpoolsucks69' team was
+// mislabeled 'Larson' in the SCHED_2011 source — it is actually Kyle P (his
+// KDP presence in 2011). Larson (Robbie) was NOT in the league in 2011.
+const REMAP_2011 = { Larson: 'KyleP' };
 const HIDDEN_2009 = {}; // no hidden teams in 2009 now that Irfan is tracked
 // 2009 team names by canonical manager key (from gen_h2h_2009.py header).
 const TEAMS_2009 = {
@@ -282,7 +286,8 @@ function emit(season) {
 // 2011-2022 (sched, no result field). 2019 needs the Antony->Larson remap.
 for (const y of [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
   const src = legacy(`gen_h2h_${y}.py`);
-  const keyRemap = y === 2019 ? (k) => REMAP_2019[k] ?? k : undefined;
+  const rm = y === 2011 ? REMAP_2011 : y === 2019 ? REMAP_2019 : null;
+  const keyRemap = rm ? (k) => rm[k] ?? k : undefined;
   emit(buildFromSched(y, parseSchedDict(src, `SCHED_${y}`), { hasResult: false, keyRemap }));
 }
 // 2023 (sched with result field, opp = manager key)

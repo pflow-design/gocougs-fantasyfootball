@@ -73,6 +73,7 @@ function parseListVar(src, name) {
 const KEY = (k) => ({ Kyle: 'KyleK', Kyle2: 'KyleP', Ryan: 'Rudee' }[k] || k);
 const REMAP_2009 = { Larson: 'David', David: '__IRFAN2009__' };
 const REMAP_2019 = { Antony: 'Larson' }; // hidden 2019 team mislabeled Antony = Larson
+const REMAP_2011 = { Larson: 'KyleP' };  // hidden 2011 'liverpoolsucks69' mislabeled Larson = Kyle P
 const twoDigit = (y) => String(y).slice(-2);
 const playoffCutoff = (y) => (y <= 2010 ? 6 : 4);
 
@@ -116,7 +117,8 @@ for (const s of seasons) {
 }
 // Playoffs — 2011..2022 (6-tuple: wk,A,B,sA,sB,True).
 for (const y of [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
-  const rm = y === 2019 ? (k) => REMAP_2019[k] ?? k : (k) => k;
+  const rmap = y === 2011 ? REMAP_2011 : y === 2019 ? REMAP_2019 : null;
+  const rm = rmap ? (k) => rmap[k] ?? k : (k) => k;
   for (const r of parseListVar(legacy(`gen_h2h_${y}.py`), `PLAYOFFS_${y}`)) {
     const [wk, a, b, sa, sb] = r;
     addGame(y, wk, true, KEY(rm(a)), KEY(rm(b)), sa, sb);

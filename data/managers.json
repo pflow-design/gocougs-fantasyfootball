@@ -36,8 +36,8 @@
         "w": 135,
         "l": 106,
         "t": 0,
-        "pf": 27772.54,
-        "pa": 26878.89,
+        "pf": 27731.69,
+        "pa": 26892.21,
         "winPct": 56,
         "playoffAppearances": 8,
         "titles": 0
@@ -55,8 +55,8 @@
         "w": 107,
         "l": 91,
         "t": 0,
-        "pf": 22638.72,
-        "pa": 22524.3,
+        "pf": 22763.22,
+        "pa": 22468.17,
         "winPct": 54,
         "playoffAppearances": 5,
         "titles": 4
@@ -66,21 +66,21 @@
     {
       "key": "Larson",
       "display": "Robbie",
-      "since": "2009",
+      "since": "2012",
       "status": "alumni",
       "currentTeam": null,
       "allTime": {
-        "seasons": 9,
-        "w": 63,
-        "l": 63,
+        "seasons": 8,
+        "w": 58,
+        "l": 54,
         "t": 0,
-        "pf": 14265.27,
-        "pa": 14512.97,
-        "winPct": 50,
+        "pf": 12857.21,
+        "pa": 12904.7,
+        "winPct": 51.8,
         "playoffAppearances": 3,
         "titles": 1
       },
-      "notes": "JS key is 'Larson' but displays as 'Robbie'. Historical/alumni; no 2025 team. 2013 champion. Recomputed: 9 seasons (2011-2019, NOT 2009); this includes 2019, where the hidden 4-10 team was mislabeled 'Antony' in the legacy SCHED_2019 but is actually Larson (confirmed by Patrick, 2026-07)."
+      "notes": "JS key is 'Larson' but displays as 'Robbie'. Historical/alumni; no 2025 team. 2013 champion. 8 seasons: 2012-2019 (NOT 2009, NOT 2011). Corrections by Patrick (2026-07): 2011 'liverpoolsucks69' was actually Kyle P (not Larson), and 2019's hidden team was mislabeled 'Antony' in SCHED_2019 but is Larson."
     },
     {
       "key": "KyleK",
@@ -93,8 +93,8 @@
         "w": 125,
         "l": 116,
         "t": 0,
-        "pf": 26946.37,
-        "pa": 26427,
+        "pf": 27100.44,
+        "pa": 26591.71,
         "winPct": 51.9,
         "playoffAppearances": 9,
         "titles": 0
@@ -131,8 +131,8 @@
         "w": 126,
         "l": 115,
         "t": 0,
-        "pf": 27718.63,
-        "pa": 27077.67,
+        "pf": 27810.93,
+        "pa": 27080.04,
         "winPct": 52.3,
         "playoffAppearances": 10,
         "titles": 1
@@ -150,8 +150,8 @@
         "w": 123,
         "l": 118,
         "t": 0,
-        "pf": 27831.79,
-        "pa": 27719.01,
+        "pf": 27987.37,
+        "pa": 27808.06,
         "winPct": 51,
         "playoffAppearances": 8,
         "titles": 1
@@ -169,8 +169,8 @@
         "w": 115,
         "l": 126,
         "t": 0,
-        "pf": 27231.85,
-        "pa": 27738.21,
+        "pf": 27129.49,
+        "pa": 27539.18,
         "winPct": 47.7,
         "playoffAppearances": 7,
         "titles": 3
@@ -188,8 +188,8 @@
         "w": 117,
         "l": 124,
         "t": 0,
-        "pf": 27423.22,
-        "pa": 27517.18,
+        "pf": 27255.64,
+        "pa": 27638.11,
         "winPct": 48.5,
         "playoffAppearances": 6,
         "titles": 2
@@ -207,8 +207,8 @@
         "w": 106,
         "l": 135,
         "t": 0,
-        "pf": 26407.15,
-        "pa": 27306.2,
+        "pf": 26421.02,
+        "pa": 27128.07,
         "winPct": 44,
         "playoffAppearances": 4,
         "titles": 1
@@ -222,17 +222,17 @@
       "status": "alumni",
       "currentTeam": null,
       "allTime": {
-        "seasons": 11,
-        "w": 65,
-        "l": 89,
+        "seasons": 12,
+        "w": 70,
+        "l": 98,
         "t": 0,
-        "pf": 17211.83,
-        "pa": 17919.87,
-        "winPct": 42.2,
+        "pf": 18463.42,
+        "pa": 19497.99,
+        "winPct": 41.7,
         "playoffAppearances": 3,
         "titles": 1
       },
-      "notes": "Formerly keyed 'Kyle2'. Debuted 2010 (ihatethecowboys, hidden slot — confirmed by Patrick 2026-07), absent 2011, then 2012-2021; not in 2022-2025. 1 title."
+      "notes": "Formerly keyed 'Kyle2'. Debuted 2010 (ihatethecowboys) and played 2011 (liverpoolsucks69) — both hidden slots, confirmed by Patrick (2026-07) — then 2012-2021 continuous; not in 2022-2025. 12 seasons, 1 title."
     },
     {
       "key": "Bradley",

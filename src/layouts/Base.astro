@@ -156,6 +156,44 @@ const path = Astro.url.pathname;
       .rlbl.s { background: #e8e0f7; color: var(--purple-900); }
       .rlbl.a { background: var(--gold); color: var(--ink); }
       .tbd { color: #c9c2e0; font-style: italic; }
+
+      /* Sortable tables */
+      table.sortable thead th { cursor: pointer; user-select: none; white-space: nowrap; }
+      table.sortable thead th:hover { color: var(--gold); }
+      .sort-arrow { opacity: .7; font-size: 10px; margin-left: 2px; }
     </style>
+
+    <script>
+      // Click-to-sort for any <table class="sortable">.
+      function cellValue(td) {
+        const raw = (td?.textContent ?? '').trim();
+        const cleaned = raw.replace(/,/g, '').replace(/[−–—]/g, '-').replace(/[^0-9.\-]/g, '');
+        if (cleaned !== '' && cleaned !== '-' && !isNaN(parseFloat(cleaned))) return parseFloat(cleaned);
+        return raw.toLowerCase();
+      }
+      document.querySelectorAll('table.sortable').forEach((table) => {
+        const tbody = table.tBodies[0];
+        if (!tbody) return;
+        const headers = table.querySelectorAll('thead th');
+        headers.forEach((th, col) => {
+          let dir = 1;
+          th.addEventListener('click', () => {
+            const rows = Array.from(tbody.rows);
+            rows.sort((a, b) => {
+              const av = cellValue(a.cells[col]), bv = cellValue(b.cells[col]);
+              if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * dir;
+              return String(av).localeCompare(String(bv)) * dir;
+            });
+            rows.forEach((r) => tbody.appendChild(r));
+            headers.forEach((h) => h.querySelector('.sort-arrow')?.remove());
+            const arrow = document.createElement('span');
+            arrow.className = 'sort-arrow';
+            arrow.textContent = dir === 1 ? '▲' : '▼';
+            th.appendChild(arrow);
+            dir *= -1;
+          });
+        });
+      });
+    </script>
   </body>
 </html>

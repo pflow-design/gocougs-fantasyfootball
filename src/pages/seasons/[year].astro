@@ -10,6 +10,11 @@ export function getStaticPaths() {
 interface Props { season: Season }
 const { season } = Astro.props;
 
+// seasons is sorted newest-first; find neighbours for prev/next nav.
+const sIdx = seasons.findIndex((s) => s.year === season.year);
+const newerSeason = sIdx > 0 ? seasons[sIdx - 1] : null;
+const olderSeason = sIdx < seasons.length - 1 ? seasons[sIdx + 1] : null;
+
 const mgrList = (managers as any).managers;
 const label = (key?: string | null) => {
   if (!key) return null;
@@ -61,6 +66,12 @@ if (pf) {
 ---
 <Base title={`${season.year} Season`} subtitle={`${season.teams} teams · ${season.regularSeasonWeeks ?? '—'}-week regular season`}>
 
+  <nav class="season-nav">
+    {olderSeason ? <a href={`/seasons/${olderSeason.year}/`}>← {olderSeason.year}</a> : <span></span>}
+    <a href="/seasons/" class="all">☰ All Seasons</a>
+    {newerSeason ? <a href={`/seasons/${newerSeason.year}/`}>{newerSeason.year} →</a> : <span></span>}
+  </nav>
+
   {champKnown ? (
     <div class="champ-banner">
       <div class="ce">🏆 {season.year} Champion</div>
@@ -100,8 +111,8 @@ if (pf) {
               const yb = chart.padT + chart.ch;
               return (
                 <>
-                  <rect x={x1} y={chart.y(pf.pf[i])} width={chart.bw} height={yb - chart.y(pf.pf[i])} rx="3" fill="rgba(96,1,210,0.82)" />
-                  <rect x={x2} y={chart.y(pf.pa[i])} width={chart.bw} height={yb - chart.y(pf.pa[i])} rx="3" fill="rgba(255,140,0,0.9)" />
+                  <rect class="pf-bar" x={x1} y={chart.y(pf.pf[i])} width={chart.bw} height={yb - chart.y(pf.pf[i])} rx="3" fill="rgba(96,1,210,0.82)" data-tip={`${t} · Points For: ${pf.pf[i].toFixed(2)}`} />
+                  <rect class="pf-bar" x={x2} y={chart.y(pf.pa[i])} width={chart.bw} height={yb - chart.y(pf.pa[i])} rx="3" fill="rgba(255,140,0,0.9)" data-tip={`${t} · Points Against: ${pf.pa[i].toFixed(2)}`} />
                   <text x={cx} y={chart.H - chart.padB + 16} text-anchor="middle" font-size="11" font-weight="600" fill="#444">{t}</text>
                 </>
               );
@@ -114,7 +125,9 @@ if (pf) {
           <span><i style="background:rgba(96,1,210,0.82)"></i>Points For</span>
           <span><i style="background:rgba(255,140,0,0.9)"></i>Points Against</span>
         </div>
+        <p class="sub" style="text-align:center;margin-top:4px;">Hover or tap a bar to see its value.</p>
       </div>
+      <div class="chart-tip" id="chartTip" hidden></div>
     </>
   )}
 
@@ -200,10 +213,59 @@ if (pf) {
     </>
   )}
 
-  <p style="margin-top:28px;"><a href="/seasons/">← All seasons</a></p>
+  <nav class="season-nav" style="margin-top:28px;">
+    {olderSeason ? <a href={`/seasons/${olderSeason.year}/`}>← {olderSeason.year}</a> : <span></span>}
+    <a href="/seasons/" class="all">☰ All Seasons</a>
+    {newerSeason ? <a href={`/seasons/${newerSeason.year}/`}>{newerSeason.year} →</a> : <span></span>}
+  </nav>
+
+  <a href="/seasons/" class="back-fab" aria-label="Back to all seasons">☰ Seasons</a>
 </Base>
 
+<script>
+  // PF/PA chart tooltip — works for hover (desktop) and tap (mobile).
+  (() => {
+    const tip = document.getElementById('chartTip');
+    if (!tip) return;
+    const place = (e) => {
+      const x = e.clientX, y = e.clientY;
+      if (x == null) return;
+      tip.style.left = x + 'px';
+      tip.style.top = (y - 14) + 'px';
+    };
+    const show = (e) => {
+      const el = e.target;
+      if (!el.classList || !el.classList.contains('pf-bar')) return;
+      tip.textContent = el.getAttribute('data-tip');
+      tip.hidden = false;
+      place(e);
+    };
+    document.querySelectorAll('.pf-bar').forEach((bar) => {
+      bar.addEventListener('pointerenter', show);
+      bar.addEventListener('pointermove', (e) => { if (!tip.hidden) place(e); });
+      bar.addEventListener('pointerleave', () => { tip.hidden = true; });
+      bar.addEventListener('pointerdown', show);
+    });
+    document.addEventListener('pointerdown', (e) => {
+      if (!(e.target.classList && e.target.classList.contains('pf-bar'))) tip.hidden = true;
+    });
+  })();
+</script>
+
 <style>
+  .season-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .season-nav a { font-size: 13px; font-weight: 700; color: var(--purple-700); text-decoration: none; padding: 6px 13px; border-radius: 20px; background: #fff; border: 1px solid var(--line); }
+  .season-nav a:hover { background: var(--purple-700); color: #fff; }
+  .season-nav a.all { background: var(--purple-900); color: #fff; border-color: var(--purple-900); }
+
+  .back-fab { position: fixed; left: 16px; bottom: 16px; z-index: 90; background: var(--purple-900); color: #fff; font-size: 13px; font-weight: 800; padding: 10px 16px; border-radius: 24px; text-decoration: none; box-shadow: 0 4px 14px rgba(59,0,153,.4); }
+  .back-fab:hover { background: var(--purple-700); }
+  @media (max-width: 640px) { .back-fab { left: 12px; bottom: 12px; padding: 9px 14px; font-size: 12px; } }
+
+  .pf-bar { cursor: pointer; transition: opacity .1s; }
+  .pf-bar:hover { opacity: .78; }
+  .chart-tip { position: fixed; z-index: 200; background: var(--purple-900); color: #fff; padding: 5px 9px; border-radius: 6px; font-size: 12px; font-weight: 600; pointer-events: none; transform: translate(-50%, -100%); white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+
   .champ-banner { background: linear-gradient(135deg, var(--gold), #ff8c00); border-radius: 12px; text-align: center; padding: 22px; margin-bottom: 8px; }
   .champ-banner .ce { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(0,0,0,.55); }
   .champ-banner .cn { font-size: 28px; font-weight: 900; color: var(--ink); margin-top: 4px; }
