@@ -1,0 +1,35 @@
+# --- Build output ---
+/public/
+/dist/
+/.cache/
+/.astro/
+node_modules/
+
+# --- Secrets / credentials (NEVER commit) ---
+.env
+.env.*
+!.env.example
+*.token
+*.tokens
+*token*.json
+oauth*.json
+credentials*.json
+secrets/
+.secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+.vscode/
+.idea/
+*.swp

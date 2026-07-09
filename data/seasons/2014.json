@@ -1,0 +1,585 @@
+{
+  "_meta": {
+    "description": "2014 KDP season regular-season standings + weekly results, built from legacy/gen_h2h_2014.py by scripts/build-seasons.mjs. Standings are regular season only.",
+    "source": "legacy/gen_h2h_2014.py",
+    "generatedBy": "scripts/build-seasons.mjs"
+  },
+  "year": 2014,
+  "leagueId": "372078",
+  "yahooUrl": "https://football.fantasysports.yahoo.com/2014/f1/372078",
+  "teams": 10,
+  "regularSeasonWeeks": 14,
+  "champion": null,
+  "standings": [
+    {
+      "rank": 1,
+      "manager": "Raj",
+      "managerKey": "Raj",
+      "w": 10,
+      "l": 4,
+      "t": 0,
+      "pf": 1805.64,
+      "pa": 1592.12,
+      "diff": 213.52,
+      "games": 14
+    },
+    {
+      "rank": 2,
+      "manager": "Antony",
+      "managerKey": "Antony",
+      "w": 9,
+      "l": 5,
+      "t": 0,
+      "pf": 1767.08,
+      "pa": 1607.72,
+      "diff": 159.36,
+      "games": 14
+    },
+    {
+      "rank": 3,
+      "manager": "Daniel",
+      "managerKey": "Daniel",
+      "w": 8,
+      "l": 6,
+      "t": 0,
+      "pf": 1626.19,
+      "pa": 1576.69,
+      "diff": 49.5,
+      "games": 14
+    },
+    {
+      "rank": 4,
+      "manager": "Larson",
+      "managerKey": "Larson",
+      "w": 8,
+      "l": 6,
+      "t": 0,
+      "pf": 1582.38,
+      "pa": 1560.67,
+      "diff": 21.71,
+      "games": 14
+    },
+    {
+      "rank": 5,
+      "manager": "PatrickF",
+      "managerKey": "PatrickF",
+      "w": 7,
+      "l": 7,
+      "t": 0,
+      "pf": 1690.01,
+      "pa": 1620.79,
+      "diff": 69.22,
+      "games": 14
+    },
+    {
+      "rank": 6,
+      "manager": "KyleP",
+      "managerKey": "KyleP",
+      "w": 7,
+      "l": 7,
+      "t": 0,
+      "pf": 1631.98,
+      "pa": 1689.83,
+      "diff": -57.85,
+      "games": 14
+    },
+    {
+      "rank": 7,
+      "manager": "David",
+      "managerKey": "David",
+      "w": 6,
+      "l": 8,
+      "t": 0,
+      "pf": 1592.86,
+      "pa": 1715.17,
+      "diff": -122.31,
+      "games": 14
+    },
+    {
+      "rank": 8,
+      "manager": "KyleK",
+      "managerKey": "KyleK",
+      "w": 5,
+      "l": 9,
+      "t": 0,
+      "pf": 1689.75,
+      "pa": 1669.52,
+      "diff": 20.23,
+      "games": 14
+    },
+    {
+      "rank": 9,
+      "manager": "duncan",
+      "managerKey": "duncan",
+      "w": 5,
+      "l": 9,
+      "t": 0,
+      "pf": 1621.55,
+      "pa": 1812.86,
+      "diff": -191.31,
+      "games": 14
+    },
+    {
+      "rank": 10,
+      "manager": "RyanC",
+      "managerKey": "RyanC",
+      "w": 5,
+      "l": 9,
+      "t": 0,
+      "pf": 1557.17,
+      "pa": 1719.24,
+      "diff": -162.07,
+      "games": 14
+    }
+  ],
+  "weeklyScores": {
+    "1": [
+      [
+        "duncan",
+        149.88,
+        "David",
+        102.13
+      ],
+      [
+        "Larson",
+        109.1,
+        "PatrickF",
+        91.39
+      ],
+      [
+        "KyleP",
+        123.3,
+        "RyanC",
+        92.36
+      ],
+      [
+        "Daniel",
+        89.12,
+        "Raj",
+        119.23
+      ],
+      [
+        "Antony",
+        126.2,
+        "KyleK",
+        130.02
+      ]
+    ],
+    "2": [
+      [
+        "duncan",
+        65.2,
+        "Larson",
+        114.81
+      ],
+      [
+        "David",
+        119.31,
+        "KyleK",
+        145.87
+      ],
+      [
+        "KyleP",
+        115.98,
+        "PatrickF",
+        133.65
+      ],
+      [
+        "Daniel",
+        116.34,
+        "RyanC",
+        75.39
+      ],
+      [
+        "Antony",
+        116.09,
+        "Raj",
+        114.45
+      ]
+    ],
+    "3": [
+      [
+        "duncan",
+        128.1,
+        "KyleP",
+        96.62
+      ],
+      [
+        "David",
+        88.49,
+        "Larson",
+        128.53
+      ],
+      [
+        "Daniel",
+        91.29,
+        "PatrickF",
+        90.55
+      ],
+      [
+        "Antony",
+        134.77,
+        "RyanC",
+        73.46
+      ],
+      [
+        "Raj",
+        111.66,
+        "KyleK",
+        107.24
+      ]
+    ],
+    "4": [
+      [
+        "duncan",
+        116.61,
+        "Daniel",
+        133.84
+      ],
+      [
+        "David",
+        156.3,
+        "KyleP",
+        78.69
+      ],
+      [
+        "Larson",
+        107.37,
+        "KyleK",
+        103.58
+      ],
+      [
+        "Antony",
+        96.15,
+        "PatrickF",
+        137.7
+      ],
+      [
+        "Raj",
+        118.95,
+        "RyanC",
+        136.91
+      ]
+    ],
+    "5": [
+      [
+        "duncan",
+        74.71,
+        "Antony",
+        146.91
+      ],
+      [
+        "David",
+        114.76,
+        "Daniel",
+        90.51
+      ],
+      [
+        "Larson",
+        87.92,
+        "KyleP",
+        134.41
+      ],
+      [
+        "Raj",
+        157.78,
+        "PatrickF",
+        123.34
+      ],
+      [
+        "RyanC",
+        117.11,
+        "KyleK",
+        103.47
+      ]
+    ],
+    "6": [
+      [
+        "duncan",
+        97.15,
+        "Raj",
+        141.21
+      ],
+      [
+        "David",
+        92.84,
+        "Antony",
+        152.84
+      ],
+      [
+        "Larson",
+        126.02,
+        "Daniel",
+        107.26
+      ],
+      [
+        "KyleP",
+        139.1,
+        "KyleK",
+        127.97
+      ],
+      [
+        "RyanC",
+        90.53,
+        "PatrickF",
+        103.28
+      ]
+    ],
+    "7": [
+      [
+        "duncan",
+        83.14,
+        "RyanC",
+        124.84
+      ],
+      [
+        "David",
+        119.18,
+        "Raj",
+        141.86
+      ],
+      [
+        "Larson",
+        98,
+        "Antony",
+        115.47
+      ],
+      [
+        "KyleP",
+        114.9,
+        "Daniel",
+        101.67
+      ],
+      [
+        "PatrickF",
+        114.06,
+        "KyleK",
+        99.46
+      ]
+    ],
+    "8": [
+      [
+        "duncan",
+        142.56,
+        "PatrickF",
+        172.04
+      ],
+      [
+        "David",
+        125.91,
+        "RyanC",
+        172.76
+      ],
+      [
+        "Larson",
+        118.16,
+        "Raj",
+        101.99
+      ],
+      [
+        "KyleP",
+        150.03,
+        "Antony",
+        141.05
+      ],
+      [
+        "Daniel",
+        115.29,
+        "KyleK",
+        99.77
+      ]
+    ],
+    "9": [
+      [
+        "duncan",
+        102.55,
+        "KyleK",
+        131.07
+      ],
+      [
+        "David",
+        122.82,
+        "PatrickF",
+        136.8
+      ],
+      [
+        "Larson",
+        87.2,
+        "RyanC",
+        111.59
+      ],
+      [
+        "KyleP",
+        129.95,
+        "Raj",
+        148.12
+      ],
+      [
+        "Daniel",
+        135.22,
+        "Antony",
+        89.52
+      ]
+    ],
+    "10": [
+      [
+        "duncan",
+        101.23,
+        "David",
+        173.74
+      ],
+      [
+        "Larson",
+        131.74,
+        "PatrickF",
+        105.59
+      ],
+      [
+        "KyleP",
+        121.74,
+        "RyanC",
+        86.5
+      ],
+      [
+        "Daniel",
+        151.43,
+        "Raj",
+        145.07
+      ],
+      [
+        "Antony",
+        114.45,
+        "KyleK",
+        81.61
+      ]
+    ],
+    "11": [
+      [
+        "duncan",
+        117.8,
+        "Larson",
+        87.31
+      ],
+      [
+        "David",
+        99.26,
+        "KyleK",
+        88.15
+      ],
+      [
+        "KyleP",
+        126.15,
+        "PatrickF",
+        73.53
+      ],
+      [
+        "Daniel",
+        131.17,
+        "RyanC",
+        105.54
+      ],
+      [
+        "Antony",
+        99.05,
+        "Raj",
+        103.95
+      ]
+    ],
+    "12": [
+      [
+        "duncan",
+        155.84,
+        "KyleP",
+        122.89
+      ],
+      [
+        "David",
+        114.87,
+        "Larson",
+        97.35
+      ],
+      [
+        "Daniel",
+        91.42,
+        "PatrickF",
+        169.53
+      ],
+      [
+        "Antony",
+        132.9,
+        "RyanC",
+        124.4
+      ],
+      [
+        "Raj",
+        155.91,
+        "KyleK",
+        86.47
+      ]
+    ],
+    "13": [
+      [
+        "duncan",
+        140.77,
+        "Daniel",
+        112.32
+      ],
+      [
+        "David",
+        94.22,
+        "KyleP",
+        71.39
+      ],
+      [
+        "Larson",
+        126.27,
+        "KyleK",
+        196.2
+      ],
+      [
+        "Antony",
+        148.55,
+        "PatrickF",
+        145.32
+      ],
+      [
+        "Raj",
+        148.2,
+        "RyanC",
+        124.8
+      ]
+    ],
+    "14": [
+      [
+        "duncan",
+        146.01,
+        "Antony",
+        153.13
+      ],
+      [
+        "David",
+        69.03,
+        "Daniel",
+        159.31
+      ],
+      [
+        "Larson",
+        162.6,
+        "KyleP",
+        106.83
+      ],
+      [
+        "Raj",
+        97.26,
+        "PatrickF",
+        93.23
+      ],
+      [
+        "RyanC",
+        120.98,
+        "KyleK",
+        188.87
+      ]
+    ]
+  }
+}

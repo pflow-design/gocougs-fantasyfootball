@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "title": "All-Time Record Book — Regular Season",
+    "description": "Regular season only; playoff games excluded from every record. 2009 is EXCLUDED (10-team WaZZU era, lower scoring, not comparable); 2010 is INCLUDED (12-team era). See HANDOFF.md section 4. Each metric has a '2025' row (current-season leader) and an 'allTime' row (best/worst across all included seasons). Cells marked TBD need per-player weekly box scores that do not exist in the project.",
+    "source": "reference/kdp_report.html Record Book section",
+    "seasonRowLabelNote": "The '2025' row = that current season's leader. Originally labeled 'Season' (ambiguous); renamed to the explicit year."
+  },
+  "groups": [
+    {
+      "title": "Head-to-Head Records",
+      "icon": "🏆",
+      "records": [
+        { "metric": "Most Wins", "y2025": { "holder": "Rudee / David", "value": "11 W" }, "allTime": { "holder": "David", "season": "2020", "value": "13 W" } },
+        { "metric": "Win Streak", "y2025": { "holder": "David", "value": "7 games" }, "allTime": { "holder": "Duncan", "season": "2021", "value": "9 games", "note": "Displayed as Duncan '21 but actually a multi-way tie: Raj '11, Raj '18, Duncan '21, and a 2010 team." } },
+        { "metric": "Most Losses", "y2025": { "holder": "Duncan", "value": "12 L" }, "allTime": { "holder": "Patrick", "season": "2021", "value": "13 L" } },
+        { "metric": "Loss Streak", "y2025": { "holder": "Kyle K / Raj", "value": "7 games" }, "allTime": { "holder": "Patrick", "season": "2021", "value": "12 games" } }
+      ]
+    },
+    {
+      "title": "Margins of Victory",
+      "icon": "💥",
+      "records": [
+        { "metric": "Biggest Blowout", "y2025": { "holder": "Patrick vs. Daniel", "detail": "Wk 7", "value": "70.28 pts" }, "allTime": { "holder": "Kyle K vs. David", "season": "2023", "value": "100.58 pts" } },
+        { "metric": "Closest Game", "y2025": { "holder": "Ryan C vs. Duncan", "detail": "Wk 14", "value": "0.02 pts" }, "allTime": { "holder": "Ryan C vs. Duncan", "season": "2025", "value": "0.02 pts", "note": "The 2025 game IS the all-time record." } },
+        { "metric": "Hardest Schedule", "y2025": { "holder": "Patrick", "value": "122.28/wk" }, "allTime": { "holder": "Antony", "season": "2018", "value": "137.63/wk" }, "definition": "Average opponent points scored against a manager (Points-Against / games)." },
+        { "metric": "Easiest Schedule", "y2025": { "holder": "Antony", "value": "108.93/wk" }, "allTime": { "holder": "Patrick", "season": "2012", "value": "97.02/wk" } }
+      ]
+    },
+    {
+      "title": "Points Records",
+      "icon": "📊",
+      "records": [
+        { "metric": "High Single Week", "y2025": { "holder": "Rudee", "detail": "Wk 15", "value": "169.80" }, "allTime": { "holder": "Kyle K", "season": "2014", "value": "196.20" } },
+        { "metric": "High Season Total", "y2025": { "holder": "David", "value": "1,900.36" }, "allTime": { "holder": "Rudee", "season": "2021", "value": "1,989.20" } },
+        { "metric": "Low Single Week", "y2025": { "holder": "Kyle K", "detail": "Wk 8", "value": "54.08" }, "allTime": { "holder": "Too Good", "season": "2010", "value": "22.36", "note": "An abandoned 2010 team; manager is hidden, so the team name is shown." } },
+        { "metric": "Low Season Total", "y2025": { "holder": "Duncan", "value": "1,534.66" }, "allTime": null },
+        { "metric": "Low Season Avg (off.)", "y2025": null, "allTime": { "holder": "TBD", "value": "TBD" } }
+      ]
+    },
+    {
+      "title": "Statistical Records",
+      "icon": "🏈",
+      "note": "All-time player-stat rows are TBD: they require per-player weekly box scores across all 16 seasons (~2,000 Yahoo pages), deliberately deferred.",
+      "records": [
+        { "metric": "Most TDs (week)", "y2025": { "holder": "Raj", "detail": "Wk 15", "value": "13 TDs" }, "allTime": { "holder": "TBD", "value": "TBD", "note": "2025's 13 TDs ties the all-time record set in 2020." } },
+        { "metric": "Rush Yds (week)", "y2025": { "holder": "TBD", "value": "TBD" }, "allTime": { "holder": "TBD", "value": "TBD" } },
+        { "metric": "Rec Yds (week)", "y2025": { "holder": "Ryan C", "detail": "Wk 12", "value": "608 yds" }, "allTime": { "holder": "TBD", "value": "TBD" } },
+        { "metric": "Pass Yds (week)", "y2025": { "holder": "Patrick", "detail": "Wk 11", "value": "452 yds" }, "allTime": { "holder": "TBD", "value": "TBD" } }
+      ]
+    }
+  ]
+}

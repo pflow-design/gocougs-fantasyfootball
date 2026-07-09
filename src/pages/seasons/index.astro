@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { seasons, managers, championInfo } from '../../lib/data.ts';
+
+const mgrLabel = (key?: string | null) => {
+  if (!key) return null;
+  const m = (managers as any).managers.find((x: any) => x.key === key);
+  return m ? m.display : key;
+};
+const rows = seasons.map((s) => {
+  const ci = championInfo(s);
+  return { s, team: ci.team, name: mgrLabel(ci.key), known: ci.known };
+});
+---
+<Base title="Seasons" subtitle={`Every KDP season, ${seasons[seasons.length - 1].year}–${seasons[0].year}.`}>
+  <div class="season-list">
+    {rows.map(({ s, team, name, known }) => (
+      <a href={`/seasons/${s.year}/`} class="card srow">
+        <div class="syear">{s.year}</div>
+        <div class="sbody">
+          <div class="stitle">
+            {known ? '🏆 ' : ''}{team ?? '—'}
+            <span class="sub"> — {name ?? '—'}{known ? '' : ' · reg. season #1'}</span>
+          </div>
+          <div class="sub">{s.teams} teams · {s.regularSeasonWeeks ?? '—'}-week regular season · League #{s.leagueId ?? '—'}</div>
+        </div>
+        <div class="sarrow">→</div>
+      </a>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .season-list { display: flex; flex-direction: column; gap: 10px; }
+  .srow { display: flex; align-items: center; gap: 18px; text-decoration: none; color: inherit; padding: 16px 20px; transition: box-shadow .15s, transform .15s; }
+  .srow:hover { box-shadow: 0 6px 18px rgba(96,1,210,.15); transform: translateY(-1px); }
+  .syear { font-size: 26px; font-weight: 900; color: var(--purple-900); min-width: 62px; }
+  .sbody { flex: 1; }
+  .stitle { font-weight: 800; font-size: 15px; }
+  .sarrow { color: var(--purple-500); font-size: 20px; font-weight: 700; }
+</style>

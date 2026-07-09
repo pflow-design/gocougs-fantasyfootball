@@ -1,0 +1,565 @@
+{
+  "_meta": {
+    "description": "2009 KDP season regular-season standings + weekly results, built from legacy/gen_h2h_2009.py by scripts/build-seasons.mjs. Standings are regular season only.",
+    "source": "legacy/gen_h2h_2009.py",
+    "generatedBy": "scripts/build-seasons.mjs"
+  },
+  "year": 2009,
+  "leagueId": "320012",
+  "yahooUrl": "https://football.fantasysports.yahoo.com/2009/f1/320012",
+  "teams": 10,
+  "regularSeasonWeeks": 13,
+  "champion": {
+    "managerKey": "duncan"
+  },
+  "standings": [
+    {
+      "rank": 1,
+      "manager": "Antony",
+      "managerKey": "Antony",
+      "w": 10,
+      "l": 3,
+      "t": 0,
+      "pf": 1246.65,
+      "pa": 1073.83,
+      "diff": 172.82,
+      "games": 13,
+      "team": "The Blackouts"
+    },
+    {
+      "rank": 2,
+      "manager": "duncan",
+      "managerKey": "duncan",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 1223.61,
+      "pa": 1181.58,
+      "diff": 42.03,
+      "games": 13,
+      "team": "The Frying Pans"
+    },
+    {
+      "rank": 3,
+      "manager": "Daniel",
+      "managerKey": "Daniel",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 1217.4,
+      "pa": 1136.43,
+      "diff": 80.97,
+      "games": 13,
+      "team": "Favre and Away"
+    },
+    {
+      "rank": 4,
+      "manager": "KyleK",
+      "managerKey": "KyleK",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 1182.7,
+      "pa": 1054.02,
+      "diff": 128.68,
+      "games": 13,
+      "team": "Ballcuzzis"
+    },
+    {
+      "rank": 5,
+      "manager": "David",
+      "managerKey": "David",
+      "w": 7,
+      "l": 6,
+      "t": 0,
+      "pf": 972.64,
+      "pa": 1142.7,
+      "diff": -170.06,
+      "games": 13,
+      "team": "cougs4bcsbid"
+    },
+    {
+      "rank": 6,
+      "manager": "RyanC",
+      "managerKey": "RyanC",
+      "w": 6,
+      "l": 7,
+      "t": 0,
+      "pf": 1137.73,
+      "pa": 1108.12,
+      "diff": 29.61,
+      "games": 13,
+      "team": "Purple Reign"
+    },
+    {
+      "rank": 7,
+      "manager": "Irfan (hidden)",
+      "managerKey": null,
+      "w": 6,
+      "l": 7,
+      "t": 0,
+      "pf": 1046.04,
+      "pa": 1149.74,
+      "diff": -103.7,
+      "games": 13,
+      "team": "Team Malaysia"
+    },
+    {
+      "rank": 8,
+      "manager": "Bradley",
+      "managerKey": "Bradley",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1205.17,
+      "pa": 1191.11,
+      "diff": 14.06,
+      "games": 13,
+      "team": "FUCK YOU RUDEE"
+    },
+    {
+      "rank": 9,
+      "manager": "Raj",
+      "managerKey": "Raj",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1050.94,
+      "pa": 1225.41,
+      "diff": -174.47,
+      "games": 13,
+      "team": "Sound Records"
+    },
+    {
+      "rank": 10,
+      "manager": "PatrickF",
+      "managerKey": "PatrickF",
+      "w": 5,
+      "l": 8,
+      "t": 0,
+      "pf": 1021.31,
+      "pa": 1041.25,
+      "diff": -19.94,
+      "games": 13,
+      "team": "AIDS"
+    }
+  ],
+  "weeklyScores": {
+    "1": [
+      [
+        "David",
+        61.22,
+        "Team Malaysia",
+        58.56
+      ],
+      [
+        "Bradley",
+        97.78,
+        "Antony",
+        71.47
+      ],
+      [
+        "RyanC",
+        91.23,
+        "KyleK",
+        85.86
+      ],
+      [
+        "PatrickF",
+        117.95,
+        "Raj",
+        62.11
+      ],
+      [
+        "Daniel",
+        148.49,
+        "duncan",
+        84.19
+      ]
+    ],
+    "2": [
+      [
+        "Team Malaysia",
+        110.25,
+        "duncan",
+        72.52
+      ],
+      [
+        "KyleK",
+        136.34,
+        "Raj",
+        74.79
+      ],
+      [
+        "Antony",
+        115.83,
+        "RyanC",
+        73.28
+      ],
+      [
+        "David",
+        88.81,
+        "Bradley",
+        76.02
+      ],
+      [
+        "PatrickF",
+        102.77,
+        "Daniel",
+        43.57
+      ]
+    ],
+    "3": [
+      [
+        "RyanC",
+        84.59,
+        "David",
+        58.52
+      ],
+      [
+        "Team Malaysia",
+        78.93,
+        "Bradley",
+        77.95
+      ],
+      [
+        "Antony",
+        112.98,
+        "Raj",
+        70.43
+      ],
+      [
+        "KyleK",
+        91.96,
+        "Daniel",
+        77.25
+      ],
+      [
+        "duncan",
+        98.4,
+        "PatrickF",
+        57.06
+      ]
+    ],
+    "4": [
+      [
+        "Raj",
+        81.53,
+        "David",
+        70.39
+      ],
+      [
+        "RyanC",
+        109.56,
+        "Team Malaysia",
+        51.18
+      ],
+      [
+        "KyleK",
+        68.86,
+        "PatrickF",
+        52.61
+      ],
+      [
+        "duncan",
+        90.17,
+        "Bradley",
+        69.35
+      ],
+      [
+        "Antony",
+        131.7,
+        "Daniel",
+        69.81
+      ]
+    ],
+    "5": [
+      [
+        "Daniel",
+        90.14,
+        "David",
+        58.47
+      ],
+      [
+        "Team Malaysia",
+        98.41,
+        "Raj",
+        67.63
+      ],
+      [
+        "Bradley",
+        95.34,
+        "RyanC",
+        84.2
+      ],
+      [
+        "duncan",
+        112.46,
+        "KyleK",
+        54.39
+      ],
+      [
+        "Antony",
+        83.1,
+        "PatrickF",
+        71.62
+      ]
+    ],
+    "6": [
+      [
+        "David",
+        59.94,
+        "PatrickF",
+        49.31
+      ],
+      [
+        "Daniel",
+        129.27,
+        "Team Malaysia",
+        53.25
+      ],
+      [
+        "Bradley",
+        118.09,
+        "Raj",
+        93.66
+      ],
+      [
+        "RyanC",
+        122.55,
+        "duncan",
+        68.03
+      ],
+      [
+        "Antony",
+        115.46,
+        "KyleK",
+        113.54
+      ]
+    ],
+    "7": [
+      [
+        "David",
+        70.7,
+        "KyleK",
+        70.03
+      ],
+      [
+        "PatrickF",
+        99.04,
+        "Team Malaysia",
+        66.78
+      ],
+      [
+        "Bradley",
+        113.25,
+        "Daniel",
+        100.52
+      ],
+      [
+        "Raj",
+        101.87,
+        "RyanC",
+        101.18
+      ],
+      [
+        "Antony",
+        112.61,
+        "duncan",
+        108.7
+      ]
+    ],
+    "8": [
+      [
+        "Antony",
+        99.13,
+        "David",
+        51.06
+      ],
+      [
+        "KyleK",
+        73.25,
+        "Team Malaysia",
+        67.78
+      ],
+      [
+        "PatrickF",
+        93.69,
+        "Bradley",
+        88.71
+      ],
+      [
+        "Daniel",
+        86.65,
+        "RyanC",
+        81.83
+      ],
+      [
+        "Raj",
+        95.25,
+        "duncan",
+        81.46
+      ]
+    ],
+    "9": [
+      [
+        "duncan",
+        113.11,
+        "David",
+        52.79
+      ],
+      [
+        "Team Malaysia",
+        109.07,
+        "Antony",
+        72.03
+      ],
+      [
+        "KyleK",
+        115.59,
+        "Bradley",
+        53.35
+      ],
+      [
+        "RyanC",
+        85.2,
+        "PatrickF",
+        81.06
+      ],
+      [
+        "Daniel",
+        106.39,
+        "Raj",
+        73.78
+      ]
+    ],
+    "10": [
+      [
+        "Team Malaysia",
+        149.16,
+        "David",
+        71.83
+      ],
+      [
+        "Antony",
+        90.19,
+        "Bradley",
+        84.76
+      ],
+      [
+        "KyleK",
+        99.54,
+        "RyanC",
+        62.46
+      ],
+      [
+        "Raj",
+        91.97,
+        "PatrickF",
+        47.59
+      ],
+      [
+        "Daniel",
+        107.65,
+        "duncan",
+        71.36
+      ]
+    ],
+    "11": [
+      [
+        "duncan",
+        112.23,
+        "Team Malaysia",
+        75.9
+      ],
+      [
+        "Raj",
+        90.78,
+        "KyleK",
+        64.94
+      ],
+      [
+        "RyanC",
+        87.01,
+        "Antony",
+        79.48
+      ],
+      [
+        "David",
+        122.58,
+        "Bradley",
+        104.28
+      ],
+      [
+        "Daniel",
+        102.37,
+        "PatrickF",
+        64.71
+      ]
+    ],
+    "12": [
+      [
+        "David",
+        110.11,
+        "RyanC",
+        86.49
+      ],
+      [
+        "Bradley",
+        135.06,
+        "Team Malaysia",
+        52.12
+      ],
+      [
+        "Antony",
+        73.47,
+        "Raj",
+        66.79
+      ],
+      [
+        "KyleK",
+        119.96,
+        "Daniel",
+        85.31
+      ],
+      [
+        "duncan",
+        101.8,
+        "PatrickF",
+        84.06
+      ]
+    ],
+    "13": [
+      [
+        "David",
+        96.22,
+        "Raj",
+        80.35
+      ],
+      [
+        "Team Malaysia",
+        74.65,
+        "RyanC",
+        68.15
+      ],
+      [
+        "PatrickF",
+        99.84,
+        "KyleK",
+        88.44
+      ],
+      [
+        "duncan",
+        109.18,
+        "Bradley",
+        91.23
+      ],
+      [
+        "Antony",
+        89.2,
+        "Daniel",
+        69.98
+      ]
+    ]
+  }
+}

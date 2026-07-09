@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDP — Go Cougs | League History Report</title>
+<style>
+:root { color-scheme: light; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; background:#F4F0FF; color:#1a1a2e; }
+
+/* HEADER */
+.hdr { background:linear-gradient(135deg,#3B0099 0%,#6001D2 60%,#7B2FBE 100%); color:white; }
+.hdr-inner { max-width:1100px; margin:0 auto; padding:36px 24px 28px; }
+.y-logo { display:inline-flex; align-items:center; gap:10px; margin-bottom:14px; }
+.y-badge { background:#FFB400; color:#1a1a2e; font-weight:900; font-size:20px; width:38px; height:38px; border-radius:7px; display:flex; align-items:center; justify-content:center; }
+.y-label { font-size:12px; font-weight:700; letter-spacing:2px; opacity:.8; text-transform:uppercase; }
+.hdr-sub { font-size:12px; letter-spacing:2px; text-transform:uppercase; opacity:.7; margin-bottom:6px; }
+.hdr-title { font-size:40px; font-weight:900; letter-spacing:-1px; line-height:1; }
+.hdr-meta { display:flex; flex-wrap:wrap; gap:28px; margin-top:20px; }
+.meta-item { display:flex; flex-direction:column; }
+.meta-lbl { font-size:10px; letter-spacing:1px; text-transform:uppercase; opacity:.65; }
+.meta-val { font-size:17px; font-weight:800; color:#FFB400; }
+
+/* CHAMPION */
+.champ { background:linear-gradient(135deg,#FFB400,#FF8C00); text-align:center; padding:28px 24px; }
+.champ-eye { font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:700; color:rgba(0,0,0,.55); margin-bottom:6px; }
+.champ-trophy { font-size:52px; display:block; margin-bottom:4px; }
+.champ-name { font-size:34px; font-weight:900; color:#1a1a2e; }
+.champ-mgr { font-size:17px; color:rgba(0,0,0,.65); font-weight:600; margin-top:2px; }
+.champ-rec { display:inline-block; background:rgba(0,0,0,.13); border-radius:20px; padding:4px 16px; font-size:12px; font-weight:700; color:rgba(0,0,0,.75); margin-top:8px; }
+
+/* LAYOUT */
+.wrap { max-width:1100px; margin:0 auto; padding:32px 24px; }
+.section { margin-bottom:48px; }
+.sec-hdr { display:flex; align-items:center; gap:10px; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid #6001D2; }
+.sec-icon { font-size:20px; }
+.sec-title { font-size:21px; font-weight:800; color:#3B0099; }
+.card { background:white; border-radius:12px; padding:22px; box-shadow:0 2px 12px rgba(0,0,0,.08); border:1px solid #e5ddf7; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+.grid5 { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:12px; }
+
+/* STANDINGS */
+.stbl { width:100%; border-collapse:collapse; font-size:13.5px; }
+.stbl thead tr { background:#3B0099; color:white; }
+.stbl thead th { padding:11px 12px; text-align:left; font-size:10px; letter-spacing:1px; text-transform:uppercase; }
+.stbl thead th.r { text-align:right; }
+.stbl tbody tr { border-bottom:1px solid #f0ebff; }
+.stbl tbody tr:hover { background:#f9f6ff; }
+.stbl tbody td { padding:11px 12px; vertical-align:middle; }
+.stbl tbody td.r { text-align:right; font-variant-numeric:tabular-nums; }
+.rank { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; font-weight:800; font-size:12px; background:#e8e0f7; color:#3B0099; }
+.rank.p { background:#3B0099; color:white; }
+.rank.c { background:#FFB400; color:#1a1a2e; }
+.tn { font-weight:700; }
+.mgr { font-size:11px; color:#999; }
+.rec { font-weight:700; color:#3B0099; }
+.sw { color:#16a34a; font-weight:700; }
+.sl { color:#dc2626; font-weight:700; }
+
+/* PLAYOFF */
+.match { background:white; border-radius:10px; overflow:hidden; border:1px solid #e5ddf7; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+.match-lbl { background:#3B0099; color:white; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; padding:5px 12px; }
+.match-lbl.gold { background:#FFB400; color:#1a1a2e; }
+.match-row { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; font-size:13.5px; }
+.match-row.win { background:#f7f3ff; font-weight:700; }
+.match-row.lose { color:#aaa; }
+.mscore { font-variant-numeric:tabular-nums; font-weight:700; font-size:15px; }
+.match-row.win .mscore { color:#3B0099; }
+.playoff-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:680px; margin:0 auto; }
+
+/* PRIZE */
+.prize-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.prize { text-align:center; padding:16px; border-radius:10px; border:1px solid #e5ddf7; }
+.prize:nth-child(1) { background:#fff8e1; border-color:#FFB400; }
+.prize:nth-child(2) { background:#f5f5f5; }
+.prize:nth-child(3) { background:#fbe9e7; }
+.prize:nth-child(4) { background:#f3e5f5; }
+.prize-pl { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+.prize-amt { font-size:26px; font-weight:900; color:#3B0099; }
+.prize-note { font-size:11px; color:#888; margin-top:4px; }
+
+/* TEAM CARDS */
+.tcard { background:white; border-radius:12px; padding:18px; border:1px solid #e5ddf7; border-left:4px solid #6001D2; box-shadow:0 2px 10px rgba(0,0,0,.07); }
+.tcard.gold { border-left-color:#FFB400; }
+.tc-hdr { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
+.tc-name { font-size:15px; font-weight:800; color:#1a1a2e; margin-bottom:2px; }
+.tc-mgr { font-size:11px; color:#888; }
+.tc-rec { font-size:21px; font-weight:900; color:#3B0099; text-align:right; line-height:1; }
+.tc-pl { font-size:11px; color:#bbb; text-align:right; }
+.tc-stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:10px; }
+.tstat { text-align:center; background:#f7f3ff; border-radius:7px; padding:7px 2px; }
+.tstat-v { font-size:13px; font-weight:700; color:#3B0099; }
+.tstat-l { font-size:9px; color:#aaa; text-transform:uppercase; letter-spacing:.5px; }
+.tc-note { font-size:11.5px; color:#666; margin-top:10px; padding-top:10px; border-top:1px solid #f0ebff; font-style:italic; line-height:1.5; }
+.badges { display:flex; gap:4px; flex-wrap:wrap; margin-top:8px; }
+.bdg { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:700; }
+.bdg-d { background:#e0f7fa; color:#006064; }
+.bdg-p { background:#e8eaf6; color:#283593; }
+.bdg-g { background:#fff8e1; color:#e65100; }
+.bdg-s { background:#f5f5f5; color:#616161; }
+.bdg-b { background:#fbe9e7; color:#bf360c; }
+.bdg-c { background:#FFB400; color:#1a1a2e; }
+.bdg-l { background:#ef4444; color:white; }
+.bdg-x { background:#e8e0f7; color:#3B0099; }
+.bdg-og { background:#FFB400; color:#1a1a2e; }
+
+/* RECORDS */
+.rtbl { width:100%; border-collapse:collapse; }
+.rtbl tr { border-bottom:1px solid #f0ebff; }
+.rtbl tr:last-child { border-bottom:none; }
+.rtbl td { padding:9px 10px; font-size:12.5px; vertical-align:top; }
+.rc { font-weight:700; color:#3B0099; width:38%; }
+.rh { color:#444; width:36%; }
+.rv { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; width:26%; }
+.rat { background:#faf8ff; }
+.rlbl { display:inline-block; font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:1px 5px; border-radius:4px; font-weight:700; vertical-align:middle; margin-left:3px; }
+.rlbl-s { background:#e8e0f7; color:#3B0099; }
+.rlbl-a { background:#FFB400; color:#1a1a2e; }
+.rtbl-hdr { font-weight:800; color:#3B0099; margin-bottom:12px; font-size:14px; }
+
+/* STORY CARDS */
+.story { background:white; border-radius:12px; padding:18px; border:1px solid #e5ddf7; }
+.s-em { font-size:26px; margin-bottom:8px; display:block; }
+.s-hl { font-size:14px; font-weight:800; color:#1a1a2e; margin-bottom:5px; line-height:1.3; }
+.s-bd { font-size:12.5px; color:#555; line-height:1.5; }
+
+/* VETERANS */
+.vet { background:white; border-radius:10px; padding:14px; border:1px solid #e5ddf7; text-align:center; }
+.vet-yr { font-size:28px; font-weight:900; color:#3B0099; line-height:1; }
+.vet-lbl { font-size:9px; color:#bbb; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+.vet-nm { font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:2px; }
+.vet-tm { font-size:11px; color:#888; margin-bottom:6px; }
+
+/* CHART */
+.chart-wrap { position:relative; height:300px; }
+
+/* NAMES */
+.name-cloud { display:flex; flex-wrap:wrap; gap:8px; }
+.nc { display:inline-block; padding:5px 11px; border-radius:20px; font-size:12px; background:#f0ebff; color:#3B0099; font-weight:600; }
+
+/* FOOTER */
+.ftr { background:#3B0099; color:rgba(255,255,255,.7); text-align:center; padding:22px; font-size:12px; margin-top:48px; }
+.ftr strong { color:white; }
+.ftr a { color:#FFB400; text-decoration:none; }
+
+@media(max-width:640px){
+  .hdr-title{font-size:28px;}
+  .prize-grid{grid-template-columns:1fr 1fr;}
+  .playoff-grid{grid-template-columns:1fr;}
+  .grid2{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="y-logo">
+      <div class="y-badge">Y!</div>
+      <span class="y-label">Fantasy Football</span>
+    </div>
+    <div class="hdr-sub">League History Report</div>
+    <div class="hdr-title">KDP — Go Cougs</div>
+    <div class="hdr-meta">
+      <div class="meta-item"><span class="meta-lbl">Since</span><span class="meta-val">2009*</span></div>
+      <div class="meta-item"><span class="meta-lbl">Teams</span><span class="meta-val">10</span></div>
+      <div class="meta-item"><span class="meta-lbl">Commissioner</span><span class="meta-val">Duncan</span></div>
+      <div class="meta-item"><span class="meta-lbl">Trophy</span><span class="meta-val">The Pullen</span></div>
+      <div class="meta-item"><span class="meta-lbl">Prize Pool</span><span class="meta-val">$3,000</span></div>
+      <div class="meta-item"><span class="meta-lbl">League ID</span><span class="meta-val">#205492</span></div>
+    </div>
+    <p style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:10px;">* 2009 is the earliest season with reliable team–manager records. The league predates this report.</p>
+  </div>
+</div>
+
+<!-- CHAMPION BANNER -->
+<div class="champ">
+  <div class="champ-eye">🏆 2025 Champion — The Pullen Trophy 🏆</div>
+  <span class="champ-trophy">🏆</span>
+  <div class="champ-name">Clappin' Cheeks</div>
+  <div class="champ-mgr">Jeremy</div>
+  <div class="champ-rec">9-6-0 regular season &nbsp;·&nbsp; 2-0 playoffs &nbsp;·&nbsp; 1st Place</div>
+</div>
+
+<div class="wrap">
+
+<!-- STANDINGS -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">📊</span><span class="sec-title">2025 Final Standings</span></div>
+  <div class="card">
+    <table class="stbl">
+      <thead><tr>
+        <th></th><th>Team</th><th>Manager</th><th>Since</th>
+        <th class="r">W-L</th><th class="r">PF</th><th class="r">PA</th><th class="r">+/−</th><th class="r">Streak</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="rank c">1</span></td>
+          <td class="tn">🏆 Clappin' Cheeks</td><td><span class="mgr">Jeremy</span></td><td class="mgr">'20</td>
+          <td class="r rec">9-6</td><td class="r">1,760.30</td><td class="r">1,655.80</td><td class="r" style="color:#16a34a">+104.5</td><td class="r"><span class="sw">W-1</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank p">2</span></td>
+          <td class="tn">🥈 My Ball Zach Ertz</td><td><span class="mgr">Daniel</span></td><td class="mgr">'09</td>
+          <td class="r rec">10-5</td><td class="r">1,723.68</td><td class="r">1,649.08</td><td class="r" style="color:#16a34a">+74.6</td><td class="r"><span class="sw">W-2</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank p">3</span></td>
+          <td class="tn">🥉 Hit Somebody</td><td><span class="mgr">Rudee</span></td><td class="mgr">'19</td>
+          <td class="r rec">11-4</td><td class="r">1,822.26</td><td class="r">1,641.46</td><td class="r" style="color:#16a34a">+180.8</td><td class="r"><span class="sw">W-3</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank p">4</span></td>
+          <td class="tn">GIBBS Me Head</td><td><span class="mgr">David</span></td><td class="mgr">'09</td>
+          <td class="r rec">11-4</td><td class="r">1,900.36</td><td class="r">1,682.22</td><td class="r" style="color:#16a34a">+218.1</td><td class="r"><span class="sw">W-7</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">5</span></td>
+          <td class="tn">The Cuddly Kittens</td><td><span class="mgr">Antony</span></td><td class="mgr">'09</td>
+          <td class="r rec">8-7</td><td class="r">1,739.98</td><td class="r">1,633.96</td><td class="r" style="color:#16a34a">+106.0</td><td class="r"><span class="sl">L-2</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">6</span></td>
+          <td class="tn">Trips Formation</td><td><span class="mgr">Ryan C</span></td><td class="mgr">'09</td>
+          <td class="r rec">8-7</td><td class="r">1,648.26</td><td class="r">1,669.44</td><td class="r" style="color:#dc2626">−21.2</td><td class="r"><span class="sl">L-1</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">7</span></td>
+          <td class="tn">shmoney maker</td><td><span class="mgr">Raj</span></td><td class="mgr">'09</td>
+          <td class="r rec">5-10</td><td class="r">1,512.14</td><td class="r">1,718.88</td><td class="r" style="color:#dc2626">−206.7</td><td class="r"><span class="sw">W-1</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">8</span></td>
+          <td class="tn">Benching Kelce</td><td><span class="mgr">Kyle K</span></td><td class="mgr">'09</td>
+          <td class="r rec">6-9</td><td class="r">1,550.88</td><td class="r">1,665.14</td><td class="r" style="color:#dc2626">−114.3</td><td class="r"><span class="sl">L-1</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">9</span></td>
+          <td class="tn">RIPete</td><td><span class="mgr">Patrick</span></td><td class="mgr">'09</td>
+          <td class="r rec">4-11</td><td class="r">1,735.00</td><td class="r">1,834.16</td><td class="r" style="color:#dc2626">−99.2</td><td class="r"><span class="sl">L-5</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">10</span></td>
+          <td class="tn">Spoiling Your Cottage Cheese</td><td><span class="mgr">Duncan 👑</span></td><td class="mgr">'09</td>
+          <td class="r rec">3-12</td><td class="r">1,534.66</td><td class="r">1,777.38</td><td class="r" style="color:#dc2626">−242.7</td><td class="r"><span class="sl">L-2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:#bbb;margin-top:10px;text-align:right;">* Clinched Playoff: seeds 1–4 &nbsp;|&nbsp; Last update: Jan 7, 2026</p>
+  </div>
+</div>
+
+<!-- PF/PA CHART -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">📈</span><span class="sec-title">2025 Points For vs. Points Against</span></div>
+  <div class="card">
+    <div id="pfpa-chart"></div>
+    <div style="display:flex;gap:20px;justify-content:center;margin-top:10px;font-size:12px;font-weight:700;">
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:rgba(96,1,210,0.82);display:inline-block;border-radius:3px;"></span>Points For (PF)</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:rgba(255,140,0,0.9);display:inline-block;border-radius:3px;"></span>Points Against (PA)</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var teams = ['David','Rudee','Jeremy','Antony','Patrick','Daniel','Ryan C','Kyle K','Duncan','Raj'];
+  var pf    = [1900.36,1822.26,1760.30,1739.98,1735.00,1723.68,1648.26,1550.88,1534.66,1512.14];
+  var pa    = [1682.22,1641.46,1655.80,1633.96,1834.16,1649.08,1669.44,1665.14,1777.38,1718.88];
+  var n = teams.length;
+  var W = 820, H = 320, padL = 52, padR = 16, padT = 16, padB = 48;
+  var chartW = W - padL - padR;
+  var chartH = H - padT - padB;
+  var minV = 1400, maxV = 1950;
+  var range = maxV - minV;
+  var groupW = chartW / n;
+  var barW = groupW * 0.35;
+  var gap   = groupW * 0.04;
+
+  function yPos(v){ return padT + chartH * (1 - (v - minV) / range); }
+  function bar(x, v, color){
+    var y = yPos(v), h = padT + chartH - y;
+    return '<rect x="'+x+'" y="'+y+'" width="'+barW+'" height="'+h+'" fill="'+color+'" rx="3"/>';
+  }
+  function yLabel(v){
+    return '<line x1="'+padL+'" y1="'+yPos(v)+'" x2="'+(W-padR)+'" y2="'+yPos(v)+'" stroke="#eee" stroke-width="1"/>'
+          +'<text x="'+(padL-6)+'" y="'+(yPos(v)+4)+'" text-anchor="end" font-size="10" fill="#999">'+v.toLocaleString()+'</text>';
+  }
+
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:'+W+'px;display:block;margin:0 auto;">';
+  // grid lines
+  [1400,1500,1600,1700,1800,1900].forEach(function(v){ if(v<=maxV) svg += yLabel(v); });
+  // bars + labels
+  for(var i=0;i<n;i++){
+    var cx = padL + i * groupW + groupW/2;
+    var x1 = cx - barW - gap/2;
+    var x2 = cx + gap/2;
+    svg += bar(x1, pf[i], 'rgba(96,1,210,0.82)');
+    svg += bar(x2, pa[i], 'rgba(255,140,0,0.9)');
+    // value labels on bars
+    svg += '<text x="'+(x1+barW/2)+'" y="'+(yPos(pf[i])-4)+'" text-anchor="middle" font-size="9" font-weight="700" fill="#6001D2">'+pf[i].toFixed(0)+'</text>';
+    svg += '<text x="'+(x2+barW/2)+'" y="'+(yPos(pa[i])-4)+'" text-anchor="middle" font-size="9" font-weight="700" fill="#b86000">'+pa[i].toFixed(0)+'</text>';
+    // x-axis label
+    var label = teams[i];
+    svg += '<text x="'+cx+'" y="'+(H-padB+16)+'" text-anchor="middle" font-size="11" font-weight="600" fill="#444">'+label+'</text>';
+  }
+  // axes
+  svg += '<line x1="'+padL+'" y1="'+padT+'" x2="'+padL+'" y2="'+(padT+chartH)+'" stroke="#ccc" stroke-width="1"/>';
+  svg += '<line x1="'+padL+'" y1="'+(padT+chartH)+'" x2="'+(W-padR)+'" y2="'+(padT+chartH)+'" stroke="#ccc" stroke-width="1"/>';
+  svg += '</svg>';
+  document.getElementById('pfpa-chart').innerHTML = svg;
+})();
+</script>
+
+<!-- PLAYOFFS -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">🏟️</span><span class="sec-title">2025 Playoff Results</span></div>
+  <div class="card">
+    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6001D2;text-align:center;margin-bottom:12px;">Semifinals — Week 16</p>
+    <div class="playoff-grid" style="margin-bottom:20px;">
+      <div class="match">
+        <div class="match-lbl">Semifinal 1</div>
+        <div class="match-row win"><span>🏆 Clappin' Cheeks</span><span class="mscore">129.52</span></div>
+        <div class="match-row lose"><span>GIBBS Me Head</span><span class="mscore">104.30</span></div>
+      </div>
+      <div class="match">
+        <div class="match-lbl">Semifinal 2</div>
+        <div class="match-row win"><span>My Ball Zach Ertz</span><span class="mscore">175.30</span></div>
+        <div class="match-row lose"><span>Hit Somebody</span><span class="mscore">151.30</span></div>
+      </div>
+    </div>
+    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6001D2;text-align:center;margin-bottom:12px;">Championship Week — Week 17</p>
+    <div class="playoff-grid">
+      <div class="match" style="border:2px solid #FFB400;">
+        <div class="match-lbl gold">🏆 Championship Game</div>
+        <div class="match-row win"><span>🏆 Clappin' Cheeks</span><span class="mscore">113.78</span></div>
+        <div class="match-row lose"><span>My Ball Zach Ertz</span><span class="mscore">105.00</span></div>
+      </div>
+      <div class="match">
+        <div class="match-lbl">3rd Place Game</div>
+        <div class="match-row win"><span>🥉 Hit Somebody</span><span class="mscore">161.72</span></div>
+        <div class="match-row lose"><span>GIBBS Me Head</span><span class="mscore">79.58</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- STORIES -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">📰</span><span class="sec-title">Stories of the 2025 Season</span></div>
+  <div class="grid3">
+    <div class="story">
+      <span class="s-em">⚡</span>
+      <div class="s-hl">0.02 Pts — The Closest Game in League History</div>
+      <div class="s-bd">Week 14: Trips Formation beat Spoiling Your Cottage Cheese by two one-hundredths of a point — the narrowest margin in KDP history, now the all-time record. Ryan C survived by a fingernail against the commissioner himself.</div>
+    </div>
+    <div class="story">
+      <span class="s-em">😤</span>
+      <div class="s-hl">RIPete: Most Unlucky Team of 2025</div>
+      <div class="s-bd">Patrick scored 1,735 pts — 5th-highest — but finished 9th at 4-11. His draft class completely failed (all-time record lows for drafted-player points and offensive avg per week). He survived on waiver wire finds alone, yet still couldn't buy a win.</div>
+    </div>
+    <div class="story">
+      <span class="s-em">📅</span>
+      <div class="s-hl">GIBBS Me Head: The Best Team That Didn't Win</div>
+      <div class="s-bd">David's team scored the most points (1,900), tied for most wins (11-4), ran a 7-game win streak, and faced the toughest schedule in the league. Knocked out in the semis 129-104 by the eventual champion. Fantasy is cruel.</div>
+    </div>
+    <div class="story">
+      <span class="s-em">👑</span>
+      <div class="s-hl">The Commissioner Finishes Last</div>
+      <div class="s-bd">Duncan (Spoiling Your Cottage Cheese) sets the rules, runs the league, makes zero waiver acquisitions all season, and finishes 3-12 in last place. He now owes dinner for the 2026 draft. A man of principles.</div>
+    </div>
+    <div class="story">
+      <span class="s-em">😬</span>
+      <div class="s-hl">Benching Kelce Sets the All-Time Low</div>
+      <div class="s-bd">Kyle K's team put up just 47.66 pts in Week 17 — now the worst single-week score in KDP history (since 2009). With 41 waiver moves all season, the hustle was real. The results were not.</div>
+    </div>
+    <div class="story">
+      <span class="s-em">🍀</span>
+      <div class="s-hl">The Schedule Gods Crown Clappin' Cheeks</div>
+      <div class="s-bd">Jeremy faced the easiest average opponent score in the league (109.71 pts/wk) while GIBBS Me Head faced the hardest (122.27). Did the schedule decide the champion? You be the judge.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM PROFILES -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">👥</span><span class="sec-title">Team Profiles — 2025 Season</span></div>
+  <div class="grid3">
+
+    <div class="tcard gold">
+      <div class="tc-hdr">
+        <div><div class="tc-name">🏆 Clappin' Cheeks</div><div class="tc-mgr">Jeremy</div></div>
+        <div><div class="tc-rec">9-6-0</div><div class="tc-pl">1st Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-c">2025 CHAMPION</span>
+        <span class="bdg bdg-p">Platinum 830</span>
+        <span class="bdg bdg-x">Since '20</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,760</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,656</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#16a34a">+105</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Had the easiest schedule in the league (avg opp: 109.71 pts/wk). Went 9-6, then ran the table in the playoffs. Jeremy finally hoists The Pullen in his 6th season in the league.</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">🥈 My Ball Zach Ertz</div><div class="tc-mgr">Daniel</div></div>
+        <div><div class="tc-rec">10-5-0</div><div class="tc-pl">2nd Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-p">Platinum 810</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,724</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,649</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#16a34a">+75</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Posted 10 wins and blew out Hit Somebody 175.30–151.30 in a high-scoring semifinal. Second-most wins in the league. Fell 8.78 pts short of the championship.</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">🥉 Hit Somebody</div><div class="tc-mgr">Rudee</div></div>
+        <div><div class="tc-rec">11-4-0</div><div class="tc-pl">3rd Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-s">Silver 673</span>
+        <span class="bdg bdg-x">Since '19</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,822</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,641</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#16a34a">+181</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Most wins this season (11). Highest season points total (2,135 / 125.6 avg). Delivered the biggest blowout of the season — beat GIBBS Me Head by 82.14 in Week 17. Led the league in defensive points (198.4).</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">GIBBS Me Head</div><div class="tc-mgr">David</div></div>
+        <div><div class="tc-rec">11-4-0</div><div class="tc-pl">4th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-g">Gold 729</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,900</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,682</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#16a34a">+218</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Most points in the league (1,900.36). Tied for most wins. Won 7 straight. Faced the toughest schedule (avg opp: 122.27 pts). Led in kicking points (204.1). The best team that didn't win the championship.</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">The Cuddly Kittens</div><div class="tc-mgr">Antony</div></div>
+        <div><div class="tc-rec">8-7-0</div><div class="tc-pl">5th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-d">Diamond 907</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,740</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,634</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#16a34a">+106</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Highest Yahoo rating in the entire league (Diamond 907). Set the season's highest single-week score: 183.94 pts (Week 17). Led the league in waiver wire points (743.34) and rushing yards per week (263.82).</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">Trips Formation</div><div class="tc-mgr">Ryan C</div></div>
+        <div><div class="tc-rec">8-7-0</div><div class="tc-pl">6th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-p">Platinum 882</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,648</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,669</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#dc2626">−21</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">An original '09 member. Will forever be in the history books: beat Spoiling Your Cottage Cheese by 0.02 pts in Week 14 — the closest game in league history. Also set the season receiving yards record (608 yds, Week 12).</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">shmoney maker</div><div class="tc-mgr">Raj</div></div>
+        <div><div class="tc-rec">5-10-0</div><div class="tc-pl">7th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-x">Since '09</span>
+        <span class="bdg bdg-b">Bronze 592</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,512</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,719</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#dc2626">−207</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">One of the league's original '09 members. Tied for longest loss streak this season (7 games). But scored 13 TDs in a single week (Week 15), tying the all-time league record set in 2020.</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">Benching Kelce</div><div class="tc-mgr">Kyle K</div></div>
+        <div><div class="tc-rec">6-9-0</div><div class="tc-pl">8th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-b">Bronze 590</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,551</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,665</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#dc2626">−114</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Most waiver moves in the league (41). Set the all-time league record for lowest single-week score: 47.66 pts in Week 17 — now the worst ever in KDP history. Tied for longest loss streak (7 games). Fewest points from draft picks (1,087.82).</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">RIPete</div><div class="tc-mgr">Patrick</div></div>
+        <div><div class="tc-rec">4-11-0</div><div class="tc-pl">9th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-b">Bronze 598</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,735</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,834</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#dc2626">−99</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">Scored 5th-most points but finished 9th — the most unlucky team of 2025. Draft picks completely flopped (all-time record lows for points from drafted players and offensive avg). Ended the season on a 5-game skid. Led the league in passing yards per week (261.76). Made only 13 waiver moves all season.</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tc-hdr">
+        <div><div class="tc-name">Spoiling Your Cottage Cheese</div><div class="tc-mgr">Duncan 👑 Commish</div></div>
+        <div><div class="tc-rec">3-12-0</div><div class="tc-pl">10th Place</div></div>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-l">LAST PLACE</span>
+        <span class="bdg bdg-g">Gold 702</span>
+        <span class="bdg bdg-x">Since '09</span>
+      </div>
+      <div class="tc-stats">
+        <div class="tstat"><div class="tstat-v">1,535</div><div class="tstat-l">PF</div></div>
+        <div class="tstat"><div class="tstat-v">1,777</div><div class="tstat-l">PA</div></div>
+        <div class="tstat"><div class="tstat-v" style="color:#dc2626">−243</div><div class="tstat-l">Diff</div></div>
+      </div>
+      <div class="tc-note">The commissioner finishes last and owes dinner for the 2026 draft. Most losses (12). Lowest offensive points (1,293.36). Made zero post-draft acquisitions all season (all-time low). Yet still managed the narrowest win in league history — a 0.02-pt escape over Trips Formation in Week 14.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ALL-TIME W-L RECORDS -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">🏅</span><span class="sec-title">All-Time Win-Loss Records by Manager</span></div>
+  <div class="card">
+    <p style="font-size:12px;color:#888;margin-bottom:14px;font-style:italic;">Regular season records only, 2009–2025 (16 seasons). Sorted by win %. "Playoffs" = championship bracket appearances (top 6 in 2009; top 4 from 2011 on). Rudee's KDP debut: 2019 (7 seasons). Ryan C missing 2011 (hidden manager, unattributed). Antony absent 2019–2021. Jeremy joined 2020. Robbie, Kyle P, and Bradley are historical/alumni managers no longer active.</p>
+    <table class="stbl" id="atRecordsTable">
+      <thead><tr>
+        <th class="at-sort" data-col="0" data-type="str" style="cursor:pointer;user-select:none;">Manager <span class="at-arrow">↕</span></th>
+        <th class="at-sort" data-col="1" data-type="str" style="cursor:pointer;user-select:none;">Team <span class="at-arrow">↕</span></th>
+        <th class="at-sort" data-col="2" data-type="str" style="cursor:pointer;user-select:none;">KDP Since <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="3" data-type="num" style="cursor:pointer;user-select:none;">Seasons <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="4" data-type="num" style="cursor:pointer;user-select:none;">W <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="5" data-type="num" style="cursor:pointer;user-select:none;">L <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="6" data-type="num" style="cursor:pointer;user-select:none;">Win % <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="7" data-type="num" style="cursor:pointer;user-select:none;">Playoffs <span class="at-arrow">↕</span></th>
+        <th class="at-sort r" data-col="8" data-type="num" style="cursor:pointer;user-select:none;">Titles <span class="at-arrow">↕</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Rudee</strong></td><td class="mgr">Hit Somebody</td><td class="mgr">'19</td>
+          <td class="r">7</td><td class="r sw">62</td><td class="r sl">41</td>
+          <td class="r rec">60.2%</td><td class="r">4</td><td class="r">1 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Raj</strong></td><td class="mgr">shmoney maker</td><td class="mgr">'09</td>
+          <td class="r">16</td><td class="r sw">130</td><td class="r sl">98</td>
+          <td class="r rec">57.0%</td><td class="r">9</td><td class="r">0</td>
+        </tr>
+        <tr>
+          <td><strong>Antony</strong></td><td class="mgr">The Cuddly Kittens</td><td class="mgr">'09</td>
+          <td class="r">13</td><td class="r sw">101</td><td class="r sl">84</td>
+          <td class="r rec">54.6%</td><td class="r">5</td><td class="r">4 🏆</td>
+        </tr>
+        <tr style="opacity:0.75;">
+          <td><strong>Robbie</strong> <span style="font-size:10px;color:#888;">(alumni)</span></td><td class="mgr">—</td><td class="mgr">'09</td>
+          <td class="r">9</td><td class="r sw">66</td><td class="r sl">59</td>
+          <td class="r rec">52.8%</td><td class="r">4</td><td class="r">1 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Kyle K</strong></td><td class="mgr">Benching Kelce</td><td class="mgr">'09</td>
+          <td class="r">16</td><td class="r sw">116</td><td class="r sl">112</td>
+          <td class="r rec">50.9%</td><td class="r">7</td><td class="r">0</td>
+        </tr>
+        <tr>
+          <td><strong>Jeremy</strong></td><td class="mgr">Clappin' Cheeks</td><td class="mgr">'20</td>
+          <td class="r">6</td><td class="r sw">45</td><td class="r sl">44</td>
+          <td class="r rec">50.6%</td><td class="r">3</td><td class="r">2 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Daniel</strong></td><td class="mgr">My Ball Zach Ertz</td><td class="mgr">'09</td>
+          <td class="r">16</td><td class="r sw">114</td><td class="r sl">114</td>
+          <td class="r rec">50.0%</td><td class="r">9</td><td class="r">1 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Ryan C</strong></td><td class="mgr">Trips Formation</td><td class="mgr">'09</td>
+          <td class="r">15</td><td class="r sw">107</td><td class="r sl">107</td>
+          <td class="r rec">50.0%</td><td class="r">7</td><td class="r">1 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Duncan</strong></td><td class="mgr">Spoiling Your Cottage Cheese</td><td class="mgr">'09</td>
+          <td class="r">16</td><td class="r sw">110</td><td class="r sl">118</td>
+          <td class="r rec">48.2%</td><td class="r">7</td><td class="r">3 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>David</strong></td><td class="mgr">GIBBS Me Head</td><td class="mgr">'11</td>
+          <td class="r">15</td><td class="r sw">102</td><td class="r sl">113</td>
+          <td class="r rec">47.4%</td><td class="r">4</td><td class="r">1 🏆</td>
+        </tr>
+        <tr>
+          <td><strong>Patrick</strong></td><td class="mgr">RIPete</td><td class="mgr">'09</td>
+          <td class="r">16</td><td class="r sw">101</td><td class="r sl">127</td>
+          <td class="r rec">44.3%</td><td class="r">4</td><td class="r">1 🏆</td>
+        </tr>
+        <tr style="opacity:0.75;">
+          <td><strong>Kyle P</strong> <span style="font-size:10px;color:#888;">(alumni)</span></td><td class="mgr">—</td><td class="mgr">'12</td>
+          <td class="r">10</td><td class="r sw">60</td><td class="r sl">81</td>
+          <td class="r rec">42.6%</td><td class="r">3</td><td class="r">1 🏆</td>
+        </tr>
+        <tr style="opacity:0.75;">
+          <td><strong>Bradley</strong> <span style="font-size:10px;color:#888;">(alumni)</span></td><td class="mgr">—</td><td class="mgr">'09</td>
+          <td class="r">2</td><td class="r sw">11</td><td class="r sl">16</td>
+          <td class="r rec">40.7%</td><td class="r">0</td><td class="r">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- H2H COMPARISON -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">⚔️</span><span class="sec-title">All-Time Head-to-Head Comparison</span></div>
+  <div class="card">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:24px;">
+      <div style="flex:1;min-width:180px;">
+        <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6001D2;display:block;margin-bottom:6px;">Manager 1</label>
+        <select id="mgr1" onchange="updateH2H()" style="width:100%;padding:10px 12px;border:2px solid #6001D2;border-radius:8px;font-size:14px;font-weight:700;color:#3B0099;background:white;cursor:pointer;">
+          <option value="">Select manager…</option>
+          <option value="Antony">Antony (Since '09)</option>
+          <option value="Bradley">Bradley (Since '09)</option>
+          <option value="Daniel">Daniel (Since '09)</option>
+          <option value="David">David (Since '09)</option>
+          <option value="duncan">Duncan (Since '09)</option>
+          <option value="Jeremy">Jeremy (Since '20)</option>
+          <option value="KyleK">Kyle K (Since '09)</option>
+          <option value="KyleP">Kyle P (Since '12)</option>
+          <option value="Larson">Robbie (Since '09)</option>
+          <option value="PatrickF">Patrick (Since '09)</option>
+          <option value="Raj">Raj (Since '09)</option>
+          <option value="Rudee">Rudee (Since '19)</option>
+          <option value="RyanC">Ryan C (Since '09)</option>
+        </select>
+      </div>
+      <div style="font-size:28px;font-weight:900;color:#3B0099;padding-top:20px;">vs</div>
+      <div style="flex:1;min-width:180px;">
+        <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6001D2;display:block;margin-bottom:6px;">Manager 2</label>
+        <select id="mgr2" onchange="updateH2H()" style="width:100%;padding:10px 12px;border:2px solid #FFB400;border-radius:8px;font-size:14px;font-weight:700;color:#3B0099;background:white;cursor:pointer;">
+          <option value="">Select manager…</option>
+          <option value="Antony">Antony (Since '09)</option>
+          <option value="Bradley">Bradley (Since '09)</option>
+          <option value="Daniel">Daniel (Since '09)</option>
+          <option value="David">David (Since '09)</option>
+          <option value="duncan">Duncan (Since '09)</option>
+          <option value="Jeremy">Jeremy (Since '20)</option>
+          <option value="KyleK">Kyle K (Since '09)</option>
+          <option value="KyleP">Kyle P (Since '12)</option>
+          <option value="Larson">Robbie (Since '09)</option>
+          <option value="PatrickF">Patrick (Since '09)</option>
+          <option value="Raj">Raj (Since '09)</option>
+          <option value="Rudee">Rudee (Since '19)</option>
+          <option value="RyanC">Ryan C (Since '09)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="h2hResult" style="display:none;">
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:24px;">
+        <div style="text-align:center;background:#f7f3ff;border-radius:12px;padding:18px;border:2px solid #6001D2;">
+          <div id="m1name" style="font-size:20px;font-weight:900;color:#3B0099;"></div>
+          <div id="m1wins" style="font-size:48px;font-weight:900;color:#3B0099;line-height:1;">—</div>
+          <div style="font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">All-Time Wins</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:13px;font-weight:700;color:#aaa;">ALL-TIME</div>
+          <div style="font-size:13px;font-weight:700;color:#aaa;">HEAD-TO-HEAD</div>
+        </div>
+        <div style="text-align:center;background:#fff8e1;border-radius:12px;padding:18px;border:2px solid #FFB400;">
+          <div id="m2name" style="font-size:20px;font-weight:900;color:#3B0099;"></div>
+          <div id="m2wins" style="font-size:48px;font-weight:900;color:#e65100;line-height:1;">—</div>
+          <div style="font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">All-Time Wins</div>
+        </div>
+      </div>
+      <table class="stbl">
+        <thead><tr>
+          <th>Stat</th>
+          <th id="m1col" class="r">Manager 1</th>
+          <th id="m2col" class="r">Manager 2</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>All-Time H2H Record</td><td class="r" id="r-rec1">—</td><td class="r" id="r-rec2">—</td></tr>
+          <tr class="rat"><td>Total Points Scored vs Each Other</td><td class="r" id="r-pf1">—</td><td class="r" id="r-pf2">—</td></tr>
+          <tr><td>Avg Points Per Game vs Each Other</td><td class="r" id="r-avg1">—</td><td class="r" id="r-avg2">—</td></tr>
+          <tr class="rat"><td>Biggest Win (Margin)</td><td class="r" id="r-big1">—</td><td class="r" id="r-big2">—</td></tr>
+          <tr><td>Last Matchup Result</td><td class="r" id="r-last1">—</td><td class="r" id="r-last2">—</td></tr>
+          <tr class="rat"><td>Playoff Matchups</td><td colspan="2" class="r" id="r-playoff" style="text-align:center;">—</td></tr>
+          <tr><td>Seasons Overlapping</td><td colspan="2" class="r" id="r-seasons" style="text-align:center;">—</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:#ccc;margin-top:10px;text-align:right;font-style:italic;">H2H data complete · 2009–2025 seasons (16 seasons)</p>
+    </div>
+    <div id="h2hPrompt" style="text-align:center;padding:32px;color:#bbb;font-size:14px;">
+      Select two managers above to see their all-time head-to-head record.
+    </div>
+  </div>
+</div>
+
+<!-- RECORD BOOK -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">📚</span><span class="sec-title">All-Time Record Book — Regular Season</span></div>
+  <p style="font-size:12px;color:#888;margin:-2px 0 14px;font-style:italic;">Regular season only — playoff games are excluded from every record below. Cells marked "TBD" need source data not yet available in the dataset.</p>
+  <div class="grid2">
+
+    <div class="card">
+      <div class="rtbl-hdr">🏆 Head-to-Head Records</div>
+      <table class="rtbl">
+        <tr><td class="rc">Most Wins <span class="rlbl rlbl-s">2025</span></td><td class="rh">Rudee / David</td><td class="rv">11 W</td></tr>
+        <tr class="rat"><td class="rc">Most Wins <span class="rlbl rlbl-a">All Time</span></td><td class="rh">David, '20</td><td class="rv">13 W</td></tr>
+        <tr><td class="rc">Win Streak <span class="rlbl rlbl-s">2025</span></td><td class="rh">David</td><td class="rv">7 games</td></tr>
+        <tr class="rat"><td class="rc">Win Streak <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Duncan, '21</td><td class="rv">9 games</td></tr>
+        <tr><td class="rc">Most Losses <span class="rlbl rlbl-s">2025</span></td><td class="rh">Duncan</td><td class="rv">12 L</td></tr>
+        <tr class="rat"><td class="rc">Most Losses <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Patrick, '21</td><td class="rv">13 L</td></tr>
+        <tr><td class="rc">Loss Streak <span class="rlbl rlbl-s">2025</span></td><td class="rh">Kyle K / Raj</td><td class="rv">7 games</td></tr>
+        <tr class="rat"><td class="rc">Loss Streak <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Patrick, '21</td><td class="rv">12 games</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="rtbl-hdr">💥 Margins of Victory</div>
+      <table class="rtbl">
+        <tr><td class="rc">Biggest Blowout <span class="rlbl rlbl-s">2025</span></td><td class="rh">Patrick vs. Daniel, Wk 7</td><td class="rv">70.28 pts</td></tr>
+        <tr class="rat"><td class="rc">Biggest Blowout <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Kyle K vs. David, '23</td><td class="rv">100.58 pts</td></tr>
+        <tr><td class="rc">Closest Game <span class="rlbl rlbl-s">2025</span></td><td class="rh">Ryan C vs. Duncan, Wk 14</td><td class="rv">0.02 pts ⚡</td></tr>
+        <tr class="rat"><td class="rc">Closest Game <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Ryan C vs. Duncan, '25</td><td class="rv">0.02 pts ⚡</td></tr>
+        <tr><td class="rc">Hardest Schedule <span class="rlbl rlbl-s">2025</span></td><td class="rh">Patrick</td><td class="rv">122.28/wk</td></tr>
+        <tr class="rat"><td class="rc">Hardest Schedule <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Antony, '18</td><td class="rv">137.63/wk</td></tr>
+        <tr><td class="rc">Easiest Schedule <span class="rlbl rlbl-s">2025</span></td><td class="rh">Antony</td><td class="rv">108.93/wk</td></tr>
+        <tr class="rat"><td class="rc">Easiest Schedule <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Patrick, '12</td><td class="rv">97.02/wk</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="rtbl-hdr">📊 Points Records</div>
+      <table class="rtbl">
+        <tr><td class="rc">High Single Week <span class="rlbl rlbl-s">2025</span></td><td class="rh">Rudee, Wk 15</td><td class="rv">169.80</td></tr>
+        <tr class="rat"><td class="rc">High Single Week <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Kyle K, '14</td><td class="rv">196.20</td></tr>
+        <tr><td class="rc">High Season Total <span class="rlbl rlbl-s">2025</span></td><td class="rh">David</td><td class="rv">1,900.36</td></tr>
+        <tr class="rat"><td class="rc">High Season Total <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Rudee, '21</td><td class="rv">1,989.20</td></tr>
+        <tr><td class="rc">Low Single Week <span class="rlbl rlbl-s">2025</span></td><td class="rh">Kyle K, Wk 8</td><td class="rv">54.08</td></tr>
+        <tr class="rat"><td class="rc">Low Single Week <span class="rlbl rlbl-a">All Time</span></td><td class="rh">Too Good, '10</td><td class="rv">22.36</td></tr>
+        <tr><td class="rc">Low Season Total <span class="rlbl rlbl-s">2025</span></td><td class="rh">Duncan</td><td class="rv">1,534.66</td></tr>
+        <tr class="rat"><td class="rc">Low Season Avg (off.) <span class="rlbl rlbl-a">All Time</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="rtbl-hdr">🏈 Statistical Records</div>
+      <table class="rtbl">
+        <tr><td class="rc">Most TDs (week) <span class="rlbl rlbl-s">2025</span></td><td class="rh">Raj, Wk 15</td><td class="rv">13 TDs ⚡</td></tr>
+        <tr class="rat"><td class="rc">Most TDs (week) <span class="rlbl rlbl-a">All Time</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+        <tr><td class="rc">Rush Yds (week) <span class="rlbl rlbl-s">2025</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+        <tr class="rat"><td class="rc">Rush Yds (week) <span class="rlbl rlbl-a">All Time</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+        <tr><td class="rc">Rec Yds (week) <span class="rlbl rlbl-s">2025</span></td><td class="rh">Ryan C, Wk 12</td><td class="rv">608 yds</td></tr>
+        <tr class="rat"><td class="rc">Rec Yds (week) <span class="rlbl rlbl-a">All Time</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+        <tr><td class="rc">Pass Yds (week) <span class="rlbl rlbl-s">2025</span></td><td class="rh">Patrick, Wk 11</td><td class="rv">452 yds</td></tr>
+        <tr class="rat"><td class="rc">Pass Yds (week) <span class="rlbl rlbl-a">All Time</span></td><td class="rh">[Mgr TBD]</td><td class="rv">TBD</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- VETERANS -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">🕰️</span><span class="sec-title">League Veterans — Tenured Members</span></div>
+  <div class="grid5">
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">Raj</div><div class="vet-tm">shmoney maker</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">Duncan</div><div class="vet-tm">Spoiling YCC</div><span class="bdg bdg-x">Since '09 · Commish</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">Patrick</div><div class="vet-tm">RIPete</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">15</div><div class="vet-nm">Ryan C</div><div class="vet-tm">Trips Formation</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">David</div><div class="vet-tm">GIBBS Me Head</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">Kyle K</div><div class="vet-tm">Benching Kelce</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">13</div><div class="vet-nm">Antony</div><div class="vet-tm">Cuddly Kittens</div><span class="bdg bdg-d">Diamond 907</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">16</div><div class="vet-nm">Daniel</div><div class="vet-tm">My Ball Zach Ertz</div><span class="bdg bdg-x">Since '09</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">7</div><div class="vet-nm">Rudee</div><div class="vet-tm">Hit Somebody</div><span class="bdg bdg-x">Since '19</span></div>
+    <div class="vet"><div class="vet-lbl">seasons</div><div class="vet-yr">6</div><div class="vet-nm">Jeremy</div><div class="vet-tm">Clappin' Cheeks</div><span class="bdg bdg-c">2025 Champion</span></div>
+  </div>
+</div>
+
+<!-- HISTORICAL TEAM NAMES -->
+<div class="section">
+  <div class="sec-hdr"><span class="sec-icon">📜</span><span class="sec-title">Hall of Team Names — 16 Seasons of Creativity</span></div>
+  <div class="card">
+    <p style="font-size:12.5px;color:#666;margin-bottom:14px;">Team names that appeared in league records from 2009–2025, evidence of the creativity this league has sustained.</p>
+    <div class="name-cloud">
+      <span class="nc">The Gloria Hole ('12–'16)</span>
+      <span class="nc">Free Ryan Leaf ('12)</span>
+      <span class="nc">the bron brons ('12)</span>
+      <span class="nc">Liquid Courage ('13)</span>
+      <span class="nc">Swing Your Sword ('14, '19)</span>
+      <span class="nc">My Main Thang ('14)</span>
+      <span class="nc">Robbie ('14, '16)</span>
+      <span class="nc">Your Mom ('14–'15)</span>
+      <span class="nc">KingDomeRafters ('15)</span>
+      <span class="nc">Russell Sprouts ('15, '18)</span>
+      <span class="nc">Brady and the skins ('17)</span>
+      <span class="nc">Mariota Kart ('17)</span>
+      <span class="nc">Falk 4 Heisman ('17)</span>
+      <span class="nc">Double deuce ('18)</span>
+      <span class="nc">Rogers Goodell ('18)</span>
+      <span class="nc">WokeUpFeelinDangaRus ('20)</span>
+      <span class="nc">Play Daktion ('20)</span>
+      <span class="nc">Candyman ('21)</span>
+      <span class="nc">Up Hill Battlers ('21)</span>
+      <span class="nc">What food do you want? ('21)</span>
+      <span class="nc">ExtraVirginOilofOlave ('23)</span>
+      <span class="nc">No Moore Problems ('23)</span>
+      <span class="nc">Catching Kelce ('23)</span>
+      <span class="nc">#CougsVsEverybody ('24)</span>
+      <span class="nc">Breece Mode ('24)</span>
+      <span class="nc">Virtual Wreckage ('24)</span>
+      <span class="nc">Chasing Points ('24)</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="ftr">
+  <p style="font-size:13px;font-weight:700;color:white;margin-bottom:5px;">KDP — Go Cougs Fantasy Football</p>
+  <p>Since 2009 &nbsp;·&nbsp; 16 Seasons of Records &nbsp;·&nbsp; League ID #205492 &nbsp;·&nbsp; Data from Yahoo Fantasy Sports</p>
+  <p style="margin-top:8px;font-size:11px;">Report generated June 2026 &nbsp;·&nbsp; <a href="https://football.fantasysports.yahoo.com/2025/f1/205492">View League on Yahoo Fantasy →</a></p>
+</div>
+
+<script>
+// Managers + H2H
+var MANAGERS = {
+  'Raj':      { label: 'Raj',            since: "'09" },
+  'duncan':   { label: 'Duncan',          since: "'09" },
+  'PatrickF': { label: 'Patrick',        since: "'09" },
+  'RyanC':    { label: 'Ryan C',         since: "'09" },
+  'David':    { label: 'David',          since: "'09" },
+  'KyleK':     { label: 'Kyle K',           since: "'09" },
+  'Antony':   { label: 'Antony',         since: "'09" },
+  'Daniel':   { label: 'Daniel',         since: "'09" },
+  'Rudee':     { label: 'Rudee',           since: "'19" },
+  'Jeremy':   { label: 'Jeremy',          since: "'20" },
+  'Larson':   { label: 'Robbie',         since: "'09" },
+  'KyleP':    { label: 'Kyle P',          since: "'12" },
+  'Bradley':  { label: 'Bradley',        since: "'09" }
+};
+
+
+var h2hData = {
+  'Antony': {
+    'Bradley': {w1:2,w2:1,pf1:315.20,pf2:281.82,big1:153.54,big2:99.28,last:{winner:'Antony',score1:153.54,score2:99.28,season:'11'},playoffs:0,seasons:2},
+    'Daniel': {w1:13,w2:7,pf1:2121.77,pf2:2150.99,big1:134.38,big2:151.50,last:{winner:'Antony',score1:97.28,score2:79.10,season:'25'},playoffs:2,seasons:13},
+    'David': {w1:15,w2:7,pf1:2648.87,pf2:2396.14,big1:152.84,big2:149.53,last:{winner:'David',score1:119.24,score2:120.78,season:'25'},playoffs:0,seasons:13},
+    'Jeremy': {w1:3,w2:4,pf1:862.11,pf2:851.67,big1:156.45,big2:155.48,last:{winner:'Jeremy',score1:102.60,score2:113.56,season:'25'},playoffs:0,seasons:4},
+    'KyleK': {w1:16,w2:7,pf1:2763.51,pf2:2409.88,big1:153.67,big2:149.04,last:{winner:'Antony',score1:153.48,score2:110.72,season:'25'},playoffs:6,seasons:13},
+    'KyleP': {w1:6,w2:5,pf1:1409.30,pf2:1361.30,big1:168.46,big2:175.89,last:{winner:'KyleP',score1:134.91,score2:175.89,season:'18'},playoffs:0,seasons:7},
+    'Larson': {w1:9,w2:8,pf1:1973.52,pf2:1871.52,big1:147.20,big2:157.57,last:{winner:'Larson',score1:135.94,score2:137.28,season:'18'},playoffs:3,seasons:9},
+    'PatrickF': {w1:10,w2:11,pf1:2374.71,pf2:2581.86,big1:148.55,big2:159.03,last:{winner:'Antony',score1:138.78,score2:129.28,season:'25'},playoffs:1,seasons:13},
+    'Raj': {w1:14,w2:14,pf1:3142.04,pf2:3161.12,big1:160.47,big2:149.63,last:{winner:'Antony',score1:99.76,score2:91.52,season:'25'},playoffs:4,seasons:13},
+    'Rudee': {w1:4,w2:4,pf1:904.54,pf2:787.84,big1:143.62,big2:177.82,last:{winner:'Rudee',score1:103.46,score2:111.76,season:'25'},playoffs:2,seasons:4},
+    'RyanC': {w1:11,w2:10,pf1:2427.30,pf2:2413.75,big1:151.79,big2:171.38,last:{winner:'Antony',score1:120.46,score2:97.06,season:'25'},playoffs:2,seasons:13},
+    'duncan': {w1:14,w2:12,pf1:3021.27,pf2:3090.28,big1:175.02,big2:160.86,last:{winner:'Antony',score1:122.80,score2:89.30,season:'25'},playoffs:2,seasons:13}
+  },
+  'Bradley': {
+    'Daniel': {w1:1,w2:2,pf1:273.13,pf2:366.25,big1:113.25,big2:140.02,last:{winner:'Daniel',score1:75.71,score2:125.71,season:'11'},playoffs:0,seasons:2},
+    'David': {w1:3,w2:1,pf1:387.32,pf2:280.63,big1:135.06,big2:85.57,last:{winner:'Bradley',score1:89.51,score2:85.57,season:'11'},playoffs:1,seasons:2},
+    'KyleK': {w1:1,w2:1,pf1:202.15,pf2:213.47,big1:148.80,big2:115.59,last:{winner:'Bradley',score1:148.80,score2:97.88,season:'11'},playoffs:0,seasons:2},
+    'Larson': {w1:0,w2:4,pf1:357.10,pf2:429.47,big1:104.28,big2:122.58,last:{winner:'Larson',score1:96.76,score2:122.38,season:'11'},playoffs:0,seasons:2},
+    'PatrickF': {w1:2,w2:1,pf1:374.65,pf2:295.95,big1:161.27,big2:110.60,last:{winner:'Bradley',score1:161.27,score2:91.66,season:'11'},playoffs:0,seasons:2},
+    'Raj': {w1:2,w2:1,pf1:362.51,pf2:322.82,big1:160.90,big2:161.43,last:{winner:'Raj',score1:160.90,score2:161.43,season:'11'},playoffs:0,seasons:2},
+    'RyanC': {w1:1,w2:2,pf1:297.20,pf2:352.07,big1:101.49,big2:151.24,last:{winner:'RyanC',score1:100.37,score2:116.63,season:'11'},playoffs:1,seasons:2},
+    'duncan': {w1:1,w2:3,pf1:352.48,pf2:427.08,big1:122.88,big2:133.93,last:{winner:'Bradley',score1:122.88,score2:93.80,season:'11'},playoffs:0,seasons:2}
+  },
+  'Daniel': {
+    'David': {w1:16,w2:15,pf1:3698.17,pf2:3622.59,big1:167.00,big2:178.14,last:{winner:'David',score1:120.12,score2:120.34,season:'25'},playoffs:3,seasons:16},
+    'Jeremy': {w1:7,w2:7,pf1:1747.17,pf2:1734.18,big1:176.59,big2:168.52,last:{winner:'Jeremy',score1:105.00,score2:113.78,season:'25'},playoffs:2,seasons:6},
+    'KyleK': {w1:16,w2:14,pf1:3260.28,pf2:3105.13,big1:156.06,big2:141.37,last:{winner:'Daniel',score1:127.50,score2:83.02,season:'25'},playoffs:3,seasons:16},
+    'KyleP': {w1:7,w2:8,pf1:1693.86,pf2:1724.68,big1:149.64,big2:161.01,last:{winner:'Daniel',score1:100.85,score2:96.25,season:'21'},playoffs:0,seasons:10},
+    'Larson': {w1:10,w2:7,pf1:1958.05,pf2:1804.07,big1:151.64,big2:137.87,last:{winner:'Larson',score1:70.56,score2:77.13,season:'19'},playoffs:4,seasons:10},
+    'PatrickF': {w1:18,w2:13,pf1:3299.54,pf2:3404.02,big1:165.94,big2:169.53,last:{winner:'PatrickF',score1:80.44,score2:150.72,season:'25'},playoffs:3,seasons:16},
+    'Raj': {w1:14,w2:12,pf1:3038.55,pf2:3195.79,big1:151.43,big2:166.39,last:{winner:'Daniel',score1:96.50,score2:62.76,season:'25'},playoffs:4,seasons:16},
+    'Rudee': {w1:6,w2:7,pf1:1530.48,pf2:1508.15,big1:175.30,big2:148.20,last:{winner:'Daniel',score1:175.30,score2:151.30,season:'25'},playoffs:2,seasons:7},
+    'RyanC': {w1:13,w2:12,pf1:3167.96,pf2:2972.72,big1:183.98,big2:168.56,last:{winner:'RyanC',score1:121.96,score2:168.56,season:'25'},playoffs:2,seasons:16},
+    'duncan': {w1:14,w2:15,pf1:3468.85,pf2:3403.73,big1:156.79,big2:173.21,last:{winner:'Daniel',score1:109.22,score2:90.60,season:'25'},playoffs:1,seasons:16}
+  },
+  'David': {
+    'Jeremy': {w1:7,w2:4,pf1:1335.65,pf2:1288.16,big1:163.84,big2:149.23,last:{winner:'Jeremy',score1:104.30,score2:129.52,season:'25'},playoffs:1,seasons:6},
+    'KyleK': {w1:12,w2:13,pf1:2828.01,pf2:2887.27,big1:162.54,big2:165.90,last:{winner:'David',score1:141.92,score2:98.72,season:'25'},playoffs:0,seasons:16},
+    'KyleP': {w1:10,w2:5,pf1:1756.33,pf2:1546.49,big1:156.30,big2:148.37,last:{winner:'David',score1:143.06,score2:98.79,season:'21'},playoffs:2,seasons:10},
+    'Larson': {w1:8,w2:11,pf1:2058.42,pf2:2113.32,big1:149.16,big2:135.29,last:{winner:'David',score1:136.46,score2:110.68,season:'19'},playoffs:2,seasons:10},
+    'PatrickF': {w1:16,w2:6,pf1:2614.01,pf2:2291.06,big1:148.28,big2:136.80,last:{winner:'David',score1:148.14,score2:143.84,season:'25'},playoffs:2,seasons:16},
+    'Raj': {w1:8,w2:15,pf1:2530.88,pf2:2739.60,big1:156.29,big2:152.17,last:{winner:'David',score1:129.72,score2:78.32,season:'25'},playoffs:1,seasons:16},
+    'Rudee': {w1:4,w2:10,pf1:1547.95,pf2:1722.50,big1:182.78,big2:161.72,last:{winner:'Rudee',score1:79.58,score2:161.72,season:'25'},playoffs:2,seasons:7},
+    'RyanC': {w1:9,w2:17,pf1:2884.09,pf2:3191.71,big1:151.81,big2:173.72,last:{winner:'David',score1:122.82,score2:94.80,season:'25'},playoffs:1,seasons:16},
+    'duncan': {w1:18,w2:17,pf1:4147.58,pf2:3966.81,big1:187.44,big2:164.05,last:{winner:'David',score1:142.42,score2:110.16,season:'25'},playoffs:4,seasons:16}
+  },
+  'Jeremy': {
+    'KyleK': {w1:3,w2:5,pf1:854.95,pf2:822.23,big1:143.53,big2:128.15,last:{winner:'Jeremy',score1:109.56,score2:54.08,season:'25'},playoffs:0,seasons:6},
+    'KyleP': {w1:3,w2:0,pf1:405.68,pf2:331.70,big1:150.71,big2:114.74,last:{winner:'Jeremy',score1:150.71,score2:114.74,season:'21'},playoffs:0,seasons:2},
+    'PatrickF': {w1:7,w2:2,pf1:1100.11,pf2:928.90,big1:149.26,big2:129.00,last:{winner:'Jeremy',score1:111.30,score2:101.98,season:'25'},playoffs:0,seasons:6},
+    'Raj': {w1:6,w2:6,pf1:1435.36,pf2:1305.36,big1:147.72,big2:172.15,last:{winner:'Jeremy',score1:147.04,score2:87.72,season:'25'},playoffs:0,seasons:6},
+    'Rudee': {w1:5,w2:6,pf1:1247.92,pf2:1308.24,big1:148.92,big2:172.60,last:{winner:'Rudee',score1:89.44,score2:155.90,season:'25'},playoffs:1,seasons:6},
+    'RyanC': {w1:6,w2:5,pf1:1354.54,pf2:1264.95,big1:158.02,big2:144.87,last:{winner:'RyanC',score1:113.02,score2:116.14,season:'25'},playoffs:3,seasons:6},
+    'duncan': {w1:7,w2:4,pf1:1299.85,pf2:1194.15,big1:149.88,big2:126.23,last:{winner:'Jeremy',score1:148.64,score2:114.82,season:'25'},playoffs:1,seasons:6}
+  },
+  'KyleK': {
+    'KyleP': {w1:9,w2:11,pf1:2133.73,pf2:2209.62,big1:134.66,big2:154.32,last:{winner:'KyleK',score1:125.19,score2:117.12,season:'21'},playoffs:2,seasons:10},
+    'Larson': {w1:8,w2:8,pf1:1910.87,pf2:1728.56,big1:196.20,big2:159.29,last:{winner:'KyleK',score1:149.04,score2:116.04,season:'19'},playoffs:2,seasons:10},
+    'PatrickF': {w1:15,w2:13,pf1:3064.69,pf2:3033.08,big1:155.23,big2:149.29,last:{winner:'PatrickF',score1:122.32,score2:130.30,season:'25'},playoffs:2,seasons:16},
+    'Raj': {w1:12,w2:19,pf1:3396.34,pf2:3516.64,big1:153.17,big2:162.62,last:{winner:'KyleK',score1:94.84,score2:76.42,season:'25'},playoffs:1,seasons:16},
+    'Rudee': {w1:7,w2:7,pf1:1710.80,pf2:1644.25,big1:173.28,big2:156.80,last:{winner:'Rudee',score1:112.74,score2:156.80,season:'25'},playoffs:2,seasons:7},
+    'RyanC': {w1:17,w2:13,pf1:3425.78,pf2:3118.57,big1:188.87,big2:134.41,last:{winner:'RyanC',score1:71.00,score2:92.92,season:'25'},playoffs:3,seasons:16},
+    'duncan': {w1:17,w2:8,pf1:3018.14,pf2:2803.21,big1:182.57,big2:161.02,last:{winner:'KyleK',score1:101.82,score2:101.16,season:'25'},playoffs:3,seasons:16}
+  },
+  'KyleP': {
+    'Larson': {w1:9,w2:6,pf1:1749.49,pf2:1713.11,big1:155.20,big2:162.60,last:{winner:'Larson',score1:91.82,score2:116.54,season:'19'},playoffs:2,seasons:8},
+    'PatrickF': {w1:8,w2:8,pf1:1779.34,pf2:1714.56,big1:140.03,big2:160.87,last:{winner:'KyleP',score1:117.50,score2:101.83,season:'21'},playoffs:1,seasons:10},
+    'Raj': {w1:6,w2:11,pf1:1796.01,pf2:2121.00,big1:142.79,big2:171.76,last:{winner:'Raj',score1:101.04,score2:126.20,season:'21'},playoffs:3,seasons:10},
+    'Rudee': {w1:3,w2:3,pf1:632.21,pf2:677.84,big1:119.83,big2:151.77,last:{winner:'Rudee',score1:119.83,score2:151.77,season:'21'},playoffs:0,seasons:3},
+    'RyanC': {w1:9,w2:11,pf1:2311.63,pf2:2430.49,big1:162.50,big2:157.43,last:{winner:'RyanC',score1:113.66,score2:113.87,season:'21'},playoffs:1,seasons:10},
+    'duncan': {w1:5,w2:9,pf1:1546.82,pf2:1589.31,big1:146.41,big2:159.26,last:{winner:'duncan',score1:109.45,score2:114.61,season:'21'},playoffs:0,seasons:10}
+  },
+  'Larson': {
+    'PatrickF': {w1:9,w2:8,pf1:1767.95,pf2:1843.83,big1:146.48,big2:166.54,last:{winner:'PatrickF',score1:94.19,score2:146.91,season:'19'},playoffs:0,seasons:10},
+    'Raj': {w1:6,w2:9,pf1:1585.90,pf2:1756.54,big1:151.62,big2:162.84,last:{winner:'Raj',score1:116.20,score2:121.31,season:'19'},playoffs:1,seasons:10},
+    'Rudee': {w1:0,w2:2,pf1:198.17,pf2:276.59,big1:119.07,big2:177.82,last:{winner:'Rudee',score1:119.07,score2:177.82,season:'19'},playoffs:0,seasons:1},
+    'RyanC': {w1:8,w2:6,pf1:1682.79,pf2:1541.85,big1:159.49,big2:149.31,last:{winner:'RyanC',score1:104.14,score2:125.74,season:'19'},playoffs:0,seasons:10},
+    'duncan': {w1:11,w2:8,pf1:2138.62,pf2:2079.79,big1:153.18,big2:160.86,last:{winner:'Larson',score1:118.10,score2:108.04,season:'19'},playoffs:2,seasons:10}
+  },
+  'PatrickF': {
+    'Raj': {w1:13,w2:16,pf1:3170.79,pf2:3220.49,big1:154.04,big2:164.70,last:{winner:'Raj',score1:143.86,score2:164.70,season:'25'},playoffs:1,seasons:16},
+    'Rudee': {w1:4,w2:8,pf1:1302.43,pf2:1485.51,big1:131.55,big2:164.95,last:{winner:'Rudee',score1:96.58,score2:98.64,season:'25'},playoffs:0,seasons:7},
+    'RyanC': {w1:16,w2:15,pf1:3527.00,pf2:3668.89,big1:172.60,big2:170.93,last:{winner:'RyanC',score1:69.78,score2:140.02,season:'25'},playoffs:4,seasons:16},
+    'duncan': {w1:8,w2:16,pf1:2603.95,pf2:2850.24,big1:172.04,big2:165.74,last:{winner:'duncan',score1:112.94,score2:135.34,season:'25'},playoffs:1,seasons:16}
+  },
+  'Raj': {
+    'Rudee': {w1:3,w2:10,pf1:1345.18,pf2:1637.74,big1:157.10,big2:157.07,last:{winner:'Rudee',score1:76.24,score2:119.90,season:'25'},playoffs:0,seasons:7},
+    'RyanC': {w1:18,w2:12,pf1:3583.34,pf2:3410.73,big1:166.96,big2:169.76,last:{winner:'Raj',score1:102.14,score2:95.86,season:'25'},playoffs:3,seasons:16},
+    'duncan': {w1:11,w2:12,pf1:2606.28,pf2:2661.52,big1:160.80,big2:166.85,last:{winner:'duncan',score1:113.72,score2:125.48,season:'25'},playoffs:4,seasons:16}
+  },
+  'Rudee': {
+    'RyanC': {w1:5,w2:6,pf1:1216.07,pf2:1308.60,big1:174.86,big2:157.86,last:{winner:'Rudee',score1:131.44,score2:69.24,season:'25'},playoffs:1,seasons:7},
+    'duncan': {w1:6,w2:4,pf1:1199.89,pf2:1168.63,big1:169.80,big2:151.85,last:{winner:'Rudee',score1:169.80,score2:139.10,season:'25'},playoffs:1,seasons:7}
+  },
+  'RyanC': {
+    'duncan': {w1:19,w2:11,pf1:3622.66,pf2:3327.33,big1:160.41,big2:165.87,last:{winner:'RyanC',score1:105.36,score2:105.34,season:'25'},playoffs:3,seasons:16}
+  },
+};
+
+function getH2H(a, b) {
+  if (h2hData[a] && h2hData[a][b]) return h2hData[a][b];
+  if (h2hData[b] && h2hData[b][a]) {
+    var d = h2hData[b][a];
+    return {
+      w1: d.w2, w2: d.w1,
+      pf1: d.pf2, pf2: d.pf1,
+      big1: d.big2, big2: d.big1,
+      last: d.last ? { winner: d.last.winner, score1: d.last.score2, score2: d.last.score1, season: d.last.season } : null,
+      playoffs: d.playoffs, seasons: d.seasons
+    };
+  }
+  return null;
+}
+
+function updateH2H() {
+  var a = document.getElementById('mgr1').value;
+  var b = document.getElementById('mgr2').value;
+  var result = document.getElementById('h2hResult');
+  var prompt = document.getElementById('h2hPrompt');
+  if (!a || !b || a === b) {
+    result.style.display = 'none';
+    prompt.style.display = 'block';
+    prompt.textContent = (a && b && a === b) ? 'Please select two different managers.' : 'Select two managers above to see their all-time head-to-head record.';
+    return;
+  }
+  var d = getH2H(a, b);
+  var mA = MANAGERS[a] ? MANAGERS[a].label : a;
+  var mB = MANAGERS[b] ? MANAGERS[b].label : b;
+  document.getElementById('m1name').textContent = mA;
+  document.getElementById('m2name').textContent = mB;
+  document.getElementById('m1col').textContent = mA;
+  document.getElementById('m2col').textContent = mB;
+  if (!d) {
+    document.getElementById('m1wins').textContent = '—';
+    document.getElementById('m2wins').textContent = '—';
+    document.getElementById('r-rec1').textContent = 'No data';
+    document.getElementById('r-rec2').textContent = 'No data';
+    ['r-pf1','r-pf2','r-avg1','r-avg2','r-big1','r-big2','r-last1','r-last2'].forEach(function(id){ document.getElementById(id).textContent = '—'; });
+    document.getElementById('r-playoff').textContent = '—';
+    document.getElementById('r-seasons').textContent = '—';
+  } else {
+    result.style.display = 'block';
+    prompt.style.display = 'none';
+    var tot = d.w1 + d.w2;
+    document.getElementById('m1wins').textContent = d.w1;
+    document.getElementById('m2wins').textContent = d.w2;
+    document.getElementById('r-rec1').textContent = d.w1 + '-' + d.w2;
+    document.getElementById('r-rec2').textContent = d.w2 + '-' + d.w1;
+    document.getElementById('r-pf1').textContent = d.pf1.toFixed(2);
+    document.getElementById('r-pf2').textContent = d.pf2.toFixed(2);
+    document.getElementById('r-avg1').textContent = tot ? (d.pf1/tot).toFixed(1) : '—';
+    document.getElementById('r-avg2').textContent = tot ? (d.pf2/tot).toFixed(1) : '—';
+    document.getElementById('r-big1').textContent = d.big1 ? d.big1.toFixed(2) : '—';
+    document.getElementById('r-big2').textContent = d.big2 ? d.big2.toFixed(2) : '—';
+    if (d.last) {
+      var lw = MANAGERS[d.last.winner] ? MANAGERS[d.last.winner].label : d.last.winner;
+      var lsn = "'"+d.last.season;
+      document.getElementById('r-last1').textContent = d.last.winner === a ? ('W ' + d.last.score1.toFixed(2) + ' · ' + lsn) : ('L ' + d.last.score1.toFixed(2) + ' · ' + lsn);
+      document.getElementById('r-last2').textContent = d.last.winner === b ? ('W ' + d.last.score2.toFixed(2) + ' · ' + lsn) : ('L ' + d.last.score2.toFixed(2) + ' · ' + lsn);
+    } else {
+      document.getElementById('r-last1').textContent = '—';
+      document.getElementById('r-last2').textContent = '—';
+    }
+    document.getElementById('r-playoff').textContent = d.playoffs ? d.playoffs + ' playoff meeting' + (d.playoffs > 1 ? 's' : '') : 'None';
+    document.getElementById('r-seasons').textContent = d.seasons ? d.seasons + ' season' + (d.seasons > 1 ? 's' : '') : '—';
+  }
+}
+
+// All-Time W-L Table Sorting
+(function() {
+  var table = document.getElementById('atRecordsTable');
+  if (!table) return;
+  var tbody = table.querySelector('tbody');
+  var lastCol = 6; // default: Win %
+  var lastDir = -1; // -1 = descending (highest first)
+
+  function getVal(row, col, type) {
+    var cell = row.cells[col];
+    var txt = cell ? cell.textContent.trim() : '';
+    if (type === 'num') {
+      // Strip % signs, trophy emojis, and grab first number
+      var m = txt.replace(/[^\d.\-]/g, '');
+      var n = parseFloat(m);
+      return isNaN(n) ? -Infinity : n;
+    }
+    return txt.toLowerCase();
+  }
+
+  function sortBy(col, type) {
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    var dir;
+    if (col === lastCol) {
+      dir = lastDir * -1;
+    } else {
+      dir = type === 'str' ? 1 : -1; // strings default A-Z, numbers default high-low
+    }
+    rows.sort(function(a, b) {
+      var av = getVal(a, col, type);
+      var bv = getVal(b, col, type);
+      if (av < bv) return -1 * dir;
+      if (av > bv) return 1 * dir;
+      return 0;
+    });
+    rows.forEach(function(r) { tbody.appendChild(r); });
+    lastCol = col;
+    lastDir = dir;
+
+    // Update arrow indicators
+    var headers = table.querySelectorAll('th.at-sort');
+    headers.forEach(function(th) {
+      var arrow = th.querySelector('.at-arrow');
+      if (!arrow) return;
+      var c = parseInt(th.getAttribute('data-col'), 10);
+      if (c === col) {
+        arrow.textContent = dir === 1 ? ' ↑' : ' ↓';
+        th.style.color = '#6001D2';
+      } else {
+        arrow.textContent = ' ↕';
+        th.style.color = '';
+      }
+    });
+  }
+
+  table.querySelectorAll('th.at-sort').forEach(function(th) {
+    th.addEventListener('click', function() {
+      var col = parseInt(th.getAttribute('data-col'), 10);
+      var type = th.getAttribute('data-type');
+      sortBy(col, type);
+    });
+  });
+})();
+</script>
+</body>
+</html>
+                                                    

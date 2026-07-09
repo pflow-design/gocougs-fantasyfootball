@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+import { records, champions, managers } from '../../lib/data.ts';
+
+const groups = (records as any).groups as any[];
+const mgrList = (managers as any).managers as any[];
+const label = (key?: string | null) => {
+  if (!key) return '—';
+  const m = mgrList.find((x) => x.key === key);
+  return m ? m.display : key;
+};
+
+// Record Book rows: flatten each metric into a 2025 row + an All-Time row.
+const bookGroups = groups.map((g) => ({
+  title: g.title,
+  icon: g.icon,
+  note: g.note,
+  rows: g.records.flatMap((r: any) => {
+    const out: any[] = [];
+    if (r.y2025) {
+      out.push({
+        metric: r.metric, kind: 's',
+        holder: r.y2025.holder, detail: r.y2025.detail,
+        value: r.y2025.value, tbd: r.y2025.value === 'TBD',
+      });
+    }
+    if (r.allTime) {
+      const seasonTag = r.allTime.season ? `, '${String(r.allTime.season).slice(-2)}` : '';
+      out.push({
+        metric: r.metric, kind: 'a',
+        holder: (r.allTime.holder ?? '—') + seasonTag,
+        value: r.allTime.value, tbd: r.allTime.value === 'TBD',
+      });
+    }
+    return out;
+  }),
+}));
+
+// Champions
+const byYear = ([...(champions as any).byYear] as any[]).sort((a, b) => b.year - a.year);
+const titles = Object.entries((champions as any).titlesByManager as Record<string, number>)
+  .map(([key, n]) => ({ key, label: label(key), n }))
+  .sort((a, b) => b.n - a.n);
+
+// All-time manager table (regular season), sorted by win% desc as in the report.
+const allTime = [...mgrList].sort((a, b) => b.allTime.winPct - a.allTime.winPct);
+---
+<Base title="Records & History" subtitle="The all-time Record Book, champions, and career manager records.">
+
+  <div class="sec-hdr"><span class="icon">📚</span><h2>All-Time Record Book — Regular Season</h2></div>
+  <p class="sub" style="margin:-6px 0 14px;font-style:italic;">
+    Regular season only — playoff games excluded. 2009 is excluded from records; 2010 included. Cells marked TBD need per-player box scores not in the dataset.
+  </p>
+  <div class="grid2">
+    {bookGroups.map((g) => (
+      <div class="card">
+        <div class="card-title">{g.icon} {g.title}</div>
+        <table class="rtbl">
+          {g.rows.map((r: any) => (
+            <tr class:list={[{ at: r.kind === 'a' }]}>
+              <td class="rc">{r.metric} <span class:list={['rlbl', r.kind === 'a' ? 'a' : 's']}>{r.kind === 'a' ? 'All Time' : '2025'}</span></td>
+              <td class="rh">{r.holder}{r.detail ? `, ${r.detail}` : ''}</td>
+              <td class:list={['rv', { tbd: r.tbd }]}>{r.value}</td>
+            </tr>
+          ))}
+        </table>
+        {g.note && <p class="sub" style="margin-top:10px;font-style:italic;">{g.note}</p>}
+      </div>
+    ))}
+  </div>
+
+  <div class="sec-hdr"><span class="icon">🏆</span><h2>League Champions</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">Title Winners by Year</div>
+      <table class="rtbl">
+        {byYear.map((c) => (
+          <tr>
+            <td class="rc" style="width:22%;">{c.year}</td>
+            <td class="rh">{label(c.champion)}</td>
+            <td class="rv" style="font-weight:600;color:var(--muted);">{c.team ?? ''}</td>
+          </tr>
+        ))}
+      </table>
+      <p class="sub" style="margin-top:10px;">Years not yet listed are pending extraction from the season archives.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Titles by Manager</div>
+      <table class="rtbl">
+        {titles.map((t) => (
+          <tr>
+            <td class="rc">{t.label}</td>
+            <td class="rv">{'🏆'.repeat(t.n)} {t.n}</td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-hdr"><span class="icon">🏅</span><h2>All-Time Records by Manager</h2></div>
+  <p class="sub" style="margin:-6px 0 14px;font-style:italic;">
+    Regular season, sorted by win %. These totals are report-derived and predate the 2009/2010 corrections (see data notes) — a recompute is pending.
+  </p>
+  <div class="card table-scroll">
+    <table class="stbl">
+      <thead><tr>
+        <th>Manager</th><th>Team</th><th class="r">Since</th><th class="r">Seasons</th>
+        <th class="r">W</th><th class="r">L</th><th class="r">Win %</th><th class="r">Playoffs</th><th class="r">Titles</th>
+      </tr></thead>
+      <tbody>
+        {allTime.map((m) => (
+          <tr style={m.status === 'alumni' ? 'opacity:.7;' : ''}>
+            <td class="tn">{m.display}{m.status === 'alumni' ? ' (alumni)' : ''}</td>
+            <td class="sub">{m.currentTeam ?? '—'}</td>
+            <td class="r sub">'{String(m.since).slice(-2)}</td>
+            <td class="r">{m.allTime.seasons}</td>
+            <td class="r pos">{m.allTime.w}</td>
+            <td class="r neg">{m.allTime.l}</td>
+            <td class="r rec">{m.allTime.winPct.toFixed(1)}%</td>
+            <td class="r">{m.allTime.playoffAppearances}</td>
+            <td class="r">{m.allTime.titles ? `${m.allTime.titles} 🏆` : '0'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Base>

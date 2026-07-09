@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "description": "Canonical managers for the KDP 'Go Cougs' league. Keys match the JS keys used in the report's h2hData and MANAGERS map. All-time records are REGULAR SEASON ONLY, 2009-2025 (16 seasons), as displayed in reference/kdp_report.html's 'All-Time Win-Loss Records by Manager' table.",
+    "source": "reference/kdp_report.html (MANAGERS map + all-time W-L table), STATUS.md (naming history)",
+    "winPctNote": "winPct is copied verbatim from the report; it may not exactly equal w/(w+l) because the report's percentages were rounded/entered by hand.",
+    "allTimeAggregatesCaveat": "The per-manager allTime W-L/seasons/etc. are report-derived and PREDATE two corrections: (1) 2010 added as a canonical season, and (2) the 2009 re-attribution (David = cougs4bcsbid, not Larson). So David is undercounted and Larson is overcounted here. The authoritative per-season truth lives in data/seasons/*.json; the all-time aggregates should be RECOMPUTED from those (regular season) plus playoff data. Tracked as a follow-up."
+  },
+  "managers": [
+    {
+      "key": "Rudee", "display": "Rudee", "since": "2019", "status": "active",
+      "currentTeam": "Hit Somebody",
+      "allTime": { "seasons": 7, "w": 62, "l": 41, "winPct": 60.2, "playoffAppearances": 4, "titles": 1 },
+      "notes": "KDP debut 2019. Was mislabeled 'Ryan' (rmath23@hotmail.com) in early builds; the h2hData key is 'Rudee'. Distinct from 'Ryan C' (RyanC)."
+    },
+    {
+      "key": "Raj", "display": "Raj", "since": "2009", "status": "active",
+      "currentTeam": "shmoney maker",
+      "allTime": { "seasons": 16, "w": 130, "l": 98, "winPct": 57.0, "playoffAppearances": 9, "titles": 0 },
+      "notes": "Original 2009 member. Most wins all-time among never-champions."
+    },
+    {
+      "key": "Antony", "display": "Antony", "since": "2009", "status": "active",
+      "currentTeam": "The Cuddly Kittens",
+      "allTime": { "seasons": 13, "w": 101, "l": 84, "winPct": 54.6, "playoffAppearances": 5, "titles": 4 },
+      "notes": "Absent 2019-2021 (3 seasons). Most titles all-time (4)."
+    },
+    {
+      "key": "Larson", "display": "Robbie", "since": "2009", "status": "alumni",
+      "currentTeam": null,
+      "allTime": { "seasons": 9, "w": 66, "l": 59, "winPct": 52.8, "playoffAppearances": 4, "titles": 1 },
+      "notes": "JS key is 'Larson' but displays as 'Robbie' in the report. Historical/alumni; no 2025 team. CORRECTION (Patrick, 2026-07): Larson was NOT in the league in 2009 — the old data wrongly credited him with David's 2009 team ('cougs4bcsbid'). The allTime figures above still include that phantom 2009 season and need a recompute (Larson's true seasons/W-L are lower). See _meta.allTimeAggregatesCaveat."
+    },
+    {
+      "key": "KyleK", "display": "Kyle K", "since": "2009", "status": "active",
+      "currentTeam": "Benching Kelce",
+      "allTime": { "seasons": 16, "w": 116, "l": 112, "winPct": 50.9, "playoffAppearances": 7, "titles": 0 },
+      "notes": "Formerly keyed 'Kyle'. Distinct from Kyle P ('Kyle2')."
+    },
+    {
+      "key": "Jeremy", "display": "Jeremy", "since": "2020", "status": "active",
+      "currentTeam": "Clappin' Cheeks",
+      "allTime": { "seasons": 6, "w": 45, "l": 44, "winPct": 50.6, "playoffAppearances": 3, "titles": 2 },
+      "notes": "Full name Jeremy Trevino. 2025 & 2023 champion (2 titles)."
+    },
+    {
+      "key": "Daniel", "display": "Daniel", "since": "2009", "status": "active",
+      "currentTeam": "My Ball Zach Ertz",
+      "allTime": { "seasons": 16, "w": 114, "l": 114, "winPct": 50.0, "playoffAppearances": 9, "titles": 1 },
+      "notes": "Original 2009 member. Exactly .500 all-time (114-114)."
+    },
+    {
+      "key": "RyanC", "display": "Ryan C", "since": "2009", "status": "active",
+      "currentTeam": "Trips Formation",
+      "allTime": { "seasons": 15, "w": 107, "l": 107, "winPct": 50.0, "playoffAppearances": 7, "titles": 1 },
+      "notes": "Distinct from Rudee. Missing 2011 attribution (hidden manager 'Kibbles and Vicks', confirmed by elimination). Exactly .500 (107-107)."
+    },
+    {
+      "key": "duncan", "display": "Duncan", "since": "2009", "status": "active",
+      "currentTeam": "Spoiling Your Cottage Cheese",
+      "allTime": { "seasons": 16, "w": 110, "l": 118, "winPct": 48.2, "playoffAppearances": 7, "titles": 3 },
+      "notes": "Commissioner. 2009 champion. 3 titles. Finished last (3-12) in 2025."
+    },
+    {
+      "key": "David", "display": "David", "since": "2009", "status": "active",
+      "currentTeam": "GIBBS Me Head",
+      "allTime": { "seasons": 15, "w": 102, "l": 113, "winPct": 47.4, "playoffAppearances": 4, "titles": 1 },
+      "notes": "RESOLVED (Patrick, 2026-07): David WAS in 2009 as the hidden team 'cougs4bcsbid' (the old data mislabeled that slot 'Larson' and wrongly placed David on 'Team Malaysia'). Since '09 stands, and David also won 2010 (Reality of Fantasy). The report's 'Since 11 / 15 seasons' was an artifact of the wrong 2009 attribution; David's true seasons (2009 + 2010 + 2011-2025) and W-L are UNDERCOUNTED in allTime above and need a recompute. See _meta.allTimeAggregatesCaveat."
+    },
+    {
+      "key": "PatrickF", "display": "Patrick", "since": "2009", "status": "active",
+      "currentTeam": "RIPete",
+      "allTime": { "seasons": 16, "w": 101, "l": 127, "winPct": 44.3, "playoffAppearances": 4, "titles": 1 },
+      "notes": "The site owner. Original 2009 member. Holds several 'worst' all-time marks (most losses 127; 2021 loss records)."
+    },
+    {
+      "key": "KyleP", "display": "Kyle P", "since": "2012", "status": "alumni",
+      "currentTeam": null,
+      "allTime": { "seasons": 10, "w": 60, "l": 81, "winPct": 42.6, "playoffAppearances": 3, "titles": 1 },
+      "notes": "Formerly keyed 'Kyle2'. Last active 2021; not in 2022-2025. 1 title."
+    },
+    {
+      "key": "Bradley", "display": "Bradley", "since": "2009", "status": "alumni",
+      "currentTeam": null,
+      "allTime": { "seasons": 2, "w": 11, "l": 16, "winPct": 40.7, "playoffAppearances": 0, "titles": 0 },
+      "notes": "Alumni; limited seasons (only 2009 & 2011 attributed). No titles."
+    }
+  ],
+  "namingHistory": {
+    "Rudee": "'Ryan' (rmath23@hotmail.com) in early builds = Rudee, NOT Ryan C.",
+    "KyleK": "Formerly 'Kyle'.",
+    "KyleP": "Formerly 'Kyle2'.",
+    "Larson": "Displays as 'Robbie' in the report despite the 'Larson' key.",
+    "David": "Identified as scmid 2 in 2009 WaZZU league ('Team Malaysia / Irfan Since 05')."
+  }
+}

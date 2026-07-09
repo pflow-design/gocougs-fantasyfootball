@@ -1,0 +1,252 @@
+---
+import Base from '../../layouts/Base.astro';
+import StandingsTable from '../../components/StandingsTable.astro';
+import { seasons, managers, championInfo } from '../../lib/data.ts';
+import type { Season } from '../../lib/data.ts';
+
+export function getStaticPaths() {
+  return seasons.map((s) => ({ params: { year: String(s.year) }, props: { season: s } }));
+}
+interface Props { season: Season }
+const { season } = Astro.props;
+
+const mgrList = (managers as any).managers;
+const label = (key?: string | null) => {
+  if (!key) return null;
+  const m = mgrList.find((x: any) => x.key === key);
+  return m ? m.display : key;
+};
+
+const ci = championInfo(season);
+const champKnown = ci.known;
+const champMgr = label(ci.key);
+const champTeam = ci.team;
+const playoffCount = season.year <= 2010 ? 6 : 4;
+
+const pf = (season as any).pfpaChart as { teams: string[]; pf: number[]; pa: number[] } | undefined;
+const playoffs = (season as any).playoffs as any;
+const profiles = (season as any).teamProfiles as any[] | undefined;
+const stories = (season as any).stories as any[] | undefined;
+const weekly = season.weeklyScores;
+// Numeric week keys only — 2025's weeklyScores also carries a "_note" string.
+const weeks = weekly ? Object.keys(weekly).filter((k) => /^\d+$/.test(k)).sort((a, b) => Number(a) - Number(b)) : [];
+const standingsOnly = (season as any)._meta?.standingsOnly;
+
+// Precompute comparisons here (Astro mis-parses `<`/`>`/`>=` in {expressions}).
+const weeksData = weeks.map((wk) => ({
+  wk,
+  games: weekly![wk].map(([a, sa, b, sb]) => ({
+    aLabel: label(a) ?? a, sa, bLabel: label(b) ?? b, sb, aWin: sa > sb,
+  })),
+}));
+const profilesData = (profiles ?? []).map((p: any) => ({ ...p, diffPos: p.diff >= 0, isFirst: p.place === 1 }));
+
+// Chart geometry (server-rendered SVG, no client JS).
+let chart: any = null;
+if (pf) {
+  const n = pf.teams.length, W = 860, H = 320, padL = 44, padR = 12, padT = 16, padB = 46;
+  const cw = W - padL - padR, ch = H - padT - padB;
+  const all = [...pf.pf, ...pf.pa];
+  const minV = Math.floor((Math.min(...all) - 60) / 50) * 50;
+  const maxV = Math.ceil((Math.max(...all) + 20) / 50) * 50;
+  const range = maxV - minV;
+  const gw = cw / n, bw = gw * 0.34, gap = gw * 0.06;
+  const y = (v: number) => padT + ch * (1 - (v - minV) / range);
+  const grid = [];
+  for (let v = minV; v <= maxV; v += 50) grid.push(v);
+  chart = { n, W, H, padL, padR, padT, padB, cw, ch, minV, maxV, gw, bw, gap, y, grid };
+}
+---
+<Base title={`${season.year} Season`} subtitle={`${season.teams} teams · ${season.regularSeasonWeeks ?? '—'}-week regular season`}>
+
+  {champKnown ? (
+    <div class="champ-banner">
+      <div class="ce">🏆 {season.year} Champion</div>
+      <div class="cn">{champTeam}</div>
+      <div class="cm">{champMgr}</div>
+      {season.yahooUrl && <a class="cl" href={season.yahooUrl} target="_blank" rel="noopener">View on Yahoo Fantasy →</a>}
+    </div>
+  ) : (
+    <div class="champ-unknown">
+      <span>Champion not yet recorded for {season.year} — the table below shows the regular-season finish.</span>
+      {season.yahooUrl && <a href={season.yahooUrl} target="_blank" rel="noopener">View on Yahoo Fantasy →</a>}
+    </div>
+  )}
+
+  <div class="sec-hdr"><span class="icon">📊</span><h2>Final Standings{standingsOnly ? ' (standings only)' : ''}</h2></div>
+  <div class="card">
+    <StandingsTable standings={season.standings} playoffCount={playoffCount} showStreak={true} />
+    {standingsOnly && <p class="sub" style="margin-top:10px;">No weekly matchup data exists for this season — standings are from the archived team totals.</p>}
+  </div>
+
+  {chart && pf && (
+    <>
+      <div class="sec-hdr"><span class="icon">📈</span><h2>Points For vs. Points Against</h2></div>
+      <div class="card">
+        <div class="table-scroll">
+          <svg viewBox={`0 0 ${chart.W} ${chart.H}`} style={`width:100%;max-width:${chart.W}px;display:block;margin:0 auto;`} xmlns="http://www.w3.org/2000/svg">
+            {chart.grid.map((v: number) => (
+              <>
+                <line x1={chart.padL} y1={chart.y(v)} x2={chart.W - chart.padR} y2={chart.y(v)} stroke="#eee" stroke-width="1" />
+                <text x={chart.padL - 6} y={chart.y(v) + 4} text-anchor="end" font-size="10" fill="#999">{v}</text>
+              </>
+            ))}
+            {pf.teams.map((t, i) => {
+              const cx = chart.padL + i * chart.gw + chart.gw / 2;
+              const x1 = cx - chart.bw - chart.gap / 2;
+              const x2 = cx + chart.gap / 2;
+              const yb = chart.padT + chart.ch;
+              return (
+                <>
+                  <rect x={x1} y={chart.y(pf.pf[i])} width={chart.bw} height={yb - chart.y(pf.pf[i])} rx="3" fill="rgba(96,1,210,0.82)" />
+                  <rect x={x2} y={chart.y(pf.pa[i])} width={chart.bw} height={yb - chart.y(pf.pa[i])} rx="3" fill="rgba(255,140,0,0.9)" />
+                  <text x={cx} y={chart.H - chart.padB + 16} text-anchor="middle" font-size="11" font-weight="600" fill="#444">{t}</text>
+                </>
+              );
+            })}
+            <line x1={chart.padL} y1={chart.padT} x2={chart.padL} y2={chart.padT + chart.ch} stroke="#ccc" />
+            <line x1={chart.padL} y1={chart.padT + chart.ch} x2={chart.W - chart.padR} y2={chart.padT + chart.ch} stroke="#ccc" />
+          </svg>
+        </div>
+        <div class="legend">
+          <span><i style="background:rgba(96,1,210,0.82)"></i>Points For</span>
+          <span><i style="background:rgba(255,140,0,0.9)"></i>Points Against</span>
+        </div>
+      </div>
+    </>
+  )}
+
+  {playoffs && (
+    <>
+      <div class="sec-hdr"><span class="icon">🏟️</span><h2>Playoff Results</h2></div>
+      <div class="card">
+        {['semifinals', 'championship'].filter((k) => playoffs[k]).map((k) => (
+          <>
+            <p class="po-label">{k === 'semifinals' ? `Semifinals — Week ${playoffs[k].week}` : `Championship — Week ${playoffs[k].week}`}</p>
+            <div class="grid2" style="margin-bottom:16px;">
+              {playoffs[k].games.map((g: any) => (
+                <div class="match">
+                  <div class={`match-lbl ${g.label?.toLowerCase().includes('champ') ? 'gold' : ''}`}>{g.label}</div>
+                  <div class="match-row win"><span>{g.winner.team}</span><span class="msc">{g.winner.score.toFixed(2)}</span></div>
+                  <div class="match-row lose"><span>{g.loser.team}</span><span class="msc">{g.loser.score.toFixed(2)}</span></div>
+                </div>
+              ))}
+            </div>
+          </>
+        ))}
+      </div>
+    </>
+  )}
+
+  {profiles && (
+    <>
+      <div class="sec-hdr"><span class="icon">👥</span><h2>Team Profiles</h2></div>
+      <div class="grid3">
+        {profilesData.map((p: any) => (
+          <div class:list={['card', 'tcard', { gold: p.isFirst }]}>
+            <div class="tc-hdr">
+              <div><div class="tc-name">{p.isFirst ? '🏆 ' : ''}{p.team}</div><div class="sub">{p.manager}</div></div>
+              <div style="text-align:right;"><div class="tc-rec">{p.record}</div><div class="sub">{p.place ? `#${p.place}` : ''}</div></div>
+            </div>
+            <div class="badges">{(p.badges ?? []).map((b: string) => <span class="bdg">{b}</span>)}</div>
+            <div class="tc-stats">
+              <div class="tstat"><b>{Math.round(p.pf).toLocaleString()}</b><span>PF</span></div>
+              <div class="tstat"><b>{Math.round(p.pa).toLocaleString()}</b><span>PA</span></div>
+              <div class="tstat"><b class={p.diffPos ? 'pos' : 'neg'}>{p.diffPos ? '+' : '−'}{Math.abs(p.diff)}</b><span>Diff</span></div>
+            </div>
+            {p.note && <div class="tc-note">{p.note}</div>}
+          </div>
+        ))}
+      </div>
+    </>
+  )}
+
+  {stories && (
+    <>
+      <div class="sec-hdr"><span class="icon">📰</span><h2>Stories of the Season</h2></div>
+      <div class="grid3">
+        {stories.map((s: any) => (
+          <div class="card story">
+            <span class="s-em">{s.emoji}</span>
+            <div class="s-hl">{s.headline}</div>
+            <div class="sub" style="line-height:1.5;">{s.body}</div>
+          </div>
+        ))}
+      </div>
+    </>
+  )}
+
+  {weeks.length > 0 && (
+    <>
+      <div class="sec-hdr"><span class="icon">📅</span><h2>Weekly Results</h2></div>
+      <div class="card">
+        {weeksData.map((w) => (
+          <details class="wk">
+            <summary>Week {w.wk}</summary>
+            <div class="wk-games">
+              {w.games.map((g) => (
+                <div class="wk-game">
+                  <span class={g.aWin ? 'wg-win' : 'wg-lose'}>{g.aLabel} <b>{g.sa.toFixed(2)}</b></span>
+                  <span class="wg-vs">vs</span>
+                  <span class={g.aWin ? 'wg-lose' : 'wg-win'}>{g.bLabel} <b>{g.sb.toFixed(2)}</b></span>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
+    </>
+  )}
+
+  <p style="margin-top:28px;"><a href="/seasons/">← All seasons</a></p>
+</Base>
+
+<style>
+  .champ-banner { background: linear-gradient(135deg, var(--gold), #ff8c00); border-radius: 12px; text-align: center; padding: 22px; margin-bottom: 8px; }
+  .champ-banner .ce { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(0,0,0,.55); }
+  .champ-banner .cn { font-size: 28px; font-weight: 900; color: var(--ink); margin-top: 4px; }
+  .champ-banner .cm { font-size: 15px; color: rgba(0,0,0,.65); font-weight: 600; }
+  .champ-banner .cl { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--purple-900); font-weight: 700; }
+  .champ-unknown { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; background: #efeaff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-bottom: 8px; font-size: 12.5px; color: var(--muted); }
+  .champ-unknown a { font-weight: 700; white-space: nowrap; }
+
+  .legend { display: flex; gap: 20px; justify-content: center; margin-top: 10px; font-size: 12px; font-weight: 700; }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .legend i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+
+  .po-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple-700); text-align: center; margin-bottom: 12px; }
+  .match { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .match-lbl { background: var(--purple-900); color: #fff; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; padding: 5px 12px; }
+  .match-lbl.gold { background: var(--gold); color: var(--ink); }
+  .match-row { display: flex; justify-content: space-between; padding: 10px 14px; font-size: 13.5px; }
+  .match-row.win { background: #f7f3ff; font-weight: 700; }
+  .match-row.lose { color: #aaa; }
+  .msc { font-variant-numeric: tabular-nums; font-weight: 700; }
+
+  .tcard { border-left: 4px solid var(--purple-700); }
+  .tcard.gold { border-left-color: var(--gold); }
+  .tc-hdr { display: flex; justify-content: space-between; align-items: flex-start; }
+  .tc-name { font-weight: 800; font-size: 15px; }
+  .tc-rec { font-size: 20px; font-weight: 900; color: var(--purple-700); line-height: 1; }
+  .badges { display: flex; gap: 4px; flex-wrap: wrap; margin: 8px 0; }
+  .bdg { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #e8e0f7; color: var(--purple-900); }
+  .tc-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 6px; }
+  .tstat { text-align: center; background: #f7f3ff; border-radius: 7px; padding: 7px 2px; }
+  .tstat b { display: block; font-size: 13px; color: var(--purple-700); }
+  .tstat span { font-size: 9px; color: #aaa; text-transform: uppercase; letter-spacing: .5px; }
+  .tc-note { font-size: 11.5px; color: #666; margin-top: 10px; padding-top: 10px; border-top: 1px solid #f0ebff; font-style: italic; line-height: 1.5; }
+
+  .story .s-em { font-size: 26px; display: block; margin-bottom: 8px; }
+  .story .s-hl { font-size: 14px; font-weight: 800; margin-bottom: 5px; line-height: 1.3; }
+
+  .wk { border-bottom: 1px solid #f0ebff; }
+  .wk summary { cursor: pointer; padding: 10px 4px; font-weight: 700; color: var(--purple-900); font-size: 13px; }
+  .wk-games { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; padding: 4px 4px 12px; }
+  @media (max-width: 640px) { .wk-games { grid-template-columns: 1fr; } }
+  .wk-game { display: flex; align-items: center; gap: 8px; font-size: 12.5px; justify-content: space-between; }
+  .wg-vs { color: #ccc; font-size: 10px; }
+  .wg-win { color: var(--ink); font-weight: 600; }
+  .wg-lose { color: #aaa; }
+  .wk-game span:first-child { flex: 1; }
+  .wk-game span:last-child { flex: 1; text-align: right; }
+</style>

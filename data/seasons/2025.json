@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "description": "2025 KDP season. Standings, playoffs, team profiles, stories, and PF/PA chart data are from reference/kdp_report.html. weeklyScores are the validated regular-season weekly actuals from scraped_2025_2010.md (summing them reproduces each team's PF and W-L exactly).",
+    "source": "reference/kdp_report.html, scraped_2025_2010.md"
+  },
+  "year": 2025,
+  "leagueId": "205492",
+  "yahooUrl": "https://football.fantasysports.yahoo.com/2025/f1/205492",
+  "teams": 10,
+  "regularSeasonWeeks": 15,
+  "playoffWeeks": [16, 17],
+  "champion": { "manager": "Jeremy", "team": "Clappin' Cheeks", "record": "9-6-0 reg, 2-0 playoffs" },
+  "trophy": "The Pullen",
+  "standings": [
+    { "rank": 1, "team": "Clappin' Cheeks", "manager": "Jeremy", "managerKey": "Jeremy", "since": "2020", "w": 9, "l": 6, "t": 0, "pf": 1760.30, "pa": 1655.80, "diff": 104.5, "streak": "W-1", "clinched": "champion" },
+    { "rank": 2, "team": "My Ball Zach Ertz", "manager": "Daniel", "managerKey": "Daniel", "since": "2009", "w": 10, "l": 5, "t": 0, "pf": 1723.68, "pa": 1649.08, "diff": 74.6, "streak": "W-2", "clinched": "playoff" },
+    { "rank": 3, "team": "Hit Somebody", "manager": "Rudee", "managerKey": "Rudee", "since": "2019", "w": 11, "l": 4, "t": 0, "pf": 1822.26, "pa": 1641.46, "diff": 180.8, "streak": "W-3", "clinched": "playoff" },
+    { "rank": 4, "team": "GIBBS Me Head", "manager": "David", "managerKey": "David", "since": "2009", "w": 11, "l": 4, "t": 0, "pf": 1900.36, "pa": 1682.22, "diff": 218.1, "streak": "W-7", "clinched": "playoff" },
+    { "rank": 5, "team": "The Cuddly Kittens", "manager": "Antony", "managerKey": "Antony", "since": "2009", "w": 8, "l": 7, "t": 0, "pf": 1739.98, "pa": 1633.96, "diff": 106.0, "streak": "L-2", "clinched": null },
+    { "rank": 6, "team": "Trips Formation", "manager": "Ryan C", "managerKey": "RyanC", "since": "2009", "w": 8, "l": 7, "t": 0, "pf": 1648.26, "pa": 1669.44, "diff": -21.2, "streak": "L-1", "clinched": null },
+    { "rank": 7, "team": "shmoney maker", "manager": "Raj", "managerKey": "Raj", "since": "2009", "w": 5, "l": 10, "t": 0, "pf": 1512.14, "pa": 1718.88, "diff": -206.7, "streak": "W-1", "clinched": null },
+    { "rank": 8, "team": "Benching Kelce", "manager": "Kyle K", "managerKey": "KyleK", "since": "2009", "w": 6, "l": 9, "t": 0, "pf": 1550.88, "pa": 1665.14, "diff": -114.3, "streak": "L-1", "clinched": null },
+    { "rank": 9, "team": "RIPete", "manager": "Patrick", "managerKey": "PatrickF", "since": "2009", "w": 4, "l": 11, "t": 0, "pf": 1735.00, "pa": 1834.16, "diff": -99.2, "streak": "L-5", "clinched": null },
+    { "rank": 10, "team": "Spoiling Your Cottage Cheese", "manager": "Duncan", "managerKey": "duncan", "since": "2009", "w": 3, "l": 12, "t": 0, "pf": 1534.66, "pa": 1777.38, "diff": -242.7, "streak": "L-2", "clinched": "last", "commissioner": true }
+  ],
+  "playoffs": {
+    "semifinals": {
+      "week": 16,
+      "games": [
+        { "label": "Semifinal 1", "winner": { "team": "Clappin' Cheeks", "score": 129.52 }, "loser": { "team": "GIBBS Me Head", "score": 104.30 } },
+        { "label": "Semifinal 2", "winner": { "team": "My Ball Zach Ertz", "score": 175.30 }, "loser": { "team": "Hit Somebody", "score": 151.30 } }
+      ]
+    },
+    "championship": {
+      "week": 17,
+      "games": [
+        { "label": "Championship Game", "winner": { "team": "Clappin' Cheeks", "score": 113.78 }, "loser": { "team": "My Ball Zach Ertz", "score": 105.00 } },
+        { "label": "3rd Place Game", "winner": { "team": "Hit Somebody", "score": 161.72 }, "loser": { "team": "GIBBS Me Head", "score": 79.58 } }
+      ]
+    }
+  },
+  "pfpaChart": {
+    "teams": ["David", "Rudee", "Jeremy", "Antony", "Patrick", "Daniel", "Ryan C", "Kyle K", "Duncan", "Raj"],
+    "pf": [1900.36, 1822.26, 1760.30, 1739.98, 1735.00, 1723.68, 1648.26, 1550.88, 1534.66, 1512.14],
+    "pa": [1682.22, 1641.46, 1655.80, 1633.96, 1834.16, 1649.08, 1669.44, 1665.14, 1777.38, 1718.88]
+  },
+  "teamProfiles": [
+    { "team": "Clappin' Cheeks", "manager": "Jeremy", "record": "9-6-0", "place": 1, "badges": ["2025 CHAMPION", "Platinum 830", "Since '20"], "pf": 1760, "pa": 1656, "diff": 105, "note": "Had the easiest schedule in the league (avg opp: 109.71 pts/wk). Went 9-6, then ran the table in the playoffs. Jeremy finally hoists The Pullen in his 6th season in the league." },
+    { "team": "My Ball Zach Ertz", "manager": "Daniel", "record": "10-5-0", "place": 2, "badges": ["Platinum 810", "Since '09"], "pf": 1724, "pa": 1649, "diff": 75, "note": "Posted 10 wins and blew out Hit Somebody 175.30-151.30 in a high-scoring semifinal. Second-most wins in the league. Fell 8.78 pts short of the championship." },
+    { "team": "Hit Somebody", "manager": "Rudee", "record": "11-4-0", "place": 3, "badges": ["Silver 673", "Since '19"], "pf": 1822, "pa": 1641, "diff": 181, "note": "Most wins this season (11). Highest season points total (2,135 / 125.6 avg). Delivered the biggest blowout of the season - beat GIBBS Me Head by 82.14 in Week 17. Led the league in defensive points (198.4)." },
+    { "team": "GIBBS Me Head", "manager": "David", "record": "11-4-0", "place": 4, "badges": ["Gold 729", "Since '09"], "pf": 1900, "pa": 1682, "diff": 218, "note": "Most points in the league (1,900.36). Tied for most wins. Won 7 straight. Faced the toughest schedule (avg opp: 122.27 pts). Led in kicking points (204.1). The best team that didn't win the championship." },
+    { "team": "The Cuddly Kittens", "manager": "Antony", "record": "8-7-0", "place": 5, "badges": ["Diamond 907", "Since '09"], "pf": 1740, "pa": 1634, "diff": 106, "note": "Highest Yahoo rating in the entire league (Diamond 907). Set the season's highest single-week score: 183.94 pts (Week 17). Led the league in waiver wire points (743.34) and rushing yards per week (263.82)." },
+    { "team": "Trips Formation", "manager": "Ryan C", "record": "8-7-0", "place": 6, "badges": ["Platinum 882", "Since '09"], "pf": 1648, "pa": 1669, "diff": -21, "note": "An original '09 member. Will forever be in the history books: beat Spoiling Your Cottage Cheese by 0.02 pts in Week 14 - the closest game in league history. Also set the season receiving yards record (608 yds, Week 12)." },
+    { "team": "shmoney maker", "manager": "Raj", "record": "5-10-0", "place": 7, "badges": ["Since '09", "Bronze 592"], "pf": 1512, "pa": 1719, "diff": -207, "note": "One of the league's original '09 members. Tied for longest loss streak this season (7 games). But scored 13 TDs in a single week (Week 15), tying the all-time league record set in 2020." },
+    { "team": "Benching Kelce", "manager": "Kyle K", "record": "6-9-0", "place": 8, "badges": ["Bronze 590", "Since '09"], "pf": 1551, "pa": 1665, "diff": -114, "note": "Most waiver moves in the league (41). Set the all-time league record for lowest single-week score: 47.66 pts in Week 17 - now the worst ever in KDP history. Tied for longest loss streak (7 games). Fewest points from draft picks (1,087.82)." },
+    { "team": "RIPete", "manager": "Patrick", "record": "4-11-0", "place": 9, "badges": ["Bronze 598", "Since '09"], "pf": 1735, "pa": 1834, "diff": -99, "note": "Scored 5th-most points but finished 9th - the most unlucky team of 2025. Draft picks completely flopped (all-time record lows for points from drafted players and offensive avg). Ended the season on a 5-game skid. Led the league in passing yards per week (261.76). Made only 13 waiver moves all season." },
+    { "team": "Spoiling Your Cottage Cheese", "manager": "Duncan", "record": "3-12-0", "place": 10, "badges": ["LAST PLACE", "Gold 702", "Since '09"], "pf": 1535, "pa": 1777, "diff": -243, "note": "The commissioner finishes last and owes dinner for the 2026 draft. Most losses (12). Lowest offensive points (1,293.36). Made zero post-draft acquisitions all season (all-time low). Yet still managed the narrowest win in league history - a 0.02-pt escape over Trips Formation in Week 14." }
+  ],
+  "stories": [
+    { "emoji": "⚡", "headline": "0.02 Pts - The Closest Game in League History", "body": "Week 14: Trips Formation beat Spoiling Your Cottage Cheese by two one-hundredths of a point - the narrowest margin in KDP history, now the all-time record. Ryan C survived by a fingernail against the commissioner himself." },
+    { "emoji": "😤", "headline": "RIPete: Most Unlucky Team of 2025", "body": "Patrick scored 1,735 pts - 5th-highest - but finished 9th at 4-11. His draft class completely failed (all-time record lows for drafted-player points and offensive avg per week). He survived on waiver wire finds alone, yet still couldn't buy a win." },
+    { "emoji": "📅", "headline": "GIBBS Me Head: The Best Team That Didn't Win", "body": "David's team scored the most points (1,900), tied for most wins (11-4), ran a 7-game win streak, and faced the toughest schedule in the league. Knocked out in the semis 129-104 by the eventual champion. Fantasy is cruel." },
+    { "emoji": "👑", "headline": "The Commissioner Finishes Last", "body": "Duncan (Spoiling Your Cottage Cheese) sets the rules, runs the league, makes zero waiver acquisitions all season, and finishes 3-12 in last place. He now owes dinner for the 2026 draft. A man of principles." },
+    { "emoji": "😬", "headline": "Benching Kelce Sets the All-Time Low", "body": "Kyle K's team put up just 47.66 pts in Week 17 - now the worst single-week score in KDP history (since 2009). With 41 waiver moves all season, the hustle was real. The results were not." },
+    { "emoji": "🍀", "headline": "The Schedule Gods Crown Clappin' Cheeks", "body": "Jeremy faced the easiest average opponent score in the league (109.71 pts/wk) while GIBBS Me Head faced the hardest (122.27). Did the schedule decide the champion? You be the judge." }
+  ],
+  "weeklyScores": {
+    "_note": "Regular-season weekly actuals from scraped_2025_2010.md. Each matchup is [teamA_key, teamA_score, teamB_key, teamB_score]. Manager codes resolved to keys: JE=Jeremy, DA=Daniel, RU=Rudee, DV=David, AN=Antony, RC=RyanC, RA=Raj, KK=KyleK, PA=PatrickF, DU=duncan.",
+    "1":  [["PatrickF",60.92,"KyleK",130.28],["duncan",91.42,"Antony",107.44],["David",110.46,"Daniel",123.78],["Jeremy",133.22,"RyanC",109.26],["Rudee",95.38,"Raj",79.12]],
+    "2":  [["PatrickF",116.98,"Rudee",126.48],["duncan",56.84,"Jeremy",109.28],["David",93.32,"Antony",86.38],["KyleK",125.70,"RyanC",109.20],["Daniel",94.64,"Raj",161.80]],
+    "3":  [["PatrickF",146.86,"RyanC",102.42],["duncan",69.94,"KyleK",104.72],["David",133.22,"Jeremy",88.96],["Antony",112.72,"Raj",114.52],["Rudee",107.30,"Daniel",116.74]],
+    "4":  [["PatrickF",88.38,"duncan",98.64],["David",120.36,"KyleK",159.18],["Antony",109.02,"Daniel",151.50],["Jeremy",142.30,"Raj",101.88],["Rudee",100.62,"RyanC",126.18]],
+    "5":  [["PatrickF",117.90,"David",146.72],["duncan",113.58,"RyanC",115.38],["KyleK",96.20,"Raj",111.34],["Antony",143.62,"Rudee",84.64],["Jeremy",100.32,"Daniel",122.00]],
+    "6":  [["PatrickF",124.68,"Raj",89.94],["duncan",92.94,"Rudee",125.46],["David",91.50,"RyanC",105.86],["KyleK",85.54,"Daniel",103.32],["Antony",122.94,"Jeremy",155.48]],
+    "7":  [["PatrickF",150.72,"Daniel",80.44],["duncan",110.16,"David",142.42],["KyleK",110.72,"Antony",153.48],["Jeremy",89.44,"Rudee",155.90],["Raj",102.14,"RyanC",95.86]],
+    "8":  [["PatrickF",129.28,"Antony",138.78],["duncan",125.48,"Raj",113.72],["David",119.32,"Rudee",125.28],["KyleK",54.08,"Jeremy",109.56],["Daniel",121.96,"RyanC",168.56]],
+    "9":  [["PatrickF",101.98,"Jeremy",111.30],["duncan",90.60,"Daniel",109.22],["David",129.72,"Raj",78.32],["KyleK",112.74,"Rudee",156.80],["Antony",120.46,"RyanC",97.06]],
+    "10": [["PatrickF",130.30,"KyleK",122.32],["duncan",89.30,"Antony",122.80],["David",120.34,"Daniel",120.12],["Jeremy",113.02,"RyanC",116.14],["Rudee",119.90,"Raj",76.24]],
+    "11": [["PatrickF",96.58,"Rudee",98.64],["duncan",114.82,"Jeremy",148.64],["David",120.78,"Antony",119.24],["KyleK",71.00,"RyanC",92.92],["Daniel",96.50,"Raj",62.76]],
+    "12": [["PatrickF",69.78,"RyanC",140.02],["duncan",101.16,"KyleK",101.82],["David",159.32,"Jeremy",109.68],["Antony",99.76,"Raj",91.52],["Rudee",112.86,"Daniel",159.76]],
+    "13": [["PatrickF",112.94,"duncan",135.34],["David",141.92,"KyleK",98.72],["Antony",97.28,"Daniel",79.10],["Jeremy",147.04,"Raj",87.72],["Rudee",131.44,"RyanC",69.24]],
+    "14": [["PatrickF",143.84,"David",148.14],["duncan",105.34,"RyanC",105.36],["KyleK",94.84,"Raj",76.42],["Antony",103.46,"Rudee",111.76],["Jeremy",88.50,"Daniel",117.10]],
+    "15": [["PatrickF",143.86,"Raj",164.70],["duncan",139.10,"Rudee",169.80],["David",122.82,"RyanC",94.80],["KyleK",83.02,"Daniel",127.50],["Antony",102.60,"Jeremy",113.56]]
+  }
+}

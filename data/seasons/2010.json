@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "2010 season — STANDINGS ONLY. No weekly matchup data exists in the project (only the team-season table in scraped_2025_2010.md). PF values are rounded integers as scraped. Manager attribution is PARTIAL: only David, Kyle K, and Patrick are identified; the rest were one-off/departed managers shown by team name. 2010 is a canonical KDP season (confirmed by Patrick, 2026-07) — champion David — and is included in the regular-season Record Book per HANDOFF.md section 4 (source of the all-time Low Single Week: Too Good 22.36). It is a 12-team, different-era league, hence the standings-only fidelity.",
+    "source": "scraped_2025_2010.md",
+    "standingsOnly": true,
+    "canonicalSeason": true
+  },
+  "year": 2010,
+  "leagueId": "264678",
+  "yahooUrl": "https://football.fantasysports.yahoo.com/2010/f1/264678",
+  "teams": 12,
+  "regularSeasonWeeks": 13,
+  "champion": { "managerKey": "David", "team": "Reality of Fantasy" },
+  "standings": [
+    { "rank": 1, "team": "Einhorn is Finkle!", "manager": null, "managerKey": null, "w": 10, "l": 3, "t": 0, "pf": 1719, "longestWinStreak": 5, "longestLossStreak": 1 },
+    { "rank": 2, "team": "Marvelous FarveLess", "manager": null, "managerKey": null, "w": 10, "l": 3, "t": 0, "pf": 1426, "longestWinStreak": 9, "longestLossStreak": 3 },
+    { "rank": 3, "team": "Ballcuzzis", "manager": "Kyle K", "managerKey": "KyleK", "w": 8, "l": 5, "t": 0, "pf": 1546, "longestWinStreak": 4, "longestLossStreak": 3 },
+    { "rank": 4, "team": "Reality of Fantasy", "manager": "David", "managerKey": "David", "w": 8, "l": 5, "t": 0, "pf": 1382, "longestWinStreak": 6, "longestLossStreak": 2 },
+    { "rank": 5, "team": "Teeth Malaysia", "manager": null, "managerKey": null, "w": 7, "l": 6, "t": 0, "pf": 1488, "longestWinStreak": 4, "longestLossStreak": 3 },
+    { "rank": 6, "team": "Post-Feminism", "manager": null, "managerKey": null, "w": 7, "l": 6, "t": 0, "pf": 1247, "longestWinStreak": 5, "longestLossStreak": 4 },
+    { "rank": 7, "team": "The Favres", "manager": null, "managerKey": null, "w": 6, "l": 7, "t": 0, "pf": 1309, "longestWinStreak": 3, "longestLossStreak": 2 },
+    { "rank": 8, "team": "ihatethecowboys", "manager": null, "managerKey": null, "w": 5, "l": 8, "t": 0, "pf": 1278, "longestWinStreak": 3, "longestLossStreak": 7 },
+    { "rank": 9, "team": "Falcon & The Snowman", "manager": null, "managerKey": null, "w": 5, "l": 8, "t": 0, "pf": 1274, "longestWinStreak": 3, "longestLossStreak": 5 },
+    { "rank": 10, "team": "Don't touch my Ditka", "manager": "Patrick", "managerKey": "PatrickF", "w": 5, "l": 8, "t": 0, "pf": 1230, "longestWinStreak": 2, "longestLossStreak": 3 },
+    { "rank": 11, "team": "Big Balls", "manager": null, "managerKey": null, "w": 5, "l": 8, "t": 0, "pf": 1189, "longestWinStreak": 3, "longestLossStreak": 5 },
+    { "rank": 12, "team": "Too Good", "manager": null, "managerKey": null, "w": 2, "l": 11, "t": 0, "pf": 1035, "longestWinStreak": 1, "longestLossStreak": 9, "note": "Abandoned team; holds the all-time Low Single Week record (22.36, Wk 9)." }
+  ]
+}

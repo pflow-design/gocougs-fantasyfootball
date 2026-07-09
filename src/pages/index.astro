@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import { seasons, champions, managers, championInfo } from '../lib/data.ts';
+
+const latest = seasons[0];
+const champ = latest.standings.find((s) => s.rank === 1);
+const mgrList = (managers as any).managers as any[];
+const label = (key?: string | null) => {
+  if (!key) return null;
+  const m = mgrList.find((x) => x.key === key);
+  return m ? m.display : key;
+};
+const champMgr = latest.champion?.managerKey ? label(latest.champion.managerKey) : champ?.manager;
+
+const titles = Object.entries((champions as any).titlesByManager as Record<string, number>)
+  .map(([key, n]) => ({ label: label(key), n }))
+  .sort((a, b) => b.n - a.n);
+const topTitle = titles[0];
+
+const features = [
+  { href: '/seasons/', icon: '📅', title: 'Seasons', body: `Standings, playoffs, and weekly results for all ${seasons.length} seasons.` },
+  { href: '/records/', icon: '📚', title: 'Records & History', body: 'The all-time Record Book, champions, and career manager records.' },
+  { href: '/head-to-head/', icon: '⚔️', title: 'Head-to-Head', body: 'Pick any two managers and see their complete rivalry history.' },
+];
+
+const recent = seasons.slice(0, 8).map((s) => {
+  const ci = championInfo(s);
+  return { year: s.year, team: ci.team, name: label(ci.key), known: ci.known };
+});
+---
+<Base title="KDP — Go Cougs" subtitle={`${seasons.length} seasons of the KDP fantasy football league — standings, records, and head-to-head history.`}>
+
+  <div class="hero">
+    <div class="hero-champ">
+      <div class="hc-eye">🏆 Reigning Champion · {latest.year}</div>
+      <div class="hc-name">{latest.champion?.team ?? champ?.team}</div>
+      <div class="hc-mgr">{champMgr}</div>
+      <a class="hc-link" href={`/seasons/${latest.year}/`}>See the {latest.year} season →</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><b>{seasons.length}</b><span>Seasons</span></div>
+      <div class="fact"><b>2009</b><span>Est.</span></div>
+      <div class="fact"><b>{topTitle?.n}</b><span>Most Titles ({topTitle?.label})</span></div>
+    </div>
+  </div>
+
+  <div class="features">
+    {features.map((f) => (
+      <a href={f.href} class="card feature">
+        <span class="f-icon">{f.icon}</span>
+        <div class="f-title">{f.title}</div>
+        <div class="sub">{f.body}</div>
+      </a>
+    ))}
+  </div>
+
+  <div class="sec-hdr"><span class="icon">📅</span><h2>Recent Seasons</h2></div>
+  <div class="season-grid">
+    {recent.map((s) => (
+      <a href={`/seasons/${s.year}/`} class="card sg">
+        <div class="sg-year">{s.year}</div>
+        {s.known
+          ? <div class="sg-champ">🏆 {s.name ?? '—'}</div>
+          : <div class="sg-champ sub" style="font-weight:700;">{s.name ?? '—'} <span style="font-weight:400;">· reg. #1</span></div>}
+        <div class="sub">{s.team ?? ''}</div>
+      </a>
+    ))}
+    <a href="/seasons/" class="card sg all">All seasons →</a>
+  </div>
+</Base>
+
+<style>
+  .hero { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 24px; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
+  .hero-champ { background: linear-gradient(135deg, var(--gold), #ff8c00); border-radius: 14px; padding: 26px; }
+  .hc-eye { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(0,0,0,.55); }
+  .hc-name { font-size: 30px; font-weight: 900; color: var(--ink); margin-top: 6px; line-height: 1.05; }
+  .hc-mgr { font-size: 16px; color: rgba(0,0,0,.65); font-weight: 700; }
+  .hc-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 800; color: var(--purple-900); }
+  .hero-facts { background: var(--purple-900); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .fact b { font-size: 28px; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
+  .fact span { font-size: 11px; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: 1px; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 8px; }
+  @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
+  .feature { text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; }
+  .feature:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(96,1,210,.16); }
+  .f-icon { font-size: 26px; }
+  .f-title { font-size: 17px; font-weight: 800; color: var(--purple-900); margin: 8px 0 4px; }
+
+  .season-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .sg { text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; }
+  .sg:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(96,1,210,.16); }
+  .sg-year { font-size: 22px; font-weight: 900; color: var(--purple-900); }
+  .sg-champ { font-weight: 700; font-size: 13px; margin-top: 4px; }
+  .sg.all { display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--purple-700); }
+</style>

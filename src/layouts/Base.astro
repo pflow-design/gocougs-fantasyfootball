@@ -1,0 +1,161 @@
+---
+// Site-wide shell. Purple/gold theme carried over from reference/kdp_report.html.
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const { title = 'KDP — Go Cougs', subtitle } = Astro.props;
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/seasons/', label: 'Seasons' },
+  { href: '/records/', label: 'Records' },
+  { href: '/head-to-head/', label: 'Head-to-Head' },
+];
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="KDP 'Go Cougs' fantasy football league history — 17 seasons of standings, records, and head-to-head." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="hdr">
+      <div class="hdr-inner">
+        <a href="/" class="brand">
+          <span class="y-badge">Y!</span>
+          <span>
+            <span class="brand-eyebrow">League History</span>
+            <span class="brand-title">KDP — Go Cougs</span>
+          </span>
+        </a>
+        <nav class="nav">
+          {nav.map((n) => (
+            <a href={n.href} class={path === n.href ? 'active' : ''}>{n.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    {(title || subtitle) && (
+      <div class="pagehead">
+        <div class="wrap">
+          <h1>{title}</h1>
+          {subtitle && <p>{subtitle}</p>}
+        </div>
+      </div>
+    )}
+
+    <main class="wrap"><slot /></main>
+
+    <footer class="ftr">
+      <p><strong>KDP — Go Cougs Fantasy Football</strong></p>
+      <p>Since 2009 · 17 seasons · Data from Yahoo Fantasy Sports</p>
+    </footer>
+
+    <style is:global>
+      :root {
+        --bg: #f4f0ff;
+        --ink: #1a1a2e;
+        --purple-900: #3b0099;
+        --purple-700: #6001d2;
+        --purple-500: #7b2fbe;
+        --gold: #ffb400;
+        --card: #ffffff;
+        --line: #e5ddf7;
+        --muted: #8a83a6;
+        --win: #16a34a;
+        --loss: #dc2626;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      a { color: var(--purple-700); }
+      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+      .hdr { background: linear-gradient(135deg, #3b0099 0%, #6001d2 60%, #7b2fbe 100%); color: #fff; }
+      .hdr-inner {
+        max-width: 1100px; margin: 0 auto; padding: 16px 24px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      }
+      .brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+      .y-badge {
+        background: var(--gold); color: var(--ink); font-weight: 900; font-size: 18px;
+        width: 34px; height: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
+      }
+      .brand-eyebrow { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: .7; }
+      .brand-title { display: block; font-size: 20px; font-weight: 900; letter-spacing: -.5px; }
+      .nav { display: flex; gap: 6px; flex-wrap: wrap; }
+      .nav a {
+        color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; font-weight: 700;
+        padding: 7px 12px; border-radius: 20px;
+      }
+      .nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+      .nav a.active { background: var(--gold); color: var(--ink); }
+
+      .pagehead { background: #fff; border-bottom: 1px solid var(--line); }
+      .pagehead .wrap { padding: 28px 24px; }
+      .pagehead h1 { font-size: 30px; font-weight: 900; color: var(--purple-900); letter-spacing: -.5px; }
+      .pagehead p { color: var(--muted); margin-top: 4px; }
+
+      main.wrap { padding-top: 32px; padding-bottom: 48px; }
+
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+
+      .ftr { background: var(--purple-900); color: rgba(255,255,255,.7); text-align: center; padding: 22px; font-size: 12px; margin-top: 48px; }
+      .ftr strong { color: #fff; }
+
+      /* Section headers */
+      .sec-hdr { display: flex; align-items: center; gap: 10px; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--purple-700); }
+      .sec-hdr:first-child { margin-top: 0; }
+      .sec-hdr .icon { font-size: 20px; }
+      .sec-hdr h2 { font-size: 19px; font-weight: 800; color: var(--purple-900); }
+
+      /* Grids */
+      .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+      @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+
+      /* Standings / data tables */
+      .stbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+      .stbl thead tr { background: var(--purple-900); color: #fff; }
+      .stbl thead th { padding: 11px 12px; text-align: left; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+      .stbl thead th.r { text-align: right; }
+      .stbl tbody tr { border-bottom: 1px solid #f0ebff; }
+      .stbl tbody tr:hover { background: #f9f6ff; }
+      .stbl tbody td { padding: 10px 12px; vertical-align: middle; }
+      .stbl tbody td.r { text-align: right; font-variant-numeric: tabular-nums; }
+      .tn { font-weight: 700; }
+      .sub { font-size: 11px; color: var(--muted); }
+      .rec { font-weight: 700; color: var(--purple-700); }
+      .pos { color: var(--win); font-weight: 700; }
+      .neg { color: var(--loss); font-weight: 700; }
+      .rank { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; font-weight: 800; font-size: 12px; background: #e8e0f7; color: var(--purple-900); }
+      .rank.champ { background: var(--gold); color: var(--ink); }
+      .rank.po { background: var(--purple-900); color: #fff; }
+      .table-scroll { overflow-x: auto; }
+
+      /* Record book tables */
+      .rtbl { width: 100%; border-collapse: collapse; }
+      .rtbl tr { border-bottom: 1px solid #f0ebff; }
+      .rtbl tr:last-child { border-bottom: none; }
+      .rtbl td { padding: 9px 10px; font-size: 12.5px; vertical-align: top; }
+      .rtbl .rc { font-weight: 700; color: var(--purple-700); width: 40%; }
+      .rtbl .rh { color: #444; width: 34%; }
+      .rtbl .rv { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; width: 26%; }
+      .rtbl tr.at { background: #faf8ff; }
+      .card-title { font-weight: 800; color: var(--purple-900); margin-bottom: 12px; font-size: 14px; }
+      .rlbl { display: inline-block; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 1px 5px; border-radius: 4px; font-weight: 700; margin-left: 4px; vertical-align: middle; }
+      .rlbl.s { background: #e8e0f7; color: var(--purple-900); }
+      .rlbl.a { background: var(--gold); color: var(--ink); }
+      .tbd { color: #c9c2e0; font-style: italic; }
+    </style>
+  </body>
+</html>

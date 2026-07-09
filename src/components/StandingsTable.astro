@@ -1,0 +1,66 @@
+---
+import type { SeasonStanding } from '../lib/data.ts';
+interface Props {
+  standings: SeasonStanding[];
+  playoffCount?: number; // ranks 1..playoffCount marked as playoff seeds
+  showPA?: boolean;
+  showStreak?: boolean;
+}
+const { standings, playoffCount = 0, showPA = true, showStreak = false } = Astro.props;
+const hasPA = showPA && standings.some((s) => typeof s.pa === 'number');
+const hasStreak = showStreak && standings.some((s) => typeof s.streak === 'string');
+const fmt = (n?: number) =>
+  typeof n === 'number' ? n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '—';
+
+// Precompute everything that needs comparisons here — Astro's template parser
+// mis-reads `<`, `<=`, `>=` inside {expressions} as tag openings.
+const rows = standings.map((s) => {
+  const isChamp = s.rank === 1;
+  const isPlayoff = playoffCount > 0 && s.rank <= playoffCount;
+  const rankClass = isChamp ? 'rank champ' : isPlayoff ? 'rank po' : 'rank';
+  const diff = typeof s.diff === 'number' ? s.diff : (typeof s.pa === 'number' ? +(s.pf - s.pa).toFixed(2) : undefined);
+  const diffPos = typeof diff === 'number' && diff >= 0;
+  const streakWin = typeof s.streak === 'string' && s.streak.startsWith('W');
+  return { s, isChamp, rankClass, diff, diffPos, streakWin, hasDiff: typeof diff === 'number' };
+});
+---
+<div class="table-scroll">
+  <table class="stbl">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Team</th>
+        <th>Manager</th>
+        <th class="r">W-L</th>
+        <th class="r">PF</th>
+        {hasPA && <th class="r">PA</th>}
+        {hasPA && <th class="r">+/−</th>}
+        {hasStreak && <th class="r">Streak</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(({ s, isChamp, rankClass, diff, diffPos, streakWin, hasDiff }) => (
+        <tr>
+          <td><span class={rankClass}>{s.rank}</span></td>
+          <td class="tn">{isChamp && '🏆 '}{s.team ?? s.manager ?? '—'}</td>
+          <td>{s.managerKey ? <span>{s.manager}</span> : <span class="sub">{s.manager ?? 'hidden'}</span>}</td>
+          <td class="r rec">{s.w}-{s.l}{s.t ? `-${s.t}` : ''}</td>
+          <td class="r">{fmt(s.pf)}</td>
+          {hasPA && <td class="r">{fmt(s.pa)}</td>}
+          {hasPA && (
+            <td class="r">
+              {hasDiff
+                ? <span class={diffPos ? 'pos' : 'neg'}>{diffPos ? '+' : '−'}{Math.abs(diff!).toFixed(1)}</span>
+                : '—'}
+            </td>
+          )}
+          {hasStreak && (
+            <td class="r">
+              {s.streak ? <span class={streakWin ? 'pos' : 'neg'}>{s.streak}</span> : '—'}
+            </td>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

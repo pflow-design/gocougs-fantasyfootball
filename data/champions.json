@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "description": "League champions (title winners) by season. titlesByManager is authoritative and sums to 16 (one per canonical season). The year-by-year 'byYear' list is INCOMPLETE: only seasons confirmed in the source docs / legacy headers are filled; the rest are pending extraction from each gen_h2h_YYYY.py header (which comments the season's final standings/champion).",
+    "source": "STATUS.md (2009), legacy/gen_h2h_2011.py header (2011), legacy/gen_h2h_2024.py header (2024 Daniel), HANDOFF.md (2023, 2025), scraped_2025_2010.md (2010 David), reference/kdp_report.html (2025 + titlesByManager counts)",
+    "seasonCount": "RESOLVED by Patrick (2026-07): 2010 IS a canonical season and David won it. So the league has 17 canonical seasons (2009-2025 inclusive). The '16 seasons' repeated throughout the legacy docs/report is a STALE UNDERCOUNT from when 2010 was missing entirely from the project data; it should read 17. Consequence: there are 17 champions/titles total, but the report-derived titlesByManager below still sums to 16 (built before 2010 was added). Per Patrick, David's title is 2010, so titlesByManager already reflects it as David's 1 title. The remaining gap (16 -> 17) will close when the 11 pending champions (2012-2022) are extracted; one of those seasons currently has an uncredited/departed-manager champion. Also update the '16 seasons' references in README/HANDOFF/report when convenient."
+  },
+  "titlesByManager": {
+    "Antony": 4,
+    "duncan": 3,
+    "Jeremy": 2,
+    "Rudee": 1,
+    "Larson": 1,
+    "Daniel": 1,
+    "RyanC": 1,
+    "David": 1,
+    "PatrickF": 1,
+    "KyleP": 1
+  },
+  "byYear": [
+    { "year": 2009, "champion": "duncan", "team": null, "runnerUp": "Antony", "third": "RyanC", "note": "WaZZU-era league (ID 320012). Confirmed in STATUS.md." },
+    { "year": 2010, "champion": "David", "team": "Reality of Fantasy", "note": "Canonical season, confirmed by Patrick (2026-07). Standings-only (no weekly data); see seasons/2010.json." },
+    { "year": 2011, "champion": "Antony", "team": null, "runnerUp": "KyleK", "third": "Raj", "note": "Confirmed in gen_h2h_2011.py header comment." },
+    { "year": 2023, "champion": "Jeremy", "team": "Clappin' Cheeks", "note": "Confirmed in HANDOFF.md + gen_h2h_2023.py header." },
+    { "year": 2024, "champion": "Daniel", "team": "My Ball Zach Ertz", "runnerUp": "Jeremy", "third": "RyanC", "note": "Confirmed in gen_h2h_2024.py header (Final: Jeremy 142.06 vs Daniel 147.88)." },
+    { "year": 2025, "champion": "Jeremy", "team": "Clappin' Cheeks", "runnerUp": "Daniel", "third": "Rudee", "note": "Beat Daniel 113.78-105.00 in the championship." }
+  ],
+  "pending": {
+    "years": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    "howToFill": "Extract each champion from the corresponding legacy/gen_h2h_YYYY.py header comment (final standings). These 11 years hold the remaining 11 titles (Antony x3, duncan x2, Rudee, Larson, RyanC, PatrickF, KyleP, and one more)."
+  }
+}
