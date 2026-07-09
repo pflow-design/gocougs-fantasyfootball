@@ -252,6 +252,25 @@
         "titles": 0
       },
       "notes": "Alumni. 3 seasons: 2009, 2010 (Post-Feminism), 2011. No titles."
+    },
+    {
+      "key": "Irfan",
+      "display": "Irfan",
+      "since": "2009",
+      "status": "alumni",
+      "currentTeam": null,
+      "allTime": {
+        "seasons": 2,
+        "w": 13,
+        "l": 13,
+        "t": 0,
+        "pf": 2534.04,
+        "pa": 1149.74,
+        "winPct": 50,
+        "playoffAppearances": 1,
+        "titles": 0
+      },
+      "notes": "Promoted to a tracked manager by Patrick (2026-07); previously the hidden 'Team Malaysia'/'Irfan Since 05' slot. 2 seasons: 2009 (Team Malaysia, 6-7, full weekly data + H2H) and 2010 (Teeth Malaysia, 7-6, standings-only). No titles."
     }
   ],
   "namingHistory": {

@@ -93,8 +93,8 @@
     },
     {
       "rank": 7,
-      "manager": "Irfan (hidden)",
-      "managerKey": null,
+      "manager": "Irfan",
+      "managerKey": "Irfan",
       "w": 6,
       "l": 7,
       "t": 0,
@@ -149,7 +149,7 @@
       [
         "David",
         61.22,
-        "Team Malaysia",
+        "Irfan",
         58.56
       ],
       [
@@ -179,7 +179,7 @@
     ],
     "2": [
       [
-        "Team Malaysia",
+        "Irfan",
         110.25,
         "duncan",
         72.52
@@ -217,7 +217,7 @@
         58.52
       ],
       [
-        "Team Malaysia",
+        "Irfan",
         78.93,
         "Bradley",
         77.95
@@ -251,7 +251,7 @@
       [
         "RyanC",
         109.56,
-        "Team Malaysia",
+        "Irfan",
         51.18
       ],
       [
@@ -281,7 +281,7 @@
         58.47
       ],
       [
-        "Team Malaysia",
+        "Irfan",
         98.41,
         "Raj",
         67.63
@@ -315,7 +315,7 @@
       [
         "Daniel",
         129.27,
-        "Team Malaysia",
+        "Irfan",
         53.25
       ],
       [
@@ -347,7 +347,7 @@
       [
         "PatrickF",
         99.04,
-        "Team Malaysia",
+        "Irfan",
         66.78
       ],
       [
@@ -379,7 +379,7 @@
       [
         "KyleK",
         73.25,
-        "Team Malaysia",
+        "Irfan",
         67.78
       ],
       [
@@ -409,7 +409,7 @@
         52.79
       ],
       [
-        "Team Malaysia",
+        "Irfan",
         109.07,
         "Antony",
         72.03
@@ -435,7 +435,7 @@
     ],
     "10": [
       [
-        "Team Malaysia",
+        "Irfan",
         149.16,
         "David",
         71.83
@@ -469,7 +469,7 @@
       [
         "duncan",
         112.23,
-        "Team Malaysia",
+        "Irfan",
         75.9
       ],
       [
@@ -507,7 +507,7 @@
       [
         "Bradley",
         135.06,
-        "Team Malaysia",
+        "Irfan",
         52.12
       ],
       [
@@ -537,7 +537,7 @@
         80.35
       ],
       [
-        "Team Malaysia",
+        "Irfan",
         74.65,
         "RyanC",
         68.15

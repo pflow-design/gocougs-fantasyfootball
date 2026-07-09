@@ -270,6 +270,12 @@ if (WRITE) {
     'Titles from champions.json. 2010 PF/PA are rounded (standings-only source).';
   writeFileSync(resolve(root, 'data/managers.json'), JSON.stringify(managersDoc, null, 2) + '\n');
 
+  // Manager label map for the H2H tool, built from managers.json (keeps it in
+  // sync — e.g. newly-tracked managers like Irfan appear in the picker).
+  const managersMap = {};
+  for (const m of managersDoc.managers) {
+    managersMap[m.key] = { label: m.display, since: "'" + String(m.since).slice(-2) };
+  }
   const out = {
     _meta: {
       description: 'Pairwise all-time head-to-head, RECOMPUTED from data/seasons/*.json (regular + playoff games) by scripts/recompute.mjs. Directional per pair: w1/pf1/big1 = first key (alphabetical), w2/pf2/big2 = second. big = winning score in that manager\'s biggest-margin victory. seasons = distinct seasons the pair met. Includes playoff games.',
@@ -277,7 +283,7 @@ if (WRITE) {
       generatedBy: 'scripts/recompute.mjs',
       pairs: pairCount,
     },
-    managers: currentH2H.managers,
+    managers: managersMap,
     h2h,
   };
   writeFileSync(resolve(root, 'data/h2h.json'), JSON.stringify(out, null, 2) + '\n');

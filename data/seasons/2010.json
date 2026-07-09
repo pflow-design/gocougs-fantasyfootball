@@ -16,7 +16,7 @@
     { "rank": 2, "team": "Marvelous FarveLess", "manager": "Daniel", "managerKey": "Daniel", "w": 10, "l": 3, "t": 0, "pf": 1426, "longestWinStreak": 9, "longestLossStreak": 3 },
     { "rank": 3, "team": "Ballcuzzis", "manager": "Kyle K", "managerKey": "KyleK", "w": 8, "l": 5, "t": 0, "pf": 1546, "longestWinStreak": 4, "longestLossStreak": 3 },
     { "rank": 4, "team": "Reality of Fantasy", "manager": "David", "managerKey": "David", "w": 8, "l": 5, "t": 0, "pf": 1382, "longestWinStreak": 6, "longestLossStreak": 2 },
-    { "rank": 5, "team": "Teeth Malaysia", "manager": "Irfan", "managerKey": null, "w": 7, "l": 6, "t": 0, "pf": 1488, "longestWinStreak": 4, "longestLossStreak": 3, "note": "Irfan — the same hidden/non-canonical manager as the 2009 'Team Malaysia'. Named but not tracked in the all-time records (not one of the canonical 13); revisit if he should become a tracked manager." },
+    { "rank": 5, "team": "Teeth Malaysia", "manager": "Irfan", "managerKey": "Irfan", "w": 7, "l": 6, "t": 0, "pf": 1488, "longestWinStreak": 4, "longestLossStreak": 3, "note": "Irfan — same person as the 2009 'Team Malaysia'. Tracked manager as of 2026-07." },
     { "rank": 6, "team": "Post-Feminism", "manager": "Bradley", "managerKey": "Bradley", "w": 7, "l": 6, "t": 0, "pf": 1247, "longestWinStreak": 5, "longestLossStreak": 4 },
     { "rank": 7, "team": "The Favres", "manager": null, "managerKey": null, "w": 6, "l": 7, "t": 0, "pf": 1309, "longestWinStreak": 3, "longestLossStreak": 2 },
     { "rank": 8, "team": "ihatethecowboys", "manager": null, "managerKey": null, "w": 5, "l": 8, "t": 0, "pf": 1278, "longestWinStreak": 3, "longestLossStreak": 7 },

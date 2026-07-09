@@ -53,21 +53,23 @@ const regWeeksFor = (y) => (y <= 2010 ? 13 : y <= 2020 ? 14 : 15);
 
 // 2009 attribution corrections (confirmed by Patrick, 2026-07):
 //  - "cougs4bcsbid" was David — the old scripts mislabeled that hidden slot 'Larson'.
-//  - "Team Malaysia" ('Irfan Since 05') was a hidden one-off — mislabeled 'David'.
+//  - "Team Malaysia" ('Irfan Since 05') was Irfan — mislabeled 'David'. Irfan is now
+//    a tracked manager (promoted by Patrick), so his games key to 'Irfan'.
 //  - Larson (Robbie) was NOT in the league in 2009.
 // Applied to the original GAMES_2009 labels (single lookup, no chaining).
-const REMAP_2009 = { Larson: 'David', David: '__IRFAN2009__' };
+const REMAP_2009 = { Larson: 'David', David: 'Irfan' };
 // 2019 correction (confirmed by Patrick, 2026-07): the hidden scmid=4 team (4-10)
 // was mislabeled 'Antony' in SCHED_2019 — it is actually Larson (Robbie). Antony
 // was NOT in the league in 2019. legacy/fix_2019_larson.py fixed only the report's
 // h2hData, never this source dict, so the builder must remap it here.
 const REMAP_2019 = { Antony: 'Larson' };
-const HIDDEN_2009 = { __IRFAN2009__: { manager: 'Irfan (hidden)', team: 'Team Malaysia' } };
+const HIDDEN_2009 = {}; // no hidden teams in 2009 now that Irfan is tracked
 // 2009 team names by canonical manager key (from gen_h2h_2009.py header).
 const TEAMS_2009 = {
   David: 'cougs4bcsbid', Bradley: 'FUCK YOU RUDEE', RyanC: 'Purple Reign',
   Raj: 'Sound Records', Daniel: 'Favre and Away', PatrickF: 'AIDS',
   KyleK: 'Ballcuzzis', duncan: 'The Frying Pans', Antony: 'The Blackouts',
+  Irfan: 'Team Malaysia',
 };
 
 // --- Python-literal helpers -------------------------------------------------
