@@ -21,6 +21,8 @@ const ci = championInfo(season);
 const champKnown = ci.known;
 const champMgr = label(ci.key);
 const champTeam = ci.team;
+const champBig = champTeam ?? champMgr;          // headline: team if known, else manager
+const champSmall = champTeam ? champMgr : null;  // subline: manager (only when team shown)
 const playoffCount = season.year <= 2010 ? 6 : 4;
 
 const pf = (season as any).pfpaChart as { teams: string[]; pf: number[]; pa: number[] } | undefined;
@@ -62,8 +64,8 @@ if (pf) {
   {champKnown ? (
     <div class="champ-banner">
       <div class="ce">🏆 {season.year} Champion</div>
-      <div class="cn">{champTeam}</div>
-      <div class="cm">{champMgr}</div>
+      <div class="cn">{champBig}</div>
+      {champSmall && <div class="cm">{champSmall}</div>}
       {season.yahooUrl && <a class="cl" href={season.yahooUrl} target="_blank" rel="noopener">View on Yahoo Fantasy →</a>}
     </div>
   ) : (

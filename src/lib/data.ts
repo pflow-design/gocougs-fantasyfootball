@@ -42,15 +42,23 @@ export const seasons: Season[] = Object.values(seasonModules)
 export const seasonByYear = (year: number): Season | undefined =>
   seasons.find((s) => s.year === year);
 
-// Honest champion resolution: `known` is true only when the season actually
-// records a champion. Otherwise we fall back to the regular-season #1 seed, and
-// callers must NOT present it as the title winner (champions for 2012-2022 are
-// still pending extraction — see champions.json).
+// Champion resolution, sourced from champions.json (the authoritative list of
+// title winners + their teams). Falls back to the season file's champion, then
+// to the regular-season #1 seed — in which case `known` is false and callers
+// must NOT present it as the title winner. `team` may be undefined when the
+// champion's team name isn't known for that year.
+const champByYear = new Map<number, any>(
+  ((champions as any).byYear as any[]).map((c) => [c.year, c])
+);
 export function championInfo(season: Season): { known: boolean; team?: string; key: string | null } {
-  const c: any = (season as any).champion;
   const top = season.standings.find((s) => s.rank === 1);
-  if (c && (c.managerKey || c.manager)) {
-    return { known: true, team: c.team ?? top?.team, key: c.managerKey ?? c.manager ?? null };
+  const cy = champByYear.get(season.year);
+  if (cy && cy.champion) {
+    return { known: true, team: cy.team ?? undefined, key: cy.champion };
+  }
+  const sc: any = (season as any).champion;
+  if (sc && (sc.managerKey || sc.manager)) {
+    return { known: true, team: sc.team ?? top?.team, key: sc.managerKey ?? sc.manager ?? null };
   }
   return { known: false, team: top?.team, key: top?.managerKey ?? null };
 }
