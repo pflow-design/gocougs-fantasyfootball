@@ -102,9 +102,14 @@ const mgrs = Object.entries(managerMap)
       if (d.last) {
         const wk = d.last.week;
         // Week 99 is a placeholder for 2023/2024 playoff games with no recorded week; omit it then.
-        const when = (wk && wk >= 1 && wk <= 25 ? 'Wk ' + wk + " '" : "'") + d.last.season;
-        $('r-last1').textContent = (d.last.winner === a ? 'W ' : 'L ') + d.last.score1.toFixed(2) + ' · ' + when;
-        $('r-last2').textContent = (d.last.winner === b ? 'W ' : 'L ') + d.last.score2.toFixed(2) + ' · ' + when;
+        const realWk = wk && wk >= 1 && wk <= 25;
+        const when = (realWk ? 'Wk ' + wk + " '" : "'") + d.last.season;
+        const loser = d.last.winner === a ? b : a;
+        const href = realWk ? '/teams/' + d.last.winner + '/?season=20' + d.last.season + '&amp;week=' + wk + '&amp;opp=' + loser : null;
+        const c1 = (d.last.winner === a ? 'W ' : 'L ') + d.last.score1.toFixed(2) + ' · ' + when;
+        const c2 = (d.last.winner === b ? 'W ' : 'L ') + d.last.score2.toFixed(2) + ' · ' + when;
+        $('r-last1').innerHTML = href ? '<a class="bs-link" href="' + href + '">' + c1 + '</a>' : c1;
+        $('r-last2').innerHTML = href ? '<a class="bs-link" href="' + href + '">' + c2 + '</a>' : c2;
       } else { $('r-last1').textContent = '—'; $('r-last2').textContent = '—'; }
       $('r-playoff').textContent = d.playoffs ? d.playoffs + ' playoff meeting' + (d.playoffs > 1 ? 's' : '') : 'None';
       $('r-seasons').textContent = d.seasons ? d.seasons + ' season' + (d.seasons > 1 ? 's' : '') : '—';
@@ -130,5 +135,7 @@ const mgrs = Object.entries(managerMap)
     .score-card.g .sc-wins { color: #e65100; }
     .sc-lbl { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
     .score-mid { text-align: center; font-size: 12px; font-weight: 700; color: #aaa; }
+    .bs-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--purple-500); }
+    .bs-link:hover { color: var(--purple-700); border-bottom-style: solid; }
   </style>
 </Base>

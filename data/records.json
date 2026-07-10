@@ -351,93 +351,201 @@
           "allTime": {
             "holder": "David vs. Kyle K",
             "season": 2023,
-            "value": "100.58 pts"
+            "value": "100.58 pts",
+            "box": {
+              "win": "David",
+              "lose": "KyleK",
+              "year": 2023,
+              "week": 1
+            }
           },
           "bySeason": {
             "2009": {
               "holder": "Bradley vs. Irfan",
               "detail": "Wk 12",
-              "value": "82.94 pts"
+              "value": "82.94 pts",
+              "box": {
+                "win": "Bradley",
+                "lose": "Irfan",
+                "year": 2009,
+                "week": 12
+              }
             },
             "2010": {
               "holder": "Ryan C vs. Kyle P",
               "detail": "Wk 11",
-              "value": "86.39 pts"
+              "value": "86.39 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "KyleP",
+                "year": 2010,
+                "week": 11
+              }
             },
             "2011": {
               "holder": "Daniel vs. Kyle P",
               "detail": "Wk 5",
-              "value": "78.61 pts"
+              "value": "78.61 pts",
+              "box": {
+                "win": "Daniel",
+                "lose": "KyleP",
+                "year": 2011,
+                "week": 5
+              }
             },
             "2012": {
               "holder": "Patrick vs. Antony",
               "detail": "Wk 14",
-              "value": "74.03 pts"
+              "value": "74.03 pts",
+              "box": {
+                "win": "PatrickF",
+                "lose": "Antony",
+                "year": 2012,
+                "week": 14
+              }
             },
             "2013": {
               "holder": "Duncan vs. Antony",
               "detail": "Wk 12",
-              "value": "83.31 pts"
+              "value": "83.31 pts",
+              "box": {
+                "win": "duncan",
+                "lose": "Antony",
+                "year": 2013,
+                "week": 12
+              }
             },
             "2014": {
               "holder": "Daniel vs. David",
               "detail": "Wk 14",
-              "value": "90.28 pts"
+              "value": "90.28 pts",
+              "box": {
+                "win": "Daniel",
+                "lose": "David",
+                "year": 2014,
+                "week": 14
+              }
             },
             "2015": {
               "holder": "Daniel vs. Kyle K",
               "detail": "Wk 3",
-              "value": "79.71 pts"
+              "value": "79.71 pts",
+              "box": {
+                "win": "Daniel",
+                "lose": "KyleK",
+                "year": 2015,
+                "week": 3
+              }
             },
             "2016": {
               "holder": "Antony vs. Kyle P",
               "detail": "Wk 13",
-              "value": "78.68 pts"
+              "value": "78.68 pts",
+              "box": {
+                "win": "Antony",
+                "lose": "KyleP",
+                "year": 2016,
+                "week": 13
+              }
             },
             "2017": {
               "holder": "Robbie vs. Raj",
               "detail": "Wk 6",
-              "value": "77.92 pts"
+              "value": "77.92 pts",
+              "box": {
+                "win": "Larson",
+                "lose": "Raj",
+                "year": 2017,
+                "week": 6
+              }
             },
             "2018": {
               "holder": "Patrick vs. Daniel",
               "detail": "Wk 11",
-              "value": "76.85 pts"
+              "value": "76.85 pts",
+              "box": {
+                "win": "PatrickF",
+                "lose": "Daniel",
+                "year": 2018,
+                "week": 11
+              }
             },
             "2019": {
               "holder": "Raj vs. Ryan C",
               "detail": "Wk 10",
-              "value": "88.43 pts"
+              "value": "88.43 pts",
+              "box": {
+                "win": "Raj",
+                "lose": "RyanC",
+                "year": 2019,
+                "week": 10
+              }
             },
             "2020": {
               "holder": "David vs. Rudee",
               "detail": "Wk 2",
-              "value": "81.81 pts"
+              "value": "81.81 pts",
+              "box": {
+                "win": "David",
+                "lose": "Rudee",
+                "year": 2020,
+                "week": 2
+              }
             },
             "2021": {
               "holder": "Kyle P vs. Duncan",
               "detail": "Wk 15",
-              "value": "77.95 pts"
+              "value": "77.95 pts",
+              "box": {
+                "win": "KyleP",
+                "lose": "duncan",
+                "year": 2021,
+                "week": 15
+              }
             },
             "2022": {
               "holder": "Ryan C vs. Duncan",
               "detail": "Wk 4",
-              "value": "91.38 pts"
+              "value": "91.38 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "duncan",
+                "year": 2022,
+                "week": 4
+              }
             },
             "2023": {
               "holder": "David vs. Kyle K",
               "detail": "Wk 1",
-              "value": "100.58 pts"
+              "value": "100.58 pts",
+              "box": {
+                "win": "David",
+                "lose": "KyleK",
+                "year": 2023,
+                "week": 1
+              }
             },
             "2024": {
               "holder": "Patrick vs. Ryan C",
               "detail": "Wk 15",
-              "value": "82.14 pts"
+              "value": "82.14 pts",
+              "box": {
+                "win": "PatrickF",
+                "lose": "RyanC",
+                "year": 2024,
+                "week": 15
+              }
             },
             "2025": {
               "holder": "Patrick vs. Daniel",
               "detail": "Wk 7",
-              "value": "70.28 pts"
+              "value": "70.28 pts",
+              "box": {
+                "win": "PatrickF",
+                "lose": "Daniel",
+                "year": 2025,
+                "week": 7
+              }
             }
           }
         },
@@ -446,93 +554,201 @@
           "allTime": {
             "holder": "Ryan C vs. Duncan",
             "season": 2025,
-            "value": "0.02 pts"
+            "value": "0.02 pts",
+            "box": {
+              "win": "RyanC",
+              "lose": "duncan",
+              "year": 2025,
+              "week": 14
+            }
           },
           "bySeason": {
             "2009": {
               "holder": "David vs. Kyle K",
               "detail": "Wk 7",
-              "value": "0.67 pts"
+              "value": "0.67 pts",
+              "box": {
+                "win": "David",
+                "lose": "KyleK",
+                "year": 2009,
+                "week": 7
+              }
             },
             "2010": {
               "holder": "David vs. Duncan",
               "detail": "Wk 4",
-              "value": "2.90 pts"
+              "value": "2.90 pts",
+              "box": {
+                "win": "David",
+                "lose": "duncan",
+                "year": 2010,
+                "week": 4
+              }
             },
             "2011": {
               "holder": "Kyle P vs. David",
               "detail": "Wk 8",
-              "value": "0.19 pts"
+              "value": "0.19 pts",
+              "box": {
+                "win": "KyleP",
+                "lose": "David",
+                "year": 2011,
+                "week": 8
+              }
             },
             "2012": {
               "holder": "Raj vs. Antony",
               "detail": "Wk 11",
-              "value": "0.31 pts"
+              "value": "0.31 pts",
+              "box": {
+                "win": "Raj",
+                "lose": "Antony",
+                "year": 2012,
+                "week": 11
+              }
             },
             "2013": {
               "holder": "Ryan C vs. Robbie",
               "detail": "Wk 10",
-              "value": "0.40 pts"
+              "value": "0.40 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "Larson",
+                "year": 2013,
+                "week": 10
+              }
             },
             "2014": {
               "holder": "Daniel vs. Patrick",
               "detail": "Wk 3",
-              "value": "0.74 pts"
+              "value": "0.74 pts",
+              "box": {
+                "win": "Daniel",
+                "lose": "PatrickF",
+                "year": 2014,
+                "week": 3
+              }
             },
             "2015": {
               "holder": "Duncan vs. Ryan C",
               "detail": "Wk 7",
-              "value": "2.55 pts"
+              "value": "2.55 pts",
+              "box": {
+                "win": "duncan",
+                "lose": "RyanC",
+                "year": 2015,
+                "week": 7
+              }
             },
             "2016": {
               "holder": "Patrick vs. Robbie",
               "detail": "Wk 2",
-              "value": "0.36 pts"
+              "value": "0.36 pts",
+              "box": {
+                "win": "PatrickF",
+                "lose": "Larson",
+                "year": 2016,
+                "week": 2
+              }
             },
             "2017": {
               "holder": "David vs. Ryan C",
               "detail": "Wk 6",
-              "value": "0.20 pts"
+              "value": "0.20 pts",
+              "box": {
+                "win": "David",
+                "lose": "RyanC",
+                "year": 2017,
+                "week": 6
+              }
             },
             "2018": {
               "holder": "Robbie vs. Kyle P",
               "detail": "Wk 11",
-              "value": "0.67 pts"
+              "value": "0.67 pts",
+              "box": {
+                "win": "Larson",
+                "lose": "KyleP",
+                "year": 2018,
+                "week": 11
+              }
             },
             "2019": {
               "holder": "Duncan vs. Kyle P",
               "detail": "Wk 8",
-              "value": "0.40 pts"
+              "value": "0.40 pts",
+              "box": {
+                "win": "duncan",
+                "lose": "KyleP",
+                "year": 2019,
+                "week": 8
+              }
             },
             "2020": {
               "holder": "Daniel vs. Kyle K",
               "detail": "Wk 8",
-              "value": "1.36 pts"
+              "value": "1.36 pts",
+              "box": {
+                "win": "Daniel",
+                "lose": "KyleK",
+                "year": 2020,
+                "week": 8
+              }
             },
             "2021": {
               "holder": "Ryan C vs. Kyle P",
               "detail": "Wk 9",
-              "value": "0.21 pts"
+              "value": "0.21 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "KyleP",
+                "year": 2021,
+                "week": 9
+              }
             },
             "2022": {
               "holder": "Rudee vs. Duncan",
               "detail": "Wk 8",
-              "value": "0.66 pts"
+              "value": "0.66 pts",
+              "box": {
+                "win": "Rudee",
+                "lose": "duncan",
+                "year": 2022,
+                "week": 8
+              }
             },
             "2023": {
               "holder": "Ryan C vs. Patrick",
               "detail": "Wk 10",
-              "value": "0.04 pts"
+              "value": "0.04 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "PatrickF",
+                "year": 2023,
+                "week": 10
+              }
             },
             "2024": {
               "holder": "Antony vs. Kyle K",
               "detail": "Wk 6",
-              "value": "0.20 pts"
+              "value": "0.20 pts",
+              "box": {
+                "win": "Antony",
+                "lose": "KyleK",
+                "year": 2024,
+                "week": 6
+              }
             },
             "2025": {
               "holder": "Ryan C vs. Duncan",
               "detail": "Wk 14",
-              "value": "0.02 pts"
+              "value": "0.02 pts",
+              "box": {
+                "win": "RyanC",
+                "lose": "duncan",
+                "year": 2025,
+                "week": 14
+              }
             }
           }
         },

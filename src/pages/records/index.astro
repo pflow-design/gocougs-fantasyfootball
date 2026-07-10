@@ -15,10 +15,11 @@ const label = (key?: string | null) => {
 const bookGroups = groups;
 const years = (records as any).years as number[];
 const yy = (y: any) => String(y).slice(-2);
+const boxHref = (b: any) => `/teams/${b.win}/?season=${b.year}&week=${b.week}&opp=${b.lose}`;
 const atCell = (r: any) => {
   const a = r.allTime;
   const holder = a ? a.holder + (a.season ? ` · '${yy(a.season)}` : '') : '—';
-  return { holder, value: a ? a.value : 'TBD', tbd: !a || a.value === 'TBD' || a.holder === 'TBD' };
+  return { holder, value: a ? a.value : 'TBD', tbd: !a || a.value === 'TBD' || a.holder === 'TBD', box: a && a.box ? a.box : null };
 };
 
 // Champions
@@ -115,7 +116,7 @@ const postSeason = [...mgrList]
             return (
               <tr>
                 <td class="rc">{r.metric}</td>
-                <td class="rh">{c.holder}</td>
+                <td class="rh">{c.box ? <a class="bs-link" href={boxHref(c.box)}>{c.holder}</a> : c.holder}</td>
                 <td class:list={['rv', { tbd: c.tbd }]}>{c.value}</td>
               </tr>
             );
@@ -168,20 +169,21 @@ const postSeason = [...mgrList]
           const a = rec.allTime;
           if (!a) return { holder: '—', value: 'TBD', tbd: true };
           let h = a.holder; if (a.season) h += " · '" + yy(a.season);
-          return { holder: h, value: a.value, tbd: a.value === 'TBD' || a.holder === 'TBD' };
+          return { holder: h, value: a.value, tbd: a.value === 'TBD' || a.holder === 'TBD', box: a.box || null };
         }
         const c = rec.bySeason[s];
         if (!c) return { holder: '—', value: 'TBD', tbd: true };
         let h = c.holder; if (c.detail) h += ' · <span class="wk">' + c.detail + '</span>';
-        return { holder: h, value: c.value, tbd: c.value === 'TBD' || c.holder === 'TBD' };
+        return { holder: h, value: c.value, tbd: c.value === 'TBD' || c.holder === 'TBD', box: c.box || null };
       }
+      const boxHref = (b) => '/teams/' + b.win + '/?season=' + b.year + '&amp;week=' + b.week + '&amp;opp=' + b.lose;
       function apply(s) {
         bookGroups.forEach((g, gi) => {
           const rows = cards[gi].querySelectorAll('.rtbl tr');
           g.records.forEach((rec, ri) => {
             const row = rows[ri]; if (!row) return;
             const c = cellFor(rec, s);
-            row.querySelector('.rh').innerHTML = c.holder;
+            row.querySelector('.rh').innerHTML = c.box ? '<a class="bs-link" href="' + boxHref(c.box) + '">' + c.holder + '</a>' : c.holder;
             const v = row.querySelector('.rv');
             v.textContent = c.value; v.classList.toggle('tbd', c.tbd);
           });
@@ -201,6 +203,8 @@ const postSeason = [...mgrList]
     #rb-scope { font-size: 12.5px; color: var(--muted); font-style: italic; }
     #rb-scope strong { color: #e65100; font-style: normal; }
     .rtbl .rh .wk { color: var(--muted); }
+    .bs-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--purple-500); }
+    .bs-link:hover { color: var(--purple-700); border-bottom-style: solid; }
   </style>
 
 </Base>

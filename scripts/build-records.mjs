@@ -102,10 +102,11 @@ function floatRecord(items, valFn, fmt, max, detail) {
 }
 function marginRecord(max) {
   const vs = (m) => `${D(m.wKey)} vs. ${D(m.lKey)}`;
+  const box = (m) => ({ win: m.wKey, lose: m.lKey, year: m.year, week: m.week }); // for box-score deep-link
   const all = pickFloat(margins, (m) => m.margin, { max });
   const bySeason = {};
-  for (const y of YEARS) { const p = pickFloat(margins, (m) => m.margin, { max, year: y }); if (p) bySeason[y] = { holder: vs(p.i), detail: `Wk ${p.i.week}`, value: `${pts(p.v)} pts` }; }
-  return { allTime: { holder: vs(all.i), season: all.i.year, value: `${pts(all.v)} pts` }, bySeason };
+  for (const y of YEARS) { const p = pickFloat(margins, (m) => m.margin, { max, year: y }); if (p) bySeason[y] = { holder: vs(p.i), detail: `Wk ${p.i.week}`, value: `${pts(p.v)} pts`, box: box(p.i) }; }
+  return { allTime: { holder: vs(all.i), season: all.i.year, value: `${pts(all.v)} pts`, box: box(all.i) }, bySeason };
 }
 
 // Curated rows — data not in the project (per-player box scores). TBD stays TBD.
