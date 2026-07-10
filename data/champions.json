@@ -19,7 +19,7 @@
   "byYear": [
     { "year": 2009, "champion": "duncan", "team": "The Frying Pans", "runnerUp": "Antony", "third": "RyanC", "note": "WaZZU-era league (ID 320012). STATUS.md + gen_h2h_2009.py header." },
     { "year": 2010, "champion": "David", "team": "Reality of Fantasy", "note": "Canonical season (Patrick, 2026-07). Standings-only; see seasons/2010.json." },
-    { "year": 2011, "champion": "Antony", "team": "Shawn Kemps' Kids", "runnerUp": "KyleK", "third": "Raj", "note": "gen_h2h_2011.py header. Team confirmed by Patrick (2026-07)." },
+    { "year": 2011, "champion": "Antony", "team": "Shawn Kemp's Kids", "runnerUp": "KyleK", "third": "Raj", "note": "gen_h2h_2011.py header. Team confirmed by Patrick (2026-07); team name corrected to Yahoo's 'Shawn Kemp's Kids' via lineup scrape." },
     { "year": 2012, "champion": "duncan", "team": "My Main Thang", "runnerUp": "KyleK", "third": "RyanC", "note": "gen_h2h_2012.py header (Final: duncan 156.61 vs Kyle 132.79). Team confirmed by Patrick (2026-07)." },
     { "year": 2013, "champion": "Larson", "team": "Larson", "note": "gen_h2h_2013.py header (Larson beats duncan 153.18-115.99). Manager displays as 'Robbie'; the 2013 team was literally named 'Larson'. Confirmed by Patrick (2026-07)." },
     { "year": 2014, "champion": "Antony", "team": "Horns and Halos", "runnerUp": "Raj", "note": "gen_h2h_2014.py header (Antony beats Raj 155.31-87.84). Team confirmed by Patrick (2026-07)." },

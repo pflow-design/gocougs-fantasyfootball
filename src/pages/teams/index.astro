@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import meta from '../../../data/teams-meta.json';
+const managers = (meta as any).managers as any[];
+const order = [...managers].sort((a, b) => b.allTime.winPct - a.allTime.winPct);
+---
+<Base title="Teams" subtitle="Pick a manager to explore their career, every season’s schedule/results, and full matchup lineups.">
+  <div class="tgrid">
+    {order.map((m) => (
+      <a class:list={['ttile', { alum: m.status === 'alumni' }]} href={`/teams/${m.key}/`}>
+        <div class="tnm">{m.name}{m.status === 'alumni' && <span class="tsub"> · alumni</span>}</div>
+        <div class="ttm">{m.currentTeam ?? '—'}</div>
+        <div class="trec">{m.allTime.w}–{m.allTime.l} <span class="tsub">({m.allTime.winPct.toFixed(1)}%)</span></div>
+        <div class="tbad">
+          {m.allTime.titles ? <span class="tchip">{m.allTime.titles} 🏆</span> : null}
+          <span class="tsub">{m.allTime.seasons} {m.allTime.seasons === 1 ? 'season' : 'seasons'}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <style>
+    .tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 15px; }
+    .ttile {
+      display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line);
+      border-left: 4px solid var(--purple-700); border-radius: 12px; padding: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06); transition: transform .12s, box-shadow .12s;
+    }
+    .ttile:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59,0,153,.14); }
+    .ttile.alum { opacity: .78; border-left-color: var(--muted); }
+    .tnm { font-size: 17px; font-weight: 900; color: var(--purple-900); }
+    .ttm { font-size: 12px; color: var(--muted); margin: 3px 0 9px; min-height: 16px; }
+    .trec { font-size: 14px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .tbad { margin-top: 9px; font-size: 12px; display: flex; align-items: center; gap: 8px; }
+    .tsub { color: var(--muted); font-weight: 600; }
+    .tchip { background: var(--gold); color: var(--ink); font-weight: 800; font-size: 11px; border-radius: 20px; padding: 2px 9px; }
+  </style>
+</Base>
