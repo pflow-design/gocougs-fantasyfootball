@@ -52,7 +52,7 @@ const postSeason = [...mgrList]
       <tbody>
         {allTime.map((m) => (
           <tr style={m.status === 'alumni' ? 'opacity:.7;' : ''}>
-            <td class="tn">{m.display}{m.status === 'alumni' ? ' (alumni)' : ''}</td>
+            <td class="tn"><a class="bs-link" href={`/teams/${m.key}/`}>{m.display}</a>{m.status === 'alumni' ? ' (alumni)' : ''}</td>
             <td class="sub">{m.currentTeam ?? '—'}</td>
             <td class="r sub">'{String(m.since).slice(-2)}</td>
             <td class="r">{m.allTime.seasons}</td>
@@ -80,7 +80,7 @@ const postSeason = [...mgrList]
       <tbody>
         {postSeason.map((m) => (
           <tr style={m.status === 'alumni' ? 'opacity:.7;' : ''}>
-            <td class="tn">{m.display}{m.status === 'alumni' ? ' (alumni)' : ''}</td>
+            <td class="tn"><a class="bs-link" href={`/teams/${m.key}/`}>{m.display}</a>{m.status === 'alumni' ? ' (alumni)' : ''}</td>
             <td class="sub">{m.currentTeam ?? '—'}</td>
             <td class="r sub">'{String(m.since).slice(-2)}</td>
             <td class="r">{m.playoff.appearances}</td>
