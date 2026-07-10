@@ -22,6 +22,11 @@ const disp = Object.fromEntries(managersDoc.managers.map((m) => [m.key, m.displa
 const D = (k) => disp[k] || k;
 const yy = (y) => String(y).slice(-2);
 
+// Managers whose data is disqualified from the Record Book. Steven abandoned his
+// 2010 team mid-season (stopped setting a lineup), so his abnormally low scores —
+// and blowout losses handed to opponents — don't reflect real competition.
+const EXCLUDE = new Set(['Steven']);
+
 const files = readdirSync(resolve(root, 'data/seasons')).filter((f) => f.endsWith('.json'));
 const seasons = files.map((f) => readJson('data/seasons/' + f)).sort((a, b) => a.year - b.year);
 const CURRENT = Math.max(...seasons.map((s) => s.year)); // 2025
@@ -38,12 +43,14 @@ for (const s of seasons) {
   const seq = {}; // key -> ['W'|'L'|'T', ...] in week order
   for (const w of weeks) {
     for (const [a, sa, b, sb] of wk[String(w)]) {
-      weekScores.push({ year: s.year, key: a, week: w, score: sa });
-      weekScores.push({ year: s.year, key: b, week: w, score: sb });
+      if (!EXCLUDE.has(a)) weekScores.push({ year: s.year, key: a, week: w, score: sa });
+      if (!EXCLUDE.has(b)) weekScores.push({ year: s.year, key: b, week: w, score: sb });
       const wKey = sa >= sb ? a : b, lKey = sa >= sb ? b : a;
-      margins.push({ year: s.year, week: w, wKey, lKey, margin: Math.abs(sa - sb) });
-      (seq[a] ||= []).push(sa > sb ? 'W' : sa < sb ? 'L' : 'T');
-      (seq[b] ||= []).push(sb > sa ? 'W' : sb < sa ? 'L' : 'T');
+      // Drop the whole game from margin records if either side is excluded (no
+      // inflated blowout of a quitting team, and the name never surfaces).
+      if (!EXCLUDE.has(wKey) && !EXCLUDE.has(lKey)) margins.push({ year: s.year, week: w, wKey, lKey, margin: Math.abs(sa - sb) });
+      if (!EXCLUDE.has(a)) (seq[a] ||= []).push(sa > sb ? 'W' : sa < sb ? 'L' : 'T');
+      if (!EXCLUDE.has(b)) (seq[b] ||= []).push(sb > sa ? 'W' : sb < sa ? 'L' : 'T');
     }
   }
   for (const [key, arr] of Object.entries(seq)) {
@@ -54,7 +61,7 @@ for (const s of seasons) {
     }
   }
   for (const st of s.standings || []) {
-    if (!st.managerKey) continue;
+    if (!st.managerKey || EXCLUDE.has(st.managerKey)) continue;
     teams.push({ year: s.year, key: st.managerKey, w: st.w, l: st.l, t: st.t || 0, pf: st.pf, pa: st.pa, games: st.games || st.w + st.l + (st.t || 0) });
   }
 }
@@ -143,7 +150,7 @@ const prevRec = (title, metric) => {
 const out = {
   _meta: {
     title: 'All-Time Record Book — Regular Season',
-    description: "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs — every season 2009-2025 is included. Each metric has a '2025' row (current-season leader) and an 'allTime' row (best/worst across all seasons). Player-stat rows and Low Season Avg remain TBD: they need per-player weekly box scores that do not exist in the project.",
+    description: "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs — every season 2009-2025 is included. Steven (abandoned his 2010 team mid-season) is EXCLUDED from all records: his scores, his team rows, and any game he played are dropped so they don't distort the leaderboard. Each metric has a '2025' row (current-season leader) and an 'allTime' row (best/worst across all seasons). Player-stat rows and Low Season Avg remain TBD: they need per-player weekly box scores that do not exist in the project.",
     source: 'data/seasons/*.json via scripts/build-records.mjs',
     seasonRowLabelNote: "The '2025' row = the current season's leader; the 'allTime' row = best/worst across all seasons.",
   },

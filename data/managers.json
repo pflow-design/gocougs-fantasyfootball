@@ -289,7 +289,7 @@
         "playoffAppearances": 0,
         "titles": 0
       },
-      "notes": "One-off manager, 2010 only (Too Good, 2-11) — a hidden slot even on Yahoo, identified by Patrick (2026-07). Abandoned team that holds the all-time Low Single Week record (22.36). Standings-only, so no H2H. No titles."
+      "notes": "One-off manager, 2010 only (Too Good, 2-11) — a hidden slot even on Yahoo, identified by Patrick (2026-07). Abandoned the team mid-season (stopped setting a lineup), so by Patrick's decision (2026-07) he is EXCLUDED from the all-time Record Book: his 22.36 low week and all his games are dropped from records (see scripts/build-records.mjs). Still counts in standings/H2H/career table. No titles."
     }
   ],
   "namingHistory": {
