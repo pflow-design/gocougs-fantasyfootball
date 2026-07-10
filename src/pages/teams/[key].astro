@@ -17,20 +17,20 @@ const clientData = { key: m.key, name: m.name, years, schedulesByYear, teamNames
 const a = m.allTime, p = m.playoff;
 ---
 <Base title={m.name} subtitle={`${m.status === 'alumni' ? 'Alumni' : 'Manager'}${m.currentTeam ? ' · ' + m.currentTeam : ''} · since ’${String(m.since).slice(-2)}`}>
-  <a href="/teams/" class="tback">← All Teams</a>
+  <a href="/teams/" class="tm-back">← All Teams</a>
 
-  <div class="card ovcard">
-    <div class="ov">
-      <div class="st"><div class="v">{a.w}–{a.l}</div><div class="l">All-Time</div></div>
-      <div class="st"><div class="v">{a.winPct.toFixed(1)}%</div><div class="l">Win %</div></div>
-      <div class="st"><div class="v">{a.seasons}</div><div class="l">Seasons</div></div>
-      <div class="st"><div class="v">{a.playoffAppearances}</div><div class="l">Playoffs</div></div>
-      {p && <div class="st"><div class="v">{p.w}–{p.l}</div><div class="l">Post-season</div></div>}
-      <div class="st"><div class="v">{a.titles ? `${a.titles} 🏆` : '0'}</div><div class="l">Titles</div></div>
+  <div class="card tm-ovcard">
+    <div class="tm-ov">
+      <div class="tm-st"><div class="tm-v">{a.w}–{a.l}</div><div class="tm-l">All-Time</div></div>
+      <div class="tm-st"><div class="tm-v">{a.winPct.toFixed(1)}%</div><div class="tm-l">Win %</div></div>
+      <div class="tm-st"><div class="tm-v">{a.seasons}</div><div class="tm-l">Seasons</div></div>
+      <div class="tm-st"><div class="tm-v">{a.playoffAppearances}</div><div class="tm-l">Playoffs</div></div>
+      {p && <div class="tm-st"><div class="tm-v">{p.w}–{p.l}</div><div class="tm-l">Post-season</div></div>}
+      <div class="tm-st"><div class="tm-v">{a.titles ? `${a.titles} 🏆` : '0'}</div><div class="tm-l">Titles</div></div>
     </div>
   </div>
 
-  <div class="tctrl">
+  <div class="tm-ctrl">
     <label for="seasonSel">Season</label>
     <select id="seasonSel">{years.map((y) => <option value={y}>{y}</option>)}</select>
     <span id="teamName" class="sub"></span>
@@ -63,10 +63,10 @@ const a = m.allTime, p = m.playoff;
         const roster = Object.entries(byPl).sort((x, y) => { const px = posOrder[x[1].pos] || 8, py = posOrder[y[1].pos] || 8; return px !== py ? px - py : y[1].pts - x[1].pts; });
         if (!roster.length) return '';
         const N = 10, extra = roster.length - N;
-        return '<div class="card"><div class="eyebrow">' + yr + ' Roster — season fantasy points</div>'
-          + '<table class="ttbl rtbl' + (extra > 0 ? ' collapsed' : '') + '" id="rosterTbl"><thead><tr><th style="width:56px">Pos</th><th>Player</th><th class="r">Points</th><th class="r">Starts</th></tr></thead><tbody>'
-          + roster.map(([nm, v], i) => '<tr' + (i >= N ? ' class="xr"' : '') + '><td><span class="rpos">' + (v.pos === 'W/R/T' ? 'FLEX' : v.pos) + '</span></td><td class="rpl">' + esc(nm) + '</td><td class="r">' + v.pts.toFixed(1) + '</td><td class="r">' + v.st + '</td></tr>').join('')
-          + '</tbody></table>' + (extra > 0 ? '<button class="tgl" id="rosterToggle">Show full roster (' + extra + ' more) ▾</button>' : '') + '</div>';
+        return '<div class="card"><div class="tm-eyebrow">' + yr + ' Roster — season fantasy points</div>'
+          + '<div class="table-scroll"><table class="stbl tm-rost' + (extra > 0 ? ' collapsed' : '') + '" id="rosterTbl"><thead><tr><th style="width:56px">Pos</th><th>Player</th><th class="r">Points</th><th class="r">Starts</th></tr></thead><tbody>'
+          + roster.map(([nm, v], i) => '<tr' + (i >= N ? ' class="tm-xr"' : '') + '><td><span class="tm-pos">' + (v.pos === 'W/R/T' ? 'FLEX' : v.pos) + '</span></td><td class="tm-rpl">' + esc(nm) + '</td><td class="r">' + v.pts.toFixed(1) + '</td><td class="r">' + v.st + '</td></tr>').join('')
+          + '</tbody></table></div>' + (extra > 0 ? '<button class="tm-tgl" id="rosterToggle">Show full roster (' + extra + ' more) ▾</button>' : '') + '</div>';
       }
 
       function scheduleHtml(yr) {
@@ -76,44 +76,41 @@ const a = m.allTime, p = m.playoff;
         for (const g of sched) {
           const clickable = g.wk != null && lu[g.wk] && cache[yr][g.opp] && cache[yr][g.opp][g.wk];
           const score = g.pf.toFixed(2) + '–' + g.pa.toFixed(2);
-          const scoreCell = clickable ? '<a class="scorelink" data-wk="' + g.wk + '" data-opp="' + esc(g.opp) + '">' + score + '</a>' : '<span class="scoredim">' + score + '</span>';
-          rows += '<tr class="' + (g.playoff ? 'po' : '') + '"><td class="r wkc">' + (g.playoff ? '<span class="polbl">' + esc(g.label || 'PO') + '</span>' : (g.wk != null ? g.wk : '')) + '</td>'
+          const scoreCell = clickable ? '<a class="tm-score" data-wk="' + g.wk + '" data-opp="' + esc(g.opp) + '">' + score + '</a>' : '<span class="tm-scoredim">' + score + '</span>';
+          rows += '<tr class="' + (g.playoff ? 'tm-po-row' : '') + '"><td class="r tm-wkc">' + (g.playoff ? '<span class="tm-po">' + esc(g.label || 'PO') + '</span>' : (g.wk != null ? g.wk : '')) + '</td>'
             + '<td>' + esc(teamOf(yr, g.opp)) + ' <span class="sub">' + esc(nameOf(g.opp)) + '</span></td>'
-            + '<td><span class="wl ' + g.res + '">' + g.res + '</span></td><td class="r">' + scoreCell + '</td></tr>';
+            + '<td><span class="tm-wl ' + g.res + '">' + g.res + '</span></td><td class="r">' + scoreCell + '</td></tr>';
         }
-        return '<div class="card"><div class="eyebrow">' + yr + ' Schedule / Results</div>'
-          + '<table class="ttbl"><thead><tr><th class="r">Wk</th><th>Opponent</th><th>Result</th><th class="r">Score</th></tr></thead><tbody>' + rows + '</tbody></table>'
+        return '<div class="card"><div class="tm-eyebrow">' + yr + ' Schedule / Results</div>'
+          + '<div class="table-scroll"><table class="stbl"><thead><tr><th class="r">Wk</th><th>Opponent</th><th>Result</th><th class="r">Score</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
           + '<p class="sub" style="margin-top:10px;font-style:italic">Click a score to open the full matchup lineup.</p></div>';
       }
 
       function lineupCard(yr, mk, wk, isWin) {
         const l = cache[yr] && cache[yr][mk] && cache[yr][mk][wk];
-        if (!l) return '<div class="card lu"><div class="luh"><span class="lun">' + esc(teamOf(yr, mk)) + '</span></div><p class="sub">No lineup data.</p></div>';
+        if (!l) return '<div class="card tm-lu"><div class="tm-luh"><span class="tm-lun">' + esc(teamOf(yr, mk)) + '</span></div><p class="sub">No lineup data.</p></div>';
         let rows = '';
-        for (const [slot, nm, pts] of l.s) rows += '<tr><td class="slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
-        rows += '<tr class="dv"><td colspan="3">Bench</td></tr>';
-        for (const [slot, nm, pts] of l.b) rows += '<tr class="bnch"><td class="slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
-        return '<div class="card lu' + (isWin ? ' win' : '') + '"><div class="luh"><span class="lun">' + esc(teamOf(yr, mk)) + ' <span class="sub">' + esc(nameOf(mk)) + '</span></span><span class="lut">' + l.tot.toFixed(2) + '</span></div>'
-          + '<table class="ttbl"><tbody>' + rows + '</tbody></table></div>';
+        for (const [slot, nm, pts] of l.s) rows += '<tr><td class="tm-slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
+        rows += '<tr class="tm-dv"><td colspan="3">Bench</td></tr>';
+        for (const [slot, nm, pts] of l.b) rows += '<tr class="tm-bnch"><td class="tm-slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
+        return '<div class="card tm-lu' + (isWin ? ' tm-win' : '') + '"><div class="tm-luh"><span class="tm-lun">' + esc(teamOf(yr, mk)) + ' <span class="sub">' + esc(nameOf(mk)) + '</span></span><span class="tm-lut">' + l.tot.toFixed(2) + '</span></div>'
+          + '<div class="table-scroll"><table class="stbl"><tbody>' + rows + '</tbody></table></div></div>';
       }
 
       function showTeam(yr) {
         $('teamName').textContent = teamOf(yr, D.key);
         $('body').innerHTML = rosterHtml(yr) + scheduleHtml(yr);
         const rtg = $('rosterToggle');
-        if (rtg) {
-          const more = rtg.textContent;
-          rtg.onclick = () => { const col = $('rosterTbl').classList.toggle('collapsed'); rtg.textContent = col ? more : 'Collapse to top 10 ▴'; };
-        }
-        document.querySelectorAll('.scorelink[data-wk]').forEach((el) => el.onclick = () => showMatchup(yr, Number(el.dataset.wk), el.dataset.opp));
+        if (rtg) { const more = rtg.textContent; rtg.onclick = () => { const col = $('rosterTbl').classList.toggle('collapsed'); rtg.textContent = col ? more : 'Collapse to top 10 ▴'; }; }
+        document.querySelectorAll('.tm-score[data-wk]').forEach((el) => el.onclick = () => showMatchup(yr, Number(el.dataset.wk), el.dataset.opp));
       }
       function showMatchup(yr, wk, opp) {
         const meT = cache[yr][D.key][wk], opT = cache[yr][opp][wk];
         const meWin = meT.tot >= opT.tot;
-        $('body').innerHTML = '<a class="tback" id="mback">← ' + esc(D.name) + ' · ' + yr + '</a>'
-          + '<div class="eyebrow" style="margin:2px 0 2px">' + yr + ' · Week ' + wk + '</div>'
-          + '<h2 class="mtitle">' + esc(teamOf(yr, D.key)) + ' <span class="sub" style="font-weight:400">vs</span> ' + esc(teamOf(yr, opp)) + '</h2>'
-          + '<div class="two">' + lineupCard(yr, D.key, wk, meWin) + lineupCard(yr, opp, wk, !meWin) + '</div>';
+        $('body').innerHTML = '<a class="tm-back" id="mback">← ' + esc(D.name) + ' · ' + yr + '</a>'
+          + '<div class="tm-eyebrow" style="margin:2px 0 2px">' + yr + ' · Week ' + wk + '</div>'
+          + '<h2 class="tm-mtitle">' + esc(teamOf(yr, D.key)) + ' <span class="sub" style="font-weight:400">vs</span> ' + esc(teamOf(yr, opp)) + '</h2>'
+          + '<div class="tm-two">' + lineupCard(yr, D.key, wk, meWin) + lineupCard(yr, opp, wk, !meWin) + '</div>';
         $('mback').onclick = () => showTeam(yr);
         window.scrollTo(0, 0);
       }
@@ -124,47 +121,48 @@ const a = m.allTime, p = m.playoff;
     })();
   </script>
 
-  <style>
-    .tback { display: inline-block; font-weight: 700; font-size: 13px; margin-bottom: 12px; }
-    .ovcard { margin-bottom: 4px; }
-    .ov { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 12px; }
-    .ov .st { text-align: center; }
-    .ov .st .v { font-size: 22px; font-weight: 900; color: var(--purple-700); }
-    .ov .st .l { font-size: 10px; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
-    .tctrl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 18px 0 4px; }
-    .tctrl label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-700); }
-    .tctrl select { padding: 8px 12px; border: 2px solid var(--purple-700); border-radius: 9px; font-size: 15px; font-weight: 800; color: var(--purple-900); background: #fff; cursor: pointer; }
-    .eyebrow { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
-    .ttbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-    .ttbl thead th { background: var(--purple-900); color: #fff; padding: 9px 11px; text-align: left; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
-    .ttbl thead th.r { text-align: right; }
-    .ttbl tbody tr { border-bottom: 1px solid #f0ebff; }
-    .ttbl tbody tr.po { background: #faf8ff; }
-    .ttbl td { padding: 9px 11px; vertical-align: middle; }
-    .ttbl td.r { text-align: right; font-variant-numeric: tabular-nums; }
-    .rtbl tbody td { padding: 10px 12px; }
-    .rtbl .rpl { font-weight: 600; }
-    .rpos { display: inline-block; min-width: 42px; font-size: 10px; font-weight: 800; letter-spacing: .5px; color: var(--purple-500); text-align: center; border: 1px solid var(--line); border-radius: 5px; padding: 2px 4px; }
-    .rtbl.collapsed .xr { display: none; }
-    .tgl { margin-top: 10px; background: transparent; border: 1px solid var(--line); border-radius: 8px; color: var(--purple-700); font-weight: 800; font-size: 12.5px; padding: 7px 14px; cursor: pointer; }
-    .tgl:hover { background: #faf8ff; }
-    .wkc { color: var(--muted); }
-    .wl { font-weight: 800; border-radius: 5px; padding: 1px 7px; font-size: 12px; }
-    .wl.W { background: rgba(22,163,74,.14); color: var(--win); }
-    .wl.L { background: rgba(220,38,38,.12); color: var(--loss); }
-    .wl.T { background: rgba(138,131,166,.2); color: var(--muted); }
-    .scorelink { font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; cursor: pointer; }
-    .scoredim { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--muted); }
-    .polbl { font-size: 10px; text-transform: uppercase; letter-spacing: .5px; color: #e65100; font-weight: 800; }
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    @media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
-    .mtitle { font-size: 20px; font-weight: 900; color: var(--purple-900); margin-bottom: 12px; }
-    .lu .luh { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--purple-700); padding-bottom: 6px; margin-bottom: 2px; }
-    .lu .luh .lun { font-weight: 900; color: var(--purple-900); font-size: 15px; }
-    .lu .luh .lut { font-weight: 900; font-size: 20px; color: var(--purple-700); font-variant-numeric: tabular-nums; }
-    .lu td.slot { font-weight: 800; color: var(--purple-500); width: 52px; font-size: 11px; }
-    .lu tr.bnch td { color: var(--muted); }
-    .lu tr.dv td { padding: 4px 11px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: #faf8ff; }
-    .lu.win { outline: 2px solid var(--gold); }
+  <style is:global>
+    /* Teams pages. Global (not scoped) because roster/schedule/matchup tables are
+       injected via innerHTML and would miss Astro's scoped-style attribute. Base
+       look comes from the site-wide .stbl / .card / .sub; tm-* adds the extras. */
+    .tm-back { display: inline-block; font-weight: 700; font-size: 13px; margin-bottom: 12px; }
+    .tm-ovcard { margin-bottom: 4px; }
+    .tm-ov { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 12px; }
+    .tm-st { text-align: center; }
+    .tm-st .tm-v { font-size: 22px; font-weight: 900; color: var(--purple-700); }
+    .tm-st .tm-l { font-size: 10px; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+    .tm-ctrl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 18px 0 4px; }
+    .tm-ctrl label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-700); }
+    .tm-ctrl select { padding: 8px 12px; border: 2px solid var(--purple-700); border-radius: 9px; font-size: 15px; font-weight: 800; color: var(--purple-900); background: #fff; cursor: pointer; }
+    .tm-eyebrow { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+
+    #body .stbl { margin-top: 0; }
+    .tm-rost tbody td { padding: 10px 12px; }
+    .tm-rpl { font-weight: 700; }
+    .tm-pos { display: inline-block; min-width: 42px; font-size: 10px; font-weight: 800; letter-spacing: .5px; color: var(--purple-500); text-align: center; border: 1px solid var(--line); border-radius: 5px; padding: 2px 4px; }
+    .tm-rost.collapsed .tm-xr { display: none; }
+    .tm-tgl { margin-top: 10px; background: transparent; border: 1px solid var(--line); border-radius: 8px; color: var(--purple-700); font-weight: 800; font-size: 12.5px; padding: 7px 14px; cursor: pointer; }
+    .tm-tgl:hover { background: #faf8ff; }
+
+    .stbl tbody tr.tm-po-row { background: #faf8ff; }
+    .tm-wkc { color: var(--muted); }
+    .tm-wl { font-weight: 800; border-radius: 5px; padding: 1px 7px; font-size: 12px; }
+    .tm-wl.W { background: rgba(22,163,74,.14); color: var(--win); }
+    .tm-wl.L { background: rgba(220,38,38,.12); color: var(--loss); }
+    .tm-wl.T { background: rgba(138,131,166,.2); color: var(--muted); }
+    .tm-score { font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; cursor: pointer; }
+    .tm-scoredim { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .tm-po { font-size: 10px; text-transform: uppercase; letter-spacing: .5px; color: #e65100; font-weight: 800; }
+
+    .tm-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 640px) { .tm-two { grid-template-columns: 1fr; } }
+    .tm-mtitle { font-size: 20px; font-weight: 900; color: var(--purple-900); margin-bottom: 12px; }
+    .tm-lu .tm-luh { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--purple-700); padding-bottom: 6px; margin-bottom: 6px; }
+    .tm-lu .tm-lun { font-weight: 900; color: var(--purple-900); font-size: 15px; }
+    .tm-lu .tm-lut { font-weight: 900; font-size: 20px; color: var(--purple-700); font-variant-numeric: tabular-nums; }
+    .tm-lu td.tm-slot { font-weight: 800; color: var(--purple-500); width: 52px; font-size: 11px; }
+    .tm-lu tbody tr.tm-bnch td { color: var(--muted); }
+    .tm-lu tbody tr.tm-dv td { padding: 4px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: #faf8ff; }
+    .tm-lu.tm-win { outline: 2px solid var(--gold); }
   </style>
 </Base>
