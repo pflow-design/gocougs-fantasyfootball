@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import meta from '../../../data/teams-meta.json';
 const managers = (meta as any).managers as any[];
-const order = [...managers].sort((a, b) => b.allTime.winPct - a.allTime.winPct);
+const order = [...managers].sort((a, b) => a.name.localeCompare(b.name));
 ---
 <Base title="Teams" subtitle="Pick a manager to explore their career, every season’s schedule/results, and full matchup lineups.">
   <div class="tgrid">
