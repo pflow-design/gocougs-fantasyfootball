@@ -44,10 +44,16 @@ const titles = Object.entries((champions as any).titlesByManager as Record<strin
 
 // All-time manager table (regular season), sorted by win% desc as in the report.
 const allTime = [...mgrList].sort((a, b) => b.allTime.winPct - a.allTime.winPct);
+
+// All-time post-season table: managers who made the playoffs at least once,
+// sorted by playoff win% desc (then wins) to mirror the regular-season table.
+const postSeason = [...mgrList]
+  .filter((m) => m.playoff && m.playoff.appearances >= 1)
+  .sort((a, b) => b.playoff.winPct - a.playoff.winPct || b.playoff.w - a.playoff.w);
 ---
 <Base title="Records & History" subtitle="The all-time Record Book, champions, and career manager records.">
 
-  <div class="sec-hdr"><span class="icon">🏅</span><h2>All-Time Records by Manager</h2></div>
+  <div class="sec-hdr"><span class="icon">🏅</span><h2>All-Time Regular Season Records by Manager</h2></div>
   <p class="sub" style="margin:-6px 0 14px;font-style:italic;">
     Regular season, recomputed from the per-season data. Click any column heading to sort.
   </p>
@@ -69,6 +75,33 @@ const allTime = [...mgrList].sort((a, b) => b.allTime.winPct - a.allTime.winPct)
             <td class="r rec">{m.allTime.winPct.toFixed(1)}%</td>
             <td class="r">{m.allTime.playoffAppearances}</td>
             <td class="r">{m.allTime.titles ? `${m.allTime.titles} 🏆` : '0'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-hdr"><span class="icon">🏆</span><h2>All-Time Post-season Records by Manager</h2></div>
+  <p class="sub" style="margin:-6px 0 14px;font-style:italic;">
+    Championship-bracket games only across all seasons 2009–2025 (includes 3rd/5th-place games; consolation games between non-playoff teams are excluded). Click any column heading to sort.
+  </p>
+  <div class="card table-scroll">
+    <table class="stbl sortable">
+      <thead><tr>
+        <th>Manager</th><th>Team</th><th class="r">Since</th><th class="r">Apps</th>
+        <th class="r">W</th><th class="r">L</th><th class="r">Win %</th><th class="r">Titles</th>
+      </tr></thead>
+      <tbody>
+        {postSeason.map((m) => (
+          <tr style={m.status === 'alumni' ? 'opacity:.7;' : ''}>
+            <td class="tn">{m.display}{m.status === 'alumni' ? ' (alumni)' : ''}</td>
+            <td class="sub">{m.currentTeam ?? '—'}</td>
+            <td class="r sub">'{String(m.since).slice(-2)}</td>
+            <td class="r">{m.playoff.appearances}</td>
+            <td class="r pos">{m.playoff.w}</td>
+            <td class="r neg">{m.playoff.l}</td>
+            <td class="r rec">{m.playoff.winPct.toFixed(1)}%</td>
+            <td class="r">{m.playoff.titles ? `${m.playoff.titles} 🏆` : '0'}</td>
           </tr>
         ))}
       </tbody>

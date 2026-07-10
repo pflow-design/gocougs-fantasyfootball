@@ -115,6 +115,21 @@ for (const s of seasons) {
     addGame(2009, wk, true, KEY(REMAP_2009[a] ?? a), KEY(REMAP_2009[b] ?? b), sa, sb);
   }
 }
+// Playoffs — 2010 (12-team era, 6-seed bracket; #1/#2 byes). Scraped from Yahoo
+// 2010/f1/264678 weeks 14-16 (Patrick, 2026-07) — no legacy file exists. Winner
+// listed first. Includes the 3rd- and 5th-place games (placement games among the
+// six playoff teams), consistent with counting 3rd-place games in later years.
+const PLAYOFFS_2010 = [
+  [14, 'David', 'Irfan', 143.74, 126.17],   // QF
+  [14, 'Bradley', 'KyleK', 83.88, 48.85],   // QF
+  [15, 'David', 'RyanC', 151.81, 121.96],   // Semifinal
+  [15, 'Bradley', 'Daniel', 109.78, 93.46], // Semifinal
+  [15, 'Irfan', 'KyleK', 111.87, 105.69],   // 5th-place game
+  [16, 'David', 'Bradley', 98.73, 82.68],   // Final — David champion
+  [16, 'Daniel', 'RyanC', 108.22, 98.82],   // 3rd-place game
+];
+for (const [wk, a, b, sa, sb] of PLAYOFFS_2010) addGame(2010, wk, true, a, b, sa, sb);
+
 // Playoffs — 2011..2022 (6-tuple: wk,A,B,sA,sB,True).
 for (const y of [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
   const rmap = y === 2011 ? REMAP_2011 : y === 2019 ? REMAP_2019 : null;
@@ -167,6 +182,32 @@ for (const k of Object.keys(allTime)) {
   allTime[k].winPct = g ? +((allTime[k].w / g) * 100).toFixed(1) : 0;
   allTime[k].pf = +allTime[k].pf.toFixed(2);
   allTime[k].pa = +allTime[k].pa.toFixed(2);
+}
+
+// ---- All-time PLAYOFF records (championship bracket only) -------------------
+// A playoff game counts only if BOTH teams were seeded into the bracket
+// (regular-season rank <= cutoff for that year); this drops consolation /
+// placement games (5th, 7th, ...) between teams that missed the playoffs.
+const seedByYearKey = {}; // `${year}:${key}` -> regular-season rank (seed)
+for (const s of seasons) for (const st of s.standings) if (st.managerKey) seedByYearKey[`${s.year}:${st.managerKey}`] = st.rank;
+const madeBracket = (year, key) => (seedByYearKey[`${year}:${key}`] ?? 99) <= playoffCutoff(year);
+
+const playoff = {}; // key -> {w, l}
+const poSeasons = new Set(); // years that contributed a bracket game
+for (const g of games) {
+  if (!g.playoff) continue;
+  if (!madeBracket(g.season, g.a) || !madeBracket(g.season, g.b)) continue; // consolation -> skip
+  poSeasons.add(g.season);
+  const aWin = g.sa >= g.sb;
+  (playoff[g.a] ||= { w: 0, l: 0 })[aWin ? 'w' : 'l']++;
+  (playoff[g.b] ||= { w: 0, l: 0 })[aWin ? 'l' : 'w']++;
+}
+for (const k of Object.keys(playoff)) {
+  const p = playoff[k];
+  const gp = p.w + p.l;
+  p.winPct = gp ? +((p.w / gp) * 100).toFixed(1) : 0;
+  p.appearances = allTime[k]?.playoffAppearances || 0;
+  p.titles = titleCount[k] || 0;
 }
 
 // ---- Pairwise H2H ----------------------------------------------------------
@@ -224,6 +265,15 @@ for (const m of managersDoc.managers) {
   );
 }
 
+console.log('\n== All-time PLAYOFF records (championship bracket only) ==');
+console.log('Bracket seasons covered:', [...poSeasons].sort((a, b) => a - b).join(', '));
+console.log('key         W-L      win%    apps  titles');
+for (const m of managersDoc.managers) {
+  const p = playoff[m.key];
+  if (!p) { console.log(`${m.key.padEnd(10)} (no bracket games)   apps ${allTime[m.key]?.playoffAppearances ?? 0}  titles ${titleCount[m.key] || 0}`); continue; }
+  console.log(`${m.key.padEnd(10)} ${(p.w + '-' + p.l).padEnd(8)} ${String(p.winPct).padStart(5)}  ${String(p.appearances).padStart(4)}  ${String(p.titles).padStart(4)}`);
+}
+
 console.log('\n== H2H fidelity check: recomputed vs report (w/pf/playoffs), pairs WITHOUT David/Larson ==');
 let checked = 0, mism = 0;
 for (const k1 of Object.keys(h2h)) for (const k2 of Object.keys(h2h[k1])) {
@@ -266,11 +316,24 @@ if (WRITE) {
       pf: a.pf, pa: a.pa, winPct: a.winPct,
       playoffAppearances: a.playoffAppearances, titles: a.titles,
     };
+    const po = playoff[m.key];
+    m.playoff = {
+      appearances: a.playoffAppearances,
+      w: po ? po.w : 0,
+      l: po ? po.l : 0,
+      winPct: po ? po.winPct : 0,
+      titles: a.titles,
+    };
   }
   managersDoc._meta.allTimeAggregatesCaveat =
     'Recomputed from data/seasons/*.json (regular season) + champions.json by scripts/recompute.mjs. ' +
     'Playoff appearances = seasons finishing in the playoff seeds (top 6 in 2009-2010, top 4 from 2011). ' +
     'Titles from champions.json. 2010 PF/PA are rounded (standings-only source).';
+  managersDoc._meta.playoffRecordsNote =
+    'm.playoff = all-time POST-SEASON record (championship bracket only: games among the ' +
+    'seeded playoff teams, incl. 3rd/5th-place games; consolation games between non-playoff ' +
+    'teams are excluded). Covers every season 2009-2025; the 2010 bracket was scraped from ' +
+    'Yahoo (2010/f1/264678, wks 14-16) since no legacy file exists. appearances/titles mirror allTime.';
   writeFileSync(resolve(root, 'data/managers.json'), JSON.stringify(managersDoc, null, 2) + '\n');
 
   // Manager label map for the H2H tool, built from managers.json (keeps it in
