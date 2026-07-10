@@ -822,6 +822,17 @@
         {
           "label": "Semifinal 1",
           "winner": {
+            "team": "Russell and Flow",
+            "score": 93.56
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 89.49
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
             "team": "Swing Your Sword",
             "score": 144.07
           },
@@ -844,6 +855,17 @@
           "loser": {
             "team": "Swing Your Sword",
             "score": 89.51
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "shmoney maker",
+            "score": 143.61
+          },
+          "loser": {
+            "team": "Russell Sprouts",
+            "score": 121.73
           }
         }
       ]

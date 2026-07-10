@@ -40,12 +40,32 @@ const weeks = weekly ? Object.keys(weekly).filter((k) => /^\d+$/.test(k)).sort((
 const standingsOnly = (season as any)._meta?.standingsOnly;
 
 // Precompute comparisons here (Astro mis-parses `<`/`>`/`>=` in {expressions}).
+const boxHref = (win: string, lose: string, wk: number | string) =>
+  `/teams/${win}/?season=${season.year}&week=${wk}&opp=${lose}`;
 const weeksData = weeks.map((wk) => ({
   wk,
-  games: weekly![wk].map(([a, sa, b, sb]) => ({
-    aLabel: label(a) ?? a, sa, bLabel: label(b) ?? b, sb, aWin: sa > sb,
-  })),
+  games: weekly![wk].map(([a, sa, b, sb]) => {
+    const aWin = sa > sb;
+    return { aLabel: label(a) ?? a, sa, bLabel: label(b) ?? b, sb, aWin, href: boxHref(aWin ? a : b, aWin ? b : a, wk) };
+  }),
 }));
+
+// Playoff games → box-score links (team names map to manager keys via standings).
+const teamToKey: Record<string, string> = {};
+for (const st of season.standings as any[]) if (st.team && st.managerKey) teamToKey[st.team] = st.managerKey;
+const poGroups = playoffs
+  ? ['semifinals', 'championship'].filter((k) => playoffs[k]).map((k) => ({
+      title: k === 'semifinals' ? `Semifinals — Week ${playoffs[k].week}` : `Championship — Week ${playoffs[k].week}`,
+      games: playoffs[k].games.map((g: any) => {
+        const wkk = teamToKey[g.winner.team], lkk = teamToKey[g.loser.team];
+        return {
+          label: g.label, isChamp: !!(g.label && g.label.toLowerCase().includes('champ')),
+          winnerTeam: g.winner.team, winnerScore: g.winner.score, loserTeam: g.loser.team, loserScore: g.loser.score,
+          href: wkk && lkk && playoffs[k].week != null ? boxHref(wkk, lkk, playoffs[k].week) : null,
+        };
+      }),
+    }))
+  : [];
 const profilesData = (profiles ?? []).map((p: any) => ({ ...p, diffPos: p.diff >= 0, isFirst: p.place === 1 }));
 
 // Chart geometry (server-rendered SVG, no client JS).
@@ -88,7 +108,7 @@ if (pf) {
 
   <div class="sec-hdr"><span class="icon">📊</span><h2>Final Standings{standingsOnly ? ' (standings only)' : ''}</h2></div>
   <div class="card">
-    <StandingsTable standings={season.standings} playoffCount={playoffCount} showStreak={true} />
+    <StandingsTable standings={season.standings} playoffCount={playoffCount} showStreak={true} year={season.year} />
     {standingsOnly && <p class="sub" style="margin-top:10px;">No weekly matchup data exists for this season — standings are from the archived team totals.</p>}
   </div>
 
@@ -135,17 +155,22 @@ if (pf) {
     <>
       <div class="sec-hdr"><span class="icon">🏟️</span><h2>Playoff Results</h2></div>
       <div class="card">
-        {['semifinals', 'championship'].filter((k) => playoffs[k]).map((k) => (
+        {poGroups.map((grp) => (
           <>
-            <p class="po-label">{k === 'semifinals' ? `Semifinals — Week ${playoffs[k].week}` : `Championship — Week ${playoffs[k].week}`}</p>
+            <p class="po-label">{grp.title}</p>
             <div class="grid2" style="margin-bottom:16px;">
-              {playoffs[k].games.map((g: any) => (
-                <div class="match">
-                  <div class={`match-lbl ${g.label?.toLowerCase().includes('champ') ? 'gold' : ''}`}>{g.label}</div>
-                  <div class="match-row win"><span>{g.winner.team}</span><span class="msc">{g.winner.score.toFixed(2)}</span></div>
-                  <div class="match-row lose"><span>{g.loser.team}</span><span class="msc">{g.loser.score.toFixed(2)}</span></div>
-                </div>
-              ))}
+              {grp.games.map((g) => {
+                const inner = (
+                  <>
+                    <div class={`match-lbl ${g.isChamp ? 'gold' : ''}`}>{g.label}</div>
+                    <div class="match-row win"><span>{g.winnerTeam}</span><span class="msc">{g.winnerScore.toFixed(2)}</span></div>
+                    <div class="match-row lose"><span>{g.loserTeam}</span><span class="msc">{g.loserScore.toFixed(2)}</span></div>
+                  </>
+                );
+                return g.href
+                  ? <a class="match match-link" href={g.href}>{inner}<span class="match-cta">View box score →</span></a>
+                  : <div class="match">{inner}</div>;
+              })}
             </div>
           </>
         ))}
@@ -200,11 +225,11 @@ if (pf) {
             <summary>Week {w.wk}</summary>
             <div class="wk-games">
               {w.games.map((g) => (
-                <div class="wk-game">
+                <a class="wk-game wk-game-link" href={g.href}>
                   <span class={g.aWin ? 'wg-win' : 'wg-lose'}>{g.aLabel} <b>{g.sa.toFixed(2)}</b></span>
                   <span class="wg-vs">vs</span>
                   <span class={g.aWin ? 'wg-lose' : 'wg-win'}>{g.bLabel} <b>{g.sb.toFixed(2)}</b></span>
-                </div>
+                </a>
               ))}
             </div>
           </details>
@@ -286,6 +311,9 @@ if (pf) {
   .match-row.win { background: #f7f3ff; font-weight: 700; }
   .match-row.lose { color: #aaa; }
   .msc { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .match-link { display: block; text-decoration: none; color: inherit; cursor: pointer; transition: box-shadow .12s, transform .12s; }
+  .match-link:hover { box-shadow: 0 5px 16px rgba(59,0,153,.18); transform: translateY(-1px); }
+  .match-cta { display: block; text-align: right; font-size: 10px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; color: var(--purple-700); background: #faf8ff; padding: 5px 12px; }
 
   .tcard { border-left: 4px solid var(--purple-700); }
   .tcard.gold { border-left-color: var(--gold); }
@@ -308,6 +336,8 @@ if (pf) {
   .wk-games { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; padding: 4px 4px 12px; }
   @media (max-width: 640px) { .wk-games { grid-template-columns: 1fr; } }
   .wk-game { display: flex; align-items: center; gap: 8px; font-size: 12.5px; justify-content: space-between; }
+  .wk-game-link { color: inherit; text-decoration: none; border-radius: 6px; padding: 5px 6px; margin: 0 -6px; transition: background .1s; }
+  .wk-game-link:hover { background: #f3ecff; }
   .wg-vs { color: #ccc; font-size: 10px; }
   .wg-win { color: var(--ink); font-weight: 600; }
   .wg-lose { color: #aaa; }

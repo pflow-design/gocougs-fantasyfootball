@@ -822,6 +822,17 @@
         {
           "label": "Semifinal 1",
           "winner": {
+            "team": "WokeUpFeelinDangerus",
+            "score": 151.77
+          },
+          "loser": {
+            "team": "My Ball Zach Ertz",
+            "score": 91.28
+          }
+        },
+        {
+          "label": "Semifinal 2",
+          "winner": {
             "team": "Candyman",
             "score": 163.82
           },
@@ -844,6 +855,17 @@
           "loser": {
             "team": "WokeUpFeelinDangerus",
             "score": 103.21
+          }
+        },
+        {
+          "label": "3rd Place Game",
+          "winner": {
+            "team": "My Ball Zach Ertz",
+            "score": 105
+          },
+          "loser": {
+            "team": "shmoney maker",
+            "score": 101.4
           }
         }
       ]

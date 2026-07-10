@@ -114,10 +114,22 @@ const a = m.allTime, p = m.playoff;
         $('mback').onclick = () => showTeam(yr);
         window.scrollTo(0, 0);
       }
-      async function selectSeason(yr) { $('body').innerHTML = '<div class="sub" style="padding:20px 0">Loading ' + yr + '…</div>'; await loadSeason(yr); showTeam(yr); }
+      async function selectSeason(yr, open) {
+        $('body').innerHTML = '<div class="sub" style="padding:20px 0">Loading ' + yr + '…</div>';
+        await loadSeason(yr);
+        showTeam(yr);
+        if (open && cache[yr][D.key] && cache[yr][D.key][open.wk] && cache[yr][open.opp] && cache[yr][open.opp][open.wk]) showMatchup(yr, open.wk, open.opp);
+      }
 
       $('seasonSel').addEventListener('change', (e) => selectSeason(Number(e.target.value)));
-      selectSeason(D.years[0]);
+
+      // Deep-link support: /teams/<key>/?season=YYYY[&week=N&opp=<key>]
+      const params = new URLSearchParams(location.search);
+      const ps = Number(params.get('season'));
+      const startYr = D.years.includes(ps) ? ps : D.years[0];
+      $('seasonSel').value = String(startYr);
+      const pw = Number(params.get('week')), po = params.get('opp');
+      selectSeason(startYr, (pw && po && D.mgrNames[po]) ? { wk: pw, opp: po } : null);
     })();
   </script>
 

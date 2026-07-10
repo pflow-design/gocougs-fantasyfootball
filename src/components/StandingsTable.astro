@@ -5,8 +5,9 @@ interface Props {
   playoffCount?: number; // ranks 1..playoffCount marked as playoff seeds
   showPA?: boolean;
   showStreak?: boolean;
+  year?: number; // when set, team names link to that team's page for this season
 }
-const { standings, playoffCount = 0, showPA = true, showStreak = false } = Astro.props;
+const { standings, playoffCount = 0, showPA = true, showStreak = false, year } = Astro.props;
 const hasPA = showPA && standings.some((s) => typeof s.pa === 'number');
 const hasStreak = showStreak && standings.some((s) => typeof s.streak === 'string');
 const fmt = (n?: number) =>
@@ -42,7 +43,9 @@ const rows = standings.map((s) => {
       {rows.map(({ s, isChamp, rankClass, diff, diffPos, streakWin, hasDiff }) => (
         <tr>
           <td><span class={rankClass}>{s.rank}</span></td>
-          <td class="tn">{isChamp && '🏆 '}{s.team ?? s.manager ?? '—'}</td>
+          <td class="tn">{isChamp && '🏆 '}{year && s.managerKey
+            ? <a class="team-link" href={`/teams/${s.managerKey}/?season=${year}`}>{s.team ?? s.manager}</a>
+            : (s.team ?? s.manager ?? '—')}</td>
           <td>{s.managerKey ? <span>{s.manager}</span> : <span class="sub">{s.manager ?? 'hidden'}</span>}</td>
           <td class="r rec">{s.w}-{s.l}{s.t ? `-${s.t}` : ''}</td>
           <td class="r">{fmt(s.pf)}</td>
@@ -64,3 +67,8 @@ const rows = standings.map((s) => {
     </tbody>
   </table>
 </div>
+
+<style>
+  .team-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  .team-link:hover { color: var(--purple-700); border-bottom-color: var(--purple-700); }
+</style>
