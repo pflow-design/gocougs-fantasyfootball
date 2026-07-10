@@ -18,9 +18,10 @@ const titles = Object.entries((champions as any).titlesByManager as Record<strin
 const topTitle = titles[0];
 
 const features = [
-  { href: '/seasons/', icon: '📅', title: 'Seasons', body: `Standings, playoffs, and weekly results for all ${seasons.length} seasons.` },
-  { href: '/records/', icon: '📚', title: 'Records & History', body: 'The all-time Record Book, champions, and career manager records.' },
-  { href: '/head-to-head/', icon: '⚔️', title: 'Head-to-Head', body: 'Pick any two managers and see their complete rivalry history.' },
+  { href: '/seasons/', icon: '📅', title: 'Seasons', body: `Standings, playoffs & weekly results, all ${seasons.length} seasons.` },
+  { href: '/teams/', icon: '🏈', title: 'Teams', body: 'Every manager’s career, schedules, rosters & box scores.' },
+  { href: '/records/', icon: '📚', title: 'Records & History', body: 'Record Book, champions & career manager records.' },
+  { href: '/head-to-head/', icon: '⚔️', title: 'Head-to-Head', body: 'Any two managers’ complete rivalry history.' },
 ];
 
 const recent = seasons.slice(0, 8).map((s) => {
@@ -81,8 +82,9 @@ const recent = seasons.slice(0, 8).map((s) => {
   .fact b { font-size: 28px; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
   .fact span { font-size: 11px; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: 1px; }
 
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 8px; }
-  @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
+  .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 8px; }
+  @media (max-width: 860px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .features { grid-template-columns: 1fr; } }
   .feature { text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; }
   .feature:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(96,1,210,.16); }
   .f-icon { font-size: 26px; }
