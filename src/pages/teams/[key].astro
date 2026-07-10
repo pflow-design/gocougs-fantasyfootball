@@ -90,7 +90,9 @@ const a = m.allTime, p = m.playoff;
         const l = cache[yr] && cache[yr][mk] && cache[yr][mk][wk];
         if (!l) return '<div class="card tm-lu"><div class="tm-luh"><span class="tm-lun">' + esc(teamOf(yr, mk)) + '</span></div><p class="sub">No lineup data.</p></div>';
         let rows = '';
-        for (const [slot, nm, pts] of l.s) rows += '<tr><td class="tm-slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
+        // Show starters in standard order (QB, RB, WR, TE, FLEX, K, DEF); Yahoo lists WR before RB.
+        const starters = l.s.slice().sort((x, y) => (posOrder[x[0]] || 8) - (posOrder[y[0]] || 8));
+        for (const [slot, nm, pts] of starters) rows += '<tr><td class="tm-slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
         rows += '<tr class="tm-dv"><td colspan="3">Bench</td></tr>';
         for (const [slot, nm, pts] of l.b) rows += '<tr class="tm-bnch"><td class="tm-slot">' + esc(slot) + '</td><td>' + esc(nm || '—') + '</td><td class="r">' + pts.toFixed(2) + '</td></tr>';
         return '<div class="card tm-lu' + (isWin ? ' tm-win' : '') + '"><div class="tm-luh"><span class="tm-lun">' + esc(teamOf(yr, mk)) + ' <span class="sub">' + esc(nameOf(mk)) + '</span></span><span class="tm-lut">' + l.tot.toFixed(2) + '</span></div>'
