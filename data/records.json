@@ -1,10 +1,28 @@
 {
   "_meta": {
     "title": "All-Time Record Book — Regular Season",
-    "description": "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs — every season 2009-2025 is included. Steven (abandoned his 2010 team mid-season) is EXCLUDED from all records: his scores, his team rows, and any game he played are dropped so they don't distort the leaderboard. Each metric has a '2025' row (current-season leader) and an 'allTime' row (best/worst across all seasons). Player-stat rows and Low Season Avg remain TBD: they need per-player weekly box scores that do not exist in the project.",
-    "source": "data/seasons/*.json via scripts/build-records.mjs",
-    "seasonRowLabelNote": "The '2025' row = the current season's leader; the 'allTime' row = best/worst across all seasons."
+    "description": "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs. Each metric has an `allTime` mark and a `bySeason` map (every season 2009-2025) so the Records page defaults to all-time with a season selector. Steven (abandoned his 2010 team mid-season) is EXCLUDED from all records. Player-stat rows and Low Season Avg stay curated TBD (no per-player box scores in the dataset).",
+    "source": "data/seasons/*.json via scripts/build-records.mjs"
   },
+  "years": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
   "groups": [
     {
       "title": "Head-to-Head Records",
@@ -12,50 +30,314 @@
       "records": [
         {
           "metric": "Most Wins",
-          "y2025": {
-            "holder": "Rudee / David",
-            "value": "11 W"
-          },
           "allTime": {
             "holder": "David",
             "season": 2020,
             "value": "13 W"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Antony",
+              "value": "10 W"
+            },
+            "2010": {
+              "holder": "Ryan C / Daniel",
+              "value": "10 W"
+            },
+            "2011": {
+              "holder": "Raj",
+              "value": "11 W"
+            },
+            "2012": {
+              "holder": "Ryan C / Patrick",
+              "value": "10 W"
+            },
+            "2013": {
+              "holder": "Raj",
+              "value": "11 W"
+            },
+            "2014": {
+              "holder": "Raj",
+              "value": "10 W"
+            },
+            "2015": {
+              "holder": "Daniel / Patrick",
+              "value": "9 W"
+            },
+            "2016": {
+              "holder": "Antony / Kyle K",
+              "value": "10 W"
+            },
+            "2017": {
+              "holder": "Kyle P",
+              "value": "11 W"
+            },
+            "2018": {
+              "holder": "Raj",
+              "value": "12 W"
+            },
+            "2019": {
+              "holder": "David",
+              "value": "11 W"
+            },
+            "2020": {
+              "holder": "David",
+              "value": "13 W"
+            },
+            "2021": {
+              "holder": "Rudee / Duncan",
+              "value": "11 W"
+            },
+            "2022": {
+              "holder": "Rudee",
+              "value": "11 W"
+            },
+            "2023": {
+              "holder": "Ryan C / Rudee",
+              "value": "11 W"
+            },
+            "2024": {
+              "holder": "Patrick",
+              "value": "11 W"
+            },
+            "2025": {
+              "holder": "Rudee / David",
+              "value": "11 W"
+            }
           }
         },
         {
           "metric": "Win Streak",
-          "y2025": {
-            "holder": "David",
-            "value": "7 games"
-          },
           "allTime": {
             "holder": "Daniel '10 / Raj '11 / Raj '18 / Duncan '21",
             "season": null,
             "value": "9 games"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Antony",
+              "value": "7 games"
+            },
+            "2010": {
+              "holder": "Daniel",
+              "value": "9 games"
+            },
+            "2011": {
+              "holder": "Raj",
+              "value": "9 games"
+            },
+            "2012": {
+              "holder": "Patrick / Ryan C",
+              "value": "6 games"
+            },
+            "2013": {
+              "holder": "Raj / Kyle K",
+              "value": "8 games"
+            },
+            "2014": {
+              "holder": "David / Robbie / Patrick / Kyle P / Daniel / Raj",
+              "value": "4 games"
+            },
+            "2015": {
+              "holder": "Daniel",
+              "value": "5 games"
+            },
+            "2016": {
+              "holder": "Kyle K",
+              "value": "6 games"
+            },
+            "2017": {
+              "holder": "Kyle P",
+              "value": "6 games"
+            },
+            "2018": {
+              "holder": "Raj",
+              "value": "9 games"
+            },
+            "2019": {
+              "holder": "Raj",
+              "value": "6 games"
+            },
+            "2020": {
+              "holder": "David",
+              "value": "8 games"
+            },
+            "2021": {
+              "holder": "Duncan",
+              "value": "9 games"
+            },
+            "2022": {
+              "holder": "Daniel / Kyle K / Rudee",
+              "value": "4 games"
+            },
+            "2023": {
+              "holder": "Rudee",
+              "value": "7 games"
+            },
+            "2024": {
+              "holder": "Jeremy",
+              "value": "7 games"
+            },
+            "2025": {
+              "holder": "David",
+              "value": "7 games"
+            }
           }
         },
         {
           "metric": "Most Losses",
-          "y2025": {
-            "holder": "Duncan",
-            "value": "12 L"
-          },
           "allTime": {
             "holder": "Patrick",
             "season": 2021,
             "value": "13 L"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Bradley / Raj / Patrick",
+              "value": "8 L"
+            },
+            "2010": {
+              "holder": "Kyle P / Antony / Patrick / Duncan",
+              "value": "8 L"
+            },
+            "2011": {
+              "holder": "Patrick",
+              "value": "10 L"
+            },
+            "2012": {
+              "holder": "Kyle P",
+              "value": "11 L"
+            },
+            "2013": {
+              "holder": "Kyle P",
+              "value": "12 L"
+            },
+            "2014": {
+              "holder": "Kyle K / Duncan / Ryan C",
+              "value": "9 L"
+            },
+            "2015": {
+              "holder": "David",
+              "value": "10 L"
+            },
+            "2016": {
+              "holder": "Kyle P",
+              "value": "11 L"
+            },
+            "2017": {
+              "holder": "David / Kyle K",
+              "value": "10 L"
+            },
+            "2018": {
+              "holder": "David",
+              "value": "11 L"
+            },
+            "2019": {
+              "holder": "Robbie / Kyle P",
+              "value": "10 L"
+            },
+            "2020": {
+              "holder": "Rudee / Kyle K",
+              "value": "10 L"
+            },
+            "2021": {
+              "holder": "Patrick",
+              "value": "13 L"
+            },
+            "2022": {
+              "holder": "Ryan C",
+              "value": "12 L"
+            },
+            "2023": {
+              "holder": "Patrick / Daniel",
+              "value": "11 L"
+            },
+            "2024": {
+              "holder": "Raj / David",
+              "value": "12 L"
+            },
+            "2025": {
+              "holder": "Duncan",
+              "value": "12 L"
+            }
           }
         },
         {
           "metric": "Loss Streak",
-          "y2025": {
-            "holder": "Kyle K / Raj",
-            "value": "7 games"
-          },
           "allTime": {
             "holder": "Patrick",
             "season": 2021,
             "value": "12 games"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Bradley / Patrick",
+              "value": "4 games"
+            },
+            "2010": {
+              "holder": "Kyle P",
+              "value": "7 games"
+            },
+            "2011": {
+              "holder": "David",
+              "value": "6 games"
+            },
+            "2012": {
+              "holder": "David / Daniel",
+              "value": "5 games"
+            },
+            "2013": {
+              "holder": "Patrick / Kyle P",
+              "value": "7 games"
+            },
+            "2014": {
+              "holder": "Duncan",
+              "value": "7 games"
+            },
+            "2015": {
+              "holder": "David",
+              "value": "8 games"
+            },
+            "2016": {
+              "holder": "Patrick",
+              "value": "9 games"
+            },
+            "2017": {
+              "holder": "Kyle K",
+              "value": "5 games"
+            },
+            "2018": {
+              "holder": "David",
+              "value": "6 games"
+            },
+            "2019": {
+              "holder": "Kyle P",
+              "value": "5 games"
+            },
+            "2020": {
+              "holder": "Duncan / Kyle P",
+              "value": "6 games"
+            },
+            "2021": {
+              "holder": "Patrick",
+              "value": "12 games"
+            },
+            "2022": {
+              "holder": "Ryan C",
+              "value": "5 games"
+            },
+            "2023": {
+              "holder": "Patrick",
+              "value": "7 games"
+            },
+            "2024": {
+              "holder": "David / Raj",
+              "value": "6 games"
+            },
+            "2025": {
+              "holder": "Kyle K / Raj",
+              "value": "7 games"
+            }
           }
         }
       ]
@@ -66,53 +348,349 @@
       "records": [
         {
           "metric": "Biggest Blowout",
-          "y2025": {
-            "holder": "Patrick vs. Daniel",
-            "detail": "Wk 7",
-            "value": "70.28 pts"
-          },
           "allTime": {
             "holder": "David vs. Kyle K",
             "season": 2023,
             "value": "100.58 pts"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Bradley vs. Irfan",
+              "detail": "Wk 12",
+              "value": "82.94 pts"
+            },
+            "2010": {
+              "holder": "Ryan C vs. Kyle P",
+              "detail": "Wk 11",
+              "value": "86.39 pts"
+            },
+            "2011": {
+              "holder": "Daniel vs. Kyle P",
+              "detail": "Wk 5",
+              "value": "78.61 pts"
+            },
+            "2012": {
+              "holder": "Patrick vs. Antony",
+              "detail": "Wk 14",
+              "value": "74.03 pts"
+            },
+            "2013": {
+              "holder": "Duncan vs. Antony",
+              "detail": "Wk 12",
+              "value": "83.31 pts"
+            },
+            "2014": {
+              "holder": "Daniel vs. David",
+              "detail": "Wk 14",
+              "value": "90.28 pts"
+            },
+            "2015": {
+              "holder": "Daniel vs. Kyle K",
+              "detail": "Wk 3",
+              "value": "79.71 pts"
+            },
+            "2016": {
+              "holder": "Antony vs. Kyle P",
+              "detail": "Wk 13",
+              "value": "78.68 pts"
+            },
+            "2017": {
+              "holder": "Robbie vs. Raj",
+              "detail": "Wk 6",
+              "value": "77.92 pts"
+            },
+            "2018": {
+              "holder": "Patrick vs. Daniel",
+              "detail": "Wk 11",
+              "value": "76.85 pts"
+            },
+            "2019": {
+              "holder": "Raj vs. Ryan C",
+              "detail": "Wk 10",
+              "value": "88.43 pts"
+            },
+            "2020": {
+              "holder": "David vs. Rudee",
+              "detail": "Wk 2",
+              "value": "81.81 pts"
+            },
+            "2021": {
+              "holder": "Kyle P vs. Duncan",
+              "detail": "Wk 15",
+              "value": "77.95 pts"
+            },
+            "2022": {
+              "holder": "Ryan C vs. Duncan",
+              "detail": "Wk 4",
+              "value": "91.38 pts"
+            },
+            "2023": {
+              "holder": "David vs. Kyle K",
+              "detail": "Wk 1",
+              "value": "100.58 pts"
+            },
+            "2024": {
+              "holder": "Patrick vs. Ryan C",
+              "detail": "Wk 15",
+              "value": "82.14 pts"
+            },
+            "2025": {
+              "holder": "Patrick vs. Daniel",
+              "detail": "Wk 7",
+              "value": "70.28 pts"
+            }
           }
         },
         {
           "metric": "Closest Game",
-          "y2025": {
-            "holder": "Ryan C vs. Duncan",
-            "detail": "Wk 14",
-            "value": "0.02 pts"
-          },
           "allTime": {
             "holder": "Ryan C vs. Duncan",
             "season": 2025,
             "value": "0.02 pts"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "David vs. Kyle K",
+              "detail": "Wk 7",
+              "value": "0.67 pts"
+            },
+            "2010": {
+              "holder": "David vs. Duncan",
+              "detail": "Wk 4",
+              "value": "2.90 pts"
+            },
+            "2011": {
+              "holder": "Kyle P vs. David",
+              "detail": "Wk 8",
+              "value": "0.19 pts"
+            },
+            "2012": {
+              "holder": "Raj vs. Antony",
+              "detail": "Wk 11",
+              "value": "0.31 pts"
+            },
+            "2013": {
+              "holder": "Ryan C vs. Robbie",
+              "detail": "Wk 10",
+              "value": "0.40 pts"
+            },
+            "2014": {
+              "holder": "Daniel vs. Patrick",
+              "detail": "Wk 3",
+              "value": "0.74 pts"
+            },
+            "2015": {
+              "holder": "Duncan vs. Ryan C",
+              "detail": "Wk 7",
+              "value": "2.55 pts"
+            },
+            "2016": {
+              "holder": "Patrick vs. Robbie",
+              "detail": "Wk 2",
+              "value": "0.36 pts"
+            },
+            "2017": {
+              "holder": "David vs. Ryan C",
+              "detail": "Wk 6",
+              "value": "0.20 pts"
+            },
+            "2018": {
+              "holder": "Robbie vs. Kyle P",
+              "detail": "Wk 11",
+              "value": "0.67 pts"
+            },
+            "2019": {
+              "holder": "Duncan vs. Kyle P",
+              "detail": "Wk 8",
+              "value": "0.40 pts"
+            },
+            "2020": {
+              "holder": "Daniel vs. Kyle K",
+              "detail": "Wk 8",
+              "value": "1.36 pts"
+            },
+            "2021": {
+              "holder": "Ryan C vs. Kyle P",
+              "detail": "Wk 9",
+              "value": "0.21 pts"
+            },
+            "2022": {
+              "holder": "Rudee vs. Duncan",
+              "detail": "Wk 8",
+              "value": "0.66 pts"
+            },
+            "2023": {
+              "holder": "Ryan C vs. Patrick",
+              "detail": "Wk 10",
+              "value": "0.04 pts"
+            },
+            "2024": {
+              "holder": "Antony vs. Kyle K",
+              "detail": "Wk 6",
+              "value": "0.20 pts"
+            },
+            "2025": {
+              "holder": "Ryan C vs. Duncan",
+              "detail": "Wk 14",
+              "value": "0.02 pts"
+            }
           }
         },
         {
           "metric": "Hardest Schedule",
-          "y2025": {
-            "holder": "Patrick",
-            "value": "122.28/wk"
-          },
           "allTime": {
             "holder": "Antony",
             "season": 2018,
             "value": "137.63/wk"
           },
+          "bySeason": {
+            "2009": {
+              "holder": "Raj",
+              "value": "94.26/wk"
+            },
+            "2010": {
+              "holder": "Irfan",
+              "value": "114.77/wk"
+            },
+            "2011": {
+              "holder": "Ryan C",
+              "value": "127.62/wk"
+            },
+            "2012": {
+              "holder": "Kyle P",
+              "value": "125.37/wk"
+            },
+            "2013": {
+              "holder": "Patrick",
+              "value": "124.90/wk"
+            },
+            "2014": {
+              "holder": "Duncan",
+              "value": "129.49/wk"
+            },
+            "2015": {
+              "holder": "Duncan",
+              "value": "127.96/wk"
+            },
+            "2016": {
+              "holder": "Kyle P",
+              "value": "128.07/wk"
+            },
+            "2017": {
+              "holder": "David",
+              "value": "122.22/wk"
+            },
+            "2018": {
+              "holder": "Antony",
+              "value": "137.63/wk"
+            },
+            "2019": {
+              "holder": "Patrick",
+              "value": "123.95/wk"
+            },
+            "2020": {
+              "holder": "Rudee",
+              "value": "129.75/wk"
+            },
+            "2021": {
+              "holder": "Daniel",
+              "value": "125.42/wk"
+            },
+            "2022": {
+              "holder": "Duncan",
+              "value": "122.17/wk"
+            },
+            "2023": {
+              "holder": "Antony",
+              "value": "125.01/wk"
+            },
+            "2024": {
+              "holder": "Raj",
+              "value": "123.71/wk"
+            },
+            "2025": {
+              "holder": "Patrick",
+              "value": "122.28/wk"
+            }
+          },
           "definition": "Average opponent points scored against a manager (Points-Against / games)."
         },
         {
           "metric": "Easiest Schedule",
-          "y2025": {
-            "holder": "Antony",
-            "value": "108.93/wk"
-          },
           "allTime": {
             "holder": "Patrick",
             "season": 2009,
             "value": "80.10/wk"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Patrick",
+              "value": "80.10/wk"
+            },
+            "2010": {
+              "holder": "Duncan",
+              "value": "97.11/wk"
+            },
+            "2011": {
+              "holder": "Daniel",
+              "value": "105.84/wk"
+            },
+            "2012": {
+              "holder": "Patrick",
+              "value": "97.02/wk"
+            },
+            "2013": {
+              "holder": "Raj",
+              "value": "103.48/wk"
+            },
+            "2014": {
+              "holder": "Robbie",
+              "value": "111.48/wk"
+            },
+            "2015": {
+              "holder": "Daniel",
+              "value": "106.16/wk"
+            },
+            "2016": {
+              "holder": "Kyle K",
+              "value": "99.66/wk"
+            },
+            "2017": {
+              "holder": "Kyle P",
+              "value": "98.84/wk"
+            },
+            "2018": {
+              "holder": "Raj",
+              "value": "107.17/wk"
+            },
+            "2019": {
+              "holder": "David",
+              "value": "108.86/wk"
+            },
+            "2020": {
+              "holder": "David",
+              "value": "101.52/wk"
+            },
+            "2021": {
+              "holder": "Kyle K",
+              "value": "110.35/wk"
+            },
+            "2022": {
+              "holder": "Daniel",
+              "value": "109.48/wk"
+            },
+            "2023": {
+              "holder": "Rudee",
+              "value": "105.12/wk"
+            },
+            "2024": {
+              "holder": "Rudee",
+              "value": "107.44/wk"
+            },
+            "2025": {
+              "holder": "Antony",
+              "value": "108.93/wk"
+            }
           }
         }
       ]
@@ -123,61 +701,358 @@
       "records": [
         {
           "metric": "High Single Week",
-          "y2025": {
-            "holder": "Rudee",
-            "detail": "Wk 15",
-            "value": "169.80"
-          },
           "allTime": {
             "holder": "Kyle K",
             "season": 2014,
             "value": "196.20"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Irfan",
+              "detail": "Wk 10",
+              "value": "149.16"
+            },
+            "2010": {
+              "holder": "Daniel",
+              "detail": "Wk 11",
+              "value": "176.11"
+            },
+            "2011": {
+              "holder": "Raj",
+              "detail": "Wk 12",
+              "value": "166.96"
+            },
+            "2012": {
+              "holder": "Duncan",
+              "detail": "Wk 4",
+              "value": "173.21"
+            },
+            "2013": {
+              "holder": "Raj",
+              "detail": "Wk 9",
+              "value": "162.63"
+            },
+            "2014": {
+              "holder": "Kyle K",
+              "detail": "Wk 13",
+              "value": "196.20"
+            },
+            "2015": {
+              "holder": "David",
+              "detail": "Wk 3",
+              "value": "187.44"
+            },
+            "2016": {
+              "holder": "Antony",
+              "detail": "Wk 13",
+              "value": "161.33"
+            },
+            "2017": {
+              "holder": "Kyle P",
+              "detail": "Wk 11",
+              "value": "155.20"
+            },
+            "2018": {
+              "holder": "Kyle P",
+              "detail": "Wk 1",
+              "value": "175.89"
+            },
+            "2019": {
+              "holder": "Rudee",
+              "detail": "Wk 5",
+              "value": "177.82"
+            },
+            "2020": {
+              "holder": "David",
+              "detail": "Wk 2",
+              "value": "182.78"
+            },
+            "2021": {
+              "holder": "Daniel",
+              "detail": "Wk 5",
+              "value": "183.98"
+            },
+            "2022": {
+              "holder": "Kyle K",
+              "detail": "Wk 5",
+              "value": "173.28"
+            },
+            "2023": {
+              "holder": "Jeremy",
+              "detail": "Wk 10",
+              "value": "168.52"
+            },
+            "2024": {
+              "holder": "Patrick",
+              "detail": "Wk 15",
+              "value": "172.60"
+            },
+            "2025": {
+              "holder": "Rudee",
+              "detail": "Wk 15",
+              "value": "169.80"
+            }
           }
         },
         {
           "metric": "High Season Total",
-          "y2025": {
-            "holder": "David",
-            "value": "1,900.36"
-          },
           "allTime": {
             "holder": "Rudee",
             "season": 2021,
             "value": "1,989.20"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Antony",
+              "value": "1,246.65"
+            },
+            "2010": {
+              "holder": "Ryan C",
+              "value": "1,719.24"
+            },
+            "2011": {
+              "holder": "Kyle K",
+              "value": "1,818.48"
+            },
+            "2012": {
+              "holder": "Ryan C",
+              "value": "1,750.46"
+            },
+            "2013": {
+              "holder": "Raj",
+              "value": "1,860.94"
+            },
+            "2014": {
+              "holder": "Raj",
+              "value": "1,805.64"
+            },
+            "2015": {
+              "holder": "David",
+              "value": "1,774.80"
+            },
+            "2016": {
+              "holder": "Antony",
+              "value": "1,725.06"
+            },
+            "2017": {
+              "holder": "Kyle P",
+              "value": "1,683.27"
+            },
+            "2018": {
+              "holder": "Kyle P",
+              "value": "1,955.78"
+            },
+            "2019": {
+              "holder": "David",
+              "value": "1,772.66"
+            },
+            "2020": {
+              "holder": "David",
+              "value": "1,908.77"
+            },
+            "2021": {
+              "holder": "Rudee",
+              "value": "1,989.20"
+            },
+            "2022": {
+              "holder": "Kyle K",
+              "value": "1,826.91"
+            },
+            "2023": {
+              "holder": "Ryan C",
+              "value": "1,978.63"
+            },
+            "2024": {
+              "holder": "Patrick",
+              "value": "1,902.78"
+            },
+            "2025": {
+              "holder": "David",
+              "value": "1,900.36"
+            }
           }
         },
         {
           "metric": "Low Single Week",
-          "y2025": {
-            "holder": "Kyle K",
-            "detail": "Wk 8",
-            "value": "54.08"
-          },
           "allTime": {
             "holder": "Daniel",
             "season": 2009,
             "value": "43.57"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "Daniel",
+              "detail": "Wk 2",
+              "value": "43.57"
+            },
+            "2010": {
+              "holder": "Antony",
+              "detail": "Wk 1",
+              "value": "59.70"
+            },
+            "2011": {
+              "holder": "Kyle P",
+              "detail": "Wk 7",
+              "value": "65.99"
+            },
+            "2012": {
+              "holder": "Robbie",
+              "detail": "Wk 4",
+              "value": "68.69"
+            },
+            "2013": {
+              "holder": "Antony",
+              "detail": "Wk 12",
+              "value": "60.99"
+            },
+            "2014": {
+              "holder": "Duncan",
+              "detail": "Wk 2",
+              "value": "65.20"
+            },
+            "2015": {
+              "holder": "Kyle P",
+              "detail": "Wk 10",
+              "value": "53.97"
+            },
+            "2016": {
+              "holder": "Kyle P",
+              "detail": "Wk 14",
+              "value": "60.73"
+            },
+            "2017": {
+              "holder": "Kyle K",
+              "detail": "Wk 4",
+              "value": "59.51"
+            },
+            "2018": {
+              "holder": "Kyle K",
+              "detail": "Wk 11",
+              "value": "55.52"
+            },
+            "2019": {
+              "holder": "Rudee",
+              "detail": "Wk 7",
+              "value": "49.06"
+            },
+            "2020": {
+              "holder": "Kyle P",
+              "detail": "Wk 7",
+              "value": "61.10"
+            },
+            "2021": {
+              "holder": "Patrick",
+              "detail": "Wk 15",
+              "value": "54.91"
+            },
+            "2022": {
+              "holder": "Duncan",
+              "detail": "Wk 4",
+              "value": "68.50"
+            },
+            "2023": {
+              "holder": "David",
+              "detail": "Wk 4",
+              "value": "58.42"
+            },
+            "2024": {
+              "holder": "David",
+              "detail": "Wk 10",
+              "value": "57.54"
+            },
+            "2025": {
+              "holder": "Kyle K",
+              "detail": "Wk 8",
+              "value": "54.08"
+            }
           }
         },
         {
           "metric": "Low Season Total",
-          "y2025": {
-            "holder": "Raj",
-            "value": "1,512.14"
-          },
           "allTime": {
             "holder": "David",
             "season": 2009,
             "value": "972.64"
+          },
+          "bySeason": {
+            "2009": {
+              "holder": "David",
+              "value": "972.64"
+            },
+            "2010": {
+              "holder": "Duncan",
+              "value": "1,189.26"
+            },
+            "2011": {
+              "holder": "Kyle P",
+              "value": "1,428.21"
+            },
+            "2012": {
+              "holder": "Kyle P",
+              "value": "1,466.41"
+            },
+            "2013": {
+              "holder": "Kyle P",
+              "value": "1,354.07"
+            },
+            "2014": {
+              "holder": "Ryan C",
+              "value": "1,557.17"
+            },
+            "2015": {
+              "holder": "Kyle P",
+              "value": "1,488.61"
+            },
+            "2016": {
+              "holder": "Kyle P",
+              "value": "1,403.10"
+            },
+            "2017": {
+              "holder": "Kyle K",
+              "value": "1,288.33"
+            },
+            "2018": {
+              "holder": "Kyle K",
+              "value": "1,478.80"
+            },
+            "2019": {
+              "holder": "Robbie",
+              "value": "1,473.21"
+            },
+            "2020": {
+              "holder": "Kyle K",
+              "value": "1,488.41"
+            },
+            "2021": {
+              "holder": "Patrick",
+              "value": "1,490.83"
+            },
+            "2022": {
+              "holder": "Raj",
+              "value": "1,572.85"
+            },
+            "2023": {
+              "holder": "Kyle K",
+              "value": "1,575.35"
+            },
+            "2024": {
+              "holder": "David",
+              "value": "1,486.08"
+            },
+            "2025": {
+              "holder": "Raj",
+              "value": "1,512.14"
+            }
           }
         },
         {
           "metric": "Low Season Avg (off.)",
-          "y2025": null,
           "allTime": {
             "holder": "TBD",
             "value": "TBD"
-          }
+          },
+          "bySeason": {},
+          "curated": true
         }
       ]
     },
@@ -188,51 +1063,63 @@
       "records": [
         {
           "metric": "Most TDs (week)",
-          "y2025": {
-            "holder": "Raj",
-            "detail": "Wk 15",
-            "value": "13 TDs"
-          },
           "allTime": {
             "holder": "TBD",
-            "value": "TBD",
-            "note": "2025's 13 TDs ties the all-time record set in 2020."
-          }
+            "value": "TBD"
+          },
+          "bySeason": {
+            "2025": {
+              "holder": "Raj",
+              "detail": "Wk 15",
+              "value": "13 TDs"
+            }
+          },
+          "note": "2025's 13 TDs ties the all-time record set in 2020.",
+          "curated": true
         },
         {
           "metric": "Rush Yds (week)",
-          "y2025": {
-            "holder": "TBD",
-            "value": "TBD"
-          },
           "allTime": {
             "holder": "TBD",
             "value": "TBD"
-          }
+          },
+          "bySeason": {
+            "2025": {
+              "holder": "TBD",
+              "value": "TBD"
+            }
+          },
+          "curated": true
         },
         {
           "metric": "Rec Yds (week)",
-          "y2025": {
-            "holder": "Ryan C",
-            "detail": "Wk 12",
-            "value": "608 yds"
-          },
           "allTime": {
             "holder": "TBD",
             "value": "TBD"
-          }
+          },
+          "bySeason": {
+            "2025": {
+              "holder": "Ryan C",
+              "detail": "Wk 12",
+              "value": "608 yds"
+            }
+          },
+          "curated": true
         },
         {
           "metric": "Pass Yds (week)",
-          "y2025": {
-            "holder": "Patrick",
-            "detail": "Wk 11",
-            "value": "452 yds"
-          },
           "allTime": {
             "holder": "TBD",
             "value": "TBD"
-          }
+          },
+          "bySeason": {
+            "2025": {
+              "holder": "Patrick",
+              "detail": "Wk 11",
+              "value": "452 yds"
+            }
+          },
+          "curated": true
         }
       ]
     }

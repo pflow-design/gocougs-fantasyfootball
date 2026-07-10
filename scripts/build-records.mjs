@@ -1,13 +1,15 @@
-// Rebuilds the All-Time Record Book (data/records.json) from the per-season data
-// — the single source of truth — so every data-derivable record is computed, not
-// curated. ALL seasons 2009-2025 are included (2009 is no longer excluded).
+// Rebuilds the All-Time Record Book (data/records.json) from the per-season data.
+// Every data-derivable record is computed for ALL seasons 2009-2025 (an `allTime`
+// mark plus a `bySeason` map), so the Records page can default to all-time and
+// offer a season selector. Player-stat rows and Low Season Avg stay curated TBD
+// (they need per-player box scores not in the dataset).
 //
 //   node scripts/build-records.mjs            # compute + print, no write
 //   node scripts/build-records.mjs --write    # also write data/records.json
 //
-// Regular season only: weeklyScores hold regular-season games; playoffs live
-// elsewhere and are excluded here. Player-stat rows (TDs, yardage) and Low Season
-// Avg stay curated TBD — they need per-player box scores not in the dataset.
+// Regular season only (weeklyScores hold regular-season games; playoffs are
+// excluded here). Steven abandoned his 2010 team mid-season, so his scores, team
+// rows and games are dropped from every record (EXCLUDE below).
 
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -22,14 +24,12 @@ const disp = Object.fromEntries(managersDoc.managers.map((m) => [m.key, m.displa
 const D = (k) => disp[k] || k;
 const yy = (y) => String(y).slice(-2);
 
-// Managers whose data is disqualified from the Record Book. Steven abandoned his
-// 2010 team mid-season (stopped setting a lineup), so his abnormally low scores —
-// and blowout losses handed to opponents — don't reflect real competition.
+// Managers disqualified from the Record Book (abandoned teams). See notes above.
 const EXCLUDE = new Set(['Steven']);
 
 const files = readdirSync(resolve(root, 'data/seasons')).filter((f) => f.endsWith('.json'));
 const seasons = files.map((f) => readJson('data/seasons/' + f)).sort((a, b) => a.year - b.year);
-const CURRENT = Math.max(...seasons.map((s) => s.year)); // 2025
+const YEARS = seasons.map((s) => s.year);
 
 // ---- Primitive collections -------------------------------------------------
 const weekScores = []; // {year, key, week, score}
@@ -46,19 +46,15 @@ for (const s of seasons) {
       if (!EXCLUDE.has(a)) weekScores.push({ year: s.year, key: a, week: w, score: sa });
       if (!EXCLUDE.has(b)) weekScores.push({ year: s.year, key: b, week: w, score: sb });
       const wKey = sa >= sb ? a : b, lKey = sa >= sb ? b : a;
-      // Drop the whole game from margin records if either side is excluded (no
-      // inflated blowout of a quitting team, and the name never surfaces).
       if (!EXCLUDE.has(wKey) && !EXCLUDE.has(lKey)) margins.push({ year: s.year, week: w, wKey, lKey, margin: Math.abs(sa - sb) });
       if (!EXCLUDE.has(a)) (seq[a] ||= []).push(sa > sb ? 'W' : sa < sb ? 'L' : 'T');
       if (!EXCLUDE.has(b)) (seq[b] ||= []).push(sb > sa ? 'W' : sb < sa ? 'L' : 'T');
     }
   }
-  for (const [key, arr] of Object.entries(seq)) {
-    for (const type of ['W', 'L']) {
-      let best = 0, run = 0;
-      for (const r of arr) { run = r === type ? run + 1 : 0; if (run > best) best = run; }
-      if (best > 0) streaks.push({ year: s.year, key, type, len: best });
-    }
+  for (const [key, arr] of Object.entries(seq)) for (const type of ['W', 'L']) {
+    let best = 0, run = 0;
+    for (const r of arr) { run = r === type ? run + 1 : 0; if (run > best) best = run; }
+    if (best > 0) streaks.push({ year: s.year, key, type, len: best });
   }
   for (const st of s.standings || []) {
     if (!st.managerKey || EXCLUDE.has(st.managerKey)) continue;
@@ -67,8 +63,6 @@ for (const s of seasons) {
 }
 
 // ---- Selection helpers -----------------------------------------------------
-// Integer records tie often -> collect all at the extreme. Float records take
-// the single extreme (exact ties are vanishingly unlikely).
 function pickInt(items, valFn, { max = true, year = null } = {}) {
   const pool = year ? items.filter((i) => i.year === year) : items;
   let best = max ? -Infinity : Infinity;
@@ -79,122 +73,105 @@ function pickFloat(items, valFn, { max = true, year = null } = {}) {
   const pool = year ? items.filter((i) => i.year === year) : items;
   let best = null;
   for (const i of pool) { const v = valFn(i); if (best === null || (max ? v > best.v : v < best.v)) best = { v, i }; }
-  return best; // {v, i}
+  return best; // {v, i} | null
 }
 
-// Value formatters (match the report's style).
 const pts = (v) => v.toFixed(2);
 const comma = (v) => v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const perWk = (v) => v.toFixed(2) + '/wk';
-
-// Holder builders.
-const names2025 = (at) => [...new Set(at.map((i) => D(i.key)))].join(' / ');
-function allTimeIntHolder(at) {
+const names = (at) => [...new Set(at.map((i) => D(i.key)))].join(' / ');
+function allTimeInt(at) {
   const yrs = [...new Set(at.map((i) => i.year))];
   if (at.length === 1) return { holder: D(at[0].key), season: at[0].year };
-  if (yrs.length === 1) return { holder: names2025(at), season: yrs[0] }; // same year, multiple people
-  return { holder: at.map((i) => `${D(i.key)} '${yy(i.year)}`).join(' / '), season: null }; // spread across years
+  if (yrs.length === 1) return { holder: names(at), season: yrs[0] };
+  return { holder: at.map((i) => `${D(i.key)} '${yy(i.year)}`).join(' / '), season: null };
 }
 
-// ---- Compute each record (2025 row + All-Time row) -------------------------
-// vs = single-team-value (wins/losses/streak/points), fmt formats the value.
+// ---- Record builders (allTime + bySeason) ----------------------------------
 function intRecord(items, valFn, fmt, max) {
-  const cur = pickInt(items, valFn, { max, year: CURRENT });
   const all = pickInt(items, valFn, { max });
-  return {
-    y2025: { holder: names2025(cur.at), value: fmt(cur.best) },
-    allTime: { ...allTimeIntHolder(all.at), value: fmt(all.best) },
-  };
+  const bySeason = {};
+  for (const y of YEARS) { const p = pickInt(items, valFn, { max, year: y }); if (p.at.length) bySeason[y] = { holder: names(p.at), value: fmt(p.best) }; }
+  return { allTime: { ...allTimeInt(all.at), value: fmt(all.best) }, bySeason };
 }
-function floatTeamRecord(items, valFn, fmt, max, { detail } = {}) {
-  const cur = pickFloat(items, valFn, { max, year: CURRENT });
+function floatRecord(items, valFn, fmt, max, detail) {
   const all = pickFloat(items, valFn, { max });
-  return {
-    y2025: { holder: D(cur.i.key), ...(detail ? { detail: detail(cur.i) } : {}), value: fmt(cur.v) },
-    allTime: { holder: D(all.i.key), season: all.i.year, value: fmt(all.v) },
-  };
+  const bySeason = {};
+  for (const y of YEARS) { const p = pickFloat(items, valFn, { max, year: y }); if (p) bySeason[y] = { holder: D(p.i.key), ...(detail ? { detail: detail(p.i) } : {}), value: fmt(p.v) }; }
+  return { allTime: { holder: D(all.i.key), season: all.i.year, value: fmt(all.v) }, bySeason };
 }
 function marginRecord(max) {
-  const cur = pickFloat(margins, (m) => m.margin, { max, year: CURRENT });
-  const all = pickFloat(margins, (m) => m.margin, { max });
   const vs = (m) => `${D(m.wKey)} vs. ${D(m.lKey)}`;
-  return {
-    y2025: { holder: vs(cur.i), detail: `Wk ${cur.i.week}`, value: `${pts(cur.v)} pts` },
-    allTime: { holder: vs(all.i), season: all.i.year, value: `${pts(all.v)} pts` },
-  };
+  const all = pickFloat(margins, (m) => m.margin, { max });
+  const bySeason = {};
+  for (const y of YEARS) { const p = pickFloat(margins, (m) => m.margin, { max, year: y }); if (p) bySeason[y] = { holder: vs(p.i), detail: `Wk ${p.i.week}`, value: `${pts(p.v)} pts` }; }
+  return { allTime: { holder: vs(all.i), season: all.i.year, value: `${pts(all.v)} pts` }, bySeason };
 }
 
-const mostWins = intRecord(teams, (t) => t.w, (n) => `${n} W`, true);
-const mostLosses = intRecord(teams, (t) => t.l, (n) => `${n} L`, true);
-const winStreak = intRecord(streaks.filter((s) => s.type === 'W'), (s) => s.len, (n) => `${n} games`, true);
-const lossStreak = intRecord(streaks.filter((s) => s.type === 'L'), (s) => s.len, (n) => `${n} games`, true);
-
-const biggestBlowout = marginRecord(true);
-const closestGame = marginRecord(false);
-const hardestSched = floatTeamRecord(teams, (t) => t.pa / t.games, perWk, true);
-const easiestSched = floatTeamRecord(teams, (t) => t.pa / t.games, perWk, false);
-
-const highWeek = floatTeamRecord(weekScores, (w) => w.score, pts, true, { detail: (w) => `Wk ${w.week}` });
-const lowWeek = floatTeamRecord(weekScores, (w) => w.score, pts, false, { detail: (w) => `Wk ${w.week}` });
-const highSeason = floatTeamRecord(teams, (t) => t.pf, comma, true);
-const lowSeason = floatTeamRecord(teams, (t) => t.pf, comma, false);
-
-// Preserve curated (data-not-available) rows verbatim from the existing file.
-const prev = readJson('data/records.json');
-const prevRec = (title, metric) => {
-  const g = prev.groups.find((x) => x.title === title);
-  return g ? g.records.find((r) => r.metric === metric) : null;
+// Curated rows — data not in the project (per-player box scores). TBD stays TBD.
+const TBD = { holder: 'TBD', value: 'TBD' };
+const curated = {
+  lowSeasonAvg: { metric: 'Low Season Avg (off.)', allTime: { ...TBD }, bySeason: {}, curated: true },
+  tds: { metric: 'Most TDs (week)', allTime: { ...TBD }, bySeason: { '2025': { holder: 'Raj', detail: 'Wk 15', value: '13 TDs' } }, note: "2025's 13 TDs ties the all-time record set in 2020.", curated: true },
+  rush: { metric: 'Rush Yds (week)', allTime: { ...TBD }, bySeason: { '2025': { holder: 'TBD', value: 'TBD' } }, curated: true },
+  rec: { metric: 'Rec Yds (week)', allTime: { ...TBD }, bySeason: { '2025': { holder: 'Ryan C', detail: 'Wk 12', value: '608 yds' } }, curated: true },
+  pass: { metric: 'Pass Yds (week)', allTime: { ...TBD }, bySeason: { '2025': { holder: 'Patrick', detail: 'Wk 11', value: '452 yds' } }, curated: true },
 };
 
 // ---- Assemble ---------------------------------------------------------------
 const out = {
   _meta: {
     title: 'All-Time Record Book — Regular Season',
-    description: "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs — every season 2009-2025 is included. Steven (abandoned his 2010 team mid-season) is EXCLUDED from all records: his scores, his team rows, and any game he played are dropped so they don't distort the leaderboard. Each metric has a '2025' row (current-season leader) and an 'allTime' row (best/worst across all seasons). Player-stat rows and Low Season Avg remain TBD: they need per-player weekly box scores that do not exist in the project.",
+    description: "Regular season only (playoff games excluded). RECOMPUTED from data/seasons/*.json by scripts/build-records.mjs. Each metric has an `allTime` mark and a `bySeason` map (every season 2009-2025) so the Records page defaults to all-time with a season selector. Steven (abandoned his 2010 team mid-season) is EXCLUDED from all records. Player-stat rows and Low Season Avg stay curated TBD (no per-player box scores in the dataset).",
     source: 'data/seasons/*.json via scripts/build-records.mjs',
-    seasonRowLabelNote: "The '2025' row = the current season's leader; the 'allTime' row = best/worst across all seasons.",
   },
+  years: YEARS,
   groups: [
     {
       title: 'Head-to-Head Records', icon: '🏆',
       records: [
-        { metric: 'Most Wins', ...mostWins },
-        { metric: 'Win Streak', ...winStreak },
-        { metric: 'Most Losses', ...mostLosses },
-        { metric: 'Loss Streak', ...lossStreak },
+        { metric: 'Most Wins', ...intRecord(teams, (t) => t.w, (n) => `${n} W`, true) },
+        { metric: 'Win Streak', ...intRecord(streaks.filter((s) => s.type === 'W'), (s) => s.len, (n) => `${n} games`, true) },
+        { metric: 'Most Losses', ...intRecord(teams, (t) => t.l, (n) => `${n} L`, true) },
+        { metric: 'Loss Streak', ...intRecord(streaks.filter((s) => s.type === 'L'), (s) => s.len, (n) => `${n} games`, true) },
       ],
     },
     {
       title: 'Margins of Victory', icon: '💥',
       records: [
-        { metric: 'Biggest Blowout', ...biggestBlowout },
-        { metric: 'Closest Game', ...closestGame },
-        { metric: 'Hardest Schedule', ...hardestSched, definition: 'Average opponent points scored against a manager (Points-Against / games).' },
-        { metric: 'Easiest Schedule', ...easiestSched },
+        { metric: 'Biggest Blowout', ...marginRecord(true) },
+        { metric: 'Closest Game', ...marginRecord(false) },
+        { metric: 'Hardest Schedule', ...floatRecord(teams, (t) => t.pa / t.games, perWk, true), definition: 'Average opponent points scored against a manager (Points-Against / games).' },
+        { metric: 'Easiest Schedule', ...floatRecord(teams, (t) => t.pa / t.games, perWk, false) },
       ],
     },
     {
       title: 'Points Records', icon: '📊',
       records: [
-        { metric: 'High Single Week', ...highWeek },
-        { metric: 'High Season Total', ...highSeason },
-        { metric: 'Low Single Week', ...lowWeek },
-        { metric: 'Low Season Total', ...lowSeason },
-        prevRec('Points Records', 'Low Season Avg (off.)'),
+        { metric: 'High Single Week', ...floatRecord(weekScores, (w) => w.score, pts, true, (w) => `Wk ${w.week}`) },
+        { metric: 'High Season Total', ...floatRecord(teams, (t) => t.pf, comma, true) },
+        { metric: 'Low Single Week', ...floatRecord(weekScores, (w) => w.score, pts, false, (w) => `Wk ${w.week}`) },
+        { metric: 'Low Season Total', ...floatRecord(teams, (t) => t.pf, comma, false) },
+        curated.lowSeasonAvg,
       ],
     },
-    // Statistical (player-stat) records: preserved verbatim — box scores not in dataset.
-    prev.groups.find((g) => g.title === 'Statistical Records'),
+    {
+      title: 'Statistical Records', icon: '🏈',
+      note: 'All-time player-stat rows are TBD: they require per-player weekly box scores across all 16 seasons (~2,000 Yahoo pages), deliberately deferred.',
+      records: [curated.tds, curated.rush, curated.rec, curated.pass],
+    },
   ],
 };
 
 // ---- Report -----------------------------------------------------------------
-const line = (r) => {
-  const a = r.allTime || {};
-  const tag = a.season ? ` '${yy(a.season)}` : '';
-  console.log(`  ${r.metric.padEnd(18)} 2025: ${(r.y2025?.holder + (r.y2025?.detail ? ', ' + r.y2025.detail : '')).padEnd(28)} ${String(r.y2025?.value).padStart(12)}   |  All: ${((a.holder ?? '—') + tag).padEnd(32)} ${String(a.value).padStart(12)}`);
-};
-for (const g of out.groups) { console.log('\n' + g.icon + ' ' + g.title); for (const r of g.records) if (r.y2025 || r.allTime) line(r); }
+for (const g of out.groups) {
+  console.log('\n' + g.icon + ' ' + g.title);
+  for (const r of g.records) {
+    const a = r.allTime, tag = a && a.season ? ` '${yy(a.season)}` : '';
+    const seasonsCovered = Object.keys(r.bySeason).length;
+    console.log(`  ${r.metric.padEnd(20)} all-time: ${((a ? a.holder : '—') + tag).padEnd(34)} ${String(a ? a.value : '—').padStart(12)}   (${seasonsCovered} season rows)`);
+  }
+}
 
 if (WRITE) {
   writeFileSync(resolve(root, 'data/records.json'), JSON.stringify(out, null, 2) + '\n');

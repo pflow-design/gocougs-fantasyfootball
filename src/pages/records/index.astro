@@ -10,31 +10,16 @@ const label = (key?: string | null) => {
   return m ? m.display : key;
 };
 
-// Record Book rows: flatten each metric into a 2025 row + an All-Time row.
-const bookGroups = groups.map((g) => ({
-  title: g.title,
-  icon: g.icon,
-  note: g.note,
-  rows: g.records.flatMap((r: any) => {
-    const out: any[] = [];
-    if (r.y2025) {
-      out.push({
-        metric: r.metric, kind: 's',
-        holder: r.y2025.holder, detail: r.y2025.detail,
-        value: r.y2025.value, tbd: r.y2025.value === 'TBD',
-      });
-    }
-    if (r.allTime) {
-      const seasonTag = r.allTime.season ? `, '${String(r.allTime.season).slice(-2)}` : '';
-      out.push({
-        metric: r.metric, kind: 'a',
-        holder: (r.allTime.holder ?? '—') + seasonTag,
-        value: r.allTime.value, tbd: r.allTime.value === 'TBD',
-      });
-    }
-    return out;
-  }),
-}));
+// Record Book: each metric has an allTime mark + a bySeason map. The page renders
+// the all-time view; a client script swaps every value when a season is picked.
+const bookGroups = groups;
+const years = (records as any).years as number[];
+const yy = (y: any) => String(y).slice(-2);
+const atCell = (r: any) => {
+  const a = r.allTime;
+  const holder = a ? a.holder + (a.season ? ` · '${yy(a.season)}` : '') : '—';
+  return { holder, value: a ? a.value : 'TBD', tbd: !a || a.value === 'TBD' || a.holder === 'TBD' };
+};
 
 // Champions
 const byYear = ([...(champions as any).byYear] as any[]).sort((a, b) => b.year - a.year);
@@ -112,18 +97,29 @@ const postSeason = [...mgrList]
   <p class="sub" style="margin:-6px 0 14px;font-style:italic;">
     Regular season only — playoff games excluded. Recomputed from the per-season data across all seasons (2009–2025). Cells marked TBD need per-player box scores not in the dataset.
   </p>
-  <div class="grid2">
+  <div class="rb-controls">
+    <label for="rb-season">View records for</label>
+    <select id="rb-season" class="rb-select">
+      <option value="all">All-Time</option>
+      {[...years].sort((a, b) => b - a).map((y) => <option value={String(y)}>{y}</option>)}
+    </select>
+    <span id="rb-scope">Showing <strong>all-time</strong> bests &amp; worsts across 2009–2025.</span>
+  </div>
+  <div class="grid2" id="rb-book">
     {bookGroups.map((g) => (
       <div class="card">
         <div class="card-title">{g.icon} {g.title}</div>
         <table class="rtbl">
-          {g.rows.map((r: any) => (
-            <tr class:list={[{ at: r.kind === 'a' }]}>
-              <td class="rc">{r.metric} <span class:list={['rlbl', r.kind === 'a' ? 'a' : 's']}>{r.kind === 'a' ? 'All Time' : '2025'}</span></td>
-              <td class="rh">{r.holder}{r.detail ? `, ${r.detail}` : ''}</td>
-              <td class:list={['rv', { tbd: r.tbd }]}>{r.value}</td>
-            </tr>
-          ))}
+          {g.records.map((r: any) => {
+            const c = atCell(r);
+            return (
+              <tr>
+                <td class="rc">{r.metric}</td>
+                <td class="rh">{c.holder}</td>
+                <td class:list={['rv', { tbd: c.tbd }]}>{c.value}</td>
+              </tr>
+            );
+          })}
         </table>
         {g.note && <p class="sub" style="margin-top:10px;font-style:italic;">{g.note}</p>}
       </div>
@@ -160,5 +156,51 @@ const postSeason = [...mgrList]
       </table>
     </div>
   </div>
+
+  <script is:inline define:vars={{ bookGroups }}>
+    (() => {
+      const sel = document.getElementById('rb-season');
+      const scope = document.getElementById('rb-scope');
+      const cards = document.querySelectorAll('#rb-book .card');
+      const yy = (y) => String(y).slice(-2);
+      function cellFor(rec, s) {
+        if (s === 'all') {
+          const a = rec.allTime;
+          if (!a) return { holder: '—', value: 'TBD', tbd: true };
+          let h = a.holder; if (a.season) h += " · '" + yy(a.season);
+          return { holder: h, value: a.value, tbd: a.value === 'TBD' || a.holder === 'TBD' };
+        }
+        const c = rec.bySeason[s];
+        if (!c) return { holder: '—', value: 'TBD', tbd: true };
+        let h = c.holder; if (c.detail) h += ' · <span class="wk">' + c.detail + '</span>';
+        return { holder: h, value: c.value, tbd: c.value === 'TBD' || c.holder === 'TBD' };
+      }
+      function apply(s) {
+        bookGroups.forEach((g, gi) => {
+          const rows = cards[gi].querySelectorAll('.rtbl tr');
+          g.records.forEach((rec, ri) => {
+            const row = rows[ri]; if (!row) return;
+            const c = cellFor(rec, s);
+            row.querySelector('.rh').innerHTML = c.holder;
+            const v = row.querySelector('.rv');
+            v.textContent = c.value; v.classList.toggle('tbd', c.tbd);
+          });
+        });
+        scope.innerHTML = s === 'all'
+          ? 'Showing <strong>all-time</strong> bests &amp; worsts across 2009–2025.'
+          : 'Showing the <strong>' + s + '</strong> season leaders.';
+      }
+      sel.addEventListener('change', () => apply(sel.value));
+    })();
+  </script>
+
+  <style>
+    .rb-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); margin: 0 0 16px; }
+    .rb-controls label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-700); }
+    .rb-select { padding: 8px 12px; border: 2px solid var(--purple-700); border-radius: 9px; font-size: 15px; font-weight: 800; color: var(--purple-900); background: #fff; cursor: pointer; min-width: 140px; }
+    #rb-scope { font-size: 12.5px; color: var(--muted); font-style: italic; }
+    #rb-scope strong { color: #e65100; font-style: normal; }
+    .rtbl .rh .wk { color: var(--muted); }
+  </style>
 
 </Base>
