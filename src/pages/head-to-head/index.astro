@@ -59,7 +59,7 @@ const mgrs = Object.entries(managerMap)
       if (h2hData[b] && h2hData[b][a]) {
         const d = h2hData[b][a];
         return {
-          w1: d.w2, w2: d.w1, pf1: d.pf2, pf2: d.pf1, big1: d.big2, big2: d.big1,
+          w1: d.w2, w2: d.w1, pf1: d.pf2, pf2: d.pf1, big1: d.big2, big2: d.big1, bigS1: d.bigS2, bigS2: d.bigS1,
           last: d.last ? { winner: d.last.winner, score1: d.last.score2, score2: d.last.score1, season: d.last.season } : null,
           playoffs: d.playoffs, seasons: d.seasons,
         };
@@ -96,8 +96,9 @@ const mgrs = Object.entries(managerMap)
       $('r-pf1').textContent = d.pf1.toFixed(2); $('r-pf2').textContent = d.pf2.toFixed(2);
       $('r-avg1').textContent = tot ? (d.pf1 / tot).toFixed(1) : '—';
       $('r-avg2').textContent = tot ? (d.pf2 / tot).toFixed(1) : '—';
-      $('r-big1').textContent = d.big1 ? d.big1.toFixed(2) : '—';
-      $('r-big2').textContent = d.big2 ? d.big2.toFixed(2) : '—';
+      const fmtBig = (m, s) => m ? m.toFixed(2) + (s ? " · '" + s : '') : '—';
+      $('r-big1').textContent = fmtBig(d.big1, d.bigS1);
+      $('r-big2').textContent = fmtBig(d.big2, d.bigS2);
       if (d.last) {
         const lsn = "'" + d.last.season;
         $('r-last1').textContent = (d.last.winner === a ? 'W ' : 'L ') + d.last.score1.toFixed(2) + ' · ' + lsn;
