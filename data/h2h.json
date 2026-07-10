@@ -3,7 +3,7 @@
     "description": "Pairwise all-time head-to-head, RECOMPUTED from data/seasons/*.json (regular + playoff games) by scripts/recompute.mjs. Directional per pair: w1/pf1/big1 = first key (alphabetical), w2/pf2/big2 = second. big = winning score in that manager's biggest-margin victory. seasons = distinct seasons the pair met. Includes playoff games.",
     "source": "data/seasons/*.json + legacy playoffs",
     "generatedBy": "scripts/recompute.mjs",
-    "pairs": 83
+    "pairs": 95
   },
   "managers": {
     "Rudee": {
@@ -20,7 +20,7 @@
     },
     "Larson": {
       "label": "Robbie",
-      "since": "'09"
+      "since": "'12"
     },
     "KyleK": {
       "label": "Kyle K",
@@ -70,26 +70,26 @@
   "h2h": {
     "David": {
       "Irfan": {
-        "w1": 1,
+        "w1": 2,
         "w2": 1,
-        "pf1": 133.05,
-        "pf2": 207.72,
-        "big1": 61.22,
+        "pf1": 263.26,
+        "pf2": 316.27,
+        "big1": 130.21,
         "big2": 149.16,
         "last": {
-          "winner": "Irfan",
-          "score1": 71.83,
-          "score2": 149.16,
-          "season": "09"
+          "winner": "David",
+          "score1": 130.21,
+          "score2": 108.55,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "RyanC": {
         "w1": 9,
-        "w2": 17,
-        "pf1": 2926.89,
-        "pf2": 3185.08,
+        "w2": 18,
+        "pf1": 3045.32,
+        "pf2": 3338.23,
         "big1": 151.81,
         "big2": 173.72,
         "last": {
@@ -99,13 +99,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "Raj": {
-        "w1": 8,
+        "w1": 9,
         "w2": 16,
-        "pf1": 2599.08,
-        "pf2": 2833.85,
+        "pf1": 2726.8,
+        "pf2": 2930.9,
         "big1": 156.29,
         "big2": 152.17,
         "last": {
@@ -115,13 +115,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "PatrickF": {
-        "w1": 17,
+        "w1": 18,
         "w2": 5,
-        "pf1": 2607.17,
-        "pf2": 2241.33,
+        "pf1": 2740.67,
+        "pf2": 2360.27,
         "big1": 148.28,
         "big2": 136.8,
         "last": {
@@ -131,13 +131,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 16
+        "seasons": 17
       },
       "KyleK": {
-        "w1": 13,
+        "w1": 14,
         "w2": 13,
-        "pf1": 2901.35,
-        "pf2": 2985.76,
+        "pf1": 3026.08,
+        "pf2": 3092.43,
         "big1": 162.54,
         "big2": 165.9,
         "last": {
@@ -147,13 +147,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "duncan": {
-        "w1": 17,
+        "w1": 18,
         "w2": 17,
-        "pf1": 4014.22,
-        "pf2": 3895.17,
+        "pf1": 4108.83,
+        "pf2": 3986.88,
         "big1": 187.44,
         "big2": 164.05,
         "last": {
@@ -163,13 +163,29 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 16
+        "seasons": 17
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 1,
+        "pf1": 201.12,
+        "pf2": 173.5,
+        "big1": 88.76,
+        "big2": 113.93,
+        "last": {
+          "winner": "David",
+          "score1": 88.76,
+          "score2": 59.57,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "KyleP": {
-        "w1": 10,
+        "w1": 11,
         "w2": 6,
-        "pf1": 1873.97,
-        "pf2": 1664.32,
+        "pf1": 1983.44,
+        "pf2": 1737.81,
         "big1": 156.3,
         "big2": 148.37,
         "last": {
@@ -179,7 +195,7 @@
           "season": "21"
         },
         "playoffs": 2,
-        "seasons": 11
+        "seasons": 12
       },
       "Larson": {
         "w1": 7,
@@ -232,10 +248,10 @@
     },
     "Antony": {
       "Bradley": {
-        "w1": 2,
+        "w1": 3,
         "w2": 1,
-        "pf1": 315.2,
-        "pf2": 281.82,
+        "pf1": 437.79,
+        "pf2": 383.17,
         "big1": 153.54,
         "big2": 97.78,
         "last": {
@@ -245,15 +261,15 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
       },
       "RyanC": {
         "w1": 11,
-        "w2": 10,
-        "pf1": 2427.3,
-        "pf2": 2413.75,
+        "w2": 12,
+        "pf1": 2602.86,
+        "pf2": 2727.54,
         "big1": 140.53,
-        "big2": 171.38,
+        "big2": 173.53,
         "last": {
           "winner": "Antony",
           "score1": 120.46,
@@ -261,13 +277,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 13
+        "seasons": 14
       },
       "Raj": {
         "w1": 14,
-        "w2": 14,
-        "pf1": 3142.04,
-        "pf2": 3161.12,
+        "w2": 15,
+        "pf1": 3209.94,
+        "pf2": 3265.13,
         "big1": 160.47,
         "big2": 149.2,
         "last": {
@@ -277,13 +293,13 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 13
+        "seasons": 14
       },
       "Daniel": {
         "w1": 13,
-        "w2": 7,
-        "pf1": 2121.77,
-        "pf2": 2150.99,
+        "w2": 8,
+        "pf1": 2189.8,
+        "pf2": 2240.96,
         "big1": 134.38,
         "big2": 151.5,
         "last": {
@@ -293,13 +309,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 13
+        "seasons": 14
       },
       "PatrickF": {
-        "w1": 10,
+        "w1": 11,
         "w2": 11,
-        "pf1": 2374.71,
-        "pf2": 2581.86,
+        "pf1": 2500.85,
+        "pf2": 2655.85,
         "big1": 148.55,
         "big2": 159.03,
         "last": {
@@ -309,13 +325,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 13
+        "seasons": 14
       },
       "KyleK": {
         "w1": 16,
-        "w2": 7,
-        "pf1": 2763.51,
-        "pf2": 2409.88,
+        "w2": 8,
+        "pf1": 2889.34,
+        "pf2": 2548.73,
         "big1": 153.67,
         "big2": 142.67,
         "last": {
@@ -325,13 +341,13 @@
           "season": "25"
         },
         "playoffs": 6,
-        "seasons": 13
+        "seasons": 14
       },
       "duncan": {
         "w1": 14,
-        "w2": 12,
-        "pf1": 3021.27,
-        "pf2": 3090.28,
+        "w2": 13,
+        "pf1": 3113.27,
+        "pf2": 3196.39,
         "big1": 175.02,
         "big2": 156.25,
         "last": {
@@ -341,13 +357,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 13
+        "seasons": 14
       },
       "David": {
-        "w1": 16,
+        "w1": 17,
         "w2": 6,
-        "pf1": 2675.97,
-        "pf2": 2338.13,
+        "pf1": 2790.48,
+        "pf2": 2411.47,
         "big1": 152.84,
         "big2": 149.53,
         "last": {
@@ -357,29 +373,29 @@
           "season": "25"
         },
         "playoffs": 0,
-        "seasons": 13
+        "seasons": 14
       },
       "Irfan": {
         "w1": 0,
-        "w2": 1,
-        "pf1": 72.03,
-        "pf2": 109.07,
+        "w2": 2,
+        "pf1": 178.58,
+        "pf2": 237.87,
         "big1": 0,
-        "big2": 109.07,
+        "big2": 128.8,
         "last": {
           "winner": "Irfan",
-          "score1": 72.03,
-          "score2": 109.07,
-          "season": "09"
+          "score1": 106.55,
+          "score2": 128.8,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "KyleP": {
-        "w1": 7,
-        "w2": 5,
-        "pf1": 1499.1,
-        "pf2": 1439.88,
+        "w1": 8,
+        "w2": 6,
+        "pf1": 1663.58,
+        "pf2": 1627,
         "big1": 168.46,
         "big2": 175.89,
         "last": {
@@ -389,7 +405,23 @@
           "season": "18"
         },
         "playoffs": 0,
-        "seasons": 8
+        "seasons": 9
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 110.15,
+        "pf2": 76.65,
+        "big1": 110.15,
+        "big2": 0,
+        "last": {
+          "winner": "Antony",
+          "score1": 110.15,
+          "score2": 76.65,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "Larson": {
         "w1": 7,
@@ -442,10 +474,10 @@
     },
     "KyleK": {
       "RyanC": {
-        "w1": 17,
-        "w2": 13,
-        "pf1": 3425.78,
-        "pf2": 3118.57,
+        "w1": 18,
+        "w2": 14,
+        "pf1": 3686.84,
+        "pf2": 3387.58,
         "big1": 188.87,
         "big2": 134.41,
         "last": {
@@ -455,14 +487,14 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
       },
       "Raj": {
-        "w1": 12,
+        "w1": 13,
         "w2": 19,
-        "pf1": 3396.34,
-        "pf2": 3516.64,
-        "big1": 153.17,
+        "pf1": 3560.82,
+        "pf2": 3643.73,
+        "big1": 164.48,
         "big2": 162.62,
         "last": {
           "winner": "KyleK",
@@ -471,13 +503,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "PatrickF": {
-        "w1": 15,
+        "w1": 16,
         "w2": 13,
-        "pf1": 3064.69,
-        "pf2": 3033.08,
+        "pf1": 3189.64,
+        "pf2": 3104.26,
         "big1": 155.23,
         "big2": 149.29,
         "last": {
@@ -487,13 +519,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 16
+        "seasons": 17
       },
       "duncan": {
-        "w1": 17,
-        "w2": 8,
-        "pf1": 3018.14,
-        "pf2": 2803.21,
+        "w1": 18,
+        "w2": 9,
+        "pf1": 3217.94,
+        "pf2": 2993.7,
         "big1": 182.57,
         "big2": 161.02,
         "last": {
@@ -503,13 +535,29 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 122.16,
+        "pf2": 22.36,
+        "big1": 122.16,
+        "big2": 0,
+        "last": {
+          "winner": "KyleK",
+          "score1": 122.16,
+          "score2": 22.36,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "KyleP": {
-        "w1": 11,
+        "w1": 12,
         "w2": 11,
-        "pf1": 2438.38,
-        "pf2": 2401.31,
+        "pf1": 2575.73,
+        "pf2": 2497.92,
         "big1": 156.94,
         "big2": 154.32,
         "last": {
@@ -519,7 +567,7 @@
           "season": "21"
         },
         "playoffs": 2,
-        "seasons": 11
+        "seasons": 12
       },
       "Larson": {
         "w1": 5,
@@ -557,9 +605,9 @@
     "PatrickF": {
       "Raj": {
         "w1": 13,
-        "w2": 16,
-        "pf1": 3170.79,
-        "pf2": 3220.49,
+        "w2": 17,
+        "pf1": 3242.95,
+        "pf2": 3313.41,
         "big1": 154.04,
         "big2": 164.7,
         "last": {
@@ -569,13 +617,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "duncan": {
-        "w1": 8,
-        "w2": 16,
-        "pf1": 2603.95,
-        "pf2": 2850.24,
+        "w1": 9,
+        "w2": 17,
+        "pf1": 2774.53,
+        "pf2": 3016.94,
         "big1": 172.04,
         "big2": 165.74,
         "last": {
@@ -585,13 +633,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "RyanC": {
-        "w1": 16,
+        "w1": 17,
         "w2": 15,
-        "pf1": 3527,
-        "pf2": 3668.89,
+        "pf1": 3633,
+        "pf2": 3762.15,
         "big1": 172.6,
         "big2": 170.93,
         "last": {
@@ -601,7 +649,23 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 16
+        "seasons": 17
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 131.58,
+        "pf2": 43.07,
+        "big1": 131.58,
+        "big2": 0,
+        "last": {
+          "winner": "PatrickF",
+          "score1": 131.58,
+          "score2": 43.07,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "Rudee": {
         "w1": 4,
@@ -622,10 +686,10 @@
     },
     "Daniel": {
       "duncan": {
-        "w1": 14,
+        "w1": 15,
         "w2": 15,
-        "pf1": 3468.85,
-        "pf2": 3403.73,
+        "pf1": 3575.41,
+        "pf2": 3505.57,
         "big1": 156.79,
         "big2": 173.21,
         "last": {
@@ -635,13 +699,13 @@
           "season": "25"
         },
         "playoffs": 1,
-        "seasons": 16
+        "seasons": 17
       },
       "PatrickF": {
-        "w1": 18,
+        "w1": 19,
         "w2": 13,
-        "pf1": 3299.54,
-        "pf2": 3404.02,
+        "pf1": 3427.37,
+        "pf2": 3492.37,
         "big1": 165.94,
         "big2": 169.53,
         "last": {
@@ -651,13 +715,13 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
       },
       "KyleK": {
-        "w1": 16,
+        "w1": 17,
         "w2": 14,
-        "pf1": 3260.28,
-        "pf2": 3105.13,
+        "pf1": 3376.75,
+        "pf2": 3216.67,
         "big1": 156.06,
         "big2": 141.37,
         "last": {
@@ -667,13 +731,13 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
       },
       "David": {
-        "w1": 17,
+        "w1": 19,
         "w2": 15,
-        "pf1": 3753.34,
-        "pf2": 3695.41,
+        "pf1": 3963.48,
+        "pf2": 3858.15,
         "big1": 167,
         "big2": 178.14,
         "last": {
@@ -683,29 +747,29 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 16
+        "seasons": 17
       },
       "Irfan": {
-        "w1": 1,
+        "w1": 2,
         "w2": 0,
-        "pf1": 129.27,
-        "pf2": 53.25,
-        "big1": 129.27,
+        "pf1": 305.38,
+        "pf2": 179.54,
+        "big1": 176.11,
         "big2": 0,
         "last": {
           "winner": "Daniel",
-          "score1": 129.27,
-          "score2": 53.25,
-          "season": "09"
+          "score1": 176.11,
+          "score2": 126.29,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "RyanC": {
         "w1": 13,
-        "w2": 12,
-        "pf1": 3167.96,
-        "pf2": 2972.72,
+        "w2": 13,
+        "pf1": 3282.39,
+        "pf2": 3096.21,
         "big1": 183.98,
         "big2": 168.56,
         "last": {
@@ -715,13 +779,13 @@
           "season": "25"
         },
         "playoffs": 2,
-        "seasons": 16
+        "seasons": 17
       },
       "Raj": {
-        "w1": 14,
+        "w1": 15,
         "w2": 12,
-        "pf1": 3038.55,
-        "pf2": 3195.79,
+        "pf1": 3140.34,
+        "pf2": 3271.5,
         "big1": 151.43,
         "big2": 166.39,
         "last": {
@@ -731,13 +795,13 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 16
+        "seasons": 17
       },
       "KyleP": {
         "w1": 9,
-        "w2": 8,
-        "pf1": 1989.18,
-        "pf2": 1896.66,
+        "w2": 9,
+        "pf1": 2096.25,
+        "pf2": 2035.61,
         "big1": 151.64,
         "big2": 161.01,
         "last": {
@@ -747,7 +811,23 @@
           "season": "21"
         },
         "playoffs": 0,
-        "seasons": 11
+        "seasons": 12
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 103.64,
+        "pf2": 91.42,
+        "big1": 103.64,
+        "big2": 0,
+        "last": {
+          "winner": "Daniel",
+          "score1": 103.64,
+          "score2": 91.42,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "Larson": {
         "w1": 6,
@@ -800,81 +880,113 @@
     },
     "Irfan": {
       "duncan": {
-        "w1": 1,
+        "w1": 2,
         "w2": 1,
-        "pf1": 186.15,
-        "pf2": 184.75,
-        "big1": 110.25,
+        "pf1": 297.36,
+        "pf2": 287.79,
+        "big1": 111.21,
         "big2": 112.23,
         "last": {
-          "winner": "duncan",
-          "score1": 75.9,
-          "score2": 112.23,
-          "season": "09"
+          "winner": "Irfan",
+          "score1": 111.21,
+          "score2": 103.04,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "RyanC": {
-        "w1": 1,
+        "w1": 2,
         "w2": 1,
-        "pf1": 125.83,
-        "pf2": 177.71,
-        "big1": 74.65,
+        "pf1": 246.07,
+        "pf2": 287.39,
+        "big1": 120.24,
         "big2": 109.56,
         "last": {
           "winner": "Irfan",
-          "score1": 74.65,
-          "score2": 68.15,
-          "season": "09"
+          "score1": 120.24,
+          "score2": 109.68,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "Raj": {
-        "w1": 1,
+        "w1": 2,
         "w2": 0,
-        "pf1": 98.41,
-        "pf2": 67.63,
-        "big1": 98.41,
+        "pf1": 231.23,
+        "pf2": 179.37,
+        "big1": 132.82,
         "big2": 0,
         "last": {
           "winner": "Irfan",
-          "score1": 98.41,
-          "score2": 67.63,
-          "season": "09"
+          "score1": 132.82,
+          "score2": 111.74,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "PatrickF": {
         "w1": 0,
-        "w2": 1,
-        "pf1": 66.78,
-        "pf2": 99.04,
+        "w2": 3,
+        "pf1": 256.52,
+        "pf2": 323.63,
         "big1": 0,
-        "big2": 99.04,
+        "big2": 133.25,
         "last": {
           "winner": "PatrickF",
-          "score1": 66.78,
-          "score2": 99.04,
-          "season": "09"
+          "score1": 88.26,
+          "score2": 91.34,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 2
+      },
+      "KyleK": {
+        "w1": 0,
+        "w2": 2,
+        "pf1": 167.41,
+        "pf2": 175.9,
+        "big1": 0,
+        "big2": 102.65,
+        "last": {
+          "winner": "KyleK",
+          "score1": 99.63,
+          "score2": 102.65,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 2
+      },
+      "Steven": {
+        "w1": 2,
+        "w2": 0,
+        "pf1": 215.23,
+        "pf2": 181.99,
+        "big1": 108.18,
+        "big2": 0,
+        "last": {
+          "winner": "Irfan",
+          "score1": 107.05,
+          "score2": 79.24,
+          "season": "10"
         },
         "playoffs": 0,
         "seasons": 1
       },
-      "KyleK": {
-        "w1": 0,
-        "w2": 1,
-        "pf1": 67.78,
-        "pf2": 73.25,
-        "big1": 0,
-        "big2": 73.25,
+      "KyleP": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 137.43,
+        "pf2": 123.45,
+        "big1": 137.43,
+        "big2": 0,
         "last": {
-          "winner": "KyleK",
-          "score1": 67.78,
-          "score2": 73.25,
-          "season": "09"
+          "winner": "Irfan",
+          "score1": 137.43,
+          "score2": 123.45,
+          "season": "10"
         },
         "playoffs": 0,
         "seasons": 1
@@ -883,9 +995,9 @@
     "Bradley": {
       "David": {
         "w1": 2,
-        "w2": 2,
-        "pf1": 354.61,
-        "pf2": 360.97,
+        "w2": 3,
+        "pf1": 418.79,
+        "pf2": 467.41,
         "big1": 89.51,
         "big2": 122.58,
         "last": {
@@ -895,29 +1007,29 @@
           "season": "11"
         },
         "playoffs": 1,
-        "seasons": 2
+        "seasons": 3
       },
       "Irfan": {
-        "w1": 1,
+        "w1": 2,
         "w2": 1,
-        "pf1": 213.01,
-        "pf2": 131.05,
+        "pf1": 335.07,
+        "pf2": 249.48,
         "big1": 135.06,
         "big2": 78.93,
         "last": {
           "winner": "Bradley",
-          "score1": 135.06,
-          "score2": 52.12,
-          "season": "09"
+          "score1": 122.06,
+          "score2": 118.43,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       },
       "duncan": {
-        "w1": 1,
+        "w1": 2,
         "w2": 3,
-        "pf1": 352.48,
-        "pf2": 427.08,
+        "pf1": 438.04,
+        "pf2": 508.1,
         "big1": 122.88,
         "big2": 133.93,
         "last": {
@@ -927,13 +1039,13 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
       },
       "RyanC": {
         "w1": 1,
-        "w2": 2,
-        "pf1": 297.2,
-        "pf2": 352.07,
+        "w2": 3,
+        "pf1": 382.14,
+        "pf2": 486.13,
         "big1": 95.34,
         "big2": 151.24,
         "last": {
@@ -943,13 +1055,13 @@
           "season": "11"
         },
         "playoffs": 1,
-        "seasons": 2
+        "seasons": 3
       },
       "Raj": {
         "w1": 2,
-        "w2": 1,
-        "pf1": 362.51,
-        "pf2": 322.82,
+        "w2": 3,
+        "pf1": 550.72,
+        "pf2": 577.99,
         "big1": 118.09,
         "big2": 161.43,
         "last": {
@@ -959,13 +1071,13 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
       },
       "Daniel": {
-        "w1": 1,
-        "w2": 2,
-        "pf1": 273.13,
-        "pf2": 366.25,
+        "w1": 2,
+        "w2": 3,
+        "pf1": 450.48,
+        "pf2": 537.82,
         "big1": 113.25,
         "big2": 140.02,
         "last": {
@@ -975,13 +1087,13 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
       },
       "PatrickF": {
-        "w1": 2,
+        "w1": 3,
         "w2": 1,
-        "pf1": 374.65,
-        "pf2": 295.95,
+        "pf1": 489.55,
+        "pf2": 388.93,
         "big1": 161.27,
         "big2": 93.69,
         "last": {
@@ -991,13 +1103,13 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
       },
       "KyleK": {
-        "w1": 1,
+        "w1": 2,
         "w2": 1,
-        "pf1": 202.15,
-        "pf2": 213.47,
+        "pf1": 311.49,
+        "pf2": 289.83,
         "big1": 148.8,
         "big2": 115.59,
         "last": {
@@ -1007,14 +1119,30 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 2
+        "seasons": 3
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 116.18,
+        "pf2": 99.18,
+        "big1": 116.18,
+        "big2": 0,
+        "last": {
+          "winner": "Bradley",
+          "score1": 116.18,
+          "score2": 99.18,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "KyleP": {
-        "w1": 0,
+        "w1": 1,
         "w2": 2,
-        "pf1": 176.8,
-        "pf2": 218.08,
-        "big1": 0,
+        "pf1": 259.68,
+        "pf2": 293.77,
+        "big1": 82.88,
         "big2": 122.38,
         "last": {
           "winner": "KyleP",
@@ -1023,15 +1151,15 @@
           "season": "11"
         },
         "playoffs": 0,
-        "seasons": 1
+        "seasons": 2
       }
     },
     "RyanC": {
       "duncan": {
-        "w1": 19,
+        "w1": 20,
         "w2": 11,
-        "pf1": 3622.66,
-        "pf2": 3327.33,
+        "pf1": 3760.4,
+        "pf2": 3398.47,
         "big1": 160.41,
         "big2": 165.87,
         "last": {
@@ -1041,15 +1169,31 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 105.54,
+        "pf2": 98.19,
+        "big1": 105.54,
+        "big2": 0,
+        "last": {
+          "winner": "RyanC",
+          "score1": 105.54,
+          "score2": 98.19,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       }
     },
     "Raj": {
       "RyanC": {
         "w1": 18,
-        "w2": 12,
-        "pf1": 3583.34,
-        "pf2": 3410.73,
+        "w2": 13,
+        "pf1": 3646.31,
+        "pf2": 3533.24,
         "big1": 166.96,
         "big2": 169.76,
         "last": {
@@ -1059,13 +1203,13 @@
           "season": "25"
         },
         "playoffs": 3,
-        "seasons": 16
+        "seasons": 17
       },
       "duncan": {
-        "w1": 11,
+        "w1": 12,
         "w2": 12,
-        "pf1": 2606.28,
-        "pf2": 2661.52,
+        "pf1": 2695.24,
+        "pf2": 2742.81,
         "big1": 160.8,
         "big2": 166.85,
         "last": {
@@ -1075,7 +1219,23 @@
           "season": "25"
         },
         "playoffs": 4,
-        "seasons": 16
+        "seasons": 17
+      },
+      "Steven": {
+        "w1": 1,
+        "w2": 0,
+        "pf1": 107.77,
+        "pf2": 91.93,
+        "big1": 107.77,
+        "big2": 0,
+        "last": {
+          "winner": "Raj",
+          "score1": 107.77,
+          "score2": 91.93,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       },
       "Rudee": {
         "w1": 3,
@@ -1095,27 +1255,11 @@
       }
     },
     "KyleP": {
-      "RyanC": {
-        "w1": 11,
-        "w2": 11,
-        "pf1": 2579.01,
-        "pf2": 2611.05,
-        "big1": 162.5,
-        "big2": 157.43,
-        "last": {
-          "winner": "RyanC",
-          "score1": 113.66,
-          "score2": 113.87,
-          "season": "21"
-        },
-        "playoffs": 1,
-        "seasons": 11
-      },
       "Raj": {
-        "w1": 6,
+        "w1": 8,
         "w2": 13,
-        "pf1": 2004.48,
-        "pf2": 2375.18,
+        "pf1": 2245.76,
+        "pf2": 2560.52,
         "big1": 142.79,
         "big2": 171.76,
         "last": {
@@ -1125,29 +1269,29 @@
           "season": "21"
         },
         "playoffs": 3,
-        "seasons": 11
+        "seasons": 12
       },
-      "duncan": {
-        "w1": 5,
-        "w2": 10,
-        "pf1": 1655.03,
-        "pf2": 1700.76,
-        "big1": 146.41,
-        "big2": 159.26,
+      "Steven": {
+        "w1": 0,
+        "w2": 1,
+        "pf1": 70.59,
+        "pf2": 81.01,
+        "big1": 0,
+        "big2": 81.01,
         "last": {
-          "winner": "KyleP",
-          "score1": 146.41,
-          "score2": 68.46,
-          "season": "21"
+          "winner": "Steven",
+          "score1": 70.59,
+          "score2": 81.01,
+          "season": "10"
         },
         "playoffs": 0,
-        "seasons": 11
+        "seasons": 1
       },
       "PatrickF": {
-        "w1": 8,
+        "w1": 9,
         "w2": 9,
-        "pf1": 1845.33,
-        "pf2": 1785.18,
+        "pf1": 1945.85,
+        "pf2": 1865.21,
         "big1": 140.03,
         "big2": 160.87,
         "last": {
@@ -1157,7 +1301,39 @@
           "season": "21"
         },
         "playoffs": 1,
-        "seasons": 11
+        "seasons": 12
+      },
+      "duncan": {
+        "w1": 5,
+        "w2": 11,
+        "pf1": 1754.32,
+        "pf2": 1808.18,
+        "big1": 146.41,
+        "big2": 159.26,
+        "last": {
+          "winner": "KyleP",
+          "score1": 146.41,
+          "score2": 68.46,
+          "season": "21"
+        },
+        "playoffs": 0,
+        "seasons": 12
+      },
+      "RyanC": {
+        "w1": 11,
+        "w2": 12,
+        "pf1": 2649.63,
+        "pf2": 2768.06,
+        "big1": 162.5,
+        "big2": 157.43,
+        "last": {
+          "winner": "RyanC",
+          "score1": 113.66,
+          "score2": 113.87,
+          "season": "21"
+        },
+        "playoffs": 1,
+        "seasons": 12
       },
       "Larson": {
         "w1": 9,
@@ -1190,6 +1366,24 @@
         },
         "playoffs": 0,
         "seasons": 3
+      }
+    },
+    "Steven": {
+      "duncan": {
+        "w1": 0,
+        "w2": 1,
+        "pf1": 76.08,
+        "pf2": 88.5,
+        "big1": 0,
+        "big2": 88.5,
+        "last": {
+          "winner": "duncan",
+          "score1": 76.08,
+          "score2": 88.5,
+          "season": "10"
+        },
+        "playoffs": 0,
+        "seasons": 1
       }
     },
     "Larson": {
