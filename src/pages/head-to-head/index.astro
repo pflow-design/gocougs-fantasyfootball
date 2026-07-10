@@ -60,7 +60,7 @@ const mgrs = Object.entries(managerMap)
         const d = h2hData[b][a];
         return {
           w1: d.w2, w2: d.w1, pf1: d.pf2, pf2: d.pf1, big1: d.big2, big2: d.big1, bigS1: d.bigS2, bigS2: d.bigS1,
-          last: d.last ? { winner: d.last.winner, score1: d.last.score2, score2: d.last.score1, season: d.last.season } : null,
+          last: d.last ? { winner: d.last.winner, score1: d.last.score2, score2: d.last.score1, season: d.last.season, week: d.last.week } : null,
           playoffs: d.playoffs, seasons: d.seasons,
         };
       }
@@ -100,9 +100,11 @@ const mgrs = Object.entries(managerMap)
       $('r-big1').textContent = fmtBig(d.big1, d.bigS1);
       $('r-big2').textContent = fmtBig(d.big2, d.bigS2);
       if (d.last) {
-        const lsn = "'" + d.last.season;
-        $('r-last1').textContent = (d.last.winner === a ? 'W ' : 'L ') + d.last.score1.toFixed(2) + ' · ' + lsn;
-        $('r-last2').textContent = (d.last.winner === b ? 'W ' : 'L ') + d.last.score2.toFixed(2) + ' · ' + lsn;
+        const wk = d.last.week;
+        // Week 99 is a placeholder for 2023/2024 playoff games with no recorded week; omit it then.
+        const when = (wk && wk >= 1 && wk <= 25 ? 'Wk ' + wk + " '" : "'") + d.last.season;
+        $('r-last1').textContent = (d.last.winner === a ? 'W ' : 'L ') + d.last.score1.toFixed(2) + ' · ' + when;
+        $('r-last2').textContent = (d.last.winner === b ? 'W ' : 'L ') + d.last.score2.toFixed(2) + ' · ' + when;
       } else { $('r-last1').textContent = '—'; $('r-last2').textContent = '—'; }
       $('r-playoff').textContent = d.playoffs ? d.playoffs + ' playoff meeting' + (d.playoffs > 1 ? 's' : '') : 'None';
       $('r-seasons').textContent = d.seasons ? d.seasons + ' season' + (d.seasons > 1 ? 's' : '') : '—';

@@ -189,7 +189,7 @@ for (const g of games) {
   const cur = p.last;
   const rank = g.season * 100 + g.week;
   if (!cur || rank >= cur._rank) {
-    p.last = { winner: margin >= 0 ? k1 : k2, score1: s1, score2: s2, season: twoDigit(g.season), _rank: rank };
+    p.last = { winner: margin >= 0 ? k1 : k2, score1: s1, score2: s2, season: twoDigit(g.season), week: g.week, _rank: rank };
   }
 }
 let pairCount = 0;
