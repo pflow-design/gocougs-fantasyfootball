@@ -181,8 +181,9 @@ for (const g of games) {
   const s2 = first ? g.sb : g.sa;
   p.pf1 += s1; p.pf2 += s2;
   const margin = s1 - s2;
-  if (margin > 0) { p.w1++; if (s1 > p.big1) p.big1 = s1; }
-  else if (margin < 0) { p.w2++; if (s2 > p.big2) p.big2 = s2; }
+  // big1/big2 = the largest MARGIN (points gap) in a win by that manager.
+  if (margin > 0) { p.w1++; if (margin > p.big1) p.big1 = margin; }
+  else if (margin < 0) { p.w2++; if (-margin > p.big2) p.big2 = -margin; }
   if (g.playoff) p.playoffs++;
   (seasonsMet[k1 + '|' + k2] ||= new Set()).add(g.season);
   const cur = p.last;
@@ -280,7 +281,7 @@ if (WRITE) {
   }
   const out = {
     _meta: {
-      description: 'Pairwise all-time head-to-head, RECOMPUTED from data/seasons/*.json (regular + playoff games) by scripts/recompute.mjs. Directional per pair: w1/pf1/big1 = first key (alphabetical), w2/pf2/big2 = second. big = winning score in that manager\'s biggest-margin victory. seasons = distinct seasons the pair met. Includes playoff games.',
+      description: 'Pairwise all-time head-to-head, RECOMPUTED from data/seasons/*.json (regular + playoff games) by scripts/recompute.mjs. Directional per pair: w1/pf1/big1 = first key (alphabetical), w2/pf2/big2 = second. big1/big2 = the largest margin (points gap) in a win by that manager. seasons = distinct seasons the pair met. Includes playoff games.',
       source: 'data/seasons/*.json + legacy playoffs',
       generatedBy: 'scripts/recompute.mjs',
       pairs: pairCount,
